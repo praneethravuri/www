@@ -8,6 +8,22 @@ export const data = {
     resumeUrl: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing", // Placeholder
     url: "https://praneethravuri.com",
     title: "AI Engineer",
+    about: "AI Engineer and Full Stack Developer with experience in building scalable real-time data systems and intelligent agentic workflows. Professional background includes roles at Tuskira and Lumen Technologies, focusing on Go, Kafka, and Cloud Infrastructure. Passionate about solving complex problems with LLMs and modern web technologies.",
+    keywords: [
+        "Praneeth Ravuri",
+        "AI Engineer",
+        "Software Engineer",
+        "Full Stack Developer",
+        "Go",
+        "Kafka",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "LLM",
+        "Agentic Workflows",
+        "RAG",
+        "Machine Learning"
+    ],
     contact: {
         email: "ravpraneeth@gmail.com",
         social: {

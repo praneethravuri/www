@@ -19,7 +19,7 @@ export function Hero() {
             <div className="font-bold text-foreground">
               Agentic AI
             </div>
-            <div className="font-serif italic text-foreground/90">
+            <div className="font-serif italic text-brand">
               <span className="text-muted-foreground/40 font-light mr-4">&</span>
               Scalable Systems.
             </div>

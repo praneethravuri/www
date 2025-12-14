@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <footer id="contact" className="py-20 border-t border-white/5 mt-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-serif mb-8 text-neutral-200">
-          Let&apos;s put AI to <br /> <span className="text-neutral-500">work.</span>
+        <h2 className="text-4xl md:text-5xl font-serif italic mb-8 text-brand">
+          Let&apos;s put AI to <br /> <span className="text-foreground">work.</span>
         </h2>
 
         <div className="flex justify-center gap-6 mb-12">

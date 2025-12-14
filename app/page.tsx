@@ -3,7 +3,6 @@ import { Navbar } from '@/components/NavBar';
 import { Hero } from '@/components/Hero';
 import { Experience } from '@/components/Experience';
 import { Education } from '@/components/Education';
-import { Projects } from '@/components/Projects';
 import { Footer } from '@/components/Footer';
 
 export default function Home() {
@@ -16,8 +15,6 @@ export default function Home() {
       <Experience />
 
       <Education />
-
-      <Projects />
 
       <Footer />
     </main>

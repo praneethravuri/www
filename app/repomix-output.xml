@@ -60,27 +60,25 @@ export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
     url: "https://praneethravuri.com",
+    title: "AI Engineer",
     contact: {
-        email: "ravpraneeth@gmail.com",
+        email: "pravdevrav@gmail.com",
         social: {
             GitHub: {
                 name: "GitHub",
                 url: "https://www.github.com/praneethravuri",
-                icon: FaGithub
             },
             LinkedIn: {
                 name: "LinkedIn",
                 url: "www.linkedin.com/in/prav10",
-                icon: FaLinkedin
             },
             X: {
                 name: "X",
                 url: "https://x.com/praneeth2510",
-                icon: FaXTwitter
             }
         }
     },
-    about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim doloremque labore quos culpa esse ullam dolores similique veritatis possimus cumque tempore cupiditate itaque ut, repellendus quia mollitia facere architecto aliquam.",
+    about: "Full-stack engineer with a passion for building scalable systems and experimenting with AI agents. My expertise lies in creating fault-tolerant microservices and optimizing front-end performance. I am always looking for new challenges and opportunities to learn and grow.",
     skills: [
         "JavaScript",
         "TypeScript",
@@ -92,31 +90,22 @@ export const data = {
         "Generative AI"],
     work: [
         {
-            company: "Tuskira.ai",
-            companyUrl: "https://tuskira.ai",
-            title: "AI Engineer",
-            startDate: "December 2025",
-            endDate: "Present",
-            location: "United States",
-            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sunt."
-        },
-        {
             company: "Lumen Technologies",
             companyUrl: "https://lumen.com",
             title: "Software Engineer",
             startDate: "July 2024",
-            endDate: "December 2025",
+            endDate: "Present",
             location: "United States",
-            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sunt."
+            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery."
         },
         {
-            company: "ADP",
-            companyUrl: "https://adp.com",
-            title: "Software Engineer Intern",
+            company: "Prodapt",
+            companyUrl: "https://prodapt.com",
+            title: "Software Engineer",
             startDate: "January 2022",
             endDate: "June 2022",
             location: "India",
-            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sunt."
+            description: "Modernized an employee portal with React, optimizing Node.js services with Redis caching and AWS auto-scaling."
         }
     ],
     education: [
@@ -139,16 +128,22 @@ export const data = {
     ],
     projects: [
         {
-            name: "F1 MCP Server",
-            url: "https://github.com/praneethravuri/pitstop",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, repellat.",
-            tags: ["Python", "MCP", "F1"]
+            name: "Gary",
+            url: "https://github.com/praneethravuri/gary",
+            description: "An AI agent that tailors resumes to job descriptions, helping users to create targeted and effective job applications.",
+            tags: ["AI", "NLP", "Resume"]
         },
         {
-            name: "RAG Document Assistant",
+            name: "Pitstop",
+            url: "https://github.com/praneethravuri/pitstop",
+            description: "A project that brings real-time F1 data into Claude, allowing for interesting data analysis and visualizations.",
+            tags: ["F1", "Data", "AI"]
+        },
+        {
+            name: "Notstuck",
             url: "https://github.com/praneethravuri/notstuck",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, repellat.",
-            tags: ["Python", "RAG", "AI"]
+            description: "A RAG-based document assistant that helps users to find information in large documents quickly and efficiently.",
+            tags: ["RAG", "AI", "Docs"]
         },
     ]
 }
@@ -193,6 +188,7 @@ export const data = {
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
+  --color-swiss-red: var(--swiss-red);
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -236,6 +232,7 @@ export const data = {
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --swiss-red: oklch(56.26% 0.219 9.71);
 }
 
 .dark {
@@ -270,6 +267,7 @@ export const data = {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --swiss-red: oklch(56.26% 0.219 9.71);
 }
 
 @layer base {
@@ -316,7 +314,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sourceCodePro.variable} min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-6 px-6`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sourceCodePro.variable} min-h-screen bg-background font-sans antialiased max-w-7xl mx-auto py-12 sm:py-6 px-6`}
       >
         <ThemeProvider
           attribute="class"
@@ -335,29 +333,37 @@ export default function RootLayout({
 <file path="page.tsx">
 import React from 'react';
 import { NavBar } from '@/components/NavBar';
-import Hero from '@/components/Hero';
-import Work from '@/components/Work';
+import { Hero } from '@/components/Hero';
+import { Work } from '@/components/Work';
+import { Projects } from '@/components/Projects';
+import { Education } from '@/components/Education';
+import { Footer } from '@/components/Footer';
 
-const page = () => {
+export default function Home() {
   return (
-    // <div className=''>
-    //   <NavBar />
-    // </div>
-    <main className="flex flex-col min-h-dvh space-y-10">
-      <section id="navbar">
-        <NavBar />
-      </section>
-      <section id="hero">
+    <main className="flex flex-col min-h-dvh space-y-20 mb-20">
+      <NavBar />
+      
+      <section id="hero" className="scroll-mt-20">
         <Hero />
       </section>
-            <section id="hero">
+      
+      {/* <section id="work" className="scroll-mt-20">
         <Work />
       </section>
-    </main>
-  )
-}
+      
+      <section id="projects" className="scroll-mt-20">
+        <Projects />
+      </section>
 
-export default page
+      <section id="education" className="scroll-mt-20">
+        <Education />
+      </section> */}
+
+      {/* <Footer /> */}
+    </main>
+  );
+}
 </file>
 
 </files>

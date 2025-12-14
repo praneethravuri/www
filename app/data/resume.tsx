@@ -6,45 +6,34 @@ export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
     url: "https://praneethravuri.com",
+    title: "AI Engineer",
     contact: {
         email: "ravpraneeth@gmail.com",
         social: {
             GitHub: {
                 name: "GitHub",
                 url: "https://www.github.com/praneethravuri",
-                icon: FaGithub
             },
             LinkedIn: {
                 name: "LinkedIn",
                 url: "www.linkedin.com/in/prav10",
-                icon: FaLinkedin
             },
             X: {
                 name: "X",
                 url: "https://x.com/praneeth2510",
-                icon: FaXTwitter
             }
         }
     },
-    about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim doloremque labore quos culpa esse ullam dolores similique veritatis possimus cumque tempore cupiditate itaque ut, repellendus quia mollitia facere architecto aliquam.",
-    skills: [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        "Go",
-        "Agentic AI",
-        "Generative AI"],
+    about: "Full-stack engineer with a passion for building scalable systems and experimenting with AI agents. My expertise lies in creating fault-tolerant microservices and optimizing front-end performance. I am always looking for new challenges and opportunities to learn and grow.",
     work: [
         {
-            company: "Tuskira.ai",
+            company: "Tuskira",
             companyUrl: "https://tuskira.ai",
             title: "AI Engineer",
             startDate: "December 2025",
             endDate: "Present",
             location: "United States",
-            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sunt."
+            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery."
         },
         {
             company: "Lumen Technologies",
@@ -53,16 +42,16 @@ export const data = {
             startDate: "July 2024",
             endDate: "December 2025",
             location: "United States",
-            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sunt."
+            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery."
         },
         {
             company: "ADP",
             companyUrl: "https://adp.com",
-            title: "Software Engineer Intern",
+            title: "Full Stack Engineer Intern",
             startDate: "January 2022",
             endDate: "June 2022",
             location: "India",
-            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sunt."
+            description: "Modernized an employee portal with React, optimizing Node.js services with Redis caching and AWS auto-scaling."
         }
     ],
     education: [
@@ -85,16 +74,22 @@ export const data = {
     ],
     projects: [
         {
-            name: "F1 MCP Server",
-            url: "https://github.com/praneethravuri/pitstop",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, repellat.",
-            tags: ["Python", "MCP", "F1"]
+            name: "Gary",
+            url: "https://github.com/praneethravuri/gary",
+            description: "An AI agent that tailors resumes to job descriptions, helping users to create targeted and effective job applications.",
+            tags: ["AI", "NLP", "Resume"]
         },
         {
-            name: "RAG Document Assistant",
+            name: "Pitstop",
+            url: "https://github.com/praneethravuri/pitstop",
+            description: "A project that brings real-time F1 data into Claude, allowing for interesting data analysis and visualizations.",
+            tags: ["F1", "Data", "AI"]
+        },
+        {
+            name: "Notstuck",
             url: "https://github.com/praneethravuri/notstuck",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, repellat.",
-            tags: ["Python", "RAG", "AI"]
+            description: "A RAG-based document assistant that helps users to find information in large documents quickly and efficiently.",
+            tags: ["RAG", "AI", "Docs"]
         },
     ]
 }

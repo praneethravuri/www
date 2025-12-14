@@ -14,12 +14,12 @@ export function Work() {
       <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
         {data.work.map((role, index) => (
           <AccordionItem value={`item-${index}`} key={role.company}>
-            <AccordionTrigger className="hover:no-underline hover:bg-muted/50 px-2 py-4 transition-all">
+            <AccordionTrigger className="hover:no-underline hover:bg-muted/50 px-2 py-4 transition-all rounded-md">
               <div className="flex flex-col text-left w-full pr-4 gap-1">
                 <div className="flex justify-between items-center w-full">
-                  <h3 className="font-semibold text-base sm:text-lg">
+                  <a href={role.companyUrl} target="_blank" className="font-semibold text-lg sm:text-xl hover:underline">
                     {role.company}
-                  </h3>
+                  </a>
                   {/* Date hidden on mobile within trigger to prevent crowding, shown below instead */}
                   <span className="text-sm font-mono text-muted-foreground tabular-nums hidden sm:block">
                     {role.startDate} - {role.endDate}
@@ -38,7 +38,7 @@ export function Work() {
               </div>
             </AccordionTrigger>
             
-            <AccordionContent className="px-2 text-sm text-muted-foreground leading-relaxed">
+            <AccordionContent className="px-4 text-base text-muted-foreground leading-relaxed">
               <div className="pt-2 pb-4">
                  {/* Optional: Add a subtle separator if you want extra distinction */}
                 {role.description}

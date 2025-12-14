@@ -39,22 +39,22 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 lg:justify-end">
-            <a
+            <Link
               href={`mailto:${data.contact.email}`}
-              className="group px-8 py-4 rounded-full bg-foreground text-background font-semibold text-lg hover:bg-neutral-200 dark:hover:bg-neutral-300 transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+              className="group px-8 py-4 rounded-full bg-foreground text-background font-semibold text-lg hover:bg-brand hover:text-white transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               Contact Me
               <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </a>
-            <a
+            </Link >
+            <Link
               href={data.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-foreground/20 text-foreground font-medium text-lg hover:bg-foreground hover:text-background transition-all flex items-center gap-3 w-full sm:w-auto justify-center"
+              className="px-8 py-4 rounded-full border border-foreground/20 text-foreground font-medium text-lg hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center gap-3 w-full sm:w-auto justify-center"
             >
               <Download className="w-5 h-5" />
               Download Resume
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

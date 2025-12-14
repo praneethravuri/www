@@ -34,9 +34,9 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-xs font-medium tracking-widest hover:text-foreground transition-colors uppercase",
+                  "text-xs font-medium tracking-widest hover:text-brand transition-colors uppercase",
                   pathname === item.href
-                    ? "text-foreground"
+                    ? "text-brand"
                     : "text-muted-foreground"
                 )}
               >
@@ -47,12 +47,12 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <a
+            <Link 
               href={`mailto:${data.contact.email}`}
-              className="hidden sm:block px-6 py-2.5 rounded-full border border-white/20 hover:border-black/20 text-foreground text-xs font-medium tracking-wide hover:bg-foreground hover:text-background transition-all duration-300"
+              className="hidden sm:block px-6 py-2.5 rounded-full border border-muted-foreground/40 hover:border-brand/50 text-foreground text-xs font-medium tracking-wide hover:bg-brand hover:text-white transition-all duration-300"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       </div>

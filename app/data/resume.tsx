@@ -16,7 +16,7 @@ export const data = {
             },
             LinkedIn: {
                 name: "LinkedIn",
-                url: "www.linkedin.com/in/prav10",
+                url: "https://www.linkedin.com/in/prav10",
             },
             X: {
                 name: "X",
@@ -24,7 +24,6 @@ export const data = {
             }
         }
     },
-    about: "Full-stack engineer with a passion for building scalable systems and experimenting with AI agents. My expertise lies in creating fault-tolerant microservices and optimizing front-end performance. I am always looking for new challenges and opportunities to learn and grow.",
     work: [
         {
             company: "Tuskira",
@@ -58,7 +57,7 @@ export const data = {
         {
             institution: "George Mason University",
             institutionUrl: "https://gmu.edu",
-            degree: "Bachelor of Science in Computer Science",
+            degree: "Master of Science in Computer Science",
             startDate: "August 2022",
             endDate: "May 2024",
             location: "United States",

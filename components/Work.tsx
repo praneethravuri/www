@@ -9,7 +9,7 @@ import { data } from "@/app/data/resume";
 export function Work() {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-xl font-bold border-b pb-2">Work Experience</h2>
+      <h2 className="text-xl font-bold border-b pb-2">Work</h2>
       
       <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
         {data.work.map((role, index) => (

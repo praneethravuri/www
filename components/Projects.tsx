@@ -2,23 +2,33 @@
 import { data } from "@/app/data/resume";
 import Link from "next/link";
 import { Github } from "lucide-react";
+import * as motion from "motion/react-client";
 
 export function Projects() {
   return (
     <section id="projects" className="py-24 max-w-7xl mx-auto px-6">
-      <div className="flex items-end justify-between mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="flex items-end justify-between mb-16"
+      >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tighter">
           Selected Work
         </h2>
         <span className="text-muted-foreground hidden md:block font-mono text-xs tracking-widest uppercase mb-2">
           Full Stack & AI Engineering
         </span>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col">
         {data.projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
             className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 py-12 border-t border-foreground/10 group"
           >
             <div className="md:col-span-1 flex flex-col pt-1">
@@ -51,7 +61,7 @@ export function Projects() {
                 View on GitHub
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
         {/* Bottom border for the last item */}
         <div className="w-full h-[1px] bg-foreground/10" />

@@ -1,6 +1,9 @@
+"use client";
+
 import { data } from "@/app/data/resume";
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
+import { motion } from "motion/react";
 
 export function Hero() {
   return (
@@ -15,18 +18,29 @@ export function Hero() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-5xl sm:text-[8rem] lg:text-[10rem] leading-[0.9] tracking-tighter">
-          <div className="font-bold text-foreground">
-            Agentic AI
-          </div>
-          <div className="font-serif italic text-foreground/90">
-            <span className="text-muted-foreground/40 font-light mr-4">&</span>
-            Scalable Systems.
-          </div>
-        </h1>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <h1 className="text-5xl sm:text-[8rem] lg:text-[10rem] leading-[0.9] tracking-tighter">
+            <div className="font-bold text-foreground">
+              Agentic AI
+            </div>
+            <div className="font-serif italic text-foreground/90">
+              <span className="text-muted-foreground/40 font-light mr-4">&</span>
+              Scalable Systems.
+            </div>
+          </h1>
+        </motion.div>
 
         {/* Bio & CTAs */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mt-8 items-end">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }} // Added delay for stagger effect
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mt-8 items-end"
+        >
           <p className="text-lg sm:text-2xl text-muted-foreground font-light leading-relaxed max-w-2xl">
             I bridge the gap between complex AI models and intuitive modern experiences.
             Building <span className="text-foreground font-medium">fault-tolerant microservices</span> and <span className="text-foreground font-medium">optimizing performance</span>.
@@ -50,7 +64,7 @@ export function Hero() {
               Download Resume
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

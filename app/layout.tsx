@@ -2,14 +2,30 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import {data} from "@/app/data/resume";
+import { data } from "@/app/data/resume";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: `${data.firstName} ${data.lastName} | ${data.title}`,
-  description: "Senior Product Designer & Frontend Developer",
+  title: {
+    template: `%s | ${data.title}`,
+    default: `${data.firstName} ${data.lastName}`,
+  },
+  description: data.about,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://praneethravuri.com",
+    title: `${data.firstName} ${data.lastName}`,
+    description: data.about,
+    siteName: `${data.firstName} ${data.lastName}`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${data.firstName} ${data.lastName}`,
+    description: data.about,
+  },
 };
 
 export default function RootLayout({

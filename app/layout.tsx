@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground relative overflow-x-hidden min-h-screen`}
       >

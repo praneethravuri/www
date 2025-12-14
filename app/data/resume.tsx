@@ -5,6 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
+    resumeUrl: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing", // Placeholder
     url: "https://praneethravuri.com",
     title: "AI Engineer",
     contact: {

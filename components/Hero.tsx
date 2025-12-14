@@ -2,21 +2,13 @@
 
 import { data } from "@/app/data/resume";
 import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Mail } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-7xl mx-auto">
-      <div className="flex flex-col gap-8 sm:gap-12 z-10 w-full">
-        {/* Intro Line */}
-        <div className="flex items-center gap-4">
-          <div className="h-[1px] w-8 sm:w-12 bg-white/50"></div>
-          <span className="text-xs sm:text-sm font-medium tracking-widest text-muted-foreground uppercase">
-            {data.firstName} {data.lastName}, {data.title}
-          </span>
-        </div>
-
+    <section className="min-h-screen flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20">
+      <div className="flex flex-col gap-6 z-10">
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,15 +39,15 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 lg:justify-end">
-            <Link
-              href="#projects"
-              className="group px-8 py-4 rounded-full bg-foreground text-background font-semibold text-lg hover:bg-gray-200 transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
-            >
-              View Case Studies
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
             <a
-              href={data.contact.social.GitHub.url}
+              href={`mailto:${data.contact.email}`}
+              className="group px-8 py-4 rounded-full bg-foreground text-background font-semibold text-lg hover:bg-neutral-200 dark:hover:bg-neutral-300 transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+            >
+              Contact Me
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <a
+              href={data.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-full border border-foreground/20 text-foreground font-medium text-lg hover:bg-foreground hover:text-background transition-all flex items-center gap-3 w-full sm:w-auto justify-center"

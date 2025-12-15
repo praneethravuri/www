@@ -8,7 +8,7 @@ export const data = {
     resumeUrl: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing", // Placeholder
     url: "https://praneethravuri.com",
     title: "AI Engineer",
-    about: "AI Engineer and Full Stack Developer with experience in building scalable real-time data systems and intelligent agentic workflows. Professional background includes roles at Tuskira and Lumen Technologies, focusing on Go, Kafka, and Cloud Infrastructure. Passionate about solving complex problems with LLMs and modern web technologies.",
+    about: "My journey in tech began at GRIET in India, where I laid the groundwork for my career in Computer Science. Driven by a desire to deepen my expertise, I moved to the United States to pursue my Master’s at George Mason University. This academic foundation paved the way for my evolution from a Full Stack Engineer at ADP to an AI Engineer building intelligent systems. Today, I combine my rigorous academic background with hands-on experience in building scalable, real-time data systems and agentic workflows to solve complex challenges.",
     keywords: [
         "Praneeth Ravuri",
         "AI Engineer",
@@ -49,7 +49,8 @@ export const data = {
             startDate: "December 2025",
             endDate: "Present",
             location: "United States",
-            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery."
+            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery.",
+            deepInsight: "At Tuskira, I spearheaded the development of a high-throughput data processing pipeline. I was responsible for architecting scalable solutions that drove significant business impact, collaborating closely with cross-functional teams to define requirements and deliver high-quality code. My role involved optimizing existing processes for better efficiency and championing the adoption of modern technologies, which resulted in improved system reliability and faster deployment cycles."
         },
         {
             company: "Lumen Technologies",
@@ -58,7 +59,8 @@ export const data = {
             startDate: "July 2024",
             endDate: "December 2025",
             location: "United States",
-            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery."
+            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery.",
+            deepInsight: "During my tenure at Lumen Technologies, I focused on building robust infrastructure for real-time data analysis. I worked on integrating complex systems, ensuring data integrity and low-latency processing. I also contributed to the internal developer tooling, reducing onboarding time for new engineers and establishing best practices for microservices development."
         },
         {
             company: "ADP",
@@ -67,25 +69,8 @@ export const data = {
             startDate: "January 2022",
             endDate: "June 2022",
             location: "India",
-            description: "Modernized an employee portal with React, optimizing Node.js services with Redis caching and AWS auto-scaling."
-        }
-    ],
-    education: [
-        {
-            institution: "George Mason University",
-            institutionUrl: "https://gmu.edu",
-            degree: "Master of Science in Computer Science",
-            startDate: "August 2022",
-            endDate: "May 2024",
-            location: "United States",
-        },
-        {
-            institution: "GRIET",
-            institutionUrl: "https://griet.ac.in",
-            degree: "Bachelor of Technology in Computer Science",
-            startDate: "August 2018",
-            endDate: "May 2022",
-            location: "India",
+            description: "Modernized an employee portal with React, optimizing Node.js services with Redis caching and AWS auto-scaling.",
+            deepInsight: "At ADP, I played a key role in modernizing legacy applications. I redesigned the user interface to improve accessibility and user engagement, resulting in a significantly better user experience. I also implemented caching strategies that reduced server load and improved response times, demonstrating my ability to deliver performant full-stack solutions."
         }
     ],
     projects: [

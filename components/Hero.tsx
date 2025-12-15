@@ -2,8 +2,9 @@
 
 import { data } from "@/app/data/resume";
 import Link from "next/link";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
@@ -39,22 +40,28 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 lg:justify-end">
-            <Link
-              href={`mailto:${data.contact.email}`}
-              className="group px-8 py-4 rounded-full bg-foreground text-background font-semibold text-lg hover:bg-brand hover:text-white transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+            <Button asChild size="lg" shape="pill" className="w-full sm:w-auto text-lg font-semibold group h-14">
+              <Link href={`mailto:${data.contact.email}`}>
+                Contact Me
+                <Mail className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              shape="pill"
+              className="w-full sm:w-auto text-lg font-medium h-14"
             >
-              Contact Me
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </Link >
-            <Link
-              href={data.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border border-foreground/20 text-foreground font-medium text-lg hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center gap-3 w-full sm:w-auto justify-center"
-            >
-              <Download className="w-5 h-5" />
-              Download Resume
-            </Link>
+              <Link
+                href={data.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </Link>
+            </Button>
           </div>
         </motion.div>
       </div>

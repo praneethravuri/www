@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { data } from "@/app/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -47,12 +48,16 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <Link 
-              href={`mailto:${data.contact.email}`}
-              className="hidden sm:block px-6 py-2.5 rounded-full border border-muted-foreground/40 hover:border-brand/50 text-foreground text-xs font-medium tracking-wide hover:bg-brand hover:text-white transition-all duration-300"
+            <Button
+              asChild
+              variant="outline"
+              shape="pill"
+              className="hidden sm:flex border-muted-foreground/40 hover:border-brand/50 text-xs tracking-wide h-auto py-2.5 px-6"
             >
-              Get in Touch
-            </Link>
+              <Link href={`mailto:${data.contact.email}`}>
+                Get in Touch
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

@@ -4,13 +4,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
 import { data } from "@/app/data/resume";
 
 export function Work() {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-xl font-bold border-b pb-2">Work</h2>
-      
+      <h2 className="text-xl font-bold pb-2">Work</h2>
+      <Separator className="mb-4" />
+
       <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
         {data.work.map((role, index) => (
           <AccordionItem value={`item-${index}`} key={role.company}>
@@ -25,7 +27,7 @@ export function Work() {
                     {role.startDate} - {role.endDate}
                   </span>
                 </div>
-                
+
                 <div className="flex justify-between items-center w-full">
                   <span className="text-sm font-medium text-foreground/80">
                     {role.title}
@@ -37,10 +39,10 @@ export function Work() {
                 </div>
               </div>
             </AccordionTrigger>
-            
+
             <AccordionContent className="px-4 text-base text-muted-foreground leading-relaxed">
               <div className="pt-2 pb-4">
-                 {/* Optional: Add a subtle separator if you want extra distinction */}
+                {/* Optional: Add a subtle separator if you want extra distinction */}
                 {role.description}
               </div>
             </AccordionContent>

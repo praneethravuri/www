@@ -23,7 +23,7 @@ export function Education() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-12 border-t border-brand/10 group"
+            className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-12 border-t group"
           >
             {/* Left Column: Date & Institution */}
             <div className="md:col-span-3 flex flex-col pt-1">

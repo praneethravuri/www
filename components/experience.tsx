@@ -2,6 +2,12 @@
 import { data } from "@/app/data/resume";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export function Experience() {
     return (
@@ -23,7 +29,7 @@ export function Experience() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-12 border-t border-brand/10 group"
+                        className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-12 border-t group"
                     >
                         {/* Left Column: Date & Company */}
                         <div className="md:col-span-3 flex flex-col pt-1">
@@ -42,9 +48,19 @@ export function Experience() {
                             <h4 className="text-2xl md:text-3xl font-medium text-foreground">
                                 {role.title}
                             </h4>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                            <div className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
                                 {role.description}
-                            </p>
+                                <Accordion type="single" collapsible className="w-full mt-4">
+                                    <AccordionItem value="item-1" className="border-none">
+                                        <AccordionTrigger className="py-2 text-sm text-brand hover:underline hover:no-underline">
+                                            View More
+                                        </AccordionTrigger>
+                                        <AccordionContent className="text-muted-foreground">
+                                            {role.deepInsight}
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                            </div>
                         </div>
                     </motion.div>
                 ))}

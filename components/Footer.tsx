@@ -15,14 +15,14 @@ export function Footer() {
               key={name}
               href={social.url}
               target="_blank"
-              className="text-neutral-400 hover:text-white transition-colors uppercase text-sm tracking-widest font-medium"
+              className="text-muted-foreground hover:text-foreground transition-colors uppercase text-sm tracking-widest font-medium"
             >
               {social.name}
             </Link>
           ))}
           <Link
             href={`mailto:${data.contact.email}`}
-            className="text-neutral-400 hover:text-white transition-colors uppercase text-sm tracking-widest font-medium"
+            className="text-muted-foreground hover:text-foreground transition-colors uppercase text-sm tracking-widest font-medium"
           >
             Email
           </Link>

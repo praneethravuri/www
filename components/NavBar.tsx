@@ -19,7 +19,7 @@ export function Navbar() {
   const initials = `${data.firstName[0]}${data.lastName[0]}.`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] bg-background/80 backdrop-blur-md border-b border-white/5 transition-colors duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-[100] bg-background/80 backdrop-blur-md border-b border-border transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"

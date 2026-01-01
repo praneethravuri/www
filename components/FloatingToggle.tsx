@@ -2,7 +2,6 @@
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useViewMode } from "@/components/providers/view-mode-provider";
-import { Monitor, User } from "lucide-react";
 
 export function FloatingToggle() {
     const { mode, setMode } = useViewMode();

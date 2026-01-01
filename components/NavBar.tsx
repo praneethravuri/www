@@ -1,7 +1,5 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
 import { data } from "@/app/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -9,7 +7,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useViewMode } from "@/components/providers/view-mode-provider";
 
 export function Navbar() {
-  const pathname = usePathname();
   const { mode } = useViewMode();
 
   if (mode === "machine") {

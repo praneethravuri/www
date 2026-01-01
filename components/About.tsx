@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 export function About() {
     return (
@@ -27,7 +26,7 @@ export function About() {
                 >
                     George Mason University
                 </Link>
-                {" "}because I wanted to get my hands dirty. I didn't just want to study code; I wanted to collaborate on systems that actually moved. The turning point was a Machine Learning course where I built a traffic congestion model using SARSA. Watching that simulation learn to clear an intersection was the moment I realized I didn't just want to build UIs—I wanted to build intelligence. Outside of code, my brain works the same way. Whether I'm reverse-engineering a recipe to improve the texture or analyzing F1 pit strategies, I’m obsessed with optimization. My goal now is simple: automate boredom. I build agents so humans can do the interesting stuff.
+                {" "}because I wanted to get my hands dirty. I didn&apos;t just want to study code; I wanted to collaborate on systems that actually moved. The turning point was a Machine Learning course where I built a traffic congestion model using SARSA. Watching that simulation learn to clear an intersection was the moment I realized I didn&apos;t just want to build UIs—I wanted to build intelligence. Outside of code, my brain works the same way. Whether I&apos;m reverse-engineering a recipe to improve the texture or analyzing F1 pit strategies, I&rsquo;m obsessed with optimization. My goal now is simple: automate boredom. I build agents so humans can do the interesting stuff.
             </div>
         </section>
     );

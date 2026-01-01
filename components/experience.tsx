@@ -2,6 +2,7 @@
 import { data } from "@/app/data/resume";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
 import {
     Accordion,
     AccordionContent,

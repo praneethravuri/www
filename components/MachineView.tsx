@@ -54,7 +54,7 @@ ${data.education.map((edu) => `
     };
 
     return (
-        <div className="relative max-w-3xl mx-auto p-6 my-8 rounded-lg border bg-background shadow-sm">
+        <div className="relative max-w-3xl mx-auto p-6 my-8 bg-background border">
             <Button
                 variant="outline"
                 size="icon"

@@ -4,14 +4,8 @@ import { data } from "@/app/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { useViewMode } from "@/components/providers/view-mode-provider";
-
 export function Navbar() {
-  const { mode } = useViewMode();
 
-  if (mode === "machine") {
-    return null;
-  }
 
   const initials = `${data.firstName[0]}${data.lastName[0]}.`;
 
@@ -22,7 +16,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="relative z-[100] bg-background border-b border-border transition-colors duration-300">
+    <nav className="bg-background border-b border-border transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import React, { createContext, useContext, useState } from "react";
 
 type ViewMode = "human" | "machine";
 
@@ -14,13 +13,7 @@ const ViewModeContext = createContext<ViewModeContextType | undefined>(undefined
 
 export function ViewModeProvider({ children }: { children: React.ReactNode }) {
     const [mode, setMode] = useState<ViewMode>("human");
-    const { setTheme } = useTheme();
 
-    useEffect(() => {
-        if (mode === "machine") {
-            setTheme("dark");
-        }
-    }, [mode, setTheme]);
 
     return (
         <ViewModeContext.Provider value={{ mode, setMode }}>

@@ -36,7 +36,6 @@ ${data.projects.map((project) => `
 ${data.education.map((edu) => `
 ### ${edu.degree}
 - **Institution**: ${edu.institution}
-- **Period**: ${edu.startDate} - ${edu.endDate}
 - **Link**: ${edu.institutionUrl}
 `).join('')}
   `.trim();

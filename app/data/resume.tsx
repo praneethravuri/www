@@ -111,5 +111,17 @@ export const data = {
             outcome: "Drastically reduces the time spent hunting through PDFs for technical specs.",
             techStack: ["TypeScript", "Pinecone", "LangChain.js", "Vercel SDK", "PostgreSQL"]
         },
+    ],
+    education: [
+        {
+            institution: "George Mason University",
+            institutionUrl: "https://www2.gmu.edu/",
+            degree: "Master's in Computer Science",
+        },
+        {
+            institution: "GRIET",
+            institutionUrl: "https://www.griet.ac.in/",
+            degree: "Bachelor's in Computer Science",
+        }
     ]
 }

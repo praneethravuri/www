@@ -6,9 +6,15 @@ import { data } from "@/app/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useViewMode } from "@/components/providers/view-mode-provider";
 
 export function Navbar() {
   const pathname = usePathname();
+  const { mode } = useViewMode();
+
+  if (mode === "machine") {
+    return null;
+  }
 
   const initials = `${data.firstName[0]}${data.lastName[0]}.`;
 
@@ -27,7 +33,6 @@ export function Navbar() {
         >
           {initials}
         </Link>
-
         <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-6">
             {Object.entries(data.contact.social).map(([name, social]) => (

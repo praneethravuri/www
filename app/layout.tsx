@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
@@ -80,6 +81,7 @@ export default function RootLayout({
 
 
           {children}
+          <Analytics />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

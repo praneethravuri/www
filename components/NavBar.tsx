@@ -6,7 +6,6 @@ import { data } from "@/app/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { ArrowUpRight } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -14,9 +13,9 @@ export function Navbar() {
   const initials = `${data.firstName[0]}${data.lastName[0]}.`;
 
   const socialIcons: Record<string, React.ReactNode> = {
-    GitHub: <FaGithub className="w-4 h-4" />,
-    LinkedIn: <FaLinkedin className="w-4 h-4" />,
-    X: <FaXTwitter className="w-4 h-4" />,
+    GitHub: <FaGithub className="w-5 h-5" />,
+    LinkedIn: <FaLinkedin className="w-5 h-5" />,
+    X: <FaXTwitter className="w-5 h-5" />,
   };
 
   return (
@@ -39,7 +38,6 @@ export function Navbar() {
                 className="flex items-center gap-1 text-muted-foreground hover:text-brand transition-colors"
               >
                 {socialIcons[name]}
-                <ArrowUpRight className="w-3 h-3 opacity-70" />
               </Link>
             ))}
           </div>

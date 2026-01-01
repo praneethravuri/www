@@ -24,7 +24,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <h1 className="text-3xl sm:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
+          <h1 className="text-6xl sm:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
             <div className="font-bold text-foreground">
               Agentic AI
             </div>

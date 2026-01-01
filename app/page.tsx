@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { Navbar } from '@/components/NavBar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
-import { Experience } from '@/components/Experience';
+import { WorkExperience } from '@/components/WorkExperience';
 import { Projects } from '@/components/Projects';
 import { Footer } from '@/components/Footer';
 import { ViewModeProvider, useViewMode } from '@/components/providers/view-mode-provider';
@@ -27,7 +27,7 @@ function MainContent() {
         <>
           <Hero />
           <About />
-          <Experience />
+          <WorkExperience />
           <Projects />
           <Footer />
         </>

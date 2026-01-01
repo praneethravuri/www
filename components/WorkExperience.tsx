@@ -10,12 +10,12 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export function Experience() {
+export function WorkExperience() {
     return (
-        <section id="Experience" className="py-16 max-w-4xl px-6 border-t">
+        <section id="work-experience" className="py-16 max-w-4xl px-6 border-t">
             <div className="flex items-center justify-between mb-16">
                 <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-base">
-                    Experience
+                    Work Experience
                 </h2>
                 <div>
                     <Link href={data.resumeUrl} target="_blank">

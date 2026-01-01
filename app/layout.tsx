@@ -69,7 +69,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground relative overflow-x-hidden min-h-screen max-w-2xl mx-auto`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto`}
       >
         <ThemeProvider
           attribute="class"

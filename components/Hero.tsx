@@ -5,8 +5,8 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20">
-      <div className="flex flex-col gap-6 z-10">
+    <section className="min-h-screen flex flex-col justify-center items-center px-6 max-w-7xl mx-auto pt-20">
+      <div className="flex flex-col gap-6 z-10 text-center">
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,16 +24,14 @@ export function Hero() {
           </h1>
         </motion.div>
 
-        {/* Bio & CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }} // Added delay for stagger effect
-          className="text-lg sm:text-2xl text-muted-foreground font-light leading-relaxed max-w-2xl"
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          className="max-w-2xl mx-auto"
         >
-          <p>
-            I bridge the gap between complex AI models and intuitive modern experiences.
-            Building <span className="text-foreground font-medium">fault-tolerant microservices</span> and <span className="text-foreground font-medium">optimizing performance</span>.
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            I build intelligent, scalable systems that bridge the gap between complex AI research and reliable production engineering.
           </p>
         </motion.div>
       </div>

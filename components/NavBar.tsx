@@ -4,22 +4,23 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { data } from "@/app/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Button } from "@/components/ui/button";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
 
-  const navItems = [
-    { name: "WORK", href: "#projects" },
-    { name: "ABOUT", href: "#about" },
-    { name: "EXPERIENCE", href: "#experience" },
-    { name: "CONTACT", href: "#contact" },
-  ];
-
   const initials = `${data.firstName[0]}${data.lastName[0]}.`;
 
+  const socialIcons: Record<string, React.ReactNode> = {
+    GitHub: <FaGithub className="w-4 h-4" />,
+    LinkedIn: <FaLinkedin className="w-4 h-4" />,
+    X: <FaXTwitter className="w-4 h-4" />,
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] bg-background/80 backdrop-blur-md border-b border-border transition-colors duration-300">
+    <nav className="relative z-[100] bg-background border-b border-border transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
@@ -29,35 +30,22 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+          <div className="hidden md:flex items-center gap-6">
+            {Object.entries(data.contact.social).map(([name, social]) => (
               <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "text-xs font-medium tracking-widest hover:text-brand hover:underline transition-all uppercase",
-                  pathname === item.href
-                    ? "text-brand"
-                    : "text-foreground"
-                )}
+                key={name}
+                href={social.url}
+                target="_blank"
+                className="flex items-center gap-1 text-muted-foreground hover:text-brand transition-colors"
               >
-                {item.name}
+                {socialIcons[name]}
+                <ArrowUpRight className="w-3 h-3 opacity-70" />
               </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <Button
-              asChild
-              variant="outline"
-              shape="pill"
-              className="hidden sm:flex border-muted-foreground/40 hover:border-brand/50 text-xs tracking-wide h-auto py-2.5 px-6"
-            >
-              <Link href={`mailto:${data.contact.email}`}>
-                Get in Touch
-              </Link>
-            </Button>
           </div>
         </div>
       </div>

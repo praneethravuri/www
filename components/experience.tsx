@@ -11,7 +11,7 @@ import {
 
 export function Experience() {
     return (
-        <section id="experience" className="py-16 max-w-4xl px-6 border-t">
+        <section id="Experience" className="py-16 max-w-4xl px-6 border-t">
             <div className="flex items-center justify-between mb-16">
                 <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-base">
                     Experience

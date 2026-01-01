@@ -34,7 +34,6 @@ export function Projects() {
                             <h3 className="text-xl font-bold text-foreground">
                                 <Link href={project.url} target="_blank" className="text-foreground hover:text-brand hover:underline decoration-1 underline-offset-4 inline-flex items-center gap-2">
                                     {project.name}
-                                    <ArrowUpRight className="w-4 h-4 opacity-50" />
                                 </Link>
                             </h3>
                             <div className="flex flex-wrap gap-2">

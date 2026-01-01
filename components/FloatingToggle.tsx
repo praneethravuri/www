@@ -1,6 +1,6 @@
 "use client";
 
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useViewMode } from "@/components/providers/view-mode-provider";
 
 export function FloatingToggle() {
@@ -30,6 +30,10 @@ export function FloatingToggle() {
                             <span className="font-medium tracking-wide">MACHINE</span>
                         </TabsTrigger>
                     </TabsList>
+                    <div className="hidden">
+                        <TabsContent value="human">Human Mode</TabsContent>
+                        <TabsContent value="machine">Machine Mode</TabsContent>
+                    </div>
                 </Tabs>
             </div>
         </div>

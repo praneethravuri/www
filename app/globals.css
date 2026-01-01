@@ -82,7 +82,7 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --swiss-red: oklch(56.26% 0.219 9.71);
-  --brand: oklch(0.55 0.25 260);
+  --brand: oklch(0.65 0.25 40);
   /* Darker blue for light mode contrast */
 }
 
@@ -119,7 +119,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
   --swiss-red: oklch(56.26% 0.219 9.71);
-  --brand: oklch(0.65 0.22 260);
+  --brand: oklch(0.65 0.25 40);
 }
 
 @layer base {

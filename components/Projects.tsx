@@ -1,6 +1,7 @@
 "use client";
 import { data } from "@/app/data/resume";
 import * as motion from "motion/react-client";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import {
@@ -37,8 +38,9 @@ export function Projects() {
 
                         {/* Right Column: Role & Description */}
                         <div className="md:col-span-9 flex flex-col gap-4">
-                            <Link href={project.url} target="_blank" className="hover:underline decoration-1 underline-offset-4 text-2xl md:text-3xl font-medium text-brand">
+                            <Link href={project.url} target="_blank" className="hover:underline decoration-1 underline-offset-4 text-2xl md:text-3xl font-medium text-foreground hover:text-brand inline-flex items-center gap-2">
                                 {project.name}
+                                <ArrowUpRight className="w-6 h-6 md:w-8 md:h-8" />
                             </Link>
                             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
                                 {project.description}

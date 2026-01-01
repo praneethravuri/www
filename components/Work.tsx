@@ -19,7 +19,7 @@ export function Work() {
             <AccordionTrigger className="hover:no-underline hover:bg-muted/50 px-2 py-4 transition-all rounded-md">
               <div className="flex flex-col text-left w-full pr-4 gap-1">
                 <div className="flex justify-between items-center w-full">
-                  <a href={role.companyUrl} target="_blank" className="font-semibold text-lg sm:text-xl hover:underline">
+                  <a href={role.companyUrl} target="_blank" className="font-semibold text-lg sm:text-xl text-foreground hover:text-brand hover:underline">
                     {role.company}
                   </a>
                   {/* Date hidden on mobile within trigger to prevent crowding, shown below instead */}

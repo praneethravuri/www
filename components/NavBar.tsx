@@ -23,7 +23,7 @@ export function Navbar() {
       <div className="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tighter text-foreground hover:opacity-80 transition-opacity"
+          className="text-xl font-bold tracking-tighter text-foreground hover:text-brand hover:underline transition-all"
         >
           {initials}
         </Link>
@@ -35,10 +35,10 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-xs font-medium tracking-widest hover:text-brand transition-colors uppercase",
+                  "text-xs font-medium tracking-widest hover:text-brand hover:underline transition-all uppercase",
                   pathname === item.href
                     ? "text-brand"
-                    : "text-muted-foreground"
+                    : "text-foreground"
                 )}
               >
                 {item.name}

@@ -34,6 +34,12 @@ export function WorkExperience() {
                                 <Link href={role.companyUrl} target="_blank" className="text-foreground hover:text-brand hover:underline decoration-1 underline-offset-4">
                                     {role.company}
                                 </Link>
+                                <span className="text-muted-foreground font-normal mx-2">
+                                    —
+                                </span>
+                                <span className="text-muted-foreground font-medium">
+                                    {role.title}
+                                </span>
                             </h3>
                             <span className="text-xs font-mono tracking-widest uppercase text-muted-foreground/60">
                                 {role.startDate} — {role.endDate}

@@ -1,12 +1,23 @@
 "use client";
 
 import { motion } from "motion/react";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center max-w-7xl mx-auto">
-      <div className="flex flex-col gap-6 z-10 text-center">
+    <section className="min-h-screen flex flex-col justify-center items-center max-w-7xl mx-auto relative overflow-hidden">
+      <FlickeringGrid
+        className="absolute inset-0 z-0 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+        height={800}
+        width={1200}
+      />
+      <div className="flex flex-col gap-6 z-10 text-center relative">
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +29,7 @@ export function Hero() {
               Agentic AI
             </div>
             <div className="font-serif italic text-brand">
-              <span className="text-muted-foreground/40 font-light mr-4">&</span>
+              <span className="text-muted-foreground font-light mr-4">&</span>
               Scalable Systems.
             </div>
           </h1>

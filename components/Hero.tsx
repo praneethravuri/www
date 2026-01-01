@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 max-w-7xl mx-auto pt-20">
+    <section className="min-h-screen flex flex-col justify-center items-center max-w-7xl mx-auto">
       <div className="flex flex-col gap-6 z-10 text-center">
         {/* Main Heading */}
         <motion.div

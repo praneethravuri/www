@@ -18,18 +18,16 @@ export function About() {
                     className="text-foreground hover:text-brand inline-flex items-center gap-1 hover:underline underline-offset-4 decoration-1"
                 >
                     GRIET
-                    <ArrowUpRight className="w-3 h-3 opacity-50" />
                 </Link>{" "}
-                in India, where I laid the groundwork for my career in Computer Science. Driven by a desire to deepen my expertise, I moved to the United States to pursue my Master’s at{" "}
+                in India, but I moved to{" "}
                 <Link
                     href="https://www2.gmu.edu"
                     target="_blank"
                     className="text-foreground hover:text-brand inline-flex items-center gap-1 hover:underline underline-offset-4 decoration-1"
                 >
                     George Mason University
-                    <ArrowUpRight className="w-3 h-3 opacity-50" />
                 </Link>
-                . This academic foundation paved the way for my evolution from a Full Stack Engineer at ADP to an AI Engineer building intelligent systems. Today, I combine my rigorous academic background with hands-on experience in building scalable, real-time data systems and agentic workflows to solve complex challenges.
+                {" "}because I wanted to get my hands dirty. I didn't just want to study code; I wanted to collaborate on systems that actually moved. The turning point was a Machine Learning course where I built a traffic congestion model using SARSA. Watching that simulation learn to clear an intersection was the moment I realized I didn't just want to build UIs—I wanted to build intelligence. Outside of code, my brain works the same way. Whether I'm reverse-engineering a recipe to improve the texture or analyzing F1 pit strategies, I’m obsessed with optimization. My goal now is simple: automate boredom. I build agents so humans can do the interesting stuff.
             </div>
         </section>
     );

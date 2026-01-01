@@ -1,28 +1,25 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-
 export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
     resumeUrl: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing", // Placeholder
     url: "https://praneethravuri.com",
     title: "AI Engineer",
-    about: "My journey in tech began at GRIET in India, where I laid the groundwork for my career in Computer Science. Driven by a desire to deepen my expertise, I moved to the United States to pursue my Master’s at George Mason University. This academic foundation paved the way for my evolution from a Full Stack Engineer at ADP to an AI Engineer building intelligent systems. Today, I combine my rigorous academic background with hands-on experience in building scalable, real-time data systems and agentic workflows to solve complex challenges.",
+    about: "I started at GRIET in India, but I moved to George Mason University because I wanted to get my hands dirty. I didn't just want to study code; I wanted to collaborate on systems that actually moved. The turning point was a Machine Learning course where I built a traffic congestion model using SARSA. Watching that simulation learn to clear an intersection was the moment I realized I didn't just want to build UIs—I wanted to build intelligence. Outside of code, my brain works the same way. Whether I'm reverse-engineering a recipe to improve the texture or analyzing F1 pit strategies, I’m obsessed with optimization. My goal now is simple: automate boredom. I build agents so humans can do the interesting stuff.",
     keywords: [
         "Praneeth Ravuri",
         "AI Engineer",
-        "Software Engineer",
-        "Full Stack Developer",
+        "Agentic Workflows",
+        "MCP Servers",
+        "RAG",
         "Go",
         "Kafka",
-        "React",
-        "Next.js",
-        "TypeScript",
-        "LLM",
-        "Agentic Workflows",
-        "RAG",
-        "Machine Learning"
+        "Python",
+        "LLM Orchestration",
+        "Vector Databases",
+        "Reinforcement Learning"
     ],
     contact: {
         email: "ravpraneeth@gmail.com",
@@ -49,8 +46,8 @@ export const data = {
             startDate: "December 2025",
             endDate: "Present",
             location: "United States",
-            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery.",
-            deepInsight: "At Tuskira, I spearheaded the development of a high-throughput data processing pipeline. I was responsible for architecting scalable solutions that drove significant business impact, collaborating closely with cross-functional teams to define requirements and deliver high-quality code. My role involved optimizing existing processes for better efficiency and championing the adoption of modern technologies, which resulted in improved system reliability and faster deployment cycles."
+            description: "Architecting autonomous cybersecurity agents that hunt threats, analyze alerts, and patch vulnerabilities faster than human analysts. Built on a stack of Claude, AWS, Kubernetes, and Postgres.",
+            deepInsight: "The biggest challenge in agentic AI isn't the model; it's the context. I built a memory system that allows agents to reference past investigations without getting confused by old errors, using smaller models to summarize history and save context space. I also heavily optimized our MCP servers. Instead of dumping raw data into the LLM, I implemented server-side filtering to ensure we only spend tokens on exactly what the agent requests. The result is a system that can pivot across domains—from finance to healthcare—without hallucinating or burning through the budget."
         },
         {
             company: "Lumen Technologies",
@@ -59,8 +56,8 @@ export const data = {
             startDate: "July 2024",
             endDate: "December 2025",
             location: "United States",
-            description: "Built a data processing system that handles network traffic from thousands of devices in real-time, processing 2 million flows per minute using Go, Kafka, MongoDB, and BigQuery.",
-            deepInsight: "During my tenure at Lumen Technologies, I focused on building robust infrastructure for real-time data analysis. I worked on integrating complex systems, ensuring data integrity and low-latency processing. I also contributed to the internal developer tooling, reducing onboarding time for new engineers and establishing best practices for microservices development."
+            description: "Engineered the backend for a real-time network traffic system processing 2 million flows per minute using Go, Kafka, and MongoDB.",
+            deepInsight: "At this volume, standard code breaks. I had to ensure zero data loss while handling massive throughput. I utilized Go's concurrency primitives—specifically goroutines paired with buffered channels—to manage the data ingestion pressure. We used Kafka partitioning to scale horizontally, ensuring that even during peak traffic spikes, the database writes remained stable and the system didn't choke."
         },
         {
             company: "ADP",
@@ -69,39 +66,49 @@ export const data = {
             startDate: "January 2022",
             endDate: "June 2022",
             location: "India",
-            description: "Modernized an employee portal with React, optimizing Node.js services with Redis caching and AWS auto-scaling.",
-            deepInsight: "At ADP, I played a key role in modernizing legacy applications. I redesigned the user interface to improve accessibility and user engagement, resulting in a significantly better user experience. I also implemented caching strategies that reduced server load and improved response times, demonstrating my ability to deliver performant full-stack solutions."
+            description: "Modernized a legacy employee portal, redesigning the UI with React and optimizing the backend Node.js services.",
+            deepInsight: "This was my crash course in performance at scale. I implemented Redis caching strategies that took a heavy load off our primary databases, significantly cutting down response times. It taught me that a pretty UI is useless if the backend can't deliver data instantly."
         }
     ],
     projects: [
         {
             name: "Gary",
             url: "https://github.com/praneethravuri/gary",
-            description: "An AI agent that tailors resumes to job descriptions, helping users to create targeted and effective job applications.",
-            tags: ["AI", "NLP", "Resume"],
-            problem: "Job seekers struggle to manually tailor their resumes for every application, leading to lower acceptance rates and wasted time.",
-            solution: "Developed an agentic workflow using LLMs to analyze job descriptions and rewrite resume bullet points in real-time, matching keywords and tone.",
-            outcome: "Users reported a 3x increase in interview callbacks and saved an average of 20 minutes per application.",
+            description: "An autonomous agent that handles the entire resume tailoring process, generating ready-to-use PDF or Word documents based on job descriptions.",
+            tags: ["Agentic AI", "Context Engineering", "Python"],
+            problem: "I got tired of the repetitive loop of tweaking resumes manually. Existing tools were just wrappers around basic prompts that didn't actually understand the job requirements.",
+            solution: "Gary uses a multi-step agentic workflow. It searches for relevant keywords, analyzes the tone of the JD, and rewrites bullet points using complex context engineering to ensure the output beats ATS filters.",
+            outcome: "It’s not just a rewriter; it’s an end-to-end recruiter engagement tool that saves hours of manual editing per application.",
             techStack: ["Python", "LangChain", "OpenAI API", "React", "FastAPI"]
         },
         {
             name: "Pitstop",
             url: "https://github.com/praneethravuri/pitstop",
-            description: "A project that brings real-time F1 data into Claude, allowing for interesting data analysis and visualizations.",
-            tags: ["F1", "Data", "AI"],
-            problem: "F1 data is fragmented across various legacy APIs and hard to visualize dynamically during race weekends.",
-            solution: "Built a bridge between OpenF1 API and Claude's context window, enabling natural language queries about live race telemetry and strategy.",
-            outcome: "Achieved sub-second latency for race stats and created a community of 500+ users analyzing strategies on race day.",
+            description: "A real-time data bridge connecting live Formula 1 telemetry to Claude for natural language race analysis.",
+            tags: ["F1", "WebSockets", "LLM"],
+            problem: "F1 data is notoriously fragmented. I wanted a way to 'talk' to the race strategy as it was happening, rather than digging through multiple dashboards.",
+            solution: "I built an MCP server that pipes live OpenF1 data directly into Claude’s context window. The interface is simple, but the backend handles rapid-fire WebSocket streams to keep the LLM updated on lap times and tire degradation.",
+            outcome: "Turns complex, high-speed telemetry into a conversational interface for race fans.",
             techStack: ["Go", "WebSockets", "Anthropic API", "Next.js", "Redis"]
+        },
+        {
+            name: "Smart Traffic",
+            url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
+            description: "A reinforcement learning simulation that optimizes traffic light timings to reduce congestion at intersections.",
+            tags: ["Reinforcement Learning", "SARSA", "Python"],
+            problem: "Fixed-timer traffic lights are inefficient. They force cars to wait even when the other road is empty, causing unnecessary congestion.",
+            solution: "I built a simulation environment and trained an agent using the SARSA algorithm. The agent observes the queue lengths and learns the optimal policy for switching lights dynamically.",
+            outcome: "This was my 'hello world' to AI. It successfully learned to prioritize high-density lanes, significantly reducing average wait times compared to static timers.",
+            techStack: ["Python", "Reinforcement Learning", "Pygame", "NumPy"]
         },
         {
             name: "Notstuck",
             url: "https://github.com/praneethravuri/notstuck",
-            description: "A RAG-based document assistant that helps users to find information in large documents quickly and efficiently.",
-            tags: ["RAG", "AI", "Docs"],
-            problem: "Knowledge workers spend excessive time searching through dense PDF documentation to find specific answers.",
-            solution: "Implemented a RAG pipeline with hybrid search (keyword + semantic) to pinpoint exact paragraphs and synthesize answers with citations.",
-            outcome: "Reduced information retrieval time by 90% in internal benchmarks and supports documents up to 500 pages.",
+            description: "A hybrid-search RAG assistant designed to pull precise answers from massive technical documentation.",
+            tags: ["RAG", "Vector Search", "TypeScript"],
+            problem: "Standard keyword search fails when you don't know the exact terminology, and pure semantic search can miss specific technical details.",
+            solution: "I implemented a hybrid pipeline that combines semantic understanding with keyword precision. It pinpoints exact paragraphs in 500+ page documents and synthesizes an answer with citations.",
+            outcome: "Drastically reduces the time spent hunting through PDFs for technical specs.",
             techStack: ["TypeScript", "Pinecone", "LangChain.js", "Vercel SDK", "PostgreSQL"]
         },
     ]

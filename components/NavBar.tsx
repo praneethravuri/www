@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <nav className="bg-background border-b border-border transition-colors duration-300">
-      <div className="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
           className="text-xl font-bold tracking-tighter text-foreground hover:text-brand hover:underline transition-all"

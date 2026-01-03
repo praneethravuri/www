@@ -6,7 +6,7 @@ import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center max-w-7xl mx-auto relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center items-center w-full mx-auto relative overflow-hidden">
       <FlickeringGrid
         className="absolute inset-0 z-0 size-full"
         squareSize={4}
@@ -14,17 +14,15 @@ export function Hero() {
         color="#6B7280"
         maxOpacity={0.5}
         flickerChance={0.1}
-        height={800}
-        width={1200}
       />
-      <div className="flex flex-col gap-6 z-10 text-center relative">
+      <div className="flex flex-col gap-6 z-10 text-center relative px-4">
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <h1 className="text-6xl sm:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
+          <h1 className="text-4xl sm:text-6xl md:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
             <div className="font-bold text-foreground">
               Agentic AI
             </div>

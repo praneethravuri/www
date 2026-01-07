@@ -23,7 +23,7 @@ export function Hero() {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <h1 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
-            <div className="font-bold text-foreground">
+            <div className="font-serif italic text-foreground">
               Agentic AI
             </div>
             <div className="font-serif italic text-brand">

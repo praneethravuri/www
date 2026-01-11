@@ -2,6 +2,8 @@
 import { data } from "@/app/data/resume";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { CustomLink } from "@/components/ui/custom-link";
 
 import {
     Accordion,
@@ -32,9 +34,9 @@ export function WorkExperience() {
                         <div key={index} className="flex flex-col gap-2">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                 <h3 className="text-xl font-bold text-foreground">
-                                    <Link href={role.companyUrl} target="_blank" className="text-foreground hover:text-brand hover:underline decoration-1 underline-offset-4">
+                                    <CustomLink href={role.companyUrl} className="text-foreground hover:text-brand">
                                         {role.company}
-                                    </Link>
+                                    </CustomLink>
                                     <span className="text-muted-foreground font-normal mx-2">
                                         —
                                     </span>
@@ -49,6 +51,14 @@ export function WorkExperience() {
 
                             <div className="text-base text-muted-foreground leading-relaxed max-w-2xl">
                                 {role.description}
+                            </div>
+
+                            <div className="flex flex-wrap gap-2 max-w-2xl">
+                                {role.technologies?.map((tech, techIndex) => (
+                                    <Badge key={techIndex} variant="secondary" className="text-xs font-mono font-normal bg-secondary/50 text-muted-foreground/80 hover:bg-secondary/80">
+                                        {tech}
+                                    </Badge>
+                                ))}
                             </div>
 
                             <div className="max-w-2xl">

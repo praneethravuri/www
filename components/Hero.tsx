@@ -7,14 +7,14 @@ import { FlickeringGrid } from "@/components/ui/flickering-grid";
 export function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center w-full mx-auto relative overflow-hidden">
-      <FlickeringGrid
+      {/* <FlickeringGrid
         className="absolute inset-0 z-0 size-full"
         squareSize={4}
         gridGap={6}
         color="#6B7280"
         maxOpacity={0.5}
         flickerChance={0.1}
-      />
+      /> */}
       <div className="flex flex-col gap-6 z-10 text-center relative px-4">
         {/* Main Heading */}
         <motion.div
@@ -39,7 +39,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="max-w-2xl mx-auto"
         >
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
             I build intelligent, scalable systems that bridge the gap between complex AI research and reliable production engineering.
           </p>
         </motion.div>

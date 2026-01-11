@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { data } from "@/app/data/resume";
+import { CustomLink } from "@/components/ui/custom-link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -20,22 +21,24 @@ export function Navbar() {
       <div className="mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tighter text-foreground hover:text-brand hover:underline transition-all"
+          className="text-xl font-bold tracking-tighter text-foreground no-underline hover:no-underline"
         >
-          {initials}
+          {data.firstName}&nbsp;{data.lastName}
         </Link>
         <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-6">
-            {Object.entries(data.contact.social).map(([name, social]) => (
-              <Link
-                key={name}
-                href={social.url}
-                target="_blank"
-                className="flex items-center gap-1 text-muted-foreground hover:text-brand transition-colors"
-              >
-                {socialIcons[name]}
-              </Link>
-            ))}
+            <CustomLink href="#about" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+              About
+            </CustomLink>
+            <CustomLink href="#work-experience" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+              Experience
+            </CustomLink>
+            <CustomLink href="#projects" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+              Projects
+            </CustomLink>
+            <CustomLink href="#contact" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+              Contact
+            </CustomLink>
           </div>
 
           <div className="flex items-center gap-4">

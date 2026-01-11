@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Button } from "@/components/ui/button";
+import { CustomLink } from "@/components/ui/custom-link";
 import {
     Accordion,
     AccordionContent,
@@ -33,14 +34,14 @@ export function Projects() {
                         <div key={index} className="flex flex-col gap-2">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                 <h3 className="text-xl font-bold text-foreground">
-                                    <Link href={project.url} target="_blank" className="text-foreground hover:text-brand hover:underline decoration-1 underline-offset-4 inline-flex items-center gap-2">
+                                    <CustomLink href={project.url} className="text-foreground hover:text-brand inline-flex items-center gap-2">
                                         {project.name}
-                                    </Link>
+                                    </CustomLink>
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {project.tags.map((tag, tagIndex) => (
-                                        <Badge key={tagIndex} variant="secondary" className="text-xs font-mono font-normal bg-secondary/50 text-muted-foreground/80 hover:bg-secondary/80">
-                                            {tag}
+                                    {project.techStack.map((tech, techIndex) => (
+                                        <Badge key={techIndex} variant="secondary" className="text-xs font-mono font-normal bg-secondary/50 text-muted-foreground/80 hover:bg-secondary/80">
+                                            {tech}
                                         </Badge>
                                     ))}
                                 </div>

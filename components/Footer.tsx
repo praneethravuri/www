@@ -1,6 +1,7 @@
 import { data } from "@/app/data/resume";
 import Link from "next/link";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { CustomLink } from "@/components/ui/custom-link";
 import { cn } from "@/lib/utils";
 
 export function Footer() {
@@ -24,21 +25,15 @@ export function Footer() {
 
         <div className="flex justify-center gap-6 mb-12">
           {Object.entries(data.contact.social).map(([name, social]) => (
-            <Link
+            <CustomLink
               key={name}
               href={social.url}
-              target="_blank"
               className="text-muted-foreground hover:text-foreground transition-colors uppercase text-sm tracking-widest font-medium"
             >
               {social.name}
-            </Link>
+            </CustomLink>
           ))}
-          <Link
-            href={`mailto:${data.contact.email}`}
-            className="text-muted-foreground hover:text-foreground transition-colors uppercase text-sm tracking-widest font-medium"
-          >
-            Email
-          </Link>
+
         </div>
 
         <p className="text-neutral-600 text-sm">

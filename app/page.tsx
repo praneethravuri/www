@@ -19,7 +19,7 @@ function MainContent() {
   return (
     <main className={cn(
       "flex flex-col min-h-screen text-foreground selection:bg-brand/15 selection:text-brand",
-      mode === 'human' && "border-l border-r border-t"
+      mode === 'human'
     )}>
       <Navbar />
 

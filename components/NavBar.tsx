@@ -36,9 +36,6 @@ export function Navbar() {
             <CustomLink href="#projects" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
               Projects
             </CustomLink>
-            <CustomLink href="#contact" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
-              Contact
-            </CustomLink>
           </div>
 
           <div className="flex items-center gap-4">

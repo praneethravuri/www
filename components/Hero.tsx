@@ -7,14 +7,14 @@ import { FlickeringGrid } from "@/components/ui/flickering-grid";
 export function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center w-full mx-auto relative overflow-hidden">
-      {/* <FlickeringGrid
+      <FlickeringGrid
         className="absolute inset-0 z-0 size-full"
         squareSize={4}
         gridGap={6}
         color="#6B7280"
-        maxOpacity={0.5}
+        maxOpacity={0.3}
         flickerChance={0.1}
-      /> */}
+      />
       <div className="flex flex-col gap-6 z-10 text-center relative px-4">
         {/* Main Heading */}
         <motion.div

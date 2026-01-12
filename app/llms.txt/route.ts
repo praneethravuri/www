@@ -5,6 +5,12 @@ export function GET() {
 # ${data.firstName} ${data.lastName}
 > ${data.title}
 
+## Summary
+${data.summary}
+
+## Skills
+- ${data.keywords.join(', ')}
+
 ${data.about}
 
 ## Contact

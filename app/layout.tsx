@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: `%s | ${data.title}`,
     default: `${data.firstName} ${data.lastName}`,
   },
-  description: data.about,
+  description: data.summary,
   keywords: data.keywords,
   authors: [
     {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: data.url,
     title: `${data.firstName} ${data.lastName}`,
-    description: data.about,
+    description: data.summary,
     siteName: `${data.firstName} ${data.lastName}`,
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${data.firstName} ${data.lastName}`,
-    description: data.about,
+    description: data.summary,
     creator: "@praneeth2510", // Extracted from X url in resume.tsx (manual extraction or I can verify the handle)
   },
   robots: {

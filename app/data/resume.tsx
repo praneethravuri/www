@@ -4,26 +4,38 @@ export const data = {
     resumeUrl: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing", // Placeholder
     url: "https://praneethravuri.com",
     title: "AI Engineer",
+    summary: "AI Engineer building autonomous systems and scalable infrastructure. Expert in Agentic AI, Distributed Systems, Python, Go, and TypeScript. Based in the US.",
 
     about:
         "I’m an AI engineer focused on building systems that reason, adapt, and operate with minimal human oversight. I started my computer science journey at GRIET in India, where I built a strong foundation in software engineering, and later continued at George Mason University to push deeper into distributed systems and machine learning. Along the way, a reinforcement learning project—training an agent to manage traffic signals using SARSA—shifted how I thought about software. I stopped seeing systems as static pipelines and started treating them as decision-makers. Since then, my work has centered on autonomous agents that sift through noisy data, retain useful context, and act with intent. I enjoy tightening feedback loops, cutting wasted computation, and designing memory systems that help models stay grounded over time. Outside of work, I apply the same thinking to anything that can be optimized—whether that’s a recipe, a workflow, or a race strategy. My goal is simple: reduce busywork so people can focus on problems that actually require human judgment.",
 
     tagline: "I build long-running AI systems with memory, guardrails, and infrastructure that does not fall apart once they leave the demo.",
     keywords: [
+        "Agentic AI",
+        "Distributed Systems Engineer",
+        "LLM System Design",
+        "Full Stack AI Engineer",
         "Python",
         "Go",
         "TypeScript",
         "AWS",
-        "Agentic AI",
-        "LLMs",
-        "Distributed Systems",
-        "PostgreSQL",
+        "Cloud Native",
         "Kubernetes",
+        "System Architecture",
         "Kafka",
         "Vector Databases",
         "Neo4j",
-        "RAG",
-        "System Design"
+        "RAG Pipelines",
+        "Prompt Engineering",
+        "Multi-Agent Systems",
+        "Autonomous Agents",
+        "Cybersecurity AI",
+        "Context Engineering",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "MongoDB",
+        "High-throughput Systems"
     ],
 
     contact: {

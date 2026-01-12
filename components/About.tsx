@@ -14,21 +14,21 @@ export function About() {
                 </div>
 
                 <div className="max-w-4xl text-base text-muted-foreground leading-relaxed">
-                    My journey in tech began at{" "}
+                    I&apos;m an AI engineer focused on building systems that reason, adapt, and operate with minimal human oversight. I started my computer science journey at{" "}
                     <CustomLink
                         href="http://www.griet.ac.in"
                         className="text-foreground"
                     >
                         GRIET
                     </CustomLink>{" "}
-                    in India, but I moved to{" "}
+                    in India, where I built a strong foundation in software engineering, and later continued at{" "}
                     <CustomLink
                         href="https://www2.gmu.edu"
                         className="text-foreground"
                     >
                         George Mason University
                     </CustomLink>
-                    {" "}because I wanted to get my hands dirty. I didn&apos;t just want to study code; I wanted to collaborate on systems that actually moved. The turning point was a Machine Learning course where I built a traffic congestion model using SARSA. Watching that simulation learn to clear an intersection was the moment I realized I didn&apos;t just want to build UIs—I wanted to build intelligence. Outside of code, my brain works the same way. Whether I&apos;m reverse-engineering a recipe to improve the texture or analyzing F1 pit strategies, I&rsquo;m obsessed with optimization. My goal now is simple: automate boredom. I build agents so humans can do the interesting stuff.
+                    {" "}to push deeper into distributed systems and machine learning. Along the way, a reinforcement learning project—training an agent to manage traffic signals using SARSA—shifted how I thought about software. I stopped seeing systems as static pipelines and started treating them as decision-makers. Since then, my work has centered on autonomous agents that sift through noisy data, retain useful context, and act with intent. I enjoy tightening feedback loops, cutting wasted computation, and designing memory systems that help models stay grounded over time. Outside of work, I apply the same thinking to anything that can be optimized—whether that&apos;s a recipe, a workflow, or a race strategy. My goal is simple: reduce busywork so people can focus on problems that actually require human judgment.
                 </div>
                 <div className="mt-6 flex flex-wrap gap-2 max-w-4xl">
                     {data.keywords.map((skill, index) => (

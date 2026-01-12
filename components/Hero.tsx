@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import { data } from "@/app/data/resume";
 
 
 export function Hero() {
@@ -40,7 +41,8 @@ export function Hero() {
           className="max-w-2xl mx-auto"
         >
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
-            I build intelligent, scalable systems that bridge the gap between complex AI research and reliable production engineering.
+            {data.tagline}
+
           </p>
         </motion.div>
       </div>

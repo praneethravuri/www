@@ -16,7 +16,7 @@ import {
 
 export function WorkExperience() {
     return (
-        <section id="work-experience" className="py-12 md:py-16 w-full">
+        <section id="work-experience" className="py-16 md:py-24 w-full">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
                     <h2 className="text-brand font-bold tracking-widest uppercase text-xl md:text-3xl">
@@ -64,7 +64,7 @@ export function WorkExperience() {
                                     ))}
                                 </div>
 
-                                <div className="max-w-2xl">
+                                <div className="max-w-2xl mt-4 md:mt-6">
                                     <Accordion type="single" collapsible className="w-full">
                                         <AccordionItem value="item-1" className="border-none">
                                             <AccordionTrigger className="py-0 text-base text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">

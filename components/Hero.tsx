@@ -14,7 +14,7 @@ export function Hero() {
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
         )}
       />
-      <div className="flex flex-col gap-6 z-10 text-center relative px-4">
+      <div className="flex flex-col gap-6 z-10 text-center relative px-6">
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export function Hero() {
               <CustomLink
                 key={social.name}
                 href={social.url}
-                className="text-foreground hover:text-brand transition-colors uppercase text-sm tracking-widest font-medium"
+                className="text-foreground hover:text-brand transition-colors uppercase text-lg tracking-widest font-medium"
               >
                 {social.name}
               </CustomLink>

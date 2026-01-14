@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-12 md:py-20 border-t mt-12 md:mt-20 relative overflow-hidden">
+    <footer id="contact" className="py-16 md:py-24 border-t mt-16 md:mt-24 relative overflow-hidden">
       <DotPattern
         className={cn(
           "[mask-image:radial-gradient(250px_circle_at_center,white,transparent)]",

@@ -64,7 +64,7 @@ export function WorkExperience() {
                             <div className="max-w-2xl">
                                 <Accordion type="single" collapsible className="w-full">
                                     <AccordionItem value="item-1" className="border-none">
-                                        <AccordionTrigger className="py-0 text-sm text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
+                                        <AccordionTrigger className="py-0 text-base text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
                                             View More
                                         </AccordionTrigger>
                                         <AccordionContent className="text-muted-foreground text-lg pt-4 leading-relaxed">

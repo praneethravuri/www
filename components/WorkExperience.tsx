@@ -37,7 +37,7 @@ export function WorkExperience() {
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <h3 className="text-lg md:text-xl font-bold text-foreground">
-                                        <CustomLink href={role.companyUrl} className="text-foreground hover:text-brand">
+                                        <CustomLink href={role.companyUrl} className="text-foreground hover:text-brand text-lg md:text-xl">
                                             {role.company}
                                         </CustomLink>
                                         <span className="text-foreground font-normal mx-2">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { data } from "@/app/data/resume";
 import { Badge } from "@/components/ui/badge";
-import { CustomLink } from "@/components/ui/custom-link";
+
 
 export function About() {
     return (

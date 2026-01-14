@@ -7,11 +7,11 @@ import { cn } from "@/lib/utils";
 export function Footer() {
   return (
     <footer id="contact" className="py-16 md:py-24 border-t mt-16 md:mt-24 relative overflow-hidden">
-      <DotPattern
+      {/* <DotPattern
         className={cn(
           "[mask-image:radial-gradient(250px_circle_at_center,white,transparent)]",
         )}
-      />
+      /> */}
       <div className="mx-auto px-6 text-center relative z-10">
         <h2 className="text-3xl md:text-5xl font-serif italic mb-8 text-brand">
           Let&apos;s put AI to <br /> <span className="text-foreground">work.</span>
@@ -22,7 +22,7 @@ export function Footer() {
             <CustomLink
               key={name}
               href={social.url}
-              className="text-foreground hover:text-brand transition-colors uppercase text-base md:text-lg tracking-widest font-medium"
+              className="text-foreground hover:text-brand transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
             >
               {social.name}
             </CustomLink>

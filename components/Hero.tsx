@@ -8,12 +8,12 @@ import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center w-full mx-auto relative overflow-hidden">
-      <DotPattern
+    <section className="h-auto md:min-h-screen py-24 md:py-0 flex flex-col justify-center items-center w-full mx-auto relative overflow-hidden">
+      {/* <DotPattern
         className={cn(
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
         )}
-      />
+      /> */}
       <div className="flex flex-col gap-6 z-10 text-center relative px-6">
         {/* Main Heading */}
         <div>
@@ -29,7 +29,7 @@ export function Hero() {
         </div>
 
         <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
+          <p className="text-base md:text-xl text-muted-foreground leading-relaxed font-medium">
             {data.tagline}
           </p>
           <div className="flex items-center gap-6">
@@ -37,7 +37,7 @@ export function Hero() {
               <CustomLink
                 key={social.name}
                 href={social.url}
-                className="text-foreground hover:text-brand transition-colors uppercase text-lg tracking-widest font-medium"
+                className="text-foreground hover:text-brand transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
               >
                 {social.name}
               </CustomLink>

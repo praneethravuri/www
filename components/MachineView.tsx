@@ -1,5 +1,3 @@
-"use client";
-
 import { data } from "@/app/data/resume";
 import { Copy, Check } from "lucide-react";
 import { useState } from "react";
@@ -62,6 +60,7 @@ ${data.education.map((edu) => `
             >
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             </Button>
+
             <pre className="whitespace-pre-wrap font-source-code text-sm leading-relaxed overflow-x-auto rounded-md text-foreground/80">
                 {content}
             </pre>

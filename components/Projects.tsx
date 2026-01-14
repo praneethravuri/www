@@ -19,7 +19,7 @@ export function Projects() {
         <section id="projects" className="py-12 md:py-16 w-full">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-brand font-bold tracking-widest uppercase text-lg md:text-2xl">
+                    <h2 className="text-brand font-bold tracking-widest uppercase text-xl md:text-3xl">
                         Projects
                     </h2>
                     <div>
@@ -36,7 +36,7 @@ export function Projects() {
                         <Fragment key={index}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                    <h3 className="text-xl font-bold text-foreground">
+                                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
                                         <CustomLink href={project.url} className="text-foreground hover:text-brand inline-flex items-center gap-2">
                                             {project.name}
                                         </CustomLink>
@@ -50,32 +50,32 @@ export function Projects() {
                                     </div>
                                 </div>
 
-                                <div className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                                <div className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
                                     {project.description}
                                 </div>
 
                                 <div className="max-w-2xl">
                                     <Accordion type="single" collapsible className="w-full">
-                                        <AccordionItem value={`item-${index}`} className="border-none text-lg">
+                                        <AccordionItem value={`item-${index}`} className="border-none text-base md:text-lg">
                                             <AccordionTrigger className="py-0 text-base text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
                                                 View Case Study
                                             </AccordionTrigger>
                                             <AccordionContent className="flex flex-col gap-6 pt-4 text-muted-foreground leading-relaxed">
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Problem</h5>
-                                                    <p className="text-lg">
+                                                    <p className="text-base md:text-lg">
                                                         {project.problem}
                                                     </p>
                                                 </div>
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Solution</h5>
-                                                    <p className="text-lg">
+                                                    <p className="text-base md:text-lg">
                                                         {project.solution}
                                                     </p>
                                                 </div>
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Outcome</h5>
-                                                    <p className="text-lg">
+                                                    <p className="text-base md:text-lg">
                                                         {project.outcome}
                                                     </p>
                                                 </div>

@@ -11,7 +11,7 @@ export function Hero() {
     <section className="min-h-screen flex flex-col justify-center items-center w-full mx-auto relative overflow-hidden">
       <DotPattern
         className={cn(
-          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
         )}
       />
       <div className="flex flex-col gap-6 z-10 text-center relative px-4">

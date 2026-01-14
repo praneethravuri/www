@@ -13,8 +13,13 @@ export function Footer() {
         )}
       /> */}
       <div className="mx-auto px-6 text-center relative z-10">
-        <h2 className="text-3xl md:text-5xl font-serif italic mb-8 text-brand">
-          Let&apos;s put AI to <br /> <span className="text-foreground">work.</span>
+        <h2 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
+          <div className="font-serif italic text-foreground">
+            Let&apos;s put AI to
+          </div>
+          <div className="font-serif italic text-brand">
+            work.
+          </div>
         </h2>
 
         <div className="flex justify-center gap-6 mb-12">

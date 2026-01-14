@@ -8,14 +8,8 @@ export function Footer() {
   return (
     <footer id="contact" className="py-12 md:py-20 border-t mt-12 md:mt-20 relative overflow-hidden">
       <DotPattern
-        width={20}
-        height={20}
-        glow={true}
-        cx={1}
-        cy={1}
-        cr={1}
-        className={cn(
-          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
+       className={cn(
+          "[mask-image:radial-gradient(250px_circle_at_center,white,transparent)]",
         )}
       />
       <div className="mx-auto px-6 text-center relative z-10">
@@ -28,7 +22,7 @@ export function Footer() {
             <CustomLink
               key={name}
               href={social.url}
-              className="text-muted-foreground hover:text-foreground transition-colors uppercase text-sm tracking-widest font-medium"
+              className="text-foreground hover:text-brand transition-colors uppercase text-lg tracking-widest font-medium"
             >
               {social.name}
             </CustomLink>
@@ -36,7 +30,7 @@ export function Footer() {
 
         </div>
 
-        <p className="text-neutral-600 text-sm">
+        <p className="text-muted-foreground text-base">
           &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}. All rights reserved.
         </p>
       </div>

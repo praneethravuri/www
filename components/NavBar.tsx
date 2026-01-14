@@ -27,13 +27,13 @@ export function Navbar() {
         </Link>
         <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-6">
-            <CustomLink href="#about" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+            <CustomLink href="#about" enabled={false} className="text-base font-medium text-muted-foreground hover:text-brand transition-colors">
               About
             </CustomLink>
-            <CustomLink href="#work-experience" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+            <CustomLink href="#work-experience" enabled={false} className="text-base font-medium text-muted-foreground hover:text-brand transition-colors">
               Experience
             </CustomLink>
-            <CustomLink href="#projects" enabled={false} className="text-sm font-medium text-muted-foreground hover:text-brand transition-colors">
+            <CustomLink href="#projects" enabled={false} className="text-base font-medium text-muted-foreground hover:text-brand transition-colors">
               Projects
             </CustomLink>
           </div>

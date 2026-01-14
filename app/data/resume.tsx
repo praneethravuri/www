@@ -1,7 +1,6 @@
 export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
-    resumeUrl: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing", // Placeholder
     url: "https://praneethravuri.com",
     title: "AI Engineer",
     summary: "AI Engineer building autonomous systems and scalable infrastructure. Expert in Agentic AI, Distributed Systems, Python, Go, and TypeScript. Based in the US.",
@@ -41,6 +40,10 @@ export const data = {
             X: {
                 name: "X",
                 url: "https://x.com/praneeth2510"
+            },
+            Resume: {
+                name: "Resume",
+                url: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing"
             }
         }
     },

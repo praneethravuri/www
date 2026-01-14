@@ -23,7 +23,7 @@ export function WorkExperience() {
                         Work Experience
                     </h2>
                     <div>
-                        <Link href={data.resumeUrl} target="_blank">
+                        <Link href={data.contact.social.Resume.url} target="_blank">
                             <Button variant="secondary" className="rounded-md bg-secondary/50 hover:bg-secondary/80 text-foreground/80 hover:text-foreground">
                                 Download Resume
                             </Button>

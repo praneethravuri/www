@@ -12,10 +12,14 @@ export function MachineView() {
 
 ${data.about}
 
+---
+
 ## Contact
 [Email](mailto:${data.contact.email})
 [Website](${data.url})
 ${Object.values(data.contact.social).map((social) => `[${social.name}](${social.url})`).join('\n')}
+
+---
 
 ## Work Experience
 ${data.work.map((job) => `
@@ -24,6 +28,8 @@ ${data.work.map((job) => `
 ${job.description}
 [Link](${job.companyUrl})
 `).join('')}
+
+---
 
 ## Projects
 ${data.projects.map((project) => `
@@ -36,6 +42,8 @@ ${project.description}
 - Outcome: ${project.outcome}
 [Link](${project.url})
 `).join('')}
+
+---
 
 ## Education
 ${data.education.map((edu) => `

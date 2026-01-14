@@ -33,6 +33,9 @@ export function Footer() {
         <p className="text-muted-foreground text-base">
           &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}. All rights reserved.
         </p>
+        <p className="text-sm text-muted-foreground mt-2">
+          Built with React, Next.js, Shadcn UI, Magic UI, Tailwind CSS, TypeScript
+        </p>
       </div>
     </footer>
   );

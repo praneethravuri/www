@@ -50,17 +50,17 @@ export function Projects() {
                                     </div>
                                 </div>
 
-                                <div className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                                <div className="text-base md:text-lg text-foreground leading-relaxed max-w-2xl">
                                     {project.description}
                                 </div>
 
                                 <div className="max-w-2xl mt-4 md:mt-6">
                                     <Accordion type="single" collapsible className="w-full">
                                         <AccordionItem value={`item-${index}`} className="border-none text-base md:text-lg">
-                                            <AccordionTrigger className="py-0 text-base text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
+                                            <AccordionTrigger className="py-0 text-base text-brand justify-start gap-2">
                                                 View Case Study
                                             </AccordionTrigger>
-                                            <AccordionContent className="flex flex-col gap-6 pt-4 text-muted-foreground leading-relaxed">
+                                            <AccordionContent className="flex flex-col gap-6 pt-4 text-foreground leading-relaxed">
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Problem</h5>
                                                     <p className="text-base md:text-lg">

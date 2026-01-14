@@ -40,19 +40,19 @@ export function WorkExperience() {
                                         <CustomLink href={role.companyUrl} className="text-foreground hover:text-brand">
                                             {role.company}
                                         </CustomLink>
-                                        <span className="text-muted-foreground font-normal mx-2">
+                                        <span className="text-foreground font-normal mx-2">
                                             —
                                         </span>
-                                        <span className="text-muted-foreground font-medium">
+                                        <span className="text-foreground font-medium">
                                             {role.title}
                                         </span>
                                     </h3>
-                                    <span className="text-xs font-mono tracking-widest uppercase text-muted-foreground/60">
+                                    <span className="text-sm font-mono tracking-widest uppercase text-foreground">
                                         {role.startDate} — {role.endDate}
                                     </span>
                                 </div>
 
-                                <div className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                                <div className="text-base md:text-lg text-foreground leading-relaxed max-w-2xl">
                                     {role.description}
                                 </div>
 
@@ -67,10 +67,10 @@ export function WorkExperience() {
                                 <div className="max-w-2xl mt-4 md:mt-6">
                                     <Accordion type="single" collapsible className="w-full">
                                         <AccordionItem value="item-1" className="border-none">
-                                            <AccordionTrigger className="py-0 text-base text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
+                                            <AccordionTrigger className="py-0 text-base text-brand justify-start gap-2">
                                                 View More
                                             </AccordionTrigger>
-                                            <AccordionContent className="text-muted-foreground text-base md:text-lg pt-4 leading-relaxed">
+                                            <AccordionContent className="text-foreground text-base md:text-lg pt-4 leading-relaxed">
                                                 {role.deepInsight}
                                             </AccordionContent>
                                         </AccordionItem>

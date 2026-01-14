@@ -13,7 +13,7 @@ export function About() {
                     </h2>
                 </div>
 
-                <div className="max-w-4xl text-base md:text-lg text-muted-foreground leading-relaxed">
+                <div className="max-w-4xl text-base md:text-lg text-foreground leading-relaxed">
                     {data.about}
                 </div>
                 <div className="mt-6 flex flex-wrap gap-2 max-w-4xl">

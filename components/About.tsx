@@ -8,12 +8,12 @@ export function About() {
         <section id="about" className="py-12 md:py-16 w-full border-t">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-base">
+                    <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-lg">
                         About Me
                     </h2>
                 </div>
 
-                <div className="max-w-4xl text-base text-muted-foreground leading-relaxed">
+                <div className="max-w-4xl text-lg text-muted-foreground leading-relaxed">
                     I&apos;m an AI engineer focused on building systems that reason, adapt, and operate with minimal human oversight. I started my computer science journey at{" "}
                     <CustomLink
                         href="http://www.griet.ac.in"
@@ -32,7 +32,7 @@ export function About() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-2 max-w-4xl">
                     {data.keywords.map((skill, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs font-mono font-normal bg-secondary/50 text-muted-foreground/80 hover:bg-secondary/80">
+                        <Badge key={index} variant="secondary">
                             {skill}
                         </Badge>
                     ))}

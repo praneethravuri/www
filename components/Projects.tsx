@@ -17,7 +17,7 @@ export function Projects() {
         <section id="projects" className="py-12 md:py-16 w-full border-t">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-base">
+                    <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-lg">
                         Projects
                     </h2>
                     <div>
@@ -40,39 +40,39 @@ export function Projects() {
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
                                     {project.techStack.map((tech, techIndex) => (
-                                        <Badge key={techIndex} variant="secondary" className="text-xs font-mono font-normal bg-secondary/50 text-muted-foreground/80 hover:bg-secondary/80">
+                                        <Badge key={techIndex} variant="secondary">
                                             {tech}
                                         </Badge>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+                            <div className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                                 {project.description}
                             </div>
 
                             <div className="max-w-2xl">
                                 <Accordion type="single" collapsible className="w-full">
-                                    <AccordionItem value={`item-${index}`} className="border-none">
-                                        <AccordionTrigger className="py-0 text-sm text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
+                                    <AccordionItem value={`item-${index}`} className="border-none text-lg">
+                                        <AccordionTrigger className="py-0 text-base text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
                                             View Case Study
                                         </AccordionTrigger>
                                         <AccordionContent className="flex flex-col gap-6 pt-4 text-muted-foreground leading-relaxed">
                                             <div className="space-y-1">
-                                                <h5 className="font-semibold text-foreground text-sm">Problem</h5>
-                                                <p>
+                                                <h5 className="font-semibold text-foreground text-lg">Problem</h5>
+                                                <p className="text-lg">
                                                     {project.problem}
                                                 </p>
                                             </div>
                                             <div className="space-y-1">
-                                                <h5 className="font-semibold text-foreground text-sm">Solution</h5>
-                                                <p>
+                                                <h5 className="font-semibold text-foreground text-lg">Solution</h5>
+                                                <p className="text-lg">
                                                     {project.solution}
                                                 </p>
                                             </div>
                                             <div className="space-y-1">
-                                                <h5 className="font-semibold text-foreground text-sm">Outcome</h5>
-                                                <p>
+                                                <h5 className="font-semibold text-foreground text-lg">Outcome</h5>
+                                                <p className="text-lg">
                                                     {project.outcome}
                                                 </p>
                                             </div>

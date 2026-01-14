@@ -17,7 +17,7 @@ export function WorkExperience() {
         <section id="work-experience" className="py-12 md:py-16 w-full border-t">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-base">
+                    <h2 className="text-brand font-bold tracking-widest uppercase text-sm md:text-lg">
                         Work Experience
                     </h2>
                     <div>
@@ -49,13 +49,13 @@ export function WorkExperience() {
                                 </span>
                             </div>
 
-                            <div className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+                            <div className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                                 {role.description}
                             </div>
 
                             <div className="flex flex-wrap gap-2 max-w-2xl">
                                 {role.technologies?.map((tech, techIndex) => (
-                                    <Badge key={techIndex} variant="secondary" className="text-xs font-mono font-normal bg-secondary/50 text-muted-foreground/80 hover:bg-secondary/80">
+                                    <Badge key={techIndex} variant="secondary">
                                         {tech}
                                     </Badge>
                                 ))}
@@ -67,7 +67,7 @@ export function WorkExperience() {
                                         <AccordionTrigger className="py-0 text-sm text-foreground hover:text-brand hover:underline hover:no-underline justify-start gap-2">
                                             View More
                                         </AccordionTrigger>
-                                        <AccordionContent className="text-muted-foreground text-base pt-4 leading-relaxed">
+                                        <AccordionContent className="text-muted-foreground text-lg pt-4 leading-relaxed">
                                             {role.deepInsight}
                                         </AccordionContent>
                                     </AccordionItem>

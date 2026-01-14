@@ -12,30 +12,19 @@ export const data = {
     tagline: "I build long-running AI systems with memory, guardrails, and infrastructure that does not fall apart once they leave the demo.",
     keywords: [
         "Agentic AI",
-        "Distributed Systems Engineer",
-        "LLM System Design",
-        "Full Stack AI Engineer",
+        "Distributed Systems",
         "Python",
         "Go",
         "TypeScript",
         "AWS",
-        "Cloud Native",
         "Kubernetes",
-        "System Architecture",
         "Kafka",
         "Vector Databases",
         "Neo4j",
-        "RAG Pipelines",
-        "Prompt Engineering",
-        "Multi-Agent Systems",
-        "Autonomous Agents",
-        "Cybersecurity AI",
-        "Context Engineering",
         "React",
         "Node.js",
         "PostgreSQL",
         "MongoDB",
-        "High-throughput Systems"
     ],
 
     contact: {
@@ -68,7 +57,7 @@ export const data = {
                 "Designed and built autonomous cybersecurity agents that investigate alerts, correlate signals across systems, and recommend or execute remediation steps. The platform is used to reduce analyst workload while maintaining auditability and control.",
             deepInsight:
                 "A recurring challenge with long-running agents was context drift. To address this, I designed a lightweight memory layer that separates durable knowledge from transient reasoning. Past investigations are summarized using smaller models and stored in structured form, allowing agents to reference history without inheriting outdated assumptions. On the infrastructure side, I optimized our MCP servers to filter and shape data before it ever reached an LLM. This reduced token usage, improved response consistency, and made the system easier to adapt across different enterprise domains.",
-            technologies: ["Go", "Python", "AWS", "Kubernetes", "PostgreSQL", "Neo4j", "Vector Databases", "MCP"]
+            technologies: ["Agentic AI", "Distributed Systems", "MCP", "Python", "Go", "AWS", "Kubernetes", "PostgreSQL", "Neo4j", "Pinecone"]
         },
 
         {
@@ -81,7 +70,7 @@ export const data = {
             description:
                 "Built backend services for a real-time network traffic platform handling millions of flows per minute. The system supported continuous ingestion, aggregation, and downstream analysis under strict reliability constraints.",
             deepInsight:
-                "At sustained high throughput, small design decisions compound quickly. I focused on predictable data flow and backpressure handling using Go’s concurrency primitives and Kafka partitioning. Buffered channels helped absorb short traffic spikes, while careful partition strategy kept consumers balanced during peak load. The result was stable ingestion with zero observed data loss, even during high-variance traffic events.",
+                "At sustained high throughput, small design decisions compound quickly. To handle the massive influx of concurrent data, I leveraged Kafka as a high-throughput message queue, decoupling ingestion from downstream processing. I focused on predictable data flow and backpressure handling using Go’s concurrency primitives and strategic partition management. Buffered channels helped absorb short traffic spikes, while careful load balancing kept consumers stable during peak load. The result was stable ingestion with zero observed data loss, even during high-variance traffic events.",
             technologies: ["Go", "Kafka", "MongoDB", "Docker", "Kubernetes"]
         },
 
@@ -113,7 +102,7 @@ export const data = {
                 "Gary uses a multi-step agent workflow to extract role requirements, analyze tone and expectations, and rewrite experience bullets accordingly. The system balances keyword alignment with readability, while maintaining a consistent candidate narrative.",
             outcome:
                 "Cuts hours of manual editing per application and produces resumes that perform better in both ATS screening and recruiter review.",
-            techStack: ["Python", "LLM Orchestration", "MongoDB"]
+            techStack: ["Crew AI", "MongoDB", "GCP"]
         },
 
         {
@@ -128,7 +117,7 @@ export const data = {
                 "I built an MCP server that streams live telemetry into an LLM-friendly format. The backend handles high-frequency WebSocket updates and selectively forwards relevant signals such as lap times, tire wear, and pit windows.",
             outcome:
                 "Transforms fast-moving telemetry into an interactive, natural-language view of race strategy.",
-            techStack: ["Python", "Streaming APIs", "MCP"]
+            techStack: ["FastMCP", "HttpX"]
         },
 
         {
@@ -143,7 +132,7 @@ export const data = {
                 "I modeled an intersection environment and trained an agent using SARSA. The agent observes queue lengths and learns when to switch lights based on current demand.",
             outcome:
                 "The learned policy reduced average wait times compared to static schedules and served as my entry point into applied reinforcement learning.",
-            techStack: ["Python", "NumPy", "Pygame"]
+            techStack: ["NumPy", "Pygame", "Matplotlib"]
         },
 
         {
@@ -158,7 +147,7 @@ export const data = {
                 "I built a pipeline that combines vector similarity with keyword filtering to locate relevant sections in large documents, then generates answers with source citations.",
             outcome:
                 "Reduces the time spent navigating long PDFs and improves confidence in retrieved answers.",
-            techStack: ["TypeScript", "React", "Next.js", "PostgreSQL", "Vector Databases", "LLMs"]
+            techStack: ["TypeScript", "React", "Next.js", "PostgreSQL", "Pinecone", "Crew AI"]
         }
     ],
 

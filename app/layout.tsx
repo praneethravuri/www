@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Source_Code_Pro } from "next/font/google";
+import { Space_Grotesk, Playfair_Display, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
 import { Analytics } from "@vercel/analytics/next"
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 const sourceCodePro = Source_Code_Pro({ subsets: ['latin'], variable: '--font-source-code-pro', display: 'swap' });
 
@@ -71,7 +71,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased bg-background text-foreground relative overflow-x-hidden min-h-screen max-w-4xl mx-auto`}
+        className={`${spaceGrotesk.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased bg-background text-foreground relative overflow-x-hidden min-h-screen max-w-5xl mx-auto`}
       >
         <ThemeProvider
           attribute="class"

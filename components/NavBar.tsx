@@ -2,18 +2,10 @@
 import Link from "next/link";
 import { data } from "@/app/data/resume";
 import { CustomLink } from "@/components/ui/custom-link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 export function Navbar() {
 
 
-  const initials = `${data.firstName[0]}${data.lastName[0]}.`;
 
-  const socialIcons: Record<string, React.ReactNode> = {
-    GitHub: <FaGithub className="w-5 h-5" />,
-    LinkedIn: <FaLinkedin className="w-5 h-5" />,
-    X: <FaXTwitter className="w-5 h-5" />,
-  };
 
   return (
     <nav className="hidden md:block border-b border-border transition-colors duration-300">

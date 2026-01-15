@@ -75,38 +75,45 @@ export function DotPattern({
 }: DotPatternProps) {
   const id = useId()
   const containerRef = useRef<SVGSVGElement>(null)
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+  interface Dot {
+    x: number
+    y: number
+    delay: number
+    duration: number
+  }
+
+  const [dots, setDots] = useState<Dot[]>([])
 
   useEffect(() => {
-    const updateDimensions = () => {
+    const updateDots = () => {
       if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect()
-        setDimensions({ width, height })
+        const { width: containerWidth, height: containerHeight } = containerRef.current.getBoundingClientRect()
+
+        const newDots = Array.from(
+          {
+            length:
+              Math.ceil(containerWidth / width) *
+              Math.ceil(containerHeight / height),
+          },
+          (_, i) => {
+            const col = i % Math.ceil(containerWidth / width)
+            const row = Math.floor(i / Math.ceil(containerWidth / width))
+            return {
+              x: col * width + cx,
+              y: row * height + cy,
+              delay: Math.random() * 5,
+              duration: Math.random() * 3 + 2,
+            }
+          }
+        )
+        setDots(newDots)
       }
     }
 
-    updateDimensions()
-    window.addEventListener("resize", updateDimensions)
-    return () => window.removeEventListener("resize", updateDimensions)
-  }, [])
-
-  const dots = Array.from(
-    {
-      length:
-        Math.ceil(dimensions.width / width) *
-        Math.ceil(dimensions.height / height),
-    },
-    (_, i) => {
-      const col = i % Math.ceil(dimensions.width / width)
-      const row = Math.floor(i / Math.ceil(dimensions.width / width))
-      return {
-        x: col * width + cx,
-        y: row * height + cy,
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
-      }
-    }
-  )
+    updateDots()
+    window.addEventListener("resize", updateDots)
+    return () => window.removeEventListener("resize", updateDots)
+  }, [width, height, cx, cy])
 
   return (
     <svg
@@ -124,7 +131,7 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {dots.map((dot, index) => (
+      {dots.map((dot) => (
         <motion.circle
           key={`${dot.x}-${dot.y}`}
           cx={dot.x}
@@ -135,20 +142,20 @@ export function DotPattern({
           animate={
             glow
               ? {
-                  opacity: [0.4, 1, 0.4],
-                  scale: [1, 1.5, 1],
-                }
+                opacity: [0.4, 1, 0.4],
+                scale: [1, 1.5, 1],
+              }
               : {}
           }
           transition={
             glow
               ? {
-                  duration: dot.duration,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  delay: dot.delay,
-                  ease: "easeInOut",
-                }
+                duration: dot.duration,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: dot.delay,
+                ease: "easeInOut",
+              }
               : {}
           }
         />

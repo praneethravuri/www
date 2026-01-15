@@ -1,10 +1,11 @@
 "use client";
 
 
-import { DotPattern } from "@/components/ui/dot-pattern";
-import { data } from "@/app/data/resume";
+
+
 import { CustomLink } from "@/components/ui/custom-link";
-import { cn } from "@/lib/utils";
+import { data } from "@/app/data/resume";
+
 
 export function Hero() {
   return (

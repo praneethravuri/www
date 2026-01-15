@@ -1,17 +1,11 @@
+
 import { data } from "@/app/data/resume";
-import Link from "next/link";
-import { DotPattern } from "@/components/ui/dot-pattern";
 import { CustomLink } from "@/components/ui/custom-link";
-import { cn } from "@/lib/utils";
 
 export function Footer() {
   return (
     <footer id="contact" className="py-16 md:py-24 border-t mt-16 md:mt-24 relative overflow-hidden">
-      {/* <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(250px_circle_at_center,white,transparent)]",
-        )}
-      /> */}
+
       <div className="mx-auto px-6 text-center relative z-10">
         <h2 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
           <div className="font-serif italic text-foreground">

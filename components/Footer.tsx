@@ -8,11 +8,8 @@ export function Footer() {
 
       <div className="mx-auto px-6 text-center relative z-10">
         <h2 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
-          <div className="text-foreground">
-            Let&apos;s put AI to
-          </div>
-          <div className="text-foreground">
-            work.
+          <div className="font-medium">
+            Let&apos;s put AI to work.
           </div>
         </h2>
 

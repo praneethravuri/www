@@ -17,7 +17,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-background border-b border-border transition-colors duration-300">
+    <nav className="border-b border-border transition-colors duration-300">
       <div className="mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"

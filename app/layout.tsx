@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
 import { Analytics } from "@vercel/analytics/next"
+import { AuroraBackground } from "@/components/ui/AuroraBackground";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
@@ -71,7 +72,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${spaceGrotesk.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased bg-background text-foreground relative overflow-x-hidden min-h-screen max-w-5xl mx-auto`}
+        className={`${spaceGrotesk.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased bg-transparent text-foreground relative overflow-x-hidden min-h-screen max-w-5xl mx-auto`}
       >
         <ThemeProvider
           attribute="class"
@@ -79,8 +80,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-
-
+          <AuroraBackground />
           {children}
           <Analytics />
           <script

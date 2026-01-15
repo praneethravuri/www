@@ -16,10 +16,10 @@ import {
 
 export function Projects() {
     return (
-        <section id="projects" className="py-16 md:py-24 w-full">
+        <section id="projects" className="py-8 md:py-12 w-full">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-brand font-bold tracking-widest uppercase text-xl md:text-3xl">
+                    <h2 className="text-foreground font-bold tracking-widest uppercase text-xl md:text-3xl">
                         Projects
                     </h2>
                     <div>
@@ -37,7 +37,7 @@ export function Projects() {
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <h3 className="text-xl md:text-2xl font-bold text-foreground">
-                                        <CustomLink href={project.url} className="text-foreground hover:text-brand inline-flex items-center gap-2 text-xl md:text-2xl">
+                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-xl md:text-2xl">
                                             {project.name}
                                         </CustomLink>
                                     </h3>
@@ -57,7 +57,7 @@ export function Projects() {
                                 <div className="max-w-2xl mt-4 md:mt-6">
                                     <Accordion type="single" collapsible className="w-full">
                                         <AccordionItem value={`item-${index}`} className="border-none text-base md:text-lg">
-                                            <AccordionTrigger className="py-0 text-base text-brand justify-start gap-2">
+                                            <AccordionTrigger className="py-0 text-base text-foreground hover:opacity-75 justify-start gap-2">
                                                 View Case Study
                                             </AccordionTrigger>
                                             <AccordionContent className="flex flex-col gap-6 pt-4 text-foreground leading-relaxed">

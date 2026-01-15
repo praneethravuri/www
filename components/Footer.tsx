@@ -4,14 +4,14 @@ import { CustomLink } from "@/components/ui/custom-link";
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-16 md:py-24 border-t mt-16 md:mt-24 relative overflow-hidden">
+    <footer id="contact" className="py-8 md:py-12 border-t mt-8 md:mt-12 relative overflow-hidden">
 
       <div className="mx-auto px-6 text-center relative z-10">
         <h2 className="text-6xl sm:text-7xl md:text-[6rem] lg:text-[8rem] leading-[0.9] tracking-tighter">
-          <div className="font-serif italic text-foreground">
+          <div className="text-foreground">
             Let&apos;s put AI to
           </div>
-          <div className="font-serif italic text-brand">
+          <div className="text-foreground">
             work.
           </div>
         </h2>
@@ -21,7 +21,7 @@ export function Footer() {
             <CustomLink
               key={name}
               href={social.url}
-              className="text-foreground hover:text-brand transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
+              className="text-foreground transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
             >
               {social.name}
             </CustomLink>

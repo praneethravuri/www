@@ -16,10 +16,10 @@ import {
 
 export function WorkExperience() {
     return (
-        <section id="work-experience" className="py-16 md:py-24 w-full">
+        <section id="work-experience" className="py-8 md:py-12 w-full">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-brand font-bold tracking-widest uppercase text-xl md:text-3xl">
+                    <h2 className="text-foreground font-bold tracking-widest uppercase text-xl md:text-3xl">
                         Work Experience
                     </h2>
                     <div>
@@ -37,7 +37,7 @@ export function WorkExperience() {
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <h3 className="text-lg md:text-xl font-bold text-foreground">
-                                        <CustomLink href={role.companyUrl} className="text-foreground hover:text-brand text-lg md:text-xl">
+                                        <CustomLink href={role.companyUrl} className="text-foreground text-lg md:text-xl">
                                             {role.company}
                                         </CustomLink>
                                         <span className="text-foreground font-normal mx-2">
@@ -67,7 +67,7 @@ export function WorkExperience() {
                                 <div className="max-w-2xl mt-4 md:mt-6">
                                     <Accordion type="single" collapsible className="w-full">
                                         <AccordionItem value="item-1" className="border-none">
-                                            <AccordionTrigger className="py-0 text-base text-brand justify-start gap-2">
+                                            <AccordionTrigger className="py-0 text-base text-foreground hover:opacity-75 justify-start gap-2">
                                                 View More
                                             </AccordionTrigger>
                                             <AccordionContent className="text-foreground text-base md:text-lg pt-4 leading-relaxed">

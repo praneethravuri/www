@@ -1,5 +1,7 @@
 "use client";
 
+import { Plane } from "lucide-react";
+
 
 
 
@@ -20,7 +22,7 @@ export function Hero() {
 
       <div className="w-full h-32 md:h-64 relative mb-6">
         <Image
-          src="/hero-image.jpg"
+          src="/san-francisco.png"
           alt="Hero Banner"
           fill
           className="object-cover"
@@ -61,6 +63,14 @@ export function Hero() {
                 {social.name}
               </CustomLink>
             ))}
+          </div>
+
+          <div className="flex items-center gap-3 w-full text-muted-foreground mt-2">
+            <span className="text-base md:text-sm font-medium whitespace-nowrap">Hyderabad, India</span>
+            <div className="h-px bg-border flex-1" />
+            <Plane className="w-6 h-6 md:w-6 md:h-6" />
+            <div className="h-px bg-border flex-1" />
+            <span className="text-base md:text-sm font-medium whitespace-nowrap">San Francisco, USA</span>
           </div>
         </div>
       </div>

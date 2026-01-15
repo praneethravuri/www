@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { data } from "@/app/data/resume";
 import { CustomLink } from "@/components/ui/custom-link";
-import { ModeToggle } from "@/components/mode-toggle";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 export function Navbar() {
@@ -17,7 +16,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="border-b border-border transition-colors duration-300">
+    <nav className="hidden md:block border-b border-border transition-colors duration-300">
       <div className="mx-auto px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
@@ -39,7 +38,7 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <ModeToggle />
+            {/* ModeToggle removed for dark mode only */}
           </div>
         </div>
       </div>

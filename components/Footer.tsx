@@ -22,7 +22,7 @@ export function Footer() {
           </div>
         </h2>
 
-        <div className="flex justify-center gap-6 mb-12">
+        <div className="flex justify-center gap-6 mb-12 mt-6 md:mt-8">
           {Object.entries(data.contact.social).map(([name, social]) => (
             <CustomLink
               key={name}

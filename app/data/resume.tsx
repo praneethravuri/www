@@ -150,7 +150,7 @@ export const data = {
                 "I built a pipeline that combines vector similarity with keyword filtering to locate relevant sections in large documents, then generates answers with source citations.",
             outcome:
                 "Reduces the time spent navigating long PDFs and improves confidence in retrieved answers.",
-            techStack: ["TypeScript", "React", "Next.js", "PostgreSQL", "Pinecone", "Crew AI"]
+            techStack: ["React", "Next.js", "PostgreSQL", "Pinecone", "Crew AI"]
         }
     ],
 

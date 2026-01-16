@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
 import { Analytics } from "@vercel/analytics/next"
 // import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import { StripedPattern } from "@/components/ui/striped-pattern"
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
@@ -81,7 +82,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {/* <AuroraBackground /> */}
+          <StripedPattern className="fixed inset-0 -z-10 stroke-[0.3] [stroke-dasharray:8,4] opacity-20" />
           {children}
           <Analytics />
           <script

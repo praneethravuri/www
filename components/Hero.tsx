@@ -14,22 +14,17 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="md:min-h-screen w-full mx-auto relative overflow-hidden">
-      {/* <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-        )}
-      /> */}
 
       <div className="w-full h-32 md:h-64 relative mb-6">
         <Image
           src="/san-francisco.png"
           alt="Hero Banner"
-          fill
+          fill={true}
           className="object-cover"
           priority
         />
         <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8">
-          <h2 className="text-white text-4xl md:text-7xl font-bold tracking-tighter italic">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white drop-shadow-md italic">
             ship fast.
           </h2>
         </div>

@@ -6,42 +6,49 @@ import Image from "next/image";
 export function Footer() {
   return (
     <footer id="contact" className="py-8 md:py-12 border-t mt-8 md:mt-12 relative overflow-hidden">
-      <div className="mx-auto px-6 text-center relative z-10">
-        <div className="w-full h-64 md:h-96 relative mb-12 rounded-lg overflow-hidden">
-          <Image
-            src="/hyderabad.png"
-            alt="Hyderabad"
-            fill
-            className="object-cover opacity-80"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <h2 className="text-4xl sm:text-6xl md:text-[5rem] lg:text-[7rem] leading-[0.9] tracking-tighter text-white drop-shadow-lg">
-              <div className="font-medium">
-                Let&apos;s put AI to work.
-              </div>
-            </h2>
+      <div className="w-full h-32 md:h-64 relative mb-6">
+        <Image
+          src="/hyderabad.png"
+          alt="Hyderabad"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 text-left">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white drop-shadow-md italic">
+            <div>
+              let&apos;s put AI
+            </div>
+            <div>
+              to work.
+            </div>
+          </h1>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-6 z-10 text-left relative px-6">
+
+        <div className="w-full flex flex-col items-start gap-6">
+          <div className="flex items-center gap-6">
+            {Object.entries(data.contact.social).map(([name, social]) => (
+              <CustomLink
+                key={name}
+                href={social.url}
+                className="text-foreground transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
+              >
+                {social.name}
+              </CustomLink>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-2 text-muted-foreground text-base mt-2">
+            <p>
+              &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}. All rights reserved.
+            </p>
+            <p className="text-sm">
+              Built with React, Next.js, Shadcn UI, Magic UI, Tailwind CSS, TypeScript
+            </p>
           </div>
         </div>
-
-        <div className="flex justify-center gap-6 mb-12 mt-6 md:mt-8">
-          {Object.entries(data.contact.social).map(([name, social]) => (
-            <CustomLink
-              key={name}
-              href={social.url}
-              className="text-foreground transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
-            >
-              {social.name}
-            </CustomLink>
-          ))}
-
-        </div>
-
-        <p className="text-muted-foreground text-base">
-          &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}. All rights reserved.
-        </p>
-        <p className="text-sm text-muted-foreground mt-2">
-          Built with React, Next.js, Shadcn UI, Magic UI, Tailwind CSS, TypeScript
-        </p>
       </div>
     </footer>
   );

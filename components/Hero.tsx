@@ -13,7 +13,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="min-h-svh md:min-h-[85vh] w-full mx-auto relative overflow-hidden grid md:grid-cols-2">
+    <section className="w-full mx-auto relative overflow-hidden grid md:grid-cols-2 md:min-h-[85vh]">
       {/* Left Column: Content */}
       <div className="flex flex-col justify-center py-6 md:py-0 order-2 md:order-1 gap-8 z-10">
         <div>
@@ -56,7 +56,7 @@ export function Hero() {
       </div>
 
       {/* Right Column: Image */}
-      <div className="relative w-full order-1 md:order-2">
+      <div className="relative w-full order-1 md:order-2 h-[50vh] md:h-full">
         <Image
           src="/san-francisco.png"
           alt="Hero Banner"

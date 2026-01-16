@@ -5,16 +5,16 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer id="contact" className="min-h-svh md:min-h-[85vh] w-full mx-auto relative overflow-hidden grid md:grid-cols-2 border-t mt-8 md:mt-12">
+    <footer id="contact" className="min-h-svh md:min-h-[85vh] w-full mx-auto relative overflow-hidden grid md:grid-cols-2 border-t mt-0 md:mt-12">
       {/* Left Column: Content */}
-      <div className="flex flex-col justify-center px-6 py-12 md:py-0 order-2 md:order-1 gap-8 z-10">
+      <div className="flex flex-col justify-center px-6 py-6 md:py-0 order-2 md:order-1 gap-8 z-10">
         <div className="w-full flex flex-col items-start gap-6">
           <div className="flex items-center gap-6">
             {Object.entries(data.contact.social).map(([name, social]) => (
               <CustomLink
                 key={name}
                 href={social.url}
-                className="text-foreground transition-colors uppercase text-sm md:text-lg tracking-widest font-medium"
+                className="text-foreground transition-colors uppercase text-[clamp(0.875rem,1.5vw,1.125rem)] tracking-widest font-medium"
               >
                 {social.name}
               </CustomLink>
@@ -43,7 +43,7 @@ export function Footer() {
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div className="absolute inset-0 flex items-center justify-center text-center">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)] italic">
+          <h1 className="text-[clamp(2.25rem,6vw,6rem)] tracking-tighter font-medium leading-[0.9] text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)] italic">
             <div>
               let&apos;s put AI
             </div>

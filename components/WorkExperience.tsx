@@ -19,7 +19,7 @@ export function WorkExperience() {
         <section id="work-experience" className="py-8 md:py-12 w-full">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-foreground font-bold tracking-widest uppercase text-xl md:text-3xl">
+                    <h2 className="text-foreground font-bold tracking-widest uppercase text-[clamp(1.25rem,3vw,1.875rem)]">
                         Work Experience
                     </h2>
                     <div>
@@ -36,8 +36,8 @@ export function WorkExperience() {
                         <Fragment key={index}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                    <h3 className="text-lg md:text-xl font-bold text-foreground">
-                                        <CustomLink href={role.companyUrl} className="text-foreground text-lg md:text-xl">
+                                    <h3 className="text-[clamp(1.125rem,2vw,1.25rem)] font-bold text-foreground">
+                                        <CustomLink href={role.companyUrl} className="text-foreground text-[clamp(1.125rem,2vw,1.25rem)]">
                                             {role.company}
                                         </CustomLink>
                                         <span className="text-foreground font-normal mx-2">
@@ -52,7 +52,7 @@ export function WorkExperience() {
                                     </span>
                                 </div>
 
-                                <div className="text-base md:text-lg text-foreground leading-relaxed max-w-2xl">
+                                <div className="text-[clamp(1rem,1.5vw,1.125rem)] text-foreground leading-relaxed max-w-2xl">
                                     {role.description}
                                 </div>
 
@@ -70,7 +70,7 @@ export function WorkExperience() {
                                             <AccordionTrigger className="py-0 text-base text-foreground hover:opacity-75 justify-start gap-2">
                                                 View More
                                             </AccordionTrigger>
-                                            <AccordionContent className="text-foreground text-base md:text-lg pt-4 leading-relaxed">
+                                            <AccordionContent className="text-foreground text-[clamp(1rem,1.5vw,1.125rem)] pt-4 leading-relaxed">
                                                 {role.deepInsight}
                                             </AccordionContent>
                                         </AccordionItem>

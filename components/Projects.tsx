@@ -19,7 +19,7 @@ export function Projects() {
         <section id="projects" className="py-8 md:py-12 w-full">
             <div className="px-6 mx-auto">
                 <div className="flex items-center justify-between mb-10 md:mb-16">
-                    <h2 className="text-foreground font-bold tracking-widest uppercase text-xl md:text-3xl">
+                    <h2 className="text-foreground font-bold tracking-widest uppercase text-[clamp(1.25rem,3vw,1.875rem)]">
                         Projects
                     </h2>
                     <div>
@@ -36,8 +36,8 @@ export function Projects() {
                         <Fragment key={index}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
-                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-xl md:text-2xl">
+                                    <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold text-foreground">
+                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-[clamp(1.25rem,2vw,1.5rem)]">
                                             {project.name}
                                         </CustomLink>
                                     </h3>
@@ -50,32 +50,32 @@ export function Projects() {
                                     </div>
                                 </div>
 
-                                <div className="text-base md:text-lg text-foreground leading-relaxed max-w-2xl">
+                                <div className="text-[clamp(1rem,1.5vw,1.125rem)] text-foreground leading-relaxed max-w-2xl">
                                     {project.description}
                                 </div>
 
                                 <div className="max-w-2xl mt-4 md:mt-6">
                                     <Accordion type="single" collapsible className="w-full">
-                                        <AccordionItem value={`item-${index}`} className="border-none text-base md:text-lg">
+                                        <AccordionItem value={`item-${index}`} className="border-none text-[clamp(1rem,1.5vw,1.125rem)]">
                                             <AccordionTrigger className="py-0 text-base text-foreground hover:opacity-75 justify-start gap-2">
                                                 View Case Study
                                             </AccordionTrigger>
                                             <AccordionContent className="flex flex-col gap-6 pt-4 text-foreground leading-relaxed">
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Problem</h5>
-                                                    <p className="text-base md:text-lg">
+                                                    <p className="text-[clamp(1rem,1.5vw,1.125rem)]">
                                                         {project.problem}
                                                     </p>
                                                 </div>
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Solution</h5>
-                                                    <p className="text-base md:text-lg">
+                                                    <p className="text-[clamp(1rem,1.5vw,1.125rem)]">
                                                         {project.solution}
                                                     </p>
                                                 </div>
                                                 <div className="space-y-1">
                                                     <h5 className="font-semibold text-foreground text-lg">Outcome</h5>
-                                                    <p className="text-base md:text-lg">
+                                                    <p className="text-[clamp(1rem,1.5vw,1.125rem)]">
                                                         {project.outcome}
                                                     </p>
                                                 </div>

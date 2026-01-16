@@ -13,8 +13,8 @@ export function Footer() {
           fill
           className="object-cover"
         />
-        <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 text-left">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white drop-shadow-md italic">
+        <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 text-right">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)] italic">
             <div>
               let&apos;s put AI
             </div>

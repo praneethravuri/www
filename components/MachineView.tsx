@@ -59,7 +59,7 @@ ${data.education.map((edu) => `
     };
 
     return (
-        <div className="relative mx-auto p-4 md:p-6 my-8">
+        <div className="relative mx-auto">
             <Button
                 variant="ghost"
                 size="icon"

@@ -1,4 +1,4 @@
-
+import { ContactForm } from "@/components/contact-form";
 import { data } from "@/app/data/resume";
 import { CustomLink } from "@/components/ui/custom-link";
 import Image from "next/image";
@@ -7,7 +7,10 @@ export function Footer() {
   return (
     <footer id="contact" className="min-h-svh md:min-h-[85vh] w-full mx-auto relative overflow-hidden grid md:grid-cols-2 border-t mt-0 md:mt-12">
       {/* Left Column: Content */}
-      <div className="flex flex-col justify-center px-6 py-6 md:py-0 order-2 md:order-1 gap-8 z-10">
+      <div className="flex flex-col justify-center px-6 py-12 md:py-0 order-2 md:order-1 gap-12 z-10">
+
+        <ContactForm />
+
         <div className="w-full flex flex-col items-start gap-6">
           <div className="flex items-center gap-6">
             {Object.entries(data.contact.social).map(([name, social]) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { Plane } from "lucide-react";
+
 
 
 
@@ -14,7 +14,11 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="md:min-h-screen w-full mx-auto relative overflow-hidden">
-
+      <div className="mb-6">
+        <span className="text-muted-foreground text-base md:text-lg font-medium tracking-wide">
+          San Francisco, USA
+        </span>
+      </div>
       <div className="w-full h-32 md:h-64 relative mb-6">
         <Image
           src="/san-francisco.png"
@@ -23,8 +27,9 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)] italic">
+
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] tracking-tighter font-medium leading-[0.9] text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)] italic text-center">
             ship fast.
           </h2>
         </div>
@@ -60,15 +65,9 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 w-full text-muted-foreground mt-2">
-            <span className="text-base md:text-sm font-medium whitespace-nowrap">Hyderabad, India</span>
-            <div className="h-px bg-border flex-1" />
-            <Plane className="w-6 h-6 md:w-6 md:h-6" />
-            <div className="h-px bg-border flex-1" />
-            <span className="text-base md:text-sm font-medium whitespace-nowrap">San Francisco, USA</span>
-          </div>
         </div>
       </div>
     </section>
+
   );
 }

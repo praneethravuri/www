@@ -9,7 +9,7 @@ export function Navbar() {
 
   return (
     <nav className="hidden md:block transition-colors duration-300">
-      <div className="mx-auto px-6 h-20 flex items-center">
+      <div className="h-20 flex items-center">
         <Link
           href="/"
           className="text-xl font-bold tracking-tighter text-foreground no-underline hover:no-underline"

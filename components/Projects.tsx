@@ -6,13 +6,15 @@ import { Button } from "@/components/ui/button";
 import { CustomLink } from "@/components/ui/custom-link";
 import { Fragment } from "react";
 
+const tagline = data.taglines.projectsTagline;
+
 export function Projects() {
     return (
         <section id="projects" className="py-8 md:py-12 w-full">
             <div className="mx-auto">
-                <div className="flex items-center justify-between mb-5 md:mb-8">
-                    <h2 className="text-foreground font-bold tracking-widest uppercase text-[clamp(1.25rem,5vw,1.5rem)]">
-                        Projects
+                <div className="flex items-center justify-between mb-4 md:mb-8">
+                    <h2 className="text-foreground text-base">
+                        Work
                     </h2>
                     <div>
                         <Link href={data.contact.social.GitHub.url} target="_blank">
@@ -23,26 +25,30 @@ export function Projects() {
                     </div>
                 </div>
 
+                <div className="text-base text-muted-foreground mb-4 md:mb-8">
+                    {tagline.tagline}
+                </div>
+
                 <div className="flex flex-col gap-12 md:gap-16">
                     {data.projects.map((project, index) => (
                         <Fragment key={index}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                    <h3 className="text-[clamp(1.125rem,2vw,1.25rem)] font-bold text-foreground">
-                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-[clamp(1.125rem,2vw,1.25rem)]">
+                                    <h3 className="text-base font-bold text-foreground">
+                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-base">
                                             {project.name}
                                         </CustomLink>
                                     </h3>
                                     <div className="flex flex-wrap gap-2">
                                         {project.techStack.map((tech, techIndex) => (
-                                            <Badge key={techIndex} variant="secondary">
+                                            <Badge key={techIndex} variant="secondary" className="text-xs">
                                                 {tech}
                                             </Badge>
                                         ))}
                                     </div>
                                 </div>
 
-                                <div className="text-[clamp(0.875rem,2vw,1rem)] text-foreground leading-relaxed max-w-2xl">
+                                <div className="text-base text-muted-foreground">
                                     {project.description}
                                 </div>
                             </div>

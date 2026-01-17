@@ -69,13 +69,18 @@
 
   --color-color-2: var(--color-2);
 
-  --color-color-1: var(--color-1)
-;
+  --color-color-1: var(--color-1);
+
   @keyframes rainbow {
-  0% {
-    background-position: 0%;}
-  100% {
-    background-position: 200%;}}}
+    0% {
+      background-position: 0%;
+    }
+
+    100% {
+      background-position: 200%;
+    }
+  }
+}
 
 :root {
   --radius: 0.625rem;
@@ -111,7 +116,7 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --swiss-red: oklch(56.26% 0.219 9.71);
-  /* --brand: dodgerblue; */
+  --brand: dodgerblue;
   /* Darker blue for light mode contrast */
   --color-1: oklch(66.2% 0.225 25.9);
   --color-2: oklch(60.4% 0.26 302);
@@ -121,7 +126,7 @@
 }
 
 .dark {
-  --background: oklch(0.129 0 0);
+  --background: oklch(0.1591 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
@@ -153,7 +158,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
   --swiss-red: oklch(56.26% 0.219 9.71);
-  /* --brand: dodgerblue; */
+  --brand: dodgerblue;
   --color-1: oklch(66.2% 0.225 25.9);
   --color-2: oklch(60.4% 0.26 302);
   --color-3: oklch(69.6% 0.165 251);

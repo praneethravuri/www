@@ -27,13 +27,13 @@ function MainContent() {
         {mode === 'human' ? (
           <>
             <Hero />
-            <Separator className="my-12 md:my-16" />
-            <About />
-            <Separator className="my-12 md:my-16" />
+            {/* <Separator className="my-12 md:my-16" /> */}
+            {/* <About /> */}
+            {/* <Separator className="my-12 md:my-16" /> */}
             <WorkExperience />
-            <Separator className="my-12 md:my-16" />
+            {/* <Separator className="my-12 md:my-16" /> */}
             <Projects />
-            <Separator className="my-12 md:my-16" />
+            {/* <Separator className="my-12 md:my-16" /> */}
             <Footer />
           </>
         ) : (

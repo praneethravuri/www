@@ -1,57 +1,59 @@
 "use client";
+import { ArrowUpRight } from "lucide-react";
 
-import { CustomLink } from "@/components/ui/custom-link";
+
 import { data } from "@/app/data/resume";
 import Image from "next/image";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+const tagline = data.taglines.heroTagline;
 
 export function Hero() {
   return (
     <section className="w-full mx-auto flex flex-col gap-8 py-1 md:py-3">
-      {/* Image Section */}
-
-      <div className="relative w-full aspect-[2/1] rounded-3xl overflow-hidden shadow-sm">
-        <Image
-          src="/san-francisco.png"
-          alt="Hero Banner"
-          fill={true}
-          className="object-cover"
-          priority
-          quality={100}
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-[clamp(2.5rem,7vw,6rem)] tracking-tighter font-medium leading-[0.9] text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_80%)] italic text-center">
-            ship fast.
-          </h2>
-        </div>
-      </div>
 
       {/* Content Section */}
       <div className="flex flex-col gap-6">
+        <div className="relative w-fit">
+          <Avatar className="size-20 rounded-xl">
+            <AvatarImage src="/hero.jpeg" alt={data.firstName} className="object-cover" />
+            <AvatarFallback>{data.firstName[0]}</AvatarFallback>
+          </Avatar>
+          <span className="absolute bottom-[-4px] right-[-4px] size-4 rounded-full bg-green-600 border-2 border-background shadow-sm"></span>
+        </div>
         <div className="flex flex-col gap-1">
-          <p className="text-[clamp(1rem,2vw,1.25rem)] leading-relaxed font-medium max-w-xl">
-            Hey, I&apos;m {data.firstName}.
+          <p className="text-base leading-relaxed max-w-xl">
+            {data.firstName} {data.lastName}
           </p>
-          <p className="text-[clamp(0.875rem,1.8vw,1.1rem)] text-muted-foreground font-medium">
+          <p className="text-base text-muted-foreground">
             {data.location}
           </p>
         </div>
-        <h1 className="text-[clamp(2rem,4.5vw,3.5rem)] tracking-tighter font-medium leading-none text-foreground">
-          Agentic AI <span className="text-muted-foreground font-light">&</span> Scalable Systems.
-        </h1>
 
-        <div className="w-full flex flex-col items-start gap-6">
-          <p className="text-[clamp(0.875rem,2vw,1rem)] text-muted-foreground leading-relaxed font-medium max-w-xl">
-            {data.tagline}
-          </p>
-          <div className="flex items-center gap-6">
+        <div>
+          <div className="flex items-center gap-1 text-muted-foreground text-base">
+            <p>{tagline.role}</p>at<Link href={tagline.companyUrl} target="_blank" className="company flex items-center gap-1 text-foreground no-underline hover:opacity-80 transition-opacity" >
+              <Image src={tagline.logoUrl} alt={tagline.company} width={24} height={24} />
+              {tagline.company}
+            </Link>
+          </div>
+          <div className="text-base text-muted-foreground">
+            {tagline.description}
+          </div>
+        </div>
+
+        <div>
+          <div className="flex items-center gap-4">
             {Object.values(data.contact.social).map((social) => (
-              <CustomLink
+              <Link
                 key={social.name}
                 href={social.url}
-                className="text-foreground transition-colors uppercase text-[clamp(0.75rem,1.5vw,1rem)] tracking-widest font-medium"
+                className="flex items-center gap-1 transition-colors text-base text-muted-foreground hover:text-foreground no-underline"
               >
                 {social.name}
-              </CustomLink>
+                <ArrowUpRight className="size-3" />
+              </Link>
             ))}
           </div>
         </div>

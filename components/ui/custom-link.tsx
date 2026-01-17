@@ -31,7 +31,7 @@ export function CustomLink({
         >
             <span>{children}</span>
             {enabled && (
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 text-muted-foreground group-hover:text-muted-foreground" />
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 text-muted-foreground group-hover:text-muted-foreground text-[clamp(0.875rem,2vw,1rem)]" />
             )}
         </Link>
     );

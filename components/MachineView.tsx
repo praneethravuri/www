@@ -10,7 +10,7 @@ export function MachineView() {
     const content = `# ${data.firstName} ${data.lastName}
 > ${data.title}
 
-${data.about}
+${data.summary}
 
 ---
 
@@ -22,6 +22,8 @@ ${Object.values(data.contact.social).map((social) => `[${social.name}](${social.
 ---
 
 ## Work Experience
+${data.taglines.experienceTagline.tagline}
+
 ${data.work.map((job) => `
 ### ${job.title} @ ${job.company}
 [${job.startDate} - ${job.endDate}]
@@ -32,6 +34,8 @@ ${job.description}
 ---
 
 ## Projects
+${data.taglines.projectsTagline.tagline}
+
 ${data.projects.map((project) => `
 ### ${project.name}
 ${project.description}
@@ -50,6 +54,10 @@ ${data.education.map((edu) => `
 ### ${edu.degree}
 [${edu.institution}](${edu.institutionUrl})
 `).join('')}
+
+---
+
+${data.taglines.footerTagline.tagline}
 `.trim();
 
     const handleCopy = () => {

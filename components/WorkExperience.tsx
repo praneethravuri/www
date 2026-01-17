@@ -1,18 +1,20 @@
 "use client";
 import { data } from "@/app/data/resume";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CustomLink } from "@/components/ui/custom-link";
-import { Fragment } from "react";
+
+const tagline = data.taglines.experienceTagline;
+
 
 export function WorkExperience() {
     return (
         <section id="work-experience" className="py-8 md:py-12 w-full">
             <div className="mx-auto">
-                <div className="flex items-center justify-between mb-5 md:mb-8">
-                    <h2 className="text-foreground font-bold tracking-widest uppercase text-[clamp(1.25rem,5vw,1.5rem)]">
-                        Work Experience
+                <div className="flex items-center justify-between mb-4 md:mb-8">
+                    <h2 className="text-foreground text-base">
+                        Experience
                     </h2>
                     <div>
                         <Link href={data.contact.social.Resume.url} target="_blank">
@@ -23,40 +25,63 @@ export function WorkExperience() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-12 md:gap-16">
-                    {data.work.map((role, index) => (
-                        <Fragment key={index}>
-                            <div className="flex flex-col gap-2">
-                                <div className="flex flex-col gap-1">
-                                    <h3 className="text-[clamp(1rem,2vw,1.125rem)] font-bold text-foreground">
-                                        <CustomLink href={role.companyUrl} className="text-foreground text-[clamp(1rem,2vw,1.125rem)]">
-                                            {role.company}
-                                        </CustomLink>
-                                        <span className="text-foreground font-normal mx-2">
-                                            —
-                                        </span>
-                                        <span className="text-foreground font-medium">
-                                            {role.title}
-                                        </span>
+                <div className="text-base text-muted-foreground mb-4 md:mb-8">
+                    {tagline.tagline}
+                </div>
+
+                <div className="space-y-8 md:space-y-12">
+                    {data.work.map((job, index) => (
+                        <div key={index} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8">
+                            <div className="text-muted-foreground text-[clamp(0.5rem,2vw,0.875rem)]">
+                                {job.startDate} - {job.endDate}
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <h3 className="text-base">
+                                        {job.title} at
                                     </h3>
-                                    <span className="text-base font-normal tracking-wide text-muted-foreground/80">
-                                        {role.startDate} — {role.endDate}
-                                    </span>
+                                    <Link
+                                        href={job.companyUrl}
+                                        target="_blank"
+                                        className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity no-underline"
+                                    >
+                                        <Image
+                                            src={job.logoUrl}
+                                            alt={`${job.company} logo`}
+                                            width={24}
+                                            height={24}
+                                            className=""
+                                        />
+                                        <span className="text-base">
+                                            {job.company}
+                                        </span>
+                                    </Link>
                                 </div>
 
-                                <div className="text-[clamp(0.875rem,2vw,1rem)] text-foreground leading-relaxed max-w-2xl">
-                                    {role.description}
-                                </div>
+                                <p className="text-muted-foreground text-base">
+                                    {job.description}
+                                </p>
 
-                                <div className="flex flex-wrap gap-2 max-w-2xl">
-                                    {role.technologies?.map((tech, techIndex) => (
-                                        <Badge key={techIndex} variant="secondary">
+                                {job.deepInsight && (
+                                    <p className="text-muted-foreground text-base">
+                                        {job.deepInsight}
+                                    </p>
+                                )}
+
+                                <div className="flex flex-wrap gap-2 pt-2">
+                                    {job.technologies.map((tech, techIndex) => (
+                                        <Badge
+                                            key={techIndex}
+                                            variant="secondary"
+                                            className="text-xs"
+                                        >
                                             {tech}
                                         </Badge>
                                     ))}
                                 </div>
                             </div>
-                        </Fragment>
+                        </div>
                     ))}
                 </div>
             </div>

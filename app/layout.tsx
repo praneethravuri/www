@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Playfair_Display, Source_Code_Pro } from "next/font/google";
+import { Space_Grotesk, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
 import { Analytics } from "@vercel/analytics/next"
 
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', display: 'swap' });
+
 const sourceCodePro = Source_Code_Pro({ subsets: ['latin'], variable: '--font-source-code-pro', display: 'swap' });
 
 export const viewport: Viewport = {
@@ -88,7 +88,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${geist.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
+        className={`${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
       >
         <ThemeProvider
           attribute="class"

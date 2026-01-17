@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist);
+  --font-sans: var(--font-space-grotesk);
   --font-mono: var(--font-source-code-pro);
   --font-source-code: var(--font-source-code-pro);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -177,7 +177,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 }
 

@@ -1,14 +1,15 @@
 export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
+    location: "San Francisco, USA",
     url: "https://praneethravuri.com",
     title: "AI Engineer",
-    summary: "AI Engineer building autonomous systems and scalable infrastructure. Expert in Agentic AI, Distributed Systems, Python, Go, and TypeScript. Based in the US.",
+    summary: "AI Engineer building autonomous systems and backend infrastructure. Work spans agentic AI, distributed systems, and production deployments. Python, Go, TypeScript.",
 
     about:
-        "AI engineer focused on building systems that reason, adapt, and operate with minimal human oversight. I started my computer science journey at GRIET in India, where I built a strong foundation in software engineering, and later continued at George Mason University to push deeper into distributed systems and machine learning. Along the way, a reinforcement learning project—training an agent to manage traffic signals using SARSA—shifted how I thought about software. I stopped seeing systems as static pipelines and started treating them as decision-makers. Since then, my work has centered on autonomous agents that sift through noisy data, retain useful context, and act with intent. I enjoy tightening feedback loops, cutting wasted computation, and designing memory systems that help models stay grounded over time. Outside of work, I apply the same thinking to anything that can be optimized—whether that’s a recipe, a workflow, or a race strategy. My goal is simple: reduce busywork so people can focus on problems that actually require human judgment.",
+        "I build AI agents that run in production, not just demos. Started at GRIET in India, then went to George Mason for grad school where I got into distributed systems and ML. A traffic signal RL project got me hooked on software that makes decisions instead of just moving data around. Now I work on agents that handle cybersecurity investigations: pulling context from multiple systems, storing useful history, and taking action when needed. Before that, I built backend services at Lumen that processed millions of network flows per minute. I like systems that stay stable under load and don't waste computation. When I'm not coding, I'm probably optimizing something else. Lately it's been race strategies for F1.",
 
-    tagline: "I build long-running AI systems with memory, guardrails, and infrastructure that does not fall apart once they leave the demo.",
+    tagline: "Building AI systems that work past the demo stage. Memory, safeguards, and infrastructure that holds up in production.",
     keywords: [
         "Agentic AI",
         "Distributed Systems",
@@ -57,9 +58,9 @@ export const data = {
             endDate: "Present",
             location: "United States",
             description:
-                "Designed and built autonomous cybersecurity agents that investigate alerts, correlate signals across systems, and recommend or execute remediation steps. The platform is used to reduce analyst workload while maintaining auditability and control.",
+                "Building AI agents that investigate security alerts, pull data from multiple systems, and recommend fixes. The agents run continuously and need to stay accurate over long sessions without drifting.",
             deepInsight:
-                "A recurring challenge with long-running agents was context drift. To address this, I designed a lightweight memory layer that separates durable knowledge from transient reasoning. Past investigations are summarized using smaller models and stored in structured form, allowing agents to reference history without inheriting outdated assumptions. On the infrastructure side, I optimized our MCP servers to filter and shape data before it ever reached an LLM. This reduced token usage, improved response consistency, and made the system easier to adapt across different enterprise domains.",
+                "Long-running agents lose context fast. I built a memory layer that separates what the agent needs to remember long-term from what it's currently thinking about. Old investigations get summarized and stored so the agent can reference them without carrying forward bad assumptions. I also optimized our MCP servers to filter data before it hits the LLM. This cuts token usage and keeps responses consistent across different client environments.",
             technologies: ["Agentic AI", "Distributed Systems", "MCP", "Python", "Go", "AWS", "Kubernetes", "PostgreSQL", "Neo4j", "Pinecone"]
         },
 
@@ -71,9 +72,9 @@ export const data = {
             endDate: "December 2025",
             location: "United States",
             description:
-                "Built backend services for a real-time network traffic platform handling millions of flows per minute. The system supported continuous ingestion, aggregation, and downstream analysis under strict reliability constraints.",
+                "Built backend services for a network traffic platform that processed millions of flows per minute. Had to keep the system stable under high load while handling continuous data ingestion and analysis.",
             deepInsight:
-                "At sustained high throughput, small design decisions compound quickly. To handle the massive influx of concurrent data, I leveraged Kafka as a high-throughput message queue, decoupling ingestion from downstream processing. I focused on predictable data flow and backpressure handling using Go’s concurrency primitives and strategic partition management. Buffered channels helped absorb short traffic spikes, while careful load balancing kept consumers stable during peak load. The result was stable ingestion with zero observed data loss, even during high-variance traffic events.",
+                "When you're processing that much data, small mistakes get expensive fast. Used Kafka to decouple ingestion from processing so one bottleneck wouldn't bring down the whole pipeline. Spent a lot of time on backpressure handling with Go's channels and making sure partitions stayed balanced. Buffered channels absorbed traffic spikes, and load balancing kept consumers from choking during peak periods. Zero data loss across all deployments.",
             technologies: ["Go", "Kafka", "MongoDB", "Docker", "Kubernetes"]
         },
 
@@ -85,9 +86,9 @@ export const data = {
             endDate: "June 2022",
             location: "India",
             description:
-                "Worked on modernizing a legacy employee portal by redesigning the frontend and improving backend service responsiveness.",
+                "Modernized a legacy employee portal. Redesigned the frontend and sped up backend responses to handle higher loads.",
             deepInsight:
-                "This role made performance tradeoffs tangible. I introduced Redis-based caching to reduce repeated database reads, which cut response times and smoothed load during peak usage. It reinforced a lesson I still carry: frontend polish only matters if the backend can deliver data quickly and reliably.",
+                "Added Redis caching to cut down on repeated database reads. Response times dropped and the system handled peak traffic better. Learned that a polished frontend doesn't matter much if the backend is slow.",
             technologies: ["React", "Node.js", "Redis", "JavaScript"]
         }
     ],
@@ -97,14 +98,14 @@ export const data = {
             name: "Gary",
             url: "https://github.com/praneethravuri/gary",
             description:
-                "An autonomous agent that tailors resumes end to end, producing ready-to-submit PDF or Word documents aligned to specific job descriptions.",
+                "Agent that rewrites resumes to match specific job descriptions. Takes your base resume and outputs a tailored PDF or Word doc.",
             tags: ["Agentic AI", "Context Engineering", "LLMs"],
             problem:
-                "Manually adjusting resumes for each role is repetitive and error-prone. Most existing tools rely on shallow prompt templates and miss role-specific nuance.",
+                "Manually tweaking resumes for every application takes forever and most tools just do basic keyword stuffing.",
             solution:
-                "Gary uses a multi-step agent workflow to extract role requirements, analyze tone and expectations, and rewrite experience bullets accordingly. The system balances keyword alignment with readability, while maintaining a consistent candidate narrative.",
+                "Built a multi-step workflow that extracts what the role actually wants, figures out the tone they're looking for, and rewrites your experience to match. Keeps your narrative consistent while hitting the right keywords.",
             outcome:
-                "Cuts hours of manual editing per application and produces resumes that perform better in both ATS screening and recruiter review.",
+                "Saves hours per application. Resumes get past ATS filters and actually get read by recruiters.",
             techStack: ["Crew AI", "MongoDB", "GCP"]
         },
 
@@ -112,14 +113,14 @@ export const data = {
             name: "Pitstop",
             url: "https://github.com/praneethravuri/pitstop",
             description:
-                "A real-time data bridge that connects live Formula 1 telemetry to an LLM for conversational race analysis.",
+                "Connects live F1 telemetry to an LLM so you can ask questions about the race as it happens.",
             tags: ["MCP", "Streaming Data", "LLMs"],
             problem:
-                "Live F1 data is fragmented across dashboards, making it hard to reason about strategy as the race unfolds.",
+                "Live F1 data is scattered across multiple screens and hard to interpret during a race.",
             solution:
-                "I built an MCP server that streams live telemetry into an LLM-friendly format. The backend handles high-frequency WebSocket updates and selectively forwards relevant signals such as lap times, tire wear, and pit windows.",
+                "Built an MCP server that pulls high-frequency WebSocket updates and formats them for an LLM. Filters out noise and only forwards useful signals like lap times, tire degradation, and pit windows.",
             outcome:
-                "Transforms fast-moving telemetry into an interactive, natural-language view of race strategy.",
+                "Turns raw telemetry into something you can actually talk to. Ask about tire strategy or race pace without switching between dashboards.",
             techStack: ["FastMCP", "HttpX"]
         },
 
@@ -127,14 +128,14 @@ export const data = {
             name: "Smart Traffic",
             url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
             description:
-                "A reinforcement learning simulation that dynamically adjusts traffic light timing to reduce congestion.",
+                "RL simulation that adjusts traffic light timing based on real-time queue lengths.",
             tags: ["Reinforcement Learning", "Python"],
             problem:
-                "Fixed-timer intersections waste capacity by treating all traffic patterns the same.",
+                "Fixed-timer intersections don't adapt to actual traffic and waste time on empty lanes.",
             solution:
-                "I modeled an intersection environment and trained an agent using SARSA. The agent observes queue lengths and learns when to switch lights based on current demand.",
+                "Modeled an intersection and trained an agent with SARSA. It watches queue lengths and learns when to switch lights instead of following a preset schedule.",
             outcome:
-                "The learned policy reduced average wait times compared to static schedules and served as my entry point into applied reinforcement learning.",
+                "Beat static timers on average wait times. This project got me into RL and changed how I think about decision-making systems.",
             techStack: ["NumPy", "Pygame", "Matplotlib"]
         },
 
@@ -142,14 +143,14 @@ export const data = {
             name: "Notstuck",
             url: "https://github.com/praneethravuri/notstuck",
             description:
-                "A hybrid-search RAG assistant for extracting precise answers from large technical documents.",
+                "Hybrid search RAG system for pulling answers out of long technical docs.",
             tags: ["RAG", "Hybrid Search", "TypeScript"],
             problem:
-                "Keyword search struggles with vague queries, while pure semantic search often misses exact technical details.",
+                "Keyword search chokes on vague queries. Semantic search misses exact technical terms. Both suck in different ways.",
             solution:
-                "I built a pipeline that combines vector similarity with keyword filtering to locate relevant sections in large documents, then generates answers with source citations.",
+                "Combined vector similarity with keyword filtering to find the right sections, then generate answers with citations. Gets the best of both approaches.",
             outcome:
-                "Reduces the time spent navigating long PDFs and improves confidence in retrieved answers.",
+                "Cuts down time spent scrolling through PDFs. You get answers with sources instead of hunting through hundreds of pages.",
             techStack: ["React", "Next.js", "PostgreSQL", "Pinecone", "Crew AI"]
         }
     ],

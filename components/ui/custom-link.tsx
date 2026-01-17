@@ -22,7 +22,7 @@ export function CustomLink({
         <Link
             href={href}
             className={cn(
-                "group inline-flex items-center gap-0.5 text-foreground transition-colors hover:text-muted-foreground no-underline text-base md:text-lg",
+                "group inline-flex items-center gap-0.5 text-foreground transition-colors hover:text-muted-foreground no-underline text-[clamp(0.875rem,2vw,1rem)]",
                 className
             )}
             target={isExternal ? "_blank" : undefined}

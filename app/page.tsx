@@ -12,6 +12,8 @@ import { MachineView } from '@/components/MachineView';
 import { NavBar } from '@/components/NavBar';
 
 
+import { Separator } from '@/components/ui/separator';
+
 function MainContent() {
   const { mode } = useViewMode();
 
@@ -25,9 +27,13 @@ function MainContent() {
         {mode === 'human' ? (
           <>
             <Hero />
+            <Separator className="my-12 md:my-16" />
             <About />
+            <Separator className="my-12 md:my-16" />
             <WorkExperience />
+            <Separator className="my-12 md:my-16" />
             <Projects />
+            <Separator className="my-12 md:my-16" />
             <Footer />
           </>
         ) : (

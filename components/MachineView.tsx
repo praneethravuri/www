@@ -31,7 +31,6 @@ ${data.work.map((job) => `
 ### ${job.title} @ ${job.company}
 [${job.startDate} - ${job.endDate}]
 ${job.description}
-[Link](${job.companyUrl})
 `).join('')}
 
 ---
@@ -53,7 +52,7 @@ ${project.description}
 ## Education
 ${data.education.map((edu) => `
 ### ${edu.degree}
-[${edu.institution}](${edu.institutionUrl})
+${edu.institution}
 `).join('')}
 
 ---

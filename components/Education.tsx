@@ -1,9 +1,7 @@
 "use client";
 import { data } from "@/app/data/resume";
-import Link from "next/link";
-import Image from "next/image";
-import { CustomLink } from "@/components/ui/custom-link";
 
+import Image from "next/image";
 export function Education() {
     return (
         <section id="education" className="py-8 md:py-12 w-full px-5 border-b border-dashed">
@@ -22,11 +20,7 @@ export function Education() {
                     {data.education.map((edu, index) => (
                         <div key={index} className="flex gap-4 items-center">
                             {edu.logoUrl && (
-                                <Link
-                                    href={edu.institutionUrl}
-                                    target="_blank"
-                                    className="shrink-0 text-muted-foreground hover:text-foreground"
-                                >
+                                <div className="shrink-0 text-muted-foreground">
                                     <Image
                                         src={edu.logoUrl}
                                         alt={`${edu.institution} logo`}
@@ -34,17 +28,14 @@ export function Education() {
                                         height={48}
                                         className="rounded-md object-cover border"
                                     />
-                                </Link>
+                                </div>
                             )}
 
                             <div className="flex flex-col gap-1">
                                 <h3 className="text-lg font-semibold">
-                                    <CustomLink
-                                        href={edu.institutionUrl}
-                                        className="font-semibold text-lg"
-                                    >
+                                    <span className="font-semibold text-lg">
                                         {edu.institution}
-                                    </CustomLink>
+                                    </span>
                                 </h3>
                                 <p className="text-base text-muted-foreground">
                                     {edu.degree}

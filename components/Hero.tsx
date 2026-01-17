@@ -4,8 +4,6 @@ import { CustomLink } from "@/components/ui/custom-link";
 
 import { data } from "@/app/data/resume";
 import Image from "next/image";
-import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
 const tagline = data.taglines.heroTagline;
@@ -17,10 +15,15 @@ export function Hero() {
       {/* Content Section */}
       <div className="flex flex-col gap-3">
         <div className="relative w-fit">
-          <Avatar className="size-20 rounded-xl">
-            <AvatarImage src="/hero.jpeg" alt={data.firstName} className="object-cover" />
-            <AvatarFallback>{data.firstName[0]}</AvatarFallback>
-          </Avatar>
+          <div className="size-20 rounded-xl overflow-hidden relative">
+            <Image
+              src="/hero.jpeg"
+              alt={data.firstName}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           <span className="absolute bottom-[-4px] right-[-4px] size-4 rounded-full bg-green-600 border-2 border-background shadow-sm"></span>
         </div>
         <div className="flex flex-col gap-1">
@@ -31,25 +34,21 @@ export function Hero() {
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <h3 className="text-lg font-semibold">
+            <h2 className="text-lg font-semibold flex items-center gap-2">
               {tagline.role} at
-            </h3>
-            <Link
-              href={tagline.companyUrl}
-              target="_blank"
-              className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity no-underline"
-            >
-              <Image
-                src={tagline.logoUrl}
-                alt={`${tagline.company} logo`}
-                width={24}
-                height={24}
-                className=""
-              />
-              <span className="text-lg font-semibold">
-                {tagline.company}
+              <span className="inline-flex items-center gap-2">
+                <Image
+                  src={tagline.logoUrl}
+                  alt={`${tagline.company} logo`}
+                  width={24}
+                  height={24}
+                  className=""
+                />
+                <span className="text-lg font-semibold">
+                  {tagline.company}
+                </span>
               </span>
-            </Link>
+            </h2>
           </div>
 
           <div>

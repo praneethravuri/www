@@ -3,7 +3,7 @@
 import { data } from "@/app/data/resume";
 import { useViewMode } from "@/components/providers/view-mode-provider";
 import { Button } from "@/components/ui/button";
-import { Separator } from "./ui/separator";
+
 import Link from "next/link";
 
 export function NavBar() {

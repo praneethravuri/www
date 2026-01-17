@@ -41,11 +41,7 @@ export function WorkExperience() {
                                     <h3 className="text-lg font-semibold">
                                         {job.title} at
                                     </h3>
-                                    <Link
-                                        href={job.companyUrl}
-                                        target="_blank"
-                                        className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity no-underline"
-                                    >
+                                    <div className="inline-flex items-center gap-2">
                                         <Image
                                             src={job.logoUrl}
                                             alt={`${job.company} logo`}
@@ -56,7 +52,7 @@ export function WorkExperience() {
                                         <span className="text-lg font-semibold">
                                             {job.company}
                                         </span>
-                                    </Link>
+                                    </div>
                                 </div>
 
                                 <p className="text-muted-foreground text-base">

@@ -26,7 +26,6 @@ ${data.work.map((job) => `
 - **Period**: ${job.startDate} - ${job.endDate}
 - **Location**: ${job.location}
 - **Description**: ${job.description}
-- **Link**: ${job.companyUrl}
 `).join('')}
 
 ## Projects
@@ -42,7 +41,6 @@ ${data.projects.map((project) => `
 ${data.education.map((edu) => `
 ### ${edu.degree}
 - **Institution**: ${edu.institution}
-- **Link**: ${edu.institutionUrl}
 `).join('')}
   `.trim();
 

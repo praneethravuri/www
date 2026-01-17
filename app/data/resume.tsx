@@ -10,7 +10,6 @@ export const data = {
         heroTagline: {
             role: "AI Engineer",
             company: "Tuskira",
-            companyUrl: "https://tuskira.ai",
             logoUrl: "/tuskira_logo.jpeg",
             description: "Agentic AI and Scalable Systems. Building and researching AI agents for cybersecurity",
         },
@@ -108,7 +107,6 @@ export const data = {
     work: [
         {
             company: "Tuskira",
-            companyUrl: "https://tuskira.ai",
             title: "AI Engineer",
             startDate: "Dec 2025",
             endDate: "Present",
@@ -121,7 +119,6 @@ export const data = {
 
         {
             company: "Lumen",
-            companyUrl: "https://lumen.com",
             title: "Software Engineer",
             startDate: "Jul 2024",
             endDate: "Dec 2025",
@@ -134,7 +131,6 @@ export const data = {
 
         {
             company: "ADP",
-            companyUrl: "https://adp.com",
             title: "Full Stack Engineer Intern",
             startDate: "Jan 2022",
             endDate: "Jun 2022",
@@ -187,13 +183,11 @@ export const data = {
     education: [
         {
             institution: "George Mason University",
-            institutionUrl: "https://www2.gmu.edu/",
             degree: "Master’s in Computer Science",
             logoUrl: "/gmu.jpeg"
         },
         {
             institution: "GRIET",
-            institutionUrl: "https://www.griet.ac.in/",
             degree: "Bachelor’s in Computer Science",
             logoUrl: "/griet.jpeg"
         }

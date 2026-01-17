@@ -72,7 +72,7 @@ ${data.taglines.footerTagline.tagline}
             <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-0 top-0 z-10 h-8 w-8 hover:bg-transparent text-muted-foreground"
+                className="absolute right-2 -top-2 z-10 h-8 w-8 hover:bg-transparent text-muted-foreground"
                 onClick={handleCopy}
             >
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}

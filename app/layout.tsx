@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Playfair_Display, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -9,6 +9,15 @@ import { Analytics } from "@vercel/analytics/next"
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 const sourceCodePro = Source_Code_Pro({ subsets: ['latin'], variable: '--font-source-code-pro', display: 'swap' });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(data.url),
@@ -34,7 +43,7 @@ export const metadata: Metadata = {
     siteName: `${data.firstName} ${data.lastName}`,
     images: [
       {
-        url: "/og-image.png", // Assuming an OG image might exist or will be added. 
+        url: "/hero.jpeg",
         width: 1200,
         height: 630,
         alt: `${data.firstName} ${data.lastName}`,
@@ -60,6 +69,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: data.url,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  verification: {
+    google: "google-site-verification=...",
+    yandex: "yandex-verification=...",
   },
 };
 

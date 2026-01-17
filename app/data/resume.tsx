@@ -12,7 +12,7 @@ export const data = {
             company: "Tuskira",
             companyUrl: "https://tuskira.ai",
             logoUrl: "/tuskira_logo.jpeg",
-            description: "Building and researching AI agents for cybersecurity",
+            description: "Agentic AI and Scalable Systems. Building and researching AI agents for cybersecurity",
         },
         experienceTagline: {
             tagline: "From high-throughput data pipelines to autonomous AI agents, building systems that stay reliable under load."
@@ -53,6 +53,19 @@ export const data = {
         "Node.js",
         "RAG",
         "Reinforcement Learning",
+        "Cybersecurity",
+        "Autonomous Agents",
+        "High-Throughput Systems",
+        "Traffic Analysis",
+        "Event-Driven Architecture",
+        "Backpressure Handling",
+        "CrewAI",
+        "WebSockets",
+        "FastMCP",
+        "Hybrid Search",
+        "Semantic Search",
+        "Generative AI",
+        "System Design",
     ],
 
     contact: {

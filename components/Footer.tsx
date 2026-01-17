@@ -1,6 +1,6 @@
 import { data } from "@/app/data/resume";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+
+import { CustomLink } from "@/components/ui/custom-link";
 
 const tagline = data.taglines.footerTagline.tagline;
 
@@ -13,20 +13,19 @@ export function Footer() {
       {/* Content Section */}
       <div className="flex flex-col gap-6">
         <div className="w-full flex flex-col items-start gap-6">
-        <div>
-          <div className="flex items-center gap-4">
-            {Object.values(data.contact.social).map((social) => (
-              <Link
-                key={social.name}
-                href={social.url}
-                className="flex items-center gap-1 transition-colors text-base text-muted-foreground hover:text-foreground no-underline"
-              >
-                {social.name}
-                <ArrowUpRight className="size-3" />
-              </Link>
-            ))}
+          <div>
+            <div className="flex items-center gap-4">
+              {Object.values(data.contact.social).map((social) => (
+                <CustomLink
+                  key={social.name}
+                  href={social.url}
+                  className="text-base text-muted-foreground hover:text-foreground"
+                >
+                  {social.name}
+                </CustomLink>
+              ))}
+            </div>
           </div>
-        </div>
 
           <div className="flex flex-col gap-2 text-sm text-muted-foreground mt-2">
             <p>

@@ -32,7 +32,7 @@ export function WorkExperience() {
                 <div className="space-y-8 md:space-y-12">
                     {data.work.map((job, index) => (
                         <div key={index} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8">
-                            <div className="text-muted-foreground text-[clamp(0.5rem,2vw,0.875rem)]">
+                            <div className="text-muted-foreground text-base">
                                 {job.startDate} - {job.endDate}
                             </div>
 

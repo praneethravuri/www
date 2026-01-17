@@ -6,13 +6,13 @@ export const data = {
     title: "AI Engineer",
     summary: "AI Engineer building autonomous agents and distributed systems. Focused on production-grade agentic AI, backend infrastructure, and high-throughput data pipelines.",
 
-    taglines : {
+    taglines: {
         heroTagline: {
-        role: "AI Engineer",
-        company: "Tuskira",
-        companyUrl: "https://tuskira.ai",
-        logoUrl: "/tuskira_logo.jpeg",
-        description: "Building and researching AI agents for cybersecurity",
+            role: "AI Engineer",
+            company: "Tuskira",
+            companyUrl: "https://tuskira.ai",
+            logoUrl: "/tuskira_logo.jpeg",
+            description: "Building and researching AI agents for cybersecurity",
         },
         experienceTagline: {
             tagline: "From high-throughput data pipelines to autonomous AI agents, building systems that stay reliable under load."
@@ -22,8 +22,11 @@ export const data = {
         },
         footerTagline: {
             tagline: "Let's put AI to work."
+        },
+        educationTagline: {
+            tagline: "Foundations of my technical journey."
         }
-        
+
     },
     keywords: [
         "Agentic AI",
@@ -157,12 +160,14 @@ export const data = {
         {
             institution: "George Mason University",
             institutionUrl: "https://www2.gmu.edu/",
-            degree: "Master’s in Computer Science"
+            degree: "Master’s in Computer Science",
+            logoUrl: "/gmu.jpeg"
         },
         {
             institution: "GRIET",
             institutionUrl: "https://www.griet.ac.in/",
-            degree: "Bachelor’s in Computer Science"
+            degree: "Bachelor’s in Computer Science",
+            logoUrl: "/griet.jpeg"
         }
     ]
 };

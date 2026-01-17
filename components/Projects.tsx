@@ -35,7 +35,7 @@ export function Projects() {
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <h3 className="text-lg font-semibold text-foreground">
-                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2">
+                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-lg font-semibold">
                                             {project.name}
                                         </CustomLink>
                                     </h3>

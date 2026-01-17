@@ -1,6 +1,6 @@
 "use client";
-import { ArrowUpRight } from "lucide-react";
 
+import { CustomLink } from "@/components/ui/custom-link";
 
 import { data } from "@/app/data/resume";
 import Image from "next/image";
@@ -60,14 +60,13 @@ export function Hero() {
           <div>
             <div className="flex items-center gap-4">
               {Object.values(data.contact.social).map((social) => (
-                <Link
+                <CustomLink
                   key={social.name}
                   href={social.url}
-                  className="flex items-center gap-1 transition-colors text-base text-muted-foreground hover:text-foreground no-underline"
+                  className="text-base text-muted-foreground hover:text-foreground"
                 >
                   {social.name}
-                  <ArrowUpRight className="size-3" />
-                </Link>
+                </CustomLink>
               ))}
             </div>
           </div>

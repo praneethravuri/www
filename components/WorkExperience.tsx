@@ -13,7 +13,7 @@ export function WorkExperience() {
         <section id="work-experience" className="py-8 md:py-12 w-full">
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-4 md:mb-8">
-                    <h2 className="text-foreground text-base">
+                    <h2 className="text-foreground text-xl md:text-2xl font-semibold">
                         Experience
                     </h2>
                     <div>
@@ -38,7 +38,7 @@ export function WorkExperience() {
 
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
-                                    <h3 className="text-base">
+                                    <h3 className="text-lg font-semibold">
                                         {job.title} at
                                     </h3>
                                     <Link
@@ -53,7 +53,7 @@ export function WorkExperience() {
                                             height={24}
                                             className=""
                                         />
-                                        <span className="text-base">
+                                        <span className="text-lg font-semibold">
                                             {job.company}
                                         </span>
                                     </Link>
@@ -63,11 +63,7 @@ export function WorkExperience() {
                                     {job.description}
                                 </p>
 
-                                {job.deepInsight && (
-                                    <p className="text-muted-foreground text-base">
-                                        {job.deepInsight}
-                                    </p>
-                                )}
+
 
                                 <div className="flex flex-wrap gap-2 pt-2">
                                     {job.technologies.map((tech, techIndex) => (

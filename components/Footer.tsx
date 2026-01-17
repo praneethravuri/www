@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer id="contact" className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 mt-12 md:mt-20 border-t">
 
-      <p>{tagline}</p>
+      <p className="text-foreground text-xl md:text-2xl font-semibold">{tagline}</p>
 
       {/* Content Section */}
       <div className="flex flex-col gap-6">
@@ -28,12 +28,9 @@ export function Footer() {
           </div>
         </div>
 
-          <div className="flex flex-col gap-2 text-base text-muted-foreground mt-2">
+          <div className="flex flex-col gap-2 text-sm text-muted-foreground mt-2">
             <p>
-              &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}. All rights reserved.
-            </p>
-            <p className="text-base text-muted-foreground">
-              Built with React, Next.js, Shadcn UI, Magic UI, Tailwind CSS, TypeScript
+              &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}
             </p>
           </div>
         </div>

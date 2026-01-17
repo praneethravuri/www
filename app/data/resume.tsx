@@ -4,10 +4,7 @@ export const data = {
     location: "San Francisco, USA",
     url: "https://praneethravuri.com",
     title: "AI Engineer",
-    summary: "AI Engineer building autonomous agents and distributed systems. Focused on production-grade agentic AI, backend infrastructure, and high-throughput data pipelines. Python, Go, TypeScript.",
-
-    about:
-        "I build production AI agents and scalable backend systems. Studied CS at GRIET and George Mason, where a reinforcement learning project shifted my focus to autonomous decision-making systems. Currently working on cybersecurity agents that investigate alerts, query multiple data sources, and maintain context across long sessions. Previously built backend infrastructure at Lumen processing millions of network flows per minute with Kafka and Go. I optimize for reliability under load and efficient resource usage.",
+    summary: "AI Engineer building autonomous agents and distributed systems. Focused on production-grade agentic AI, backend infrastructure, and high-throughput data pipelines.",
 
     taglines : {
         heroTagline: {

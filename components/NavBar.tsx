@@ -27,21 +27,21 @@ export function NavBar() {
                     <Separator />
                 </div>
 
-                {/* Right: Machine/Human Toggle */}
+                {/* Right: View Mode Toggle */}
                 <div className="flex items-center gap-2">
                     <Button
                         variant="ghost"
                         size="sm"
                         onClick={toggleMode}
-                        className="font-source-code"
+                        className="text-sm"
                     >
                         {mode === 'human' ? (
                             <>
-                                <span className="inline font-source-code">MACHINE</span>
+                                <span className="inline">Machine</span>
                             </>
                         ) : (
                             <>
-                                <span className="inline font-source-code">HUMAN</span>
+                                <span className="inline">Human</span>
                             </>
                         )}
                     </Button>

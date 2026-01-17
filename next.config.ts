@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   experimental: {
-    optimizePackageImports: ["lucide-react", "react-icons", "motion"],
+    optimizePackageImports: ["lucide-react"],
   },
   images: {
     qualities: [75, 100],

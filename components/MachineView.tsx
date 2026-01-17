@@ -8,9 +8,9 @@ export function MachineView() {
 
     // Generate markdown content
     const content = `# ${data.firstName} ${data.lastName}
-> ${data.title}
-
-${data.summary}
+> ${data.location}
+> ${data.taglines.heroTagline.role} at ${data.taglines.heroTagline.company}
+> ${data.taglines.heroTagline.description}
 
 ---
 
@@ -41,9 +41,7 @@ ${data.projects.map((project) => `
 ${project.description}
 
 - Tech Stack: ${project.techStack.join(', ')}
-- Problem: ${project.problem}
-- Solution: ${project.solution}
-- Outcome: ${project.outcome}
+
 [Link](${project.url})
 `).join('')}
 

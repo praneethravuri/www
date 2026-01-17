@@ -13,8 +13,8 @@ export function Projects() {
         <section id="projects" className="py-8 md:py-12 w-full">
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-4 md:mb-8">
-                    <h2 className="text-foreground text-base">
-                        Work
+                    <h2 className="text-foreground text-xl md:text-2xl font-semibold">
+                        Projects
                     </h2>
                     <div>
                         <Link href={data.contact.social.GitHub.url} target="_blank">
@@ -34,8 +34,8 @@ export function Projects() {
                         <Fragment key={index}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                    <h3 className="text-base font-bold text-foreground">
-                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-base">
+                                    <h3 className="text-lg font-semibold text-foreground">
+                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2">
                                             {project.name}
                                         </CustomLink>
                                     </h3>

@@ -3,15 +3,14 @@ import { data } from "@/app/data/resume";
 export function GET() {
     const markdown = `
 # ${data.firstName} ${data.lastName}
-> ${data.title}
-
-## Summary
-${data.summary}
+> ${data.location}
+> ${data.taglines.heroTagline.role} at ${data.taglines.heroTagline.company}
+> ${data.taglines.heroTagline.description}
 
 ## Skills
 - ${data.keywords.join(', ')}
 
-${data.about}
+
 
 ## Contact
 - Email: ${data.contact.email}
@@ -32,9 +31,7 @@ ${data.projects.map((project) => `
 ### ${project.name}
 - **Description**: ${project.description}
 - **Tech Stack**: ${project.techStack.join(', ')}
-- **Problem**: ${project.problem}
-- **Solution**: ${project.solution}
-- **Outcome**: ${project.outcome}
+
 - **Link**: ${project.url}
 `).join('')}
 

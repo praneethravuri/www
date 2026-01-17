@@ -38,11 +38,11 @@ export function Footer() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-2 text-muted-foreground text-sm mt-2">
+          <div className="flex flex-col gap-2 text-[clamp(0.875rem,2vw,1rem)] text-muted-foreground mt-2">
             <p>
               &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}. All rights reserved.
             </p>
-            <p className="text-xs opacity-70">
+            <p className="text-[clamp(0.875rem,2vw,1rem)] text-muted-foreground">
               Built with React, Next.js, Shadcn UI, Magic UI, Tailwind CSS, TypeScript
             </p>
           </div>

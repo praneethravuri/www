@@ -6,6 +6,7 @@ import { data } from "@/app/data/resume";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 
 const tagline = data.taglines.heroTagline;
 
@@ -14,7 +15,7 @@ export function Hero() {
     <section className="w-full mx-auto flex flex-col gap-8 py-1 md:py-3 px-5 border-b border-dashed">
 
       {/* Content Section */}
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-3">
         <div className="relative w-fit">
           <Avatar className="size-20 rounded-xl">
             <AvatarImage src="/hero.jpeg" alt={data.firstName} className="object-cover" />
@@ -75,6 +76,14 @@ export function Hero() {
             <p className="text-base text-muted-foreground">
               {data.location}
             </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {data.skills.map((skill, index) => (
+              <Badge key={index} variant="secondary" className="text-xs">
+                {skill}
+              </Badge>
+            ))}
           </div>
         </div>
       </div>

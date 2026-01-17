@@ -68,6 +68,21 @@ export const data = {
         "System Design",
     ],
 
+    skills: [
+        "Python",
+        "Go",
+        "TypeScript",
+        "React",
+        "AWS",
+        "GCP",
+        "Kubernetes",
+        "Docker",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Neo4j",
+    ],
+
     contact: {
         email: "ravpraneeth@gmail.com",
         social: {

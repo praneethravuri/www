@@ -8,6 +8,9 @@ export function GET() {
 > ${data.taglines.heroTagline.description}
 
 ## Skills
+- ${data.skills.join(', ')}
+
+## Keywords
 - ${data.keywords.join(', ')}
 
 

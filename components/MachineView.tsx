@@ -12,6 +12,9 @@ export function MachineView() {
 > ${data.taglines.heroTagline.role} at ${data.taglines.heroTagline.company}
 > ${data.taglines.heroTagline.description}
 
+## Skills
+${data.skills.join(', ')}
+
 ---
 
 ## Contact
@@ -75,7 +78,7 @@ ${data.taglines.footerTagline.tagline}
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             </Button>
 
-            <pre className="whitespace-pre-wrap font-source-code text-sm leading-relaxed overflow-x-auto rounded-md text-foreground/80">
+            <pre className="whitespace-pre-wrap font-source-code text-sm leading-relaxed overflow-x-auto rounded-md text-foreground/80 px-5">
                 {content}
             </pre>
         </div>

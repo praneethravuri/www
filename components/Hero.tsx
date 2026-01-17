@@ -11,7 +11,7 @@ const tagline = data.taglines.heroTagline;
 
 export function Hero() {
   return (
-    <section className="w-full mx-auto flex flex-col gap-8 py-1 md:py-3">
+    <section className="w-full mx-auto flex flex-col gap-8 py-1 md:py-3 px-5 border-b border-dashed">
 
       {/* Content Section */}
       <div className="flex flex-col gap-6">

@@ -14,18 +14,18 @@ export function NavBar() {
     };
 
     return (
-        <nav className="w-full">
-            <div className="flex h-16 items-center w-full mx-auto justify-between gap-4">
+        <nav className="w-full border-b border-dashed">
+            <div className="flex h-16 items-center w-full mx-auto justify-between gap-4 px-5">
                 {/* Left: Name */}
                 <div className="flex items-center">
                     <Link href="/" className="text-base font-bold tracking-tight hover:text-muted-foreground transition-colors no-underline hover:no-underline">
-                        {data.firstName[0]}{data.lastName[0].toLowerCase()}.
+                        ప్రణీత్
                     </Link>
                 </div>
 
-                <div className="flex-1 px-4">
+                {/* <div className="flex-1 px-4">
                     <Separator />
-                </div>
+                </div> */}
 
                 {/* Right: View Mode Toggle */}
                 <div className="flex items-center gap-2">

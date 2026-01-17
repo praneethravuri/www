@@ -17,7 +17,7 @@ function MainContent() {
 
   return (
     <main className={cn(
-      "flex flex-col min-h-screen text-foreground selection:bg-brand/15 selection:text-brand",
+      "flex flex-col min-h-screen text-foreground selection:bg-brand/15 selection:text-brand border border-dashed",
       mode === 'human'
     )}>
       <NavBar />

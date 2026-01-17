@@ -88,7 +88,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${geist.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-2xl mx-auto px-4 sm:px-8`}
+        className={`${geist.variable} ${playfair.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
       >
         <ThemeProvider
           attribute="class"

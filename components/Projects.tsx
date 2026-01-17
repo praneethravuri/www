@@ -10,7 +10,7 @@ const tagline = data.taglines.projectsTagline;
 
 export function Projects() {
     return (
-        <section id="projects" className="py-8 md:py-12 w-full">
+        <section id="projects" className="py-8 md:py-12 w-full px-5 border-b border-dashed">
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-4 md:mb-8">
                     <h2 className="text-foreground text-xl md:text-2xl font-semibold">

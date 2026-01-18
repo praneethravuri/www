@@ -11,7 +11,7 @@ export const data = {
             role: "AI Engineer",
             company: "Tuskira",
             logoUrl: "/tuskira_logo.webp",
-            description: "Agentic AI and Scalable Systems. Building and researching AI agents for cybersecurity",
+            description: "Agentic AI and Scalable Systems. Building and researching AI agents for cybersecurity.",
         },
         experienceTagline: {
             tagline: "From high-throughput data pipelines to autonomous AI agents, building systems that stay reliable under load."
@@ -156,7 +156,7 @@ export const data = {
             name: "Pitstop",
             url: "https://github.com/praneethravuri/pitstop",
             description:
-                "MCP server connecting live F1 telemetry to LLMs for natural language race queries. Processes high-frequency WebSocket streams with FastMCP and HttpX, filtering noise to extract meaningful signals like lap times, tire degradation, and pit windows. Enables conversational queries about race strategy and pace without switching dashboards.",
+                "MCP server connecting live F1 telemetry to LLMs for natural language race queries. Processes high-frequency data streams with FastMCP and HttpX, filtering noise to extract meaningful signals like lap times, tire degradation, and pit windows. Enables conversational queries about race strategy and pace without switching dashboards.",
             tags: ["MCP", "Streaming Data", "LLMs"],
             techStack: ["FastMCP", "HttpX"]
         },

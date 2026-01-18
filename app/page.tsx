@@ -1,15 +1,36 @@
 "use client";
 
-
+import dynamic from 'next/dynamic';
 import { cn } from '@/lib/utils';
 import { Hero } from '@/components/Hero';
-import { WorkExperience } from '@/components/WorkExperience';
-import { Projects } from '@/components/Projects';
-import { Education } from '@/components/Education';
-import { Footer } from '@/components/Footer';
 import { ViewModeProvider, useViewMode } from '@/components/providers/view-mode-provider';
-import { MachineView } from '@/components/MachineView';
 import { NavBar } from '@/components/NavBar';
+
+// Lazy load below-fold components for better performance
+const WorkExperience = dynamic(
+  () => import('@/components/WorkExperience').then(mod => ({ default: mod.WorkExperience })),
+  { loading: () => <div className="py-8 md:py-12 w-full px-5 border-b border-dashed animate-pulse h-64" /> }
+);
+
+const Projects = dynamic(
+  () => import('@/components/Projects').then(mod => ({ default: mod.Projects })),
+  { loading: () => <div className="py-8 md:py-12 w-full px-5 border-b border-dashed animate-pulse h-64" /> }
+);
+
+const Education = dynamic(
+  () => import('@/components/Education').then(mod => ({ default: mod.Education })),
+  { loading: () => <div className="py-8 md:py-12 w-full px-5 border-b border-dashed animate-pulse h-64" /> }
+);
+
+const MachineView = dynamic(
+  () => import('@/components/MachineView').then(mod => ({ default: mod.MachineView })),
+  { loading: () => <div className="py-8 md:py-12 w-full px-5 border-b border-dashed animate-pulse h-64" /> }
+);
+
+const Footer = dynamic(
+  () => import('@/components/Footer').then(mod => ({ default: mod.Footer })),
+  { loading: () => <div className="py-8 w-full px-5" /> }
+);
 
 
 function MainContent() {

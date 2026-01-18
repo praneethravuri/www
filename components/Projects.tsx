@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Button } from "@/components/ui/button";
 import { CustomLink } from "@/components/ui/custom-link";
-import { Fragment } from "react";
 
 const tagline = data.taglines.projectsTagline;
 
@@ -31,28 +30,26 @@ export function Projects() {
 
                 <div className="flex flex-col gap-12 md:gap-16">
                     {data.projects.map((project, index) => (
-                        <Fragment key={index}>
-                            <div className="flex flex-col gap-2">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                    <h3 className="text-lg font-semibold text-foreground">
-                                        <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-lg font-semibold">
-                                            {project.name}
-                                        </CustomLink>
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.techStack.map((tech, techIndex) => (
-                                            <Badge key={techIndex} variant="secondary" className="text-xs">
-                                                {tech}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="text-base text-muted-foreground">
-                                    {project.description}
+                        <article key={index} className="flex flex-col gap-2">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                                <h3 className="text-lg font-semibold text-foreground">
+                                    <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-2 text-lg font-semibold">
+                                        {project.name}
+                                    </CustomLink>
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.techStack.map((tech, techIndex) => (
+                                        <Badge key={techIndex} variant="secondary" className="text-xs">
+                                            {tech}
+                                        </Badge>
+                                    ))}
                                 </div>
                             </div>
-                        </Fragment>
+
+                            <div className="text-base text-muted-foreground">
+                                {project.description}
+                            </div>
+                        </article>
                     ))}
                 </div>
             </div>

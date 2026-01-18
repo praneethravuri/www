@@ -18,7 +18,7 @@ export function Education() {
 
                 <div className="flex flex-col gap-8 md:gap-12">
                     {data.education.map((edu, index) => (
-                        <div key={index} className="flex gap-4 items-center">
+                        <article key={index} className="flex gap-4 items-center">
                             {edu.logoUrl && (
                                 <div className="shrink-0 text-muted-foreground">
                                     <Image
@@ -41,7 +41,7 @@ export function Education() {
                                     {edu.degree}
                                 </p>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

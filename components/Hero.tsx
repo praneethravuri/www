@@ -17,7 +17,7 @@ export function Hero() {
         <div className="relative w-fit">
           <div className="size-20 rounded-xl overflow-hidden relative">
             <Image
-              src="/hero.jpeg"
+              src="/hero.webp"
               alt={data.firstName}
               fill
               className="object-cover"

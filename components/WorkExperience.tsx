@@ -31,10 +31,10 @@ export function WorkExperience() {
 
                 <div className="space-y-8 md:space-y-12">
                     {data.work.map((job, index) => (
-                        <div key={index} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8">
-                            <div className="text-muted-foreground text-base">
+                        <article key={index} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8">
+                            <time className="text-muted-foreground text-base">
                                 {job.startDate} - {job.endDate}
-                            </div>
+                            </time>
 
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ export function WorkExperience() {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

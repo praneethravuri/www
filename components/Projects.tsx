@@ -28,10 +28,10 @@ export function Projects() {
                     {tagline.tagline}
                 </div>
 
-                <div className="flex flex-col gap-12 md:gap-16">
+                <div className="flex flex-col gap-8 md:gap-12">
                     {data.projects.map((project, index) => (
-                        <article key={index} className="flex flex-col gap-1">
-                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                        <article key={index} className="flex flex-col gap-3">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                 <h3 className="text-lg font-semibold text-foreground">
                                     <CustomLink href={project.url} className="text-foreground inline-flex items-center gap-1 text-lg font-semibold">
                                         {project.name}

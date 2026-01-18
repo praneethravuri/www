@@ -37,11 +37,11 @@ export function WorkExperience() {
                             </time>
 
                             <div className="space-y-3">
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-1">
                                     <h3 className="text-lg font-semibold">
                                         {job.title} at
                                     </h3>
-                                    <div className="inline-flex items-center gap-2">
+                                    <div className="inline-flex items-center gap-1">
                                         <Image
                                             src={job.logoUrl}
                                             alt={`${job.company} logo`}
@@ -61,7 +61,7 @@ export function WorkExperience() {
 
 
 
-                                <div className="flex flex-wrap gap-2 pt-2">
+                                <div className="flex flex-wrap gap-1 pt-2">
                                     {job.technologies.map((tech, techIndex) => (
                                         <Badge
                                             key={techIndex}

@@ -18,7 +18,7 @@ export function NavBar() {
             <div className="flex h-16 items-center w-full mx-auto justify-between gap-4 px-5">
                 {/* Left: Name */}
                 <div className="flex items-center">
-                    <Link href="/" className="text-base font-bold tracking-tight hover:text-muted-foreground transition-colors no-underline hover:no-underline">
+                    <Link href="/" className="text-base font-bold tracking-tight hover:text-brand transition-colors no-underline hover:no-underline">
                         ప్రణీత్
                     </Link>
                 </div>
@@ -28,7 +28,7 @@ export function NavBar() {
                 </div> */}
 
                 {/* Right: View Mode Toggle */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                     <Button
                         variant="ghost"
                         size="sm"

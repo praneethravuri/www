@@ -33,10 +33,10 @@ export function Hero() {
         </div>
 
         <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <h2 className="text-lg font-semibold flex items-center gap-2">
-              {tagline.role} at
-              <span className="inline-flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <h2 className="text-lg font-semibold flex items-center gap-1">
+              <span className="">{tagline.role}</span> at
+              <span className="inline-flex items-center gap-1">
                 <Image
                   src={tagline.logoUrl}
                   alt={`${tagline.company} logo`}

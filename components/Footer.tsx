@@ -19,7 +19,7 @@ export function Footer() {
                 <CustomLink
                   key={social.name}
                   href={social.url}
-                  className="text-base text-muted-foreground hover:text-foreground"
+                  className="text-base text-muted-foreground hover:text-brand"
                 >
                   {social.name}
                 </CustomLink>
@@ -27,7 +27,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-sm text-muted-foreground mt-2">
+          <div className="flex flex-col gap-1 text-sm text-muted-foreground mt-2">
             <p>
               &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}
             </p>

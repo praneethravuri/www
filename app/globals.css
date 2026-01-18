@@ -116,7 +116,7 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --swiss-red: oklch(56.26% 0.219 9.71);
-  --brand: dodgerblue;
+  --brand: oklch(0.6 0.2 250);
   /* Darker blue for light mode contrast */
   --color-1: oklch(66.2% 0.225 25.9);
   --color-2: oklch(60.4% 0.26 302);
@@ -158,7 +158,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
   --swiss-red: oklch(56.26% 0.219 9.71);
-  --brand: dodgerblue;
+  --brand: oklch(0.6 0.2 250);
   --color-1: oklch(66.2% 0.225 25.9);
   --color-2: oklch(60.4% 0.26 302);
   --color-3: oklch(69.6% 0.165 251);
@@ -172,12 +172,16 @@
   }
 
   a {
-    @apply underline underline-offset-4 decoration-primary/50 hover:decoration-primary;
+    @apply underline underline-offset-4 decoration-brand/50 hover:decoration-brand;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
   }
 }
 

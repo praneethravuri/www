@@ -19,7 +19,7 @@ export function Footer() {
                 <CustomLink
                   key={social.name}
                   href={social.url}
-                  className="text-base text-muted-foreground hover:text-brand"
+                  className="text-base text-muted-foreground hover:text-foreground"
                 >
                   {social.name}
                 </CustomLink>

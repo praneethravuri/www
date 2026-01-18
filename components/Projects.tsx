@@ -13,7 +13,7 @@ export function Projects() {
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-4 md:mb-8">
                     <h2 className="text-foreground text-xl md:text-2xl font-semibold">
-                        Projects
+                        Work
                     </h2>
                     <div>
                         <Link href={data.contact.social.GitHub.url} target="_blank">

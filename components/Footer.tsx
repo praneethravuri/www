@@ -1,12 +1,12 @@
 import { data } from "@/app/data/resume";
 
-import { CustomLink } from "@/components/ui/custom-link";
+import { ContactLinks } from "@/components/ContactLinks";
 
 const tagline = data.taglines.footerTagline.tagline;
 
 export function Footer() {
   return (
-    <footer id="contact" className="py-8 md:py-12 w-full px-5 border-b border-dashed">
+    <footer id="footer" className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5 border-b border-dashed">
 
       <p className="text-foreground text-xl md:text-2xl font-semibold">{tagline}</p>
 
@@ -15,21 +15,16 @@ export function Footer() {
         <div className="w-full flex flex-col items-start gap-6">
           <div>
             <div className="flex items-center gap-4">
-              {Object.values(data.contact.social).map((social) => (
-                <CustomLink
-                  key={social.name}
-                  href={social.url}
-                  className="text-base text-muted-foreground hover:text-foreground"
-                >
-                  {social.name}
-                </CustomLink>
-              ))}
+              <ContactLinks />
             </div>
           </div>
 
           <div className="flex flex-col gap-1 text-sm text-muted-foreground mt-2">
             <p>
               &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}
+            </p>
+            <p>
+              Built with Next.js, React, Tailwind CSS, and Shadcn UI. Deployed on Vercel.
             </p>
           </div>
         </div>

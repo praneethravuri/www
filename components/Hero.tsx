@@ -5,6 +5,7 @@ import { CustomLink } from "@/components/ui/custom-link";
 import { data } from "@/app/data/resume";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { ContactLinks } from "@/components/ContactLinks";
 
 const tagline = data.taglines.heroTagline;
 
@@ -59,15 +60,7 @@ export function Hero() {
 
           <div>
             <div className="flex items-center gap-4">
-              {Object.values(data.contact.social).map((social) => (
-                <CustomLink
-                  key={social.name}
-                  href={social.url}
-                  className="text-base text-muted-foreground hover:text-foreground"
-                >
-                  {social.name}
-                </CustomLink>
-              ))}
+              <ContactLinks />
             </div>
           </div>
 

@@ -11,7 +11,7 @@ export const data = {
             role: "AI Engineer",
             company: "Tuskira",
             logoUrl: "/tuskira_logo.webp",
-            description: "Agentic AI and Scalable Systems. Building and researching AI agents for cybersecurity.",
+            description: "Building Agentic AI and Scalable Systems for Cybersecurity.",
         },
         experienceTagline: {
             tagline: "From high-throughput data pipelines to autonomous AI agents, building systems that stay reliable under load."

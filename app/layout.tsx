@@ -119,13 +119,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <head>
-        {/* Preconnect to critical third-party origins */}
-        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
-        <link rel="preconnect" href="https://va.vercel-scripts.com" />
-        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
-        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
-      </head>
       <body
         suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}

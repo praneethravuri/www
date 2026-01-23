@@ -19,6 +19,7 @@ export function Hero() {
               src="/images/profile/hero.webp"
               alt={`${data.firstName} ${data.lastName} - ${data.title}`}
               fill
+              sizes="80px"
               className="object-cover"
               priority
             />

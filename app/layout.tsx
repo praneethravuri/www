@@ -183,8 +183,8 @@ export default function RootLayout({
                   {
                     "@type": "ProfilePage",
                     "@id": `${data.url}#profilepage`,
-                    dateCreated: "2024-01-01",
-                    dateModified: new Date().toISOString().split('T')[0],
+                    dateCreated: "2024-01-01T00:00:00+00:00",
+                    dateModified: new Date().toISOString(),
                     mainEntity: { "@id": `${data.url}#person` },
                   },
                   ...data.work.map((job, idx) => ({

@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     siteName: `${data.firstName} ${data.lastName}`,
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/profile/hero.webp",
         width: 1200,
         height: 630,
         alt: `${data.firstName} ${data.lastName} - ${data.title}`,
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: `${data.firstName} ${data.lastName}`,
     description: data.summary,
     creator: "@praneeth2510",
-    images: [`${data.url}/og-image.png`],
+    images: [`${data.url}/images/profile/hero.webp`],
   },
   category: 'technology',
   classification: "Praneeth Ravuri's Portfolio Website",
@@ -126,6 +126,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        {/* Preconnect to critical third-party origins */}
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
+        <link rel="preconnect" href="https://va.vercel-scripts.com" />
+        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+      </head>
       <body
         suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}

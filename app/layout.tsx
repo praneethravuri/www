@@ -65,10 +65,10 @@ export const metadata: Metadata = {
     siteName: `${data.firstName} ${data.lastName}`,
     images: [
       {
-        url: "/hero.webp",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: `${data.firstName} ${data.lastName}`,
+        alt: `${data.firstName} ${data.lastName} - ${data.title}`,
       },
     ],
   },
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: `${data.firstName} ${data.lastName}`,
     description: data.summary,
     creator: "@praneeth2510",
-    images: [`${data.url}/hero.webp`],
+    images: [`${data.url}/og-image.png`],
   },
   category: 'technology',
   classification: 'Personal Portfolio',
@@ -94,13 +94,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: data.url,
+    languages: {
+      'en-US': data.url,
+    },
   },
   icons: {
     icon: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180" },
+    ],
   },
   verification: {
-    google: "google-site-verification=...",
-    yandex: "yandex-verification=...",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "",
   },
 };
 
@@ -174,6 +180,13 @@ export default function RootLayout({
                     description: data.summary,
                     inLanguage: "en-US",
                   },
+                  {
+                    "@type": "ProfilePage",
+                    "@id": `${data.url}#profilepage`,
+                    dateCreated: "2024-01-01",
+                    dateModified: new Date().toISOString().split('T')[0],
+                    mainEntity: { "@id": `${data.url}#person` },
+                  },
                   ...data.work.map((job, idx) => ({
                     "@type": "OrganizationRole",
                     "@id": `${data.url}#work-${idx}`,
@@ -183,13 +196,14 @@ export default function RootLayout({
                     organizationName: job.company,
                   })),
                   ...data.projects.map((project, idx) => ({
-                    "@type": "CreativeWork",
+                    "@type": "SoftwareSourceCode",
                     "@id": `${data.url}#project-${idx}`,
                     name: project.name,
                     description: project.description,
+                    codeRepository: project.url,
                     url: project.url,
                     author: { "@id": `${data.url}#person` },
-                    keywords: project.techStack,
+                    programmingLanguage: project.techStack,
                   })),
                 ],
               }),

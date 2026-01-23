@@ -1,6 +1,5 @@
 "use client";
 
-import { data } from "@/app/data/resume";
 import { useViewMode } from "@/components/providers/view-mode-provider";
 import { Button } from "@/components/ui/button";
 
@@ -34,6 +33,8 @@ export function NavBar() {
                         size="sm"
                         onClick={toggleMode}
                         className="text-sm"
+                        aria-label={`Switch to ${mode === 'human' ? 'machine' : 'human'} readable view`}
+                        aria-pressed={mode === 'machine'}
                     >
                         {mode === 'human' ? (
                             <>

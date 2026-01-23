@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     images: [`${data.url}/og-image.png`],
   },
   category: 'technology',
-  classification: 'Personal Portfolio',
+  classification: "Praneeth Ravuri's Portfolio Website",
   robots: {
     index: true,
     follow: true,
@@ -96,6 +96,8 @@ export const metadata: Metadata = {
     canonical: data.url,
     languages: {
       'en-US': data.url,
+      'en': data.url,
+      'x-default': data.url,
     },
   },
   icons: {
@@ -111,6 +113,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "",
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION || "",
+    },
   },
 };
 
@@ -125,6 +130,12 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:text-foreground focus:border focus:rounded-md"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -190,6 +201,18 @@ export default function RootLayout({
                     dateCreated: "2024-01-01T00:00:00+00:00",
                     dateModified: new Date().toISOString(),
                     mainEntity: { "@id": `${data.url}#person` },
+                  },
+                  {
+                    "@type": "BreadcrumbList",
+                    "@id": `${data.url}#breadcrumb`,
+                    itemListElement: [
+                      {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: data.url,
+                      },
+                    ],
                   },
                   ...data.work.map((job, idx) => ({
                     "@type": "OrganizationRole",

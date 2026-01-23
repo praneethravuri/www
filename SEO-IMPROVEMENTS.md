@@ -1,34 +1,43 @@
 # SEO Next Steps Guide
 
-All code changes have been completed. You just need to add the image assets.
+Almost everything is complete. Just two items remaining.
 
 ---
 
 ## Remaining Checklist
 
-- [ ] Create `/public/og-image.png` (1200x630px)
-- [ ] Create `/public/apple-touch-icon.png` (180x180px)
-- [ ] Create `/public/icon-192.png` (192x192px)
-- [ ] Create `/public/icon-512.png` (512x512px)
-- [ ] Submit sitemap in Google Search Console
+- [ ] Create `/public/og-image.png` (1200x630px) - Social sharing preview image
+- [ ] Register with [Bing Webmaster Tools](https://www.bing.com/webmasters) and add verification token to `.env.local`
 
 ---
 
 ## Completed
 
+### Initial SEO Setup
 - [x] Google Search Console verification
+- [x] Sitemap submitted to Google Search Console
 - [x] Environment variables configured
 - [x] PWA manifest created
-- [x] JSON-LD schemas enhanced (ProfilePage, SoftwareSourceCode)
+- [x] JSON-LD schemas (Person, WebSite, WebPage, ProfilePage, SoftwareSourceCode)
 - [x] Sitemap lastModified date fixed
-- [x] Apple touch icon metadata added
-- [x] OG image metadata configured
+- [x] Favicon and icons added (`/public/favicon.ico`, `/public/icons/`)
+- [x] Apple touch icon added (`/public/icons/apple-touch-icon.png`)
+- [x] PWA icons added (`android-chrome-192x192.png`, `android-chrome-512x512.png`)
+
+### Additional SEO Improvements (Just Added)
+- [x] Bing Webmaster Tools verification support added to metadata
+- [x] Breadcrumb schema added to JSON-LD
+- [x] x-default hreflang added for international SEO
+- [x] Skip-to-content link added for accessibility
+- [x] Improved image alt texts (hero image now includes full name and title)
+- [x] ARIA labels added to view mode toggle button
+- [x] Status indicator has aria-label for screen readers
+- [x] Cache headers added for static assets (icons, images, favicon, og-image)
 
 ---
 
-## Step 1: Create Image Assets
+## Create OG Image (Social Sharing Preview)
 
-### OG Image (Social Sharing Preview)
 **File:** `/public/og-image.png`
 **Size:** 1200 x 630 pixels
 
@@ -50,48 +59,47 @@ This image appears when your site is shared on Twitter, LinkedIn, Facebook, etc.
 - Avoid text near edges (some platforms crop)
 - Match your site's dark theme aesthetic
 
----
-
-### Apple Touch Icon & PWA Icons
-**Files to create:**
-- `/public/apple-touch-icon.png` (180x180px) - iOS home screen icon
-- `/public/icon-192.png` (192x192px) - PWA icon
-- `/public/icon-512.png` (512x512px) - PWA icon (large)
-
-**Quick option:** Use [favicon.io](https://favicon.io/favicon-converter/) - upload a single image and it generates all sizes.
-
-**Image prompt for AI generation:**
+**AI prompt for generating:**
 ```
-Minimalist logo design on solid black background, single letter "P" in modern geometric sans-serif font, white color, clean lines, centered composition, simple and bold, suitable for favicon and app icon, flat design, no gradients, no shadows, no additional elements, square format, high contrast
+Professional social media card design, 1200x630 pixels, dark background (#000000), "Praneeth Ravuri" in large white modern sans-serif font, "AI Engineer" subtitle below, minimal geometric accents, clean tech aesthetic, high contrast, no photo, suitable for LinkedIn and Twitter sharing
 ```
 
 ---
 
-## Step 2: Submit Sitemap
+## Add Bing Verification Token
 
-1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Select your property
-3. Go to **Sitemaps** in the left sidebar
-4. Enter: `sitemap.xml`
-5. Click **Submit**
+1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters)
+2. Add your site and choose "HTML Meta Tag" verification
+3. Copy the content value from the meta tag
+4. Add to `.env.local`:
+   ```
+   NEXT_PUBLIC_BING_VERIFICATION=your_token_here
+   ```
+5. Add to Vercel environment variables for production
+6. Deploy and verify
 
 ---
 
-## Step 3: Test Your Changes
+## Test Your Changes
 
 ### Test Structured Data
 - [Google Rich Results Test](https://search.google.com/test/rich-results)
-- Enter your URL and verify no errors
+- Verify Breadcrumb schema appears correctly
 
 ### Test Social Sharing (after adding OG image)
 - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 - [Twitter Card Validator](https://cards-dev.twitter.com/validator)
 - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
 
-### Test PWA (after adding icons)
+### Test PWA
 - Open your site in Chrome
 - Open DevTools (F12) → Application → Manifest
 - Verify manifest loads correctly
+
+### Test Accessibility
+- Run Lighthouse audit in Chrome DevTools
+- Verify skip-to-content link works (Tab on page load)
+- Verify ARIA labels are present on toggle button
 
 ---
 

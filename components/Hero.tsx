@@ -1,7 +1,5 @@
 "use client";
 
-import { CustomLink } from "@/components/ui/custom-link";
-
 import { data } from "@/app/data/resume";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
@@ -19,13 +17,17 @@ export function Hero() {
           <div className="size-20 rounded-xl overflow-hidden relative">
             <Image
               src="/images/profile/hero.webp"
-              alt={data.firstName}
+              alt={`${data.firstName} ${data.lastName} - ${data.title}`}
               fill
               className="object-cover"
               priority
             />
           </div>
-          <span className="absolute bottom-[-4px] right-[-4px] size-4 rounded-full bg-green-600 border-2 border-background shadow-sm"></span>
+          <span
+            className="absolute bottom-[-4px] right-[-4px] size-4 rounded-full bg-green-600 border-2 border-background shadow-sm"
+            aria-label="Available for opportunities"
+            role="status"
+          ></span>
         </div>
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl md:text-3xl font-semibold leading-relaxed">

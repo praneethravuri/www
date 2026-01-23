@@ -10,7 +10,7 @@ export const data = {
         heroTagline: {
             role: "AI Engineer",
             company: "Tuskira",
-            logoUrl: "/tuskira_logo.webp",
+            logoUrl: "/images/logos/tuskira_logo.webp",
             description: "Building Agentic AI and Scalable Systems for Cybersecurity.",
         },
         experienceTagline: {
@@ -110,7 +110,7 @@ export const data = {
             title: "AI Engineer",
             startDate: "Dec 2025",
             endDate: "Present",
-            logoUrl: "/tuskira_logo.webp",
+            logoUrl: "/images/logos/tuskira_logo.webp",
             location: "United States",
             description:
                 "Building autonomous AI agents for cybersecurity investigations that query multiple data sources and maintain context across long sessions. Designed a memory layer separating long-term knowledge from active reasoning to prevent context drift, storing summarized investigations in Neo4j and Pinecone for retrieval. Optimized MCP servers in Go and Python to filter data before LLM processing, reducing token usage while maintaining response consistency. Deployed on AWS with Kubernetes for continuous operation across multiple client environments.",
@@ -122,7 +122,7 @@ export const data = {
             title: "Software Engineer",
             startDate: "Jul 2024",
             endDate: "Dec 2025",
-            logoUrl: "/lumen_logo.webp",
+            logoUrl: "/images/logos/lumen_logo.webp",
             location: "United States",
             description:
                 "Built backend services processing millions of network flows per minute for traffic analysis platform. Architected event-driven pipeline with Kafka to decouple ingestion from processing, preventing bottlenecks from cascading failures. Implemented backpressure handling in Go using buffered channels to absorb traffic spikes and balanced partition consumption to maintain throughput during peak periods. Deployed with Docker and Kubernetes, achieving zero data loss across all production deployments.",
@@ -134,7 +134,7 @@ export const data = {
             title: "Full Stack Engineer Intern",
             startDate: "Jan 2022",
             endDate: "Jun 2022",
-            logoUrl: "/adp_logo.webp",
+            logoUrl: "/images/logos/adp_logo.webp",
             location: "India",
             description:
                 "Modernized legacy employee portal handling thousands of daily users. Built React frontend and optimized Node.js backend with Redis caching layer to reduce repeated database queries. Improved response times and stabilized performance during peak traffic periods.",
@@ -184,12 +184,12 @@ export const data = {
         {
             institution: "George Mason University",
             degree: "Master’s in Computer Science",
-            logoUrl: "/gmu.webp"
+            logoUrl: "/images/logos/gmu.webp"
         },
         {
             institution: "GRIET",
             degree: "Bachelor’s in Computer Science",
-            logoUrl: "/griet.webp"
+            logoUrl: "/images/logos/griet.webp"
         }
     ]
 };

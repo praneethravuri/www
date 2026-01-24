@@ -120,7 +120,7 @@ export const data = {
         {
             company: "Lumen",
             title: "Software Engineer",
-            startDate: "Jul 2024",
+            startDate: "Oct 2024",
             endDate: "Dec 2025",
             logoUrl: "/images/logos/lumen_logo.webp",
             location: "United States",

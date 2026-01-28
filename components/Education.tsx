@@ -26,12 +26,13 @@ export function Education() {
                                         alt={`${edu.institution} logo`}
                                         width={48}
                                         height={48}
+                                        loading="lazy"
                                         className="rounded-md object-cover border"
                                     />
                                 </div>
                             )}
 
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-2">
                                 <h3 className="text-lg font-semibold">
                                     <span className="font-semibold text-lg">
                                         {edu.institution}

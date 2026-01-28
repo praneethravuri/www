@@ -12,7 +12,7 @@ export function Hero() {
     <section className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5 border-b border-dashed">
 
       {/* Content Section */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <div className="relative w-fit">
           <div className="size-20 rounded-xl overflow-hidden relative">
             <Image
@@ -30,29 +30,28 @@ export function Hero() {
             role="status"
           ></span>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <h1 className="text-2xl md:text-3xl font-semibold leading-relaxed">
             {data.firstName} {data.lastName}
           </h1>
         </div>
 
-        <div className="space-y-3">
-          <div className="flex items-center gap-1">
-            <h2 className="text-lg font-semibold flex items-center gap-1">
-              <span className="">{tagline.role}</span> at
-              <span className="inline-flex items-center gap-1">
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <h2 className="text-lg font-semibold">
+              {tagline.role} <span className="text-muted-foreground font-normal">at</span>
+            </h2>
+              <span className="inline-flex items-center gap-2 whitespace-nowrap text-lg font-semibold">
                 <Image
                   src={tagline.logoUrl}
                   alt={`${tagline.company} logo`}
                   width={24}
                   height={24}
+                  loading="lazy"
                   className=""
                 />
-                <span className="text-lg font-semibold">
-                  {tagline.company}
-                </span>
+                {tagline.company}
               </span>
-            </h2>
           </div>
 
           <div>

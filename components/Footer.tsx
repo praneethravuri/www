@@ -6,7 +6,7 @@ const tagline = data.taglines.footerTagline.tagline;
 
 export function Footer() {
   return (
-    <footer id="footer" className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5 border-b border-dashed">
+    <footer id="footer" className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5">
 
       <p className="text-foreground text-xl md:text-2xl font-semibold">{tagline}</p>
 

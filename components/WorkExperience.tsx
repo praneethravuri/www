@@ -18,7 +18,7 @@ export function WorkExperience() {
                     </h2>
                     <div>
                         <Link href={data.contact.social.Resume.url} target="_blank">
-                            <Button variant="secondary" className="rounded-md bg-secondary/50 hover:bg-secondary/80 text-foreground/80 hover:text-foreground">
+                            <Button variant="outline" className="rounded-md">
                                 Download Resume
                             </Button>
                         </Link>
@@ -36,17 +36,18 @@ export function WorkExperience() {
                                 {job.startDate} - {job.endDate}
                             </time>
 
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-1">
+                            <div className="space-y-4">
+                                <div className="flex flex-wrap items-center gap-2">
                                     <h3 className="text-lg font-semibold">
-                                        {job.title} at
+                                        {job.title} <span className="text-muted-foreground font-normal">at</span>
                                     </h3>
-                                    <div className="inline-flex items-center gap-1">
+                                    <div className="inline-flex items-center gap-2 whitespace-nowrap">
                                         <Image
                                             src={job.logoUrl}
                                             alt={`${job.company} logo`}
                                             width={24}
                                             height={24}
+                                            loading="lazy"
                                             className=""
                                         />
                                         <span className="text-lg font-semibold">
@@ -61,7 +62,7 @@ export function WorkExperience() {
 
 
 
-                                <div className="flex flex-wrap gap-1 pt-2">
+                                <div className="flex flex-wrap gap-2 pt-2">
                                     {job.technologies.map((tech, techIndex) => (
                                         <Badge
                                             key={techIndex}

@@ -27,6 +27,7 @@ export function CustomLink({
             )}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
+            aria-label={isExternal ? `${children} (opens in new tab)` : undefined}
             {...props}
         >
             <span>{children}</span>

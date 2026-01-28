@@ -3,7 +3,7 @@ import { CustomLink } from "@/components/ui/custom-link";
 
 export function ContactLinks() {
     return (
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
             {Object.values(data.contact.social).map((social) => (
                 <CustomLink
                     key={social.name}

@@ -25,7 +25,7 @@ ${Object.values(data.contact.social).map((social) => `[${social.name}](${social.
 ---
 
 ## Work Experience
-${data.taglines.experienceTagline.tagline}
+
 
 ${data.work.map((job) => `
 ### ${job.title} @ ${job.company}
@@ -36,7 +36,7 @@ ${job.description}
 ---
 
 ## Projects
-${data.taglines.projectsTagline.tagline}
+
 
 ${data.projects.map((project) => `
 ### ${project.name}
@@ -57,7 +57,7 @@ ${edu.institution}
 
 ---
 
-${data.taglines.footerTagline.tagline}
+
 `.trim();
 
     const handleCopy = () => {

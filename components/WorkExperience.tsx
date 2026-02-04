@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const tagline = data.taglines.experienceTagline;
+
 
 
 export function WorkExperience() {
@@ -18,15 +18,11 @@ export function WorkExperience() {
                     </h2>
                     <div>
                         <Link href={data.contact.social.Resume.url} target="_blank">
-                            <Button variant="outline" className="rounded-md">
+                            <Button variant="outline" className="rounded-md border-none">
                                 Download Resume
                             </Button>
                         </Link>
                     </div>
-                </div>
-
-                <div className="text-base text-muted-foreground mb-4 md:mb-8">
-                    {tagline.tagline}
                 </div>
 
                 <div className="space-y-8 md:space-y-12">
@@ -77,7 +73,7 @@ export function WorkExperience() {
                         </article>
                     ))}
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }

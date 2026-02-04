@@ -5,7 +5,6 @@ import { Badge } from "./ui/badge";
 import { Button } from "@/components/ui/button";
 import { CustomLink } from "@/components/ui/custom-link";
 
-const tagline = data.taglines.projectsTagline;
 
 export function Projects() {
     return (
@@ -17,15 +16,11 @@ export function Projects() {
                     </h2>
                     <div>
                         <Link href={data.contact.social.GitHub.url} target="_blank">
-                            <Button variant="outline" className="rounded-md">
+                            <Button variant="outline" className="rounded-md border-none">
                                 View Github
                             </Button>
                         </Link>
                     </div>
-                </div>
-
-                <div className="text-base text-muted-foreground mb-4 md:mb-8">
-                    {tagline.tagline}
                 </div>
 
                 <div className="flex flex-col gap-8 md:gap-12">

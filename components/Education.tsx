@@ -12,10 +12,6 @@ export function Education() {
                     </h2>
                 </div>
 
-                <div className="text-base text-muted-foreground mb-4 md:mb-8">
-                    {data.taglines.educationTagline.tagline}
-                </div>
-
                 <div className="flex flex-col gap-8 md:gap-12">
                     {data.education.map((edu, index) => (
                         <article key={index} className="flex gap-4 items-center">

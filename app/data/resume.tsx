@@ -13,18 +13,10 @@ export const data = {
             logoUrl: "/images/logos/tuskira_logo.webp",
             description: "Building Agentic AI and Scalable Systems for Cybersecurity.",
         },
-        experienceTagline: {
-            tagline: "From high-throughput data pipelines to autonomous AI agents, building systems that stay reliable under load."
-        },
-        projectsTagline: {
-            tagline: "Projects I've worked on, from AI agents to distributed systems."
-        },
         footerTagline: {
             tagline: "Let's put AI to work."
         },
-        educationTagline: {
-            tagline: "Foundations of my technical journey."
-        }
+
 
     },
     keywords: [

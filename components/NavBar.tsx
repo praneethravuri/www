@@ -13,7 +13,7 @@ export function NavBar() {
     };
 
     return (
-        <nav className="w-full border-b border-dashed">
+        <nav className="w-full">
             <div className="flex h-16 items-center w-full mx-auto justify-between gap-4 px-5">
                 {/* Left: Name */}
                 <div className="flex items-center">

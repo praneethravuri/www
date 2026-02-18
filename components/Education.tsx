@@ -4,7 +4,7 @@ import { data } from "@/app/data/resume";
 import Image from "next/image";
 export function Education() {
     return (
-        <section id="education" className="py-8 md:py-12 w-full px-5 border-b border-dashed">
+        <section id="education" className="py-8 md:py-12 w-full px-5">
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-4 md:mb-8">
                     <h2 className="text-foreground text-xl md:text-2xl font-semibold">

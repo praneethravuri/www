@@ -9,7 +9,7 @@ const tagline = data.taglines.heroTagline;
 
 export function Hero() {
   return (
-    <section className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5 border-b border-dashed">
+    <section className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5">
 
       {/* Content Section */}
       <div className="flex flex-col gap-4">
@@ -41,17 +41,17 @@ export function Hero() {
             <h2 className="text-lg font-semibold">
               {tagline.role} <span className="text-muted-foreground font-normal">at</span>
             </h2>
-              <span className="inline-flex items-center gap-2 whitespace-nowrap text-lg font-semibold">
-                <Image
-                  src={tagline.logoUrl}
-                  alt={`${tagline.company} logo`}
-                  width={24}
-                  height={24}
-                  loading="lazy"
-                  className=""
-                />
-                {tagline.company}
-              </span>
+            <span className="inline-flex items-center gap-2 whitespace-nowrap text-lg font-semibold">
+              <Image
+                src={tagline.logoUrl}
+                alt={`${tagline.company} logo`}
+                width={24}
+                height={24}
+                loading="lazy"
+                className=""
+              />
+              {tagline.company}
+            </span>
           </div>
 
           <div>

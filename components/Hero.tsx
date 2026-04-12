@@ -9,12 +9,14 @@ const tagline = data.taglines.heroTagline;
 
 export function Hero() {
   return (
-    <section className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5">
+    <section className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5">
 
       {/* Content Section */}
       <div className="flex flex-col gap-4">
         <div className="relative w-fit">
-          <div className="size-20 rounded-xl overflow-hidden relative">
+          <div
+            className="size-20 rounded-lg overflow-hidden relative shadow-border"
+          >
             <Image
               src="/images/profile/hero.webp"
               alt={`${data.firstName} ${data.lastName} - ${data.title}`}
@@ -31,31 +33,30 @@ export function Hero() {
           ></span>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl md:text-3xl font-semibold leading-relaxed">
+          <h1 className="text-[48px] font-semibold leading-tight tracking-display">
             {data.firstName} {data.lastName}
           </h1>
         </div>
 
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <h2 className="text-lg font-semibold">
-              {tagline.role} <span className="text-muted-foreground font-normal">at</span>
+            <h2 className="text-xl font-semibold leading-relaxed tracking-tight-custom">
+              {tagline.role} <span className="text-secondary-foreground font-normal">at</span>
             </h2>
-            <span className="inline-flex items-center gap-2 whitespace-nowrap text-lg font-semibold">
+            <span className="inline-flex items-center gap-2 whitespace-nowrap text-xl font-semibold">
               <Image
                 src={tagline.logoUrl}
                 alt={`${tagline.company} logo`}
                 width={24}
                 height={24}
                 loading="lazy"
-                className=""
               />
               {tagline.company}
             </span>
           </div>
 
           <div>
-            <p className="text-base text-muted-foreground">
+            <p className="text-base text-secondary-foreground leading-relaxed">
               {tagline.description}
             </p>
           </div>
@@ -67,7 +68,7 @@ export function Hero() {
           </div>
 
           <div>
-            <p className="text-base text-muted-foreground">
+            <p className="text-base text-secondary-foreground">
               {data.location}
             </p>
           </div>

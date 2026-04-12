@@ -14,17 +14,13 @@ export function NavBar() {
 
     return (
         <nav className="w-full">
-            <div className="flex h-16 items-center w-full mx-auto justify-between gap-4 px-5">
+            <div className="flex h-14 items-center w-full mx-auto justify-between gap-4 px-5">
                 {/* Left: Name */}
                 <div className="flex items-center">
-                    <Link href="/" className="text-base font-bold tracking-tight hover:text-muted-foreground transition-colors no-underline hover:no-underline">
+                    <Link href="/" className="text-[15px] font-semibold tracking-tight text-foreground hover:text-foreground transition-colors no-underline hover:no-underline">
                         ప్రణీత్
                     </Link>
                 </div>
-
-                {/* <div className="flex-1 px-4">
-                    <Separator />
-                </div> */}
 
                 {/* Right: View Mode Toggle */}
                 <div className="flex items-center gap-1">
@@ -32,7 +28,7 @@ export function NavBar() {
                         variant="ghost"
                         size="sm"
                         onClick={toggleMode}
-                        className="text-sm"
+                        className="text-sm font-medium"
                         aria-label={`Switch to ${mode === 'human' ? 'machine' : 'human'} readable view`}
                         aria-pressed={mode === 'machine'}
                     >

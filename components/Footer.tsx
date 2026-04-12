@@ -6,9 +6,12 @@ const tagline = data.taglines.footerTagline.tagline;
 
 export function Footer() {
   return (
-    <footer id="footer" className="w-full mx-auto flex flex-col gap-8 py-8 md:py-12 px-5">
+    <footer
+      id="footer"
+      className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5 shadow-border-top"
+    >
 
-      <p className="text-foreground text-xl md:text-2xl font-semibold">{tagline}</p>
+      <p className="text-foreground text-2xl font-semibold tracking-subheading">{tagline}</p>
 
       {/* Content Section */}
       <div className="flex flex-col gap-6">
@@ -19,7 +22,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-1 text-sm text-muted-foreground mt-2">
+          <div className="flex flex-col gap-1 text-xs text-secondary-foreground mt-2">
             <p>
               &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}
             </p>

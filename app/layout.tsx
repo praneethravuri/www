@@ -1,5 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Source_Code_Pro } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
@@ -16,28 +26,13 @@ function convertToISO(date: string): string {
   return `${year}-${months[month as keyof typeof months]}`;
 }
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-});
-
-const sourceCodePro = Source_Code_Pro({
-  subsets: ['latin'],
-  variable: '--font-source-code-pro',
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-});
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
 };
 
@@ -121,7 +116,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
       >
         <a
           href="#main-content"

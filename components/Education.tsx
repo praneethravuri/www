@@ -4,10 +4,10 @@ import { data } from "@/app/data/resume";
 import Image from "next/image";
 export function Education() {
     return (
-        <section id="education" className="py-8 md:py-12 w-full px-5">
+        <section id="education" className="py-12 md:py-20 w-full px-5">
             <div className="mx-auto">
-                <div className="flex items-center justify-between mb-4 md:mb-8">
-                    <h2 className="text-foreground text-xl md:text-2xl font-semibold">
+                <div className="flex items-center justify-between mb-8 md:mb-12">
+                    <h2 className="text-foreground text-[32px] font-semibold tracking-heading">
                         Education
                     </h2>
                 </div>
@@ -23,7 +23,7 @@ export function Education() {
                                         width={48}
                                         height={48}
                                         loading="lazy"
-                                        className="rounded-md object-cover border"
+                                        className="rounded-md object-cover shadow-border"
                                     />
                                 </div>
                             )}
@@ -34,7 +34,7 @@ export function Education() {
                                         {edu.institution}
                                     </span>
                                 </h3>
-                                <p className="text-base text-muted-foreground">
+                                <p className="text-base text-secondary-foreground">
                                     {edu.degree}
                                 </p>
                             </div>

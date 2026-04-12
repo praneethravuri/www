@@ -113,7 +113,7 @@ export const data = {
             company: "Lumen",
             title: "Software Engineer",
             startDate: "Oct 2024",
-            endDate: "Dec 2025",
+            endDate: "Nov 2025",
             logoUrl: "/images/logos/lumen_logo.webp",
             location: "United States",
             description:

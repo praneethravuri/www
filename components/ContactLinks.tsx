@@ -8,7 +8,7 @@ export function ContactLinks() {
                 <CustomLink
                     key={social.name}
                     href={social.url}
-                    className="text-base text-foreground hover:text-muted-foreground"
+                    className="text-base text-foreground hover:text-accent"
                 >
                     {social.name}
                 </CustomLink>

@@ -77,7 +77,7 @@ ${edu.institution}
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             </Button>
 
-            <pre className="whitespace-pre-wrap font-source-code text-sm leading-relaxed overflow-x-auto rounded-md text-foreground/80 px-5">
+            <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed overflow-x-auto rounded-md text-foreground/80 px-5" style={{ fontFeatureSettings: '"liga" 1' }}>
                 {content}
             </pre>
         </div>

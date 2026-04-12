@@ -22,7 +22,7 @@ export function CustomLink({
         <Link
             href={href}
             className={cn(
-                "group inline-flex items-center gap-0.5 text-foreground transition-colors hover:text-muted-foreground no-underline text-[clamp(0.875rem,2vw,1rem)]",
+                "group inline-flex items-center gap-0.5 text-foreground transition-colors hover:text-accent no-underline hover:no-underline text-[clamp(0.875rem,2vw,1rem)]",
                 className
             )}
             target={isExternal ? "_blank" : undefined}
@@ -32,7 +32,7 @@ export function CustomLink({
         >
             <span>{children}</span>
             {enabled && (
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 text-muted-foreground group-hover:text-muted-foreground text-[clamp(0.875rem,2vw,1rem)]" />
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 text-secondary-foreground group-hover:text-accent text-[clamp(0.875rem,2vw,1rem)]" />
             )}
         </Link>
     );

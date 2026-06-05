@@ -20,10 +20,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: [
       "lucide-react",
-      "@radix-ui/react-accordion",
-      "@radix-ui/react-avatar",
-      "@radix-ui/react-icons",
-      "@radix-ui/react-separator",
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",

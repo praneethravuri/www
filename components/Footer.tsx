@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer
       id="footer"
-      className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5 shadow-border-top"
+      className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5 shadow-border-top animate-in fade-in duration-500"
     >
 
       <p className="text-foreground text-2xl font-semibold tracking-subheading">{tagline}</p>

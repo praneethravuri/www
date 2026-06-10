@@ -1,4 +1,3 @@
-"use client";
 import { data } from "@/app/data/resume";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,25 +6,25 @@ import { Badge } from "@/components/ui/badge";
 
 export function WorkExperience() {
     return (
-        <section id="work-experience" className="py-12 md:py-20 w-full px-5">
+        <section id="work-experience" className="py-12 md:py-20 w-full px-5 animate-in fade-in slide-in-from-bottom-2 duration-500">
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-8 md:mb-12">
-                    <h2 className="text-foreground text-[32px] font-semibold tracking-heading">
+                    <h2 className="text-foreground text-3xl font-semibold tracking-heading">
                         Experience
                     </h2>
                     <div>
-                        <Link href={data.contact.social.Resume.url} target="_blank">
-                            <Button variant="default">
+                        <Button variant="default" asChild>
+                            <Link href={data.contact.social.Resume.url} target="_blank" rel="noopener noreferrer">
                                 Download Resume
-                            </Button>
-                        </Link>
+                            </Link>
+                        </Button>
                     </div>
                 </div>
 
                 <div className="space-y-10 md:space-y-14">
                     {data.work.map((job, index) => (
                         <article key={index} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8">
-                            <time className="font-mono text-xs uppercase tracking-wide text-secondary-foreground">
+                            <time className="font-mono text-sm font-bold uppercase tracking-wide text-secondary-foreground">
                                 {job.startDate} - {job.endDate}
                             </time>
 
@@ -42,7 +41,7 @@ export function WorkExperience() {
                                             height={24}
                                             loading="lazy"
                                         />
-                                        <span className="text-lg font-semibold">
+                                        <span className="text-xl font-semibold">
                                             {job.company}
                                         </span>
                                     </div>

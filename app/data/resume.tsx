@@ -1,7 +1,7 @@
 export const data = {
     firstName: "Praneeth",
     lastName: "Ravuri",
-    location: "San Francisco, USA",
+    location: "Chicago, USA",
     url: "https://praneethravuri.com",
     title: "AI Engineer",
     summary: "AI Engineer building autonomous agents and distributed systems. Focused on production-grade agentic AI, backend infrastructure, and high-throughput data pipelines.",
@@ -72,6 +72,9 @@ export const data = {
         "MongoDB",
         "Redis",
         "Neo4j",
+        "FalkorDB",
+        "Agentic AI",
+        "LLMs",
     ],
 
     contact: {

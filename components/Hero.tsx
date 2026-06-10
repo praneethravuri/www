@@ -9,7 +9,7 @@ const tagline = data.taglines.heroTagline;
 
 export function Hero() {
   return (
-    <section className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5">
+    <section className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5 animate-in fade-in slide-in-from-bottom-2 duration-500">
 
       {/* Content Section */}
       <div className="flex flex-col gap-4">
@@ -33,7 +33,7 @@ export function Hero() {
           ></span>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-[48px] font-semibold leading-tight tracking-display">
+          <h1 className="text-4xl md:text-5xl text-balance font-semibold leading-tight tracking-display">
             {data.firstName} {data.lastName}
           </h1>
         </div>
@@ -68,7 +68,7 @@ export function Hero() {
           </div>
 
           <div>
-            <p className="text-base text-secondary-foreground">
+            <p className="text-base text-secondary-foreground leading-relaxed">
               {data.location}
             </p>
           </div>

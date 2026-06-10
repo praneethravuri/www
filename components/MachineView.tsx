@@ -67,17 +67,21 @@ ${edu.institution}
     };
 
     return (
-        <div className="relative mx-auto">
+        <div className="relative mx-auto animate-in fade-in duration-500">
             <Button
                 variant="ghost"
                 size="icon"
                 className="absolute right-2 -top-2 z-10 h-8 w-8 hover:bg-transparent text-muted-foreground"
                 onClick={handleCopy}
+                aria-label={copied ? "Copied" : "Copy resume as Markdown"}
             >
-                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
             </Button>
+            <span aria-live="polite" className="sr-only">
+                {copied ? "Resume copied to clipboard" : ""}
+            </span>
 
-            <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed overflow-x-auto rounded-md text-foreground/80 px-5" style={{ fontFeatureSettings: '"liga" 1' }}>
+            <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed overflow-x-auto rounded-md bg-card text-foreground/80 px-5 py-4 shadow-border-light" style={{ fontFeatureSettings: '"liga" 1' }}>
                 {content}
             </pre>
         </div>

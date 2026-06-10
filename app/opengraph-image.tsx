@@ -15,7 +15,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)',
+          background: 'linear-gradient(135deg, #202020 0%, #333533 50%, #202020 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -31,7 +31,7 @@ export default async function Image() {
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(214,214,214,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(214,214,214,0.04) 1px, transparent 1px)',
             backgroundSize: '50px 50px',
           }}
         />
@@ -51,7 +51,7 @@ export default async function Image() {
             style={{
               fontSize: '72px',
               fontWeight: 700,
-              color: '#ffffff',
+              color: '#d6d6d6',
               margin: 0,
               letterSpacing: '-2px',
             }}
@@ -63,7 +63,7 @@ export default async function Image() {
           <p
             style={{
               fontSize: '32px',
-              color: '#a0a0a0',
+              color: '#a3a3a3',
               margin: 0,
             }}
           >
@@ -74,7 +74,7 @@ export default async function Image() {
           <p
             style={{
               fontSize: '24px',
-              color: '#666666',
+              color: '#8a8a8a',
               margin: 0,
               maxWidth: '800px',
               textAlign: 'center',
@@ -87,7 +87,7 @@ export default async function Image() {
           <p
             style={{
               fontSize: '20px',
-              color: '#3b82f6',
+              color: '#ffd100',
               margin: 0,
               marginTop: '20px',
             }}

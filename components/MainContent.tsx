@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { cn } from '@/lib/utils';
 import { Hero } from '@/components/Hero';
 import { ViewModeProvider, useViewMode } from '@/components/providers/view-mode-provider';
 import { NavBar } from '@/components/NavBar';
@@ -36,10 +35,7 @@ function Content() {
   const { mode } = useViewMode();
 
   return (
-    <main className={cn(
-      "flex flex-col min-h-screen text-foreground selection:bg-accent/15 selection:text-foreground",
-      mode === 'human'
-    )}>
+    <main id="main-content" className="flex flex-col min-h-screen text-foreground">
       <NavBar />
       <div className="w-full mt-6">
         {mode === 'human' ? (

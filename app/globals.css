@@ -14,6 +14,7 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -33,55 +34,38 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --card: #141414;
-  --card-foreground: #ededed;
-  --popover: #141414;
-  --popover-foreground: #ededed;
-  --primary: #ededed;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #a1a1a1;
-  --muted: #1a1a1a;
-  --muted-foreground: #a1a1a1;
-  --accent: #0a72ef;
-  --accent-foreground: #ffffff;
+  --background: #202020;
+  --foreground: #d6d6d6;
+  --card: #333533;
+  --card-foreground: #d6d6d6;
+  --popover: #333533;
+  --popover-foreground: #d6d6d6;
+  --primary: #ffd100;
+  --primary-foreground: #202020;
+  --secondary: #333533;
+  --secondary-foreground: #ababab;
+  --muted: #333533;
+  --muted-foreground: #ababab;
+  --accent: #ffd100;
+  --accent-hover: #ffee32;
+  --accent-foreground: #202020;
   --destructive: #ff5b4f;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: #1a1a1a;
-  --ring: hsla(212, 100%, 48%, 1);
-}
-
-.dark {
-  --radius: 0.5rem;
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --card: #141414;
-  --card-foreground: #ededed;
-  --popover: #141414;
-  --popover-foreground: #ededed;
-  --primary: #ededed;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #a1a1a1;
-  --muted: #1a1a1a;
-  --muted-foreground: #a1a1a1;
-  --accent: #0a72ef;
-  --accent-foreground: #ffffff;
-  --destructive: #ff5b4f;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: #1a1a1a;
-  --ring: hsla(212, 100%, 48%, 1);
+  --border: rgba(214, 214, 214, 0.12);
+  --input: #333533;
+  --ring: #ffd100;
 }
 
 @layer base {
+  html {
+    color-scheme: dark;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
 
   a {
-    @apply no-underline hover:underline hover:underline-offset-4 hover:text-accent transition-colors;
+    @apply no-underline hover:text-accent transition-colors duration-300 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
   }
 
   body {
@@ -93,7 +77,7 @@
   }
 
   ::selection {
-    background: rgba(10, 114, 239, 0.15);
+    background: rgba(255, 238, 50, 0.3);
     color: var(--foreground);
   }
 
@@ -110,13 +94,13 @@
 
 @layer utilities {
   .shadow-border {
-    box-shadow: rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
+    box-shadow: rgba(214, 214, 214, 0.12) 0px 0px 0px 1px;
   }
   .shadow-border-light {
-    box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+    box-shadow: rgba(214, 214, 214, 0.07) 0px 0px 0px 1px;
   }
   .shadow-border-top {
-    box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.08);
+    box-shadow: 0px -1px 0px 0px rgba(214, 214, 214, 0.12);
   }
   .tracking-display {
     letter-spacing: -2.4px;

@@ -4,6 +4,7 @@ import { data } from "@/app/data/resume";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { ContactLinks } from "@/components/ContactLinks";
+import { Button } from "@/components/ui/button";
 
 const tagline = data.taglines.heroTagline;
 
@@ -13,9 +14,9 @@ export function Hero() {
 
       {/* Content Section */}
       <div className="flex flex-col gap-4">
-        <div className="relative w-fit">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-6">
           <div
-            className="size-20 rounded-lg overflow-hidden relative shadow-border"
+            className="size-20 shrink-0 rounded-lg overflow-hidden relative shadow-border"
           >
             <Image
               src="/images/profile/hero.webp"
@@ -26,16 +27,18 @@ export function Hero() {
               priority
             />
           </div>
-          <span
-            className="absolute bottom-[-4px] right-[-4px] size-4 rounded-full bg-green-600 border-2 border-background shadow-sm"
-            aria-label="Available for opportunities"
-            role="status"
-          ></span>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h1 className="text-4xl md:text-5xl text-balance font-semibold leading-tight tracking-display">
-            {data.firstName} {data.lastName}
-          </h1>
+          <div className="flex flex-col gap-3">
+            <h1 className="text-4xl md:text-5xl text-balance font-semibold leading-tight tracking-display">
+              {data.firstName} {data.lastName}
+            </h1>
+            <span
+              role="status"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs text-secondary-foreground shadow-border-light"
+            >
+              <span className="size-2 rounded-full bg-green-600 animate-pulse motion-reduce:animate-none" aria-hidden="true" />
+              Open to opportunities
+            </span>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -65,6 +68,15 @@ export function Hero() {
             <div className="flex items-center gap-4">
               <ContactLinks />
             </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Button asChild>
+              <a href={`mailto:${data.contact.email}`}>Email Me</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href={data.contact.social.Resume.url} target="_blank" rel="noopener noreferrer">Resume</a>
+            </Button>
           </div>
 
           <div>

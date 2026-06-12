@@ -6,12 +6,15 @@ import { Badge } from "@/components/ui/badge";
 
 export function WorkExperience() {
     return (
-        <section id="work-experience" className="py-12 md:py-20 w-full px-5 animate-in fade-in slide-in-from-bottom-2 duration-500">
+        <section id="work-experience" className="py-12 md:py-20 w-full px-5 animate-in fade-in slide-in-from-bottom-2 duration-500 border-t border-border scroll-mt-16">
             <div className="mx-auto">
                 <div className="flex items-center justify-between mb-8 md:mb-12">
-                    <h2 className="text-foreground text-3xl font-semibold tracking-heading">
-                        Experience
-                    </h2>
+                    <div>
+                        <span className="block h-1 w-8 rounded-full bg-accent mb-4" aria-hidden="true" />
+                        <h2 className="text-foreground text-3xl font-semibold tracking-heading">
+                            Experience
+                        </h2>
+                    </div>
                     <div>
                         <Button variant="default" asChild>
                             <Link href={data.contact.social.Resume.url} target="_blank" rel="noopener noreferrer">
@@ -23,7 +26,11 @@ export function WorkExperience() {
 
                 <div className="space-y-10 md:space-y-14">
                     {data.work.map((job, index) => (
-                        <article key={index} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8">
+                        <article
+                            key={index}
+                            className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8 rounded-lg -mx-3 px-3 py-2 transition-colors duration-300 hover:bg-card/60 animate-in fade-in slide-in-from-bottom-2 duration-500 fill-mode-backwards"
+                            style={{ animationDelay: `${Math.min(index * 100, 400)}ms` }}
+                        >
                             <time className="font-mono text-sm font-bold uppercase tracking-wide text-secondary-foreground">
                                 {job.startDate} - {job.endDate}
                             </time>

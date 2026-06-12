@@ -1,58 +1,76 @@
 import { data } from "@/app/data/resume";
-import Link from "next/link";
-import { Badge } from "./ui/badge";
-import { Button } from "@/components/ui/button";
-import { CustomLink } from "@/components/ui/custom-link";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export function Projects() {
-    return (
-        <section id="projects" className="py-12 md:py-20 w-full px-5 animate-in fade-in slide-in-from-bottom-2 duration-500 border-t border-border scroll-mt-16">
-            <div className="mx-auto">
-                <div className="flex items-center justify-between mb-8 md:mb-12">
-                    <div>
-                        <span className="block h-1 w-8 rounded-full bg-accent mb-4" aria-hidden="true" />
-                        <h2 className="text-foreground text-3xl font-semibold tracking-heading">
-                            Projects
-                        </h2>
-                    </div>
-                    <div>
-                        <Button variant="default" asChild>
-                            <Link href={data.contact.social.GitHub.url} target="_blank" rel="noopener noreferrer">
-                                View GitHub
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
+  return (
+    <section
+      id="projects"
+      aria-label="Projects"
+      className="mt-[88px] max-[600px]:mt-[70px] scroll-mt-8"
+    >
+      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.05}>
+        <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[480] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
+          Projects
+        </h2>
+      </BlurFade>
 
-                <div className="flex flex-col gap-10 md:gap-14">
-                    {data.projects.map((project, index) => (
-                        <article
-                            key={index}
-                            className="flex flex-col gap-4 rounded-lg -mx-3 px-3 py-2 transition-colors duration-300 hover:bg-card/60 animate-in fade-in slide-in-from-bottom-2 duration-500 fill-mode-backwards"
-                            style={{ animationDelay: `${Math.min(index * 100, 400)}ms` }}
-                        >
-                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                <h3 className="text-xl font-semibold tracking-tight-custom">
-                                    <CustomLink href={project.url} className="inline-flex items-center gap-1 text-xl font-semibold">
-                                        {project.name}
-                                    </CustomLink>
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.techStack.map((tech, techIndex) => (
-                                        <Badge key={techIndex} variant="secondary" className="text-xs">
-                                            {tech}
-                                        </Badge>
-                                    ))}
-                                </div>
-                            </div>
+      <div className="flex flex-col">
+        {data.projects.map((project, index) => (
+          <BlurFade
+            key={index}
+            inView
+            direction="up"
+            offset={14}
+            duration={0.7}
+            blur="0px"
+            inViewMargin="-8%"
+            delay={0.05 + index * 0.06}
+          >
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group block py-[30px] ${
+                index === 0
+                  ? "border-t-0 pt-5"
+                  : "border-t border-line"
+              }`}
+            >
+              {/* Head */}
+              <div className="flex items-baseline gap-2.5 flex-wrap">
+                <h3 className="inline-flex items-center gap-2 text-[18px] font-[680] tracking-[-0.02em] text-ink leading-[1.2]">
+                  {project.name}
+                  <ArrowUpRightIcon
+                    size={15}
+                    className="text-faint transition-all duration-200 group-hover:text-ink group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
+                  />
+                </h3>
+                <span className="text-[15px] text-muted-foreground">
+                  {project.tags.join(" · ")}
+                </span>
+              </div>
 
-                            <div className="text-base text-secondary-foreground leading-relaxed">
-                                {project.description}
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+              {/* Description */}
+              <p className="text-[16px] text-body mt-3.5 font-[440] text-pretty">
+                {project.description}
+              </p>
+
+              {/* TechStack pills */}
+              <div className="flex flex-wrap gap-1.5 mt-3.5">
+                {project.techStack.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="text-[12.5px] tracking-[0.01em] text-muted-foreground px-2.5 py-1 rounded-[6px] border border-line whitespace-nowrap"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </a>
+          </BlurFade>
+        ))}
+      </div>
+    </section>
+  );
 }

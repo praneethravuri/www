@@ -1,18 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
 });
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { data } from "@/app/data/resume";
+import { NoiseTexture } from "@/components/ui/noise-texture";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -30,7 +25,7 @@ function convertToISO(date: string): string {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#202020",
+  themeColor: "#000000",
 };
 
 export const metadata: Metadata = {
@@ -113,7 +108,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="motion-safe:scroll-smooth">
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased text-foreground relative overflow-x-hidden min-h-screen max-w-3xl mx-auto px-4 sm:px-8`}
+        className={`${geistSans.variable} font-sans antialiased relative min-h-screen`}
       >
         <a
           href="#main-content"
@@ -121,16 +116,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-          <Analytics />
-          <SpeedInsights />
+        <NoiseTexture
+          className="fixed inset-0 z-50 opacity-30 dark:opacity-30"
+          noiseOpacity={0.3}
+        />
+        {children}
+        <Analytics />
+        <SpeedInsights />
 
           <script
             type="application/ld+json"
@@ -221,7 +213,6 @@ export default function RootLayout({
               }),
             }}
           />
-        </ThemeProvider>
       </body>
     </html>
   );

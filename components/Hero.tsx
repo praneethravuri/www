@@ -1,99 +1,88 @@
-"use client";
-
-import { data } from "@/app/data/resume";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { ContactLinks } from "@/components/ContactLinks";
-import { Button } from "@/components/ui/button";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { data } from "@/app/data/resume";
 
-const tagline = data.taglines.heroTagline;
-
-export function Hero() {
+function SubParagraph({ text }: { text: string }) {
+  const parts = text.split("Tuskira");
   return (
-    <section className="w-full mx-auto flex flex-col gap-8 py-12 md:py-20 px-5 animate-in fade-in slide-in-from-bottom-2 duration-500">
+    <p className="text-[17px] text-body max-w-[52ch] text-pretty">
+      {parts[0]}
+      <strong className="text-ink font-[600]">Tuskira</strong>
+      {parts[1]}
+    </p>
+  );
+}
 
-      {/* Content Section */}
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-          <div
-            className="size-20 shrink-0 rounded-lg overflow-hidden relative shadow-border"
-          >
-            <Image
-              src="/images/profile/hero.webp"
-              alt={`${data.firstName} ${data.lastName} - ${data.title}`}
-              fill
-              sizes="80px"
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <h1 className="text-4xl md:text-5xl text-balance font-semibold leading-tight tracking-display">
+export default function Hero() {
+  const sub = data.taglines.heroTagline.sub;
+
+  return (
+    <section
+      className="mt-[60px]"
+      id="top"
+      aria-label="Introduction"
+    >
+      {/* Identity row */}
+      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.044}>
+        <div className="flex items-center gap-[15px] mb-[26px]">
+          <Image
+            src="/images/profile/hero.webp"
+            alt="Praneeth Ravuri"
+            width={56}
+            height={56}
+            priority
+            sizes="56px"
+            className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_rgba(255,255,255,0.14)]"
+          />
+          <div>
+            <h1 className="text-[19px] font-[680] text-ink tracking-[-0.02em] leading-[1.2]">
               {data.firstName} {data.lastName}
             </h1>
-            <span
-              role="status"
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs text-secondary-foreground shadow-border-light"
-            >
-              <span className="size-2 rounded-full bg-green-600 animate-pulse motion-reduce:animate-none" aria-hidden="true" />
-              Open to opportunities
-            </span>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2">
-            <h2 className="text-xl font-semibold leading-relaxed tracking-tight-custom">
-              {tagline.role} <span className="text-secondary-foreground font-normal">at</span>
-            </h2>
-            <span className="inline-flex items-center gap-2 whitespace-nowrap text-xl font-semibold">
-              <Image
-                src={tagline.logoUrl}
-                alt={`${tagline.company} logo`}
-                width={24}
-                height={24}
-                loading="lazy"
-              />
-              {tagline.company}
-            </span>
-          </div>
-
-          <div>
-            <p className="text-base text-secondary-foreground leading-relaxed">
-              {tagline.description}
-            </p>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-4">
-              <ContactLinks />
+            <div className="text-[15px] text-muted-foreground font-[440] mt-px">
+              {data.title}
             </div>
           </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <Button asChild>
-              <a href={`mailto:${data.contact.email}`}>Email Me</a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href={data.contact.social.Resume.url} target="_blank" rel="noopener noreferrer">Resume</a>
-            </Button>
-          </div>
-
-          <div>
-            <p className="text-base text-secondary-foreground leading-relaxed">
-              {data.location}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {data.skills.map((skill, index) => (
-              <Badge key={index} variant="secondary" className="text-xs">
-                {skill}
-              </Badge>
-            ))}
-          </div>
         </div>
-      </div>
+      </BlurFade>
+
+      {/* Lead paragraph */}
+      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.066}>
+        <p className="text-[27px] max-[600px]:text-[23px] leading-[1.38] text-ink font-[560] tracking-[-0.025em] mb-[18px] max-w-[38ch] text-pretty">
+          Building{" "}
+          <span className="font-bold">autonomous agents</span>{" "}
+          and{" "}
+          <span className="font-bold">distributed systems</span>{" "}
+          for the real world.
+        </p>
+      </BlurFade>
+
+      {/* Sub paragraph */}
+      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.088}>
+        <SubParagraph text={sub} />
+      </BlurFade>
+
+      {/* Socials row */}
+      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.11}>
+        <div className="flex flex-wrap gap-[22px] mt-[30px]">
+          {Object.values(data.contact.social).map((item) => (
+            <a
+              key={item.name}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[15px] text-ink font-[500] transition-colors duration-200 hover:text-muted-foreground"
+            >
+              {item.name}
+            </a>
+          ))}
+          <a
+            href={`mailto:${data.contact.email}`}
+            className="text-[15px] text-ink font-[500] transition-colors duration-200 hover:text-muted-foreground"
+          >
+            Email
+          </a>
+        </div>
+      </BlurFade>
     </section>
   );
 }

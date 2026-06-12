@@ -1,52 +1,73 @@
 import { data } from "@/app/data/resume";
 
+export const dynamic = "force-static";
+
 export function GET() {
-    const markdown = `
-# ${data.firstName} ${data.lastName}
-> ${data.location}
-> ${data.taglines.heroTagline.role} at ${data.taglines.heroTagline.company}
-> ${data.taglines.heroTagline.description}
+    const social = Object.values(data.contact.social)
+        .map((s) => `- [${s.name}](${s.url})`)
+        .join("\n");
 
-## Skills
-- ${data.skills.join(', ')}
+    const work = data.work
+        .map(
+            (job) => `### ${job.title} — ${job.company}
 
-## Keywords
-- ${data.keywords.join(', ')}
+${job.startDate} – ${job.endDate} · ${job.location}
 
+${job.description}
 
+Technologies: ${job.technologies.join(", ")}`
+        )
+        .join("\n\n");
+
+    const projects = data.projects
+        .map(
+            (project) => `### [${project.name}](${project.url})
+
+${project.tags.join(" · ")}
+
+${project.description}
+
+Tech stack: ${project.techStack.join(", ")}`
+        )
+        .join("\n\n");
+
+    const education = data.education
+        .map((edu) => `- ${edu.degree}, ${edu.institution}`)
+        .join("\n");
+
+    const markdown = `# ${data.firstName} ${data.lastName}
+
+> ${data.summary}
+
+${data.taglines.heroTagline.role} at ${data.taglines.heroTagline.company} — ${data.taglines.heroTagline.description} Based in ${data.location}.
 
 ## Contact
+
 - Email: ${data.contact.email}
 - Website: ${data.url}
-${Object.values(data.contact.social).map((social) => `- ${social.name}: ${social.url}`).join('\n')}
+${social}
 
-## Work Experience
-${data.work.map((job) => `
-### ${job.title} at ${job.company}
-- **Period**: ${job.startDate} - ${job.endDate}
-- **Location**: ${job.location}
-- **Description**: ${job.description}
-`).join('')}
+## Experience
+
+${work}
 
 ## Projects
-${data.projects.map((project) => `
-### ${project.name}
-- **Description**: ${project.description}
-- **Tech Stack**: ${project.techStack.join(', ')}
 
-- **Link**: ${project.url}
-`).join('')}
+${projects}
 
 ## Education
-${data.education.map((edu) => `
-### ${edu.degree}
-- **Institution**: ${edu.institution}
-`).join('')}
-  `.trim();
+
+${education}
+
+## Skills
+
+${data.skills.join(", ")}
+`;
 
     return new Response(markdown, {
         headers: {
-            'Content-Type': 'text/plain; charset=utf-8',
+            "Content-Type": "text/plain; charset=utf-8",
+            "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
         },
     });
 }

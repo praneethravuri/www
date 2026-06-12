@@ -19,9 +19,8 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizePackageImports: [
-      "lucide-react",
-      "@radix-ui/react-slot",
-      "class-variance-authority",
+      "@phosphor-icons/react",
+      "motion",
       "clsx",
       "tailwind-merge",
     ],

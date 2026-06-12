@@ -1,0 +1,101 @@
+"use client"
+
+import { useRef } from "react"
+import {
+  LazyMotion,
+  domAnimation,
+  m,
+  useInView,
+  useReducedMotion,
+  type MotionProps,
+  type UseInViewOptions,
+  type Variants,
+} from "motion/react"
+
+type MarginType = UseInViewOptions["margin"]
+
+interface BlurFadeProps extends MotionProps {
+  children: React.ReactNode
+  className?: string
+  variant?: {
+    hidden: { y: number }
+    visible: { y: number }
+  }
+  duration?: number
+  delay?: number
+  offset?: number
+  direction?: "up" | "down" | "left" | "right"
+  inView?: boolean
+  inViewMargin?: MarginType
+  blur?: string
+}
+
+const getFilter = (v: Variants[string]) =>
+  typeof v === "function" ? undefined : v.filter
+
+export function BlurFade({
+  children,
+  className,
+  variant,
+  duration = 0.4,
+  delay = 0,
+  offset = 6,
+  direction = "down",
+  inView = false,
+  inViewMargin = "-50px",
+  blur = "6px",
+  ...props
+}: BlurFadeProps) {
+  const ref = useRef(null)
+  const inViewResult = useInView(ref, { once: true, margin: inViewMargin })
+  const prefersReducedMotion = useReducedMotion()
+  // Reduced motion must not change the rendered tree (server HTML has no media
+  // context), so reveal instantly via the transition instead of branching.
+  const isInView = !inView || inViewResult || !!prefersReducedMotion
+
+  const defaultVariants: Variants = {
+    hidden: {
+      [direction === "left" || direction === "right" ? "x" : "y"]:
+        direction === "right" || direction === "down" ? -offset : offset,
+      opacity: 0,
+      filter: `blur(${blur})`,
+    },
+    visible: {
+      [direction === "left" || direction === "right" ? "x" : "y"]: 0,
+      opacity: 1,
+      filter: `blur(0px)`,
+    },
+  }
+  const combinedVariants = variant ?? defaultVariants
+
+  const hiddenFilter = getFilter(combinedVariants.hidden)
+  const visibleFilter = getFilter(combinedVariants.visible)
+
+  const shouldTransitionFilter =
+    hiddenFilter != null &&
+    visibleFilter != null &&
+    hiddenFilter !== visibleFilter
+
+  return (
+    <LazyMotion features={domAnimation}>
+      <m.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={combinedVariants}
+        transition={{
+          delay: prefersReducedMotion ? 0 : 0.04 + delay,
+          duration: prefersReducedMotion ? 0 : duration,
+          ease: [0.22, 0.61, 0.36, 1],
+          ...(shouldTransitionFilter
+            ? { filter: { duration: prefersReducedMotion ? 0 : duration } }
+            : {}),
+        }}
+        className={className}
+        {...props}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
+  )
+}

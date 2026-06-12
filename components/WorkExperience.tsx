@@ -1,79 +1,83 @@
 import { data } from "@/app/data/resume";
-import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export function WorkExperience() {
-    return (
-        <section id="work-experience" className="py-12 md:py-20 w-full px-5 animate-in fade-in slide-in-from-bottom-2 duration-500 border-t border-border scroll-mt-16">
-            <div className="mx-auto">
-                <div className="flex items-center justify-between mb-8 md:mb-12">
-                    <div>
-                        <span className="block h-1 w-8 rounded-full bg-accent mb-4" aria-hidden="true" />
-                        <h2 className="text-foreground text-3xl font-semibold tracking-heading">
-                            Experience
-                        </h2>
-                    </div>
-                    <div>
-                        <Button variant="default" asChild>
-                            <Link href={data.contact.social.Resume.url} target="_blank" rel="noopener noreferrer">
-                                Download Resume
-                            </Link>
-                        </Button>
-                    </div>
+  return (
+    <section
+      id="experience"
+      aria-label="Experience"
+      className="mt-[88px] max-[600px]:mt-[70px] scroll-mt-8"
+    >
+      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.05}>
+        <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[480] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
+          Experience
+        </h2>
+      </BlurFade>
+
+      <div className="flex flex-col">
+        {data.work.map((job, index) => (
+          <BlurFade
+            key={index}
+            inView
+            direction="up"
+            offset={14}
+            duration={0.7}
+            blur="0px"
+            inViewMargin="-8%"
+            delay={0.05 + index * 0.06}
+          >
+            <div
+              className={`py-[30px] ${
+                index === 0
+                  ? "border-t-0 pt-5"
+                  : "border-t border-line"
+              }`}
+            >
+              {/* Top row */}
+              <div className="flex items-center gap-3.5">
+                <Image
+                  src={job.logoUrl}
+                  alt={`${job.company} logo`}
+                  width={46}
+                  height={46}
+                  className="border border-line-strong bg-card object-cover flex-none"
+                />
+                <div>
+                  <div className="flex items-baseline gap-2.5 flex-wrap">
+                    <h3 className="text-[18px] font-[680] text-ink tracking-[-0.02em]">
+                      {job.company}
+                    </h3>
+                    <span className="text-[15px] text-muted-foreground">
+                      {job.title}
+                    </span>
+                  </div>
+                  <p className="text-[13px] text-faint mt-0.5 uppercase tracking-[0.04em]">
+                    {job.startDate} — {job.endDate} · {job.location}
+                  </p>
                 </div>
+              </div>
 
-                <div className="space-y-10 md:space-y-14">
-                    {data.work.map((job, index) => (
-                        <article
-                            key={index}
-                            className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8 rounded-lg -mx-3 px-3 py-2 transition-colors duration-300 hover:bg-card/60 animate-in fade-in slide-in-from-bottom-2 duration-500 fill-mode-backwards"
-                            style={{ animationDelay: `${Math.min(index * 100, 400)}ms` }}
-                        >
-                            <time className="font-mono text-sm font-bold uppercase tracking-wide text-secondary-foreground">
-                                {job.startDate} - {job.endDate}
-                            </time>
+              {/* Description */}
+              <p className="text-[16px] text-body mt-3.5 font-[440] text-pretty">
+                {job.description}
+              </p>
 
-                            <div className="space-y-4">
-                                <div className="flex flex-wrap items-center gap-2">
-                                    <h3 className="text-xl font-semibold tracking-tight-custom">
-                                        {job.title} <span className="text-secondary-foreground font-normal">at</span>
-                                    </h3>
-                                    <div className="inline-flex items-center gap-2 whitespace-nowrap">
-                                        <Image
-                                            src={job.logoUrl}
-                                            alt={`${job.company} logo`}
-                                            width={24}
-                                            height={24}
-                                            loading="lazy"
-                                        />
-                                        <span className="text-xl font-semibold">
-                                            {job.company}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <p className="text-secondary-foreground text-base leading-relaxed">
-                                    {job.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 pt-2">
-                                    {job.technologies.map((tech, techIndex) => (
-                                        <Badge
-                                            key={techIndex}
-                                            variant="secondary"
-                                            className="text-xs"
-                                        >
-                                            {tech}
-                                        </Badge>
-                                    ))}
-                                </div>
-                            </div>
-                        </article>
-                    ))}
-                </div>
+              {/* Tech pills */}
+              <div className="flex flex-wrap gap-1.5 mt-3.5">
+                {job.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="text-[12.5px] tracking-[0.01em] text-muted-foreground px-2.5 py-1 rounded-[6px] border border-line whitespace-nowrap"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-        </section>
-    );
+          </BlurFade>
+        ))}
+      </div>
+    </section>
+  );
 }

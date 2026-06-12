@@ -12,6 +12,7 @@ export const data = {
             company: "Tuskira",
             logoUrl: "/images/logos/tuskira_logo.webp",
             description: "Building Agentic AI and Scalable Systems for Cybersecurity.",
+            sub: "I'm an AI Engineer focused on production-grade agentic AI, backend infrastructure, and high-throughput data pipelines. Currently at Tuskira, building Agentic AI and scalable systems for cybersecurity.",
         },
         footerTagline: {
             tagline: "Let's put AI to work."
@@ -93,7 +94,7 @@ export const data = {
                 url: "https://x.com/praneeth2510"
             },
             Resume: {
-                name: "Resume",
+                name: "Résumé",
                 url: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing"
             }
         }
@@ -108,7 +109,7 @@ export const data = {
             logoUrl: "/images/logos/tuskira_logo.webp",
             location: "United States",
             description:
-                "Building autonomous AI agents for cybersecurity investigations that query multiple data sources and maintain context across long sessions. Designed a memory layer separating long-term knowledge from active reasoning to prevent context drift, storing summarized investigations in Neo4j and Pinecone for retrieval. Optimized MCP servers in Go and Python to filter data before LLM processing, reducing token usage while maintaining response consistency. Deployed on AWS with Kubernetes for continuous operation across multiple client environments.",
+                "Building autonomous AI agents for cybersecurity investigations that query many data sources and hold context across long sessions. Designed a memory layer that separates long-term knowledge from active reasoning, storing summarized investigations in Neo4j and Pinecone. Optimized MCP servers in Go and Python to filter data before the LLM, cutting token usage. Deployed on AWS with Kubernetes across multiple client environments.",
             technologies: ["Agentic AI", "MCP", "Python", "Go", "AWS", "Kubernetes", "PostgreSQL", "Neo4j", "Pinecone"]
         },
 
@@ -120,7 +121,7 @@ export const data = {
             logoUrl: "/images/logos/lumen_logo.webp",
             location: "United States",
             description:
-                "Built backend services processing millions of network flows per minute for traffic analysis platform. Architected event-driven pipeline with Kafka to decouple ingestion from processing, preventing bottlenecks from cascading failures. Implemented backpressure handling in Go using buffered channels to absorb traffic spikes and balanced partition consumption to maintain throughput during peak periods. Deployed with Docker and Kubernetes, achieving zero data loss across all production deployments.",
+                "Built backend services processing millions of network flows per minute for a traffic-analysis platform. Architected an event-driven Kafka pipeline that decouples ingestion from processing so failures can’t cascade. Added backpressure in Go with buffered channels to absorb spikes and hold throughput at peak. Shipped on Docker and Kubernetes with zero data loss in production.",
             technologies: ["Go", "Kafka", "MongoDB", "Docker", "Kubernetes"]
         },
 
@@ -132,7 +133,7 @@ export const data = {
             logoUrl: "/images/logos/adp_logo.webp",
             location: "India",
             description:
-                "Modernized legacy employee portal handling thousands of daily users. Built React frontend and optimized Node.js backend with Redis caching layer to reduce repeated database queries. Improved response times and stabilized performance during peak traffic periods.",
+                "Modernized a legacy employee portal serving thousands of daily users. Built a React frontend and added a Redis caching layer to the Node.js backend to cut repeated database queries. Improved response times and stabilized performance during peak traffic.",
             technologies: ["React", "Node.js", "Redis", "JavaScript"]
         }
     ],
@@ -142,7 +143,7 @@ export const data = {
             name: "Gary",
             url: "https://github.com/praneethravuri/gary",
             description:
-                "AI agent that rewrites resumes to match job descriptions without keyword stuffing. Built multi-step workflow with Crew AI that extracts role requirements, analyzes tone, and rewrites experience while maintaining narrative consistency. Outputs tailored PDF/Word docs that pass ATS filters. Deployed on GCP with MongoDB for resume version management.",
+                "An AI agent that rewrites résumés to match job descriptions without keyword stuffing. A multi-step Crew AI workflow extracts role requirements, analyzes tone, and rewrites experience while keeping the narrative consistent — outputting tailored PDF/Word docs that pass ATS filters.",
             tags: ["Agentic AI", "LLMs"],
             techStack: ["Crew AI", "MongoDB", "GCP"]
         },
@@ -151,8 +152,8 @@ export const data = {
             name: "Pitstop",
             url: "https://github.com/praneethravuri/pitstop",
             description:
-                "MCP server connecting live F1 telemetry to LLMs for natural language race queries. Processes high-frequency data streams with FastMCP and HttpX, filtering noise to extract meaningful signals like lap times, tire degradation, and pit windows. Enables conversational queries about race strategy and pace without switching dashboards.",
-            tags: ["MCP", "Streaming Data", "LLMs"],
+                "An MCP server connecting live F1 telemetry to LLMs for natural-language race queries. Processes high-frequency streams with FastMCP and HttpX, filtering noise into signals like lap times, tire degradation, and pit windows — enabling conversational queries about strategy and pace.",
+            tags: ["MCP", "Streaming Data"],
             techStack: ["FastMCP", "HttpX"]
         },
 
@@ -160,8 +161,8 @@ export const data = {
             name: "Smart Traffic",
             url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
             description:
-                "Reinforcement learning simulation using SARSA to optimize traffic light timing based on real-time queue lengths. Modeled intersection dynamics with NumPy and Pygame, training agent to learn adaptive switching policies instead of fixed schedules. Reduced average wait times compared to static timers, demonstrating RL for real-time decision-making systems.",
-            tags: ["Reinforcement Learning", "Python"],
+                "A reinforcement-learning simulation using SARSA to optimize traffic-light timing from real-time queue lengths. Modeled intersection dynamics with NumPy and Pygame, training an agent to learn adaptive switching policies instead of fixed schedules — reducing average wait times versus static timers.",
+            tags: ["Reinforcement Learning"],
             techStack: ["NumPy", "Pygame", "Matplotlib"]
         },
 
@@ -169,8 +170,8 @@ export const data = {
             name: "Notstuck",
             url: "https://github.com/praneethravuri/notstuck",
             description:
-                "Hybrid search RAG system combining vector similarity and keyword filtering for technical documentation retrieval. Built with Next.js and React frontend, PostgreSQL for metadata, and Pinecone for vector search. Crew AI generates answers with citations, balancing semantic understanding with exact term matching to reduce time spent manually searching PDFs.",
-            tags: ["RAG", "Hybrid Search", "TypeScript"],
+                "A hybrid-search RAG system combining vector similarity and keyword filtering for technical-doc retrieval. Built with a Next.js + React frontend, PostgreSQL for metadata, and Pinecone for vectors. Crew AI generates cited answers, balancing semantic understanding with exact-term matching.",
+            tags: ["RAG", "Hybrid Search"],
             techStack: ["React", "Next.js", "PostgreSQL", "Pinecone", "Crew AI"]
         }
     ],

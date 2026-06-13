@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BlurFade } from "@/components/ui/blur-fade";
 import { data } from "@/app/data/resume";
 
 function SubParagraph({ text }: { text: string }) {
@@ -23,66 +22,58 @@ export default function Hero() {
       aria-label="Introduction"
     >
       {/* Identity row */}
-      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.044}>
-        <div className="flex items-center gap-[15px] mb-[26px]">
-          <Image
-            src="/images/profile/hero.webp"
-            alt="Praneeth Ravuri"
-            width={56}
-            height={56}
-            priority
-            sizes="56px"
-            className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_rgba(255,255,255,0.14)]"
-          />
-          <div>
-            <h1 className="text-[19px] font-[680] text-ink tracking-[-0.02em] leading-[1.2]">
-              {data.firstName} {data.lastName}
-            </h1>
-            <div className="text-[15px] text-muted-foreground font-[440] mt-px">
-              {data.title}
-            </div>
+      <div className="flex items-center gap-[15px] mb-[26px]">
+        <Image
+          src="/images/profile/hero.webp"
+          alt="Praneeth Ravuri"
+          width={56}
+          height={56}
+          priority
+          sizes="56px"
+          className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_rgba(255,255,255,0.14)]"
+        />
+        <div>
+          <h1 className="text-[19px] font-[680] text-ink tracking-[-0.02em] leading-[1.2]">
+            {data.firstName} {data.lastName}
+          </h1>
+          <div className="text-[15px] text-muted-foreground font-[440] mt-px">
+            {data.title}
           </div>
         </div>
-      </BlurFade>
+      </div>
 
       {/* Lead paragraph */}
-      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.066}>
-        <p className="text-[27px] max-[600px]:text-[23px] leading-[1.38] text-ink font-[560] tracking-[-0.025em] mb-[18px] max-w-[38ch] text-pretty">
-          Building{" "}
-          <span className="font-bold">autonomous agents</span>{" "}
-          and{" "}
-          <span className="font-bold">distributed systems</span>{" "}
-          for the real world.
-        </p>
-      </BlurFade>
+      <p className="text-[27px] max-[600px]:text-[23px] leading-[1.38] text-ink font-[560] tracking-[-0.025em] mb-[18px] max-w-[38ch] text-pretty">
+        Building{" "}
+        <span className="font-bold">autonomous agents</span>{" "}
+        and{" "}
+        <span className="font-bold">distributed systems</span>{" "}
+        for the real world.
+      </p>
 
       {/* Sub paragraph */}
-      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.088}>
-        <SubParagraph text={sub} />
-      </BlurFade>
+      <SubParagraph text={sub} />
 
       {/* Socials row */}
-      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.11}>
-        <div className="flex flex-wrap gap-[22px] mt-[30px]">
-          {Object.values(data.contact.social).map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[15px] text-ink font-[500] transition-colors duration-200 hover:text-muted-foreground"
-            >
-              {item.name}
-            </a>
-          ))}
+      <div className="flex flex-wrap gap-[22px] mt-[30px]">
+        {Object.values(data.contact.social).map((item) => (
           <a
-            href={`mailto:${data.contact.email}`}
+            key={item.name}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[15px] text-ink font-[500] transition-colors duration-200 hover:text-muted-foreground"
           >
-            Email
+            {item.name}
           </a>
-        </div>
-      </BlurFade>
+        ))}
+        <a
+          href={`mailto:${data.contact.email}`}
+          className="text-[15px] text-ink font-[500] transition-colors duration-200 hover:text-muted-foreground"
+        >
+          Email
+        </a>
+      </div>
     </section>
   );
 }

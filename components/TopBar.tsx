@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { MapPinIcon } from "@phosphor-icons/react";
-import { BlurFade } from "@/components/ui/blur-fade";
 import { data } from "@/app/data/resume";
 
 export default function TopBar() {
@@ -31,15 +30,11 @@ export default function TopBar() {
 
   return (
     <header className="flex items-center justify-between gap-4 pt-[28px] text-[13px] tracking-[0.04em] text-muted-foreground">
-      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0}>
-        <span className="inline-flex items-center gap-[7px] whitespace-nowrap">
-          <MapPinIcon size={13} className="opacity-70 flex-none" />
-          {data.location}
-        </span>
-      </BlurFade>
-      <BlurFade inView direction="up" offset={14} duration={0.7} blur="0px" inViewMargin="-8%" delay={0.022}>
-        <span className="whitespace-nowrap">{time}</span>
-      </BlurFade>
+      <span className="inline-flex items-center gap-[7px] whitespace-nowrap">
+        <MapPinIcon size={13} className="opacity-70 flex-none" />
+        {data.location}
+      </span>
+      <span className="whitespace-nowrap">{time}</span>
     </header>
   );
 }

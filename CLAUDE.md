@@ -15,8 +15,8 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 
 - **ESLint must stay on v9** — v10 breaks eslint-plugin-react via eslint-config-next 16.x.
 - **Design is locked to pure-black monochrome**: bg `#000000`, ink `#ffffff`, body `#a3a3a3`, muted `#7c7c7c`, faint `#5a5a5a`, surfaces `#0e0e0e`, hairlines `rgba(255,255,255,0.08/0.14)`. Do NOT add color, gradients, cards, link underlines, navbars/docks, or extra fonts. Geist only (via next/font, `--font-geist-sans`).
-- Keep sections as **server components**; the only client components are `components/TopBar.tsx` (live Chicago clock) and `components/ui/blur-fade.tsx` / `noise-texture.tsx`.
-- Animations: only the BlurFade fade-up reveal (offset 14, duration 0.7, blur "0px", staggered small delays). It must keep respecting `prefers-reduced-motion` **without changing the rendered DOM shape** (hydration safety — reveal instantly via zero-duration transition instead of branching the tree).
+- Keep sections as **server components**; the only client components are `components/TopBar.tsx` (live Chicago clock) and `components/ui/noise-texture.tsx`.
+- **No entrance/reveal animations.** BlurFade was removed for FCP/LCP reasons — JS-driven reveals SSR content with `opacity:0`, which delays paint until hydration. Do not reintroduce scroll reveals or anything that renders content hidden. Hover transitions (color/transform) are fine.
 - Images are **sharp-cornered** (no border radius) and go through `next/image`.
 
 ## Architecture

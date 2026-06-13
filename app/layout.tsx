@@ -118,6 +118,7 @@ export default function RootLayout({
         </a>
         <NoiseTexture
           className="fixed inset-0 z-50 opacity-30 dark:opacity-30"
+          octaves={3}
           noiseOpacity={0.3}
         />
         {children}

@@ -18,11 +18,7 @@ const nextConfig: NextConfig = {
   },
 
   experimental: {
-    optimizePackageImports: [
-      "@phosphor-icons/react",
-      "clsx",
-      "tailwind-merge",
-    ],
+    optimizePackageImports: ["@phosphor-icons/react"],
     optimizeCss: true,
   },
 

@@ -7,7 +7,6 @@ const geistSans = Geist({
 });
 import "./globals.css";
 import { data } from "@/app/data/resume";
-import { NoiseTexture } from "@/components/ui/noise-texture";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -116,11 +115,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <NoiseTexture
-          className="fixed inset-0 z-50 opacity-30 dark:opacity-30"
-          octaves={3}
-          noiseOpacity={0.3}
-        />
         {children}
         <Analytics />
         <SpeedInsights />

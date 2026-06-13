@@ -15,7 +15,7 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 
 - **ESLint must stay on v9** — v10 breaks eslint-plugin-react via eslint-config-next 16.x.
 - **Design is locked to pure-black monochrome**: bg `#000000`, ink `#ffffff`, body `#a3a3a3`, muted `#7c7c7c`, faint `#5a5a5a`, surfaces `#0e0e0e`, hairlines `rgba(255,255,255,0.08/0.14)`. Do NOT add color, gradients, cards, link underlines, navbars/docks, or extra fonts. Geist only (via next/font, `--font-geist-sans`).
-- Keep sections as **server components**; the only client components are `components/TopBar.tsx` (live Chicago clock) and `components/ui/noise-texture.tsx`.
+- **Everything is a server component** — there is zero custom client JS. The live clock and noise-texture overlay were removed (user request, performance); don't reintroduce client components without need.
 - **No entrance/reveal animations.** BlurFade was removed for FCP/LCP reasons — JS-driven reveals SSR content with `opacity:0`, which delays paint until hydration. Do not reintroduce scroll reveals or anything that renders content hidden. Hover transitions (color/transform) are fine.
 - Images are **sharp-cornered** (no border radius) and go through `next/image`.
 
@@ -23,7 +23,7 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 
 - **All content lives in `app/data/resume.tsx`** (`data` export) — name, summary, taglines, contact/socials, work, projects, education. Components render from it; edit content there, not in components.
 - `app/page.tsx` renders TopBar → Hero → WorkExperience → Projects → Education → Footer inside `<main class="max-w-[640px]">`.
-- `app/layout.tsx` holds all SEO metadata, JSON-LD structured data, Vercel Analytics/Speed Insights, the skip link, and the site-wide `<NoiseTexture>` overlay (intensity tuned here).
+- `app/layout.tsx` holds all SEO metadata, JSON-LD structured data, Vercel Analytics/Speed Insights, and the skip link.
 - `app/globals.css` — Tailwind v4 CSS-first `@theme` tokens (the palette above), body base type (17px / weight 440 / -0.01em), inverted `::selection`, custom scrollbar.
 - Design-exact values use Tailwind arbitrary classes (`text-[27px] font-[560] tracking-[-0.025em]`).
 - Machine-readable resume: `app/llms.txt/route.ts` (llms.txt convention, generated from resume data). Also `manifest.ts`, `robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, `twitter-image.tsx` — keep in sync with the palette/content.

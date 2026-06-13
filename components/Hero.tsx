@@ -30,7 +30,7 @@ export default function Hero() {
           height={56}
           priority
           sizes="56px"
-          className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_rgba(255,255,255,0.14)]"
+          className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_var(--color-line-strong)]"
         />
         <div>
           <h1 className="text-[19px] font-[680] text-ink tracking-[-0.02em] leading-[1.2]">
@@ -42,14 +42,28 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Lead paragraph */}
-      <p className="text-[27px] max-[600px]:text-[23px] leading-[1.38] text-ink font-[560] tracking-[-0.025em] mb-[18px] max-w-[38ch] text-pretty">
-        Building{" "}
-        <span className="font-bold">autonomous agents</span>{" "}
-        and{" "}
-        <span className="font-bold">distributed systems</span>{" "}
-        for the real world.
-      </p>
+      {/* Lead visual — image with overlaid headline */}
+      <div className="relative overflow-hidden mb-[18px]">
+        <Image
+          src="/images/hero-banner.jpg"
+          alt="Mountain valley viewed through a window"
+          width={2000}
+          height={1121}
+          priority
+          sizes="(max-width: 640px) 100vw, 640px"
+          className="w-full h-auto object-cover"
+        />
+
+        {/* Scrim for text legibility */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40" />
+
+        {/* Overlaid headline — vertically centered, fluid type */}
+        <div className="absolute inset-0 flex items-center p-[5%]">
+          <p className="text-[clamp(18px,5.5vw,38px)] leading-[1.22] font-[620] tracking-[-0.025em] text-white text-pretty max-w-[28ch] drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]">
+            Building AI agents for cybersecurity.
+          </p>
+        </div>
+      </div>
 
       {/* Sub paragraph */}
       <SubParagraph text={sub} />

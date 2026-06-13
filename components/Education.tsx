@@ -22,7 +22,7 @@ export function Education() {
             alt={`${edu.institution} logo`}
             width={44}
             height={44}
-            className="border border-line-strong bg-card object-cover flex-none"
+            className="bg-card object-cover flex-none"
           />
           <div>
             <p className="text-[17px] text-ink font-[600]">{edu.degree}</p>

@@ -30,7 +30,7 @@ export function WorkExperience() {
                 alt={`${job.company} logo`}
                 width={46}
                 height={46}
-                className="border border-line-strong bg-card object-cover flex-none"
+                className="bg-card object-cover flex-none"
               />
               <div>
                 <div className="flex items-baseline gap-2.5 flex-wrap">

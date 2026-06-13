@@ -18,7 +18,7 @@ export default function Hero() {
           height={56}
           priority
           sizes="56px"
-          className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_var(--color-line-strong)]"
+          className="size-[56px] flex-none object-cover"
         />
         <div>
           <h1 className="text-[19px] font-[600] text-ink tracking-[-0.02em] leading-[1.2]">

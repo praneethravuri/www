@@ -10,6 +10,8 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: '#000000',
     theme_color: '#000000',
+    scope: '/',
+    categories: ['technology'],
     icons: [
       {
         src: '/icons/android-chrome-192x192.png',
@@ -20,6 +22,12 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/icons/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
+      },
+      {
+        src: '/icons/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'maskable',
       },
       {
         src: '/icons/apple-touch-icon.png',

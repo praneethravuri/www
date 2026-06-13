@@ -8,7 +8,7 @@ export function Education() {
       aria-label="Education"
       className="mt-[88px] max-[600px]:mt-[70px] scroll-mt-8"
     >
-      <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[480] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
+      <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[500] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
         Education
       </h2>
 
@@ -25,8 +25,8 @@ export function Education() {
             className="border border-line-strong bg-card object-cover flex-none"
           />
           <div>
-            <p className="text-[17px] text-ink font-[560]">{edu.degree}</p>
-            <p className="text-[14px] text-muted-foreground mt-px">{edu.institution}</p>
+            <p className="text-[17px] text-ink font-[600]">{edu.degree}</p>
+            <p className="text-[14px] text-muted-foreground mt-px font-[460]">{edu.institution}</p>
           </div>
         </div>
       ))}

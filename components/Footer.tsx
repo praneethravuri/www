@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="mt-[120px] text-center">
       {/* Wordmark */}
-      <div className="text-[clamp(38px,9vw,60px)] font-bold tracking-[-0.045em] leading-none text-ink">
+      <div className="text-[clamp(38px,9vw,60px)] font-bold tracking-[-0.045em] leading-none text-ink text-balance">
         {data.taglines.footerTagline.tagline}
       </div>
 
@@ -13,7 +13,7 @@ export function Footer() {
       <div>
         <a
           href={`mailto:${data.contact.email}`}
-          className="inline-flex items-center gap-2.5 mt-[30px] bg-primary text-primary-foreground text-[16px] font-[620] tracking-[-0.01em] px-7 py-3.5 rounded-full transition-transform duration-200 hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2.5 mt-[30px] bg-primary text-primary-foreground text-[16px] font-[600] tracking-[-0.01em] px-7 py-3.5 rounded-full transition-transform duration-200 hover:-translate-y-0.5"
         >
           <EnvelopeSimpleIcon size={16} />
           {data.contact.email}
@@ -28,7 +28,7 @@ export function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[14px] text-muted-foreground transition-colors duration-200 hover:text-ink"
+            className="text-[14px] text-muted-foreground font-[460] transition-colors duration-200 hover:text-ink"
           >
             {link.name}
           </a>
@@ -36,9 +36,8 @@ export function Footer() {
       </div>
 
       {/* Meta row */}
-      <div className="flex justify-between items-center gap-4 mt-[52px] pt-[22px] border-t border-line text-[12.5px] tracking-[0.06em] text-faint uppercase max-[600px]:flex-wrap max-[600px]:justify-center">
-        <span>{data.location.toUpperCase()}</span>
-        <span className="normal-case tracking-[0.01em]">
+      <div className="flex justify-center items-center gap-4 mt-[52px] pt-[22px] border-t border-line text-[12.5px] font-[500] tracking-[0.06em] text-faint uppercase">
+        <span className="normal-case tracking-[0.01em] tabular-nums">
           &copy; {new Date().getFullYear()} {data.firstName} {data.lastName}
         </span>
       </div>

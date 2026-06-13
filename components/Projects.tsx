@@ -1,5 +1,6 @@
 import { data } from "@/app/data/resume";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
+import { Badge } from "@/components/ui/badge";
 
 export function Projects() {
   return (
@@ -8,7 +9,7 @@ export function Projects() {
       aria-label="Projects"
       className="mt-[88px] max-[600px]:mt-[70px] scroll-mt-8"
     >
-      <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[480] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
+      <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[500] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
         Projects
       </h2>
 
@@ -27,32 +28,32 @@ export function Projects() {
           >
             {/* Head */}
             <div className="flex items-baseline gap-2.5 flex-wrap">
-              <h3 className="inline-flex items-center gap-2 text-[18px] font-[680] tracking-[-0.02em] text-ink leading-[1.2]">
+              <h3 className="inline-flex items-center gap-2 text-[18px] font-[600] tracking-[-0.02em] text-ink leading-[1.2]">
                 {project.name}
                 <ArrowUpRightIcon
                   size={15}
                   className="text-faint transition-all duration-200 group-hover:text-ink group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
                 />
               </h3>
-              <span className="text-[15px] text-muted-foreground">
+              <span className="text-[15px] text-muted-foreground font-[460]">
                 {project.tags.join(" · ")}
               </span>
             </div>
 
             {/* Description */}
-            <p className="text-[16px] text-body mt-3.5 font-[440] text-pretty">
+            <p className="text-[16px] text-body mt-3.5 font-[420] text-pretty">
               {project.description}
             </p>
 
-            {/* TechStack pills */}
+            {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mt-3.5">
               {project.techStack.map((tech, techIndex) => (
-                <span
+                <Badge
                   key={techIndex}
-                  className="text-[12.5px] tracking-[0.01em] text-muted-foreground px-2.5 py-1 rounded-[6px] border border-line whitespace-nowrap"
+                  variant="secondary"
                 >
                   {tech}
-                </span>
+                </Badge>
               ))}
             </div>
           </a>

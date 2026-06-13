@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a pure-black, monochrome, 640px single-column layout.
 

@@ -7,9 +7,9 @@
   --background: #ffffff;
   --foreground: #0a0a0a;
   --ink: #0a0a0a;
-  --body: #404040;
-  --muted-foreground: #6b6b6b;
-  --faint: #8f8f8f;
+  --body: #3a3a3a;
+  --muted-foreground: #585858;
+  --faint: #707070;
   --line: rgba(0, 0, 0, 0.1);
   --line-strong: rgba(0, 0, 0, 0.16);
   --card: #f5f5f5;
@@ -26,9 +26,9 @@
   --background: #000000;
   --foreground: #ffffff;
   --ink: #ffffff;
-  --body: #a3a3a3;
-  --muted-foreground: #7c7c7c;
-  --faint: #5a5a5a;
+  --body: #b5b5b5;
+  --muted-foreground: #8e8e8e;
+  --faint: #808080;
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.14);
   --card: #0e0e0e;
@@ -67,7 +67,7 @@
   --color-input: var(--line-strong);
   --color-ring: var(--ink);
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
 
   --radius-sm: calc(0.5rem - 4px);
   --radius-md: calc(0.5rem - 2px);
@@ -92,13 +92,14 @@
 
   body {
     @apply bg-background text-body;
-    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont,
       "Segoe UI", sans-serif;
     font-size: 17px;
     line-height: 1.6;
-    font-weight: 440;
-    letter-spacing: -0.01em;
-    font-feature-settings: "liga" 1;
+    font-weight: 420;
+    letter-spacing: -0.011em;
+    font-optical-sizing: auto;
+    font-feature-settings: "liga" 1, "calt" 1, "cv11" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;

@@ -1,20 +1,8 @@
 import Image from "next/image";
+import heroBanner from "@/public/images/hero-banner.jpg";
 import { data } from "@/app/data/resume";
 
-function SubParagraph({ text }: { text: string }) {
-  const parts = text.split("Tuskira");
-  return (
-    <p className="text-[17px] text-body max-w-[52ch] text-pretty">
-      {parts[0]}
-      <strong className="text-ink font-[600]">Tuskira</strong>
-      {parts[1]}
-    </p>
-  );
-}
-
 export default function Hero() {
-  const sub = data.taglines.heroTagline.sub;
-
   return (
     <section
       className="mt-[60px]"
@@ -33,10 +21,10 @@ export default function Hero() {
           className="size-[56px] flex-none object-cover shadow-[0_0_0_1px_var(--color-line-strong)]"
         />
         <div>
-          <h1 className="text-[19px] font-[680] text-ink tracking-[-0.02em] leading-[1.2]">
+          <h1 className="text-[19px] font-[600] text-ink tracking-[-0.02em] leading-[1.2]">
             {data.firstName} {data.lastName}
           </h1>
-          <div className="text-[15px] text-muted-foreground font-[440] mt-px">
+          <div className="text-[15px] text-muted-foreground font-[460] mt-px">
             {data.title}
           </div>
         </div>
@@ -45,12 +33,13 @@ export default function Hero() {
       {/* Lead visual — image with overlaid headline */}
       <div className="relative overflow-hidden mb-[18px]">
         <Image
-          src="/images/hero-banner.jpg"
+          src={heroBanner}
           alt="Mountain valley viewed through a window"
-          width={2000}
-          height={1121}
           priority
+          placeholder="blur"
+          quality={70}
           sizes="(max-width: 640px) 100vw, 640px"
+          fetchPriority="high"
           className="w-full h-auto object-cover"
         />
 
@@ -59,14 +48,11 @@ export default function Hero() {
 
         {/* Overlaid headline — vertically centered, fluid type */}
         <div className="absolute inset-0 flex items-center p-[5%]">
-          <p className="text-[clamp(18px,5.5vw,38px)] leading-[1.22] font-[620] tracking-[-0.025em] text-white text-pretty max-w-[28ch] drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]">
-            Building AI agents for cybersecurity.
+          <p className="text-[clamp(18px,5.5vw,38px)] leading-[1.22] font-[640] tracking-[-0.025em] text-white text-balance max-w-[28ch] drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]">
+            {data.heroHeadline}
           </p>
         </div>
       </div>
-
-      {/* Sub paragraph */}
-      <SubParagraph text={sub} />
 
       {/* Socials row */}
       <div className="flex flex-wrap gap-[22px] mt-[30px]">

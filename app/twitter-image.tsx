@@ -3,10 +3,13 @@ import { data } from '@/app/data/resume'
 
 export const runtime = 'edge'
 
-export const alt = `${data.firstName} ${data.lastName} - ${data.title}`
+const fullName = `${data.firstName} ${data.lastName}`
+const pageTitle = `${fullName} | ${data.title}`
+
+export const alt = pageTitle
 export const size = {
   width: 1200,
-  height: 630,
+  height: 675,
 }
 export const contentType = 'image/png'
 
@@ -56,7 +59,7 @@ export default async function Image() {
               letterSpacing: '-2px',
             }}
           >
-            {data.firstName} {data.lastName}
+            {fullName}
           </h1>
 
           {/* Title */}
@@ -80,7 +83,7 @@ export default async function Image() {
               textAlign: 'center',
             }}
           >
-            {data.taglines.heroTagline.description}
+            {data.heroHeadline}
           </p>
 
           {/* URL */}

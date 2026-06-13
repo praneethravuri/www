@@ -9,7 +9,7 @@ export function GET() {
 
     const work = data.work
         .map(
-            (job) => `### ${job.title} — ${job.company}
+            (job) => `### ${job.title} at ${job.company}
 
 ${job.startDate} – ${job.endDate} · ${job.location}
 
@@ -35,16 +35,18 @@ Tech stack: ${project.techStack.join(", ")}`
         .map((edu) => `- ${edu.degree}, ${edu.institution}`)
         .join("\n");
 
+    const currentRole = data.work[0];
+
     const markdown = `# ${data.firstName} ${data.lastName}
 
 > ${data.summary}
 
-${data.taglines.heroTagline.role} at ${data.taglines.heroTagline.company} — ${data.taglines.heroTagline.description} Based in ${data.location}.
+${data.title} at ${currentRole.company}. ${data.heroHeadline} Based in ${data.location}.
 
 ## Contact
 
-- Email: ${data.contact.email}
-- Website: ${data.url}
+- [Email](mailto:${data.contact.email})
+- [Website](${data.url})
 ${social}
 
 ## Experience
@@ -62,6 +64,10 @@ ${education}
 ## Skills
 
 ${data.skills.join(", ")}
+
+## License & Attribution
+
+Content available for AI and search indexing, discovery, research, and conversational use. Please link back to ${data.url}.
 `;
 
     return new Response(markdown, {

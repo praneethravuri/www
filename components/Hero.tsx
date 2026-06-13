@@ -37,14 +37,14 @@ export default function Hero() {
           alt="Mountain valley viewed through a window"
           priority
           placeholder="blur"
-          quality={70}
+          quality={100}
           sizes="(max-width: 640px) 100vw, 640px"
           fetchPriority="high"
           className="w-full h-auto object-cover"
         />
 
         {/* Scrim for text legibility */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40" />
+        {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40" /> */}
 
         {/* Overlaid headline — vertically centered, fluid type */}
         <div className="absolute inset-0 flex items-center p-[5%]">

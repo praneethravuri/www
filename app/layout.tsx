@@ -17,25 +17,24 @@ const pageTitle = `${fullName} | ${data.title}`;
 const currentRole = data.work[0];
 const lastUpdatedDateTime = `${data.lastUpdated}T00:00:00+00:00`;
 
-// Utility function to convert date strings to ISO format
-function convertToISO(date: string): string {
-  const months = {
-    Jan: "01",
-    Feb: "02",
-    Mar: "03",
-    Apr: "04",
-    May: "05",
-    Jun: "06",
-    Jul: "07",
-    Aug: "08",
-    Sep: "09",
-    Oct: "10",
-    Nov: "11",
-    Dec: "12",
-  };
-  const [month, year] = date.split(" ");
-  return `${year}-${months[month as keyof typeof months]}`;
-}
+const MONTH_NUM: Record<string, string> = {
+  Jan: "01",
+  Feb: "02",
+  Mar: "03",
+  Apr: "04",
+  May: "05",
+  Jun: "06",
+  Jul: "07",
+  Aug: "08",
+  Sep: "09",
+  Oct: "10",
+  Nov: "11",
+  Dec: "12",
+};
+const convertToISO = (d: string) => {
+  const [m, y] = d.split(" ");
+  return `${y}-${MONTH_NUM[m]}`;
+};
 
 export const viewport: Viewport = {
   width: "device-width",

@@ -47,9 +47,7 @@ export function WorkExperience() {
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mt-3.5">
               {job.technologies.map((tech, techIndex) => (
-                <Badge key={techIndex} variant="secondary">
-                  {tech}
-                </Badge>
+                <Badge key={techIndex}>{tech}</Badge>
               ))}
             </div>
           </div>

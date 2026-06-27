@@ -52,17 +52,12 @@
   /* shadcn semantic tokens mapped onto the palette */
   --color-card: var(--card);
   --color-card-foreground: var(--body);
-  --color-popover: var(--card);
-  --color-popover-foreground: var(--body);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--card);
   --color-secondary-foreground: var(--body);
   --color-muted: var(--card);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--card);
-  --color-accent-foreground: var(--ink);
-  --color-destructive: #ff5b4f;
   --color-border: var(--line);
   --color-input: var(--line-strong);
   --color-ring: var(--ink);

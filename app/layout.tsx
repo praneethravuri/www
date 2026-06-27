@@ -17,23 +17,10 @@ const pageTitle = `${fullName} | ${data.title}`;
 const currentRole = data.work[0];
 const lastUpdatedDateTime = `${data.lastUpdated}T00:00:00+00:00`;
 
-const MONTH_NUM: Record<string, string> = {
-  Jan: "01",
-  Feb: "02",
-  Mar: "03",
-  Apr: "04",
-  May: "05",
-  Jun: "06",
-  Jul: "07",
-  Aug: "08",
-  Sep: "09",
-  Oct: "10",
-  Nov: "11",
-  Dec: "12",
-};
+const MONTHS = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(",");
 const convertToISO = (d: string) => {
   const [m, y] = d.split(" ");
-  return `${y}-${MONTH_NUM[m]}`;
+  return `${y}-${String(MONTHS.indexOf(m) + 1).padStart(2, "0")}`;
 };
 
 export const viewport: Viewport = {

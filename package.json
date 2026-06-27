@@ -10,7 +10,8 @@
     "analyze": "ANALYZE=true next build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:headers": "node scripts/check-headers.mjs"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

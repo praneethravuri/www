@@ -30,7 +30,8 @@ export function Projects() {
                 {project.name}
                 <ArrowUpRightIcon
                   size={15}
-                  className="text-faint transition-all duration-200 group-hover:text-ink group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
+                  aria-hidden="true"
+                  className="text-faint transition-[color,transform] duration-200 group-hover:text-ink group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
                 />
               </h3>
               <span className="text-[15px] text-muted-foreground font-[460]">

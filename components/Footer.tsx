@@ -15,7 +15,7 @@ export function Footer() {
           href={`mailto:${data.contact.email}`}
           className="inline-flex items-center gap-2.5 mt-[30px] bg-primary text-primary-foreground text-[16px] font-[600] tracking-[-0.01em] px-7 py-3.5 rounded-full transition-transform duration-200 hover:-translate-y-0.5"
         >
-          <EnvelopeSimpleIcon size={16} />
+          <EnvelopeSimpleIcon size={16} aria-hidden="true" />
           {data.contact.email}
         </a>
       </div>

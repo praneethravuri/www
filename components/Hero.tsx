@@ -4,11 +4,7 @@ import { data } from "@/app/data/resume";
 
 export default function Hero() {
   return (
-    <section
-      className="mt-[60px]"
-      id="top"
-      aria-label="Introduction"
-    >
+    <section className="mt-[60px]" id="top" aria-label="Introduction">
       {/* Identity row */}
       <div className="flex items-center gap-[15px] mb-[26px]">
         <Image
@@ -24,9 +20,7 @@ export default function Hero() {
           <h1 className="text-[19px] font-[600] text-ink tracking-[-0.02em] leading-[1.2]">
             {data.firstName} {data.lastName}
           </h1>
-          <div className="text-[15px] text-muted-foreground font-[460] mt-px">
-            {data.title}
-          </div>
+          <div className="text-[15px] text-muted-foreground font-[460] mt-px">{data.title}</div>
         </div>
       </div>
 

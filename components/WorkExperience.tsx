@@ -17,11 +17,7 @@ export function WorkExperience() {
         {data.work.map((job, index) => (
           <div
             key={index}
-            className={`py-7.5 ${
-              index === 0
-                ? "border-t-0 pt-5"
-                : "border-t border-line"
-            }`}
+            className={`py-7.5 ${index === 0 ? "border-t-0 pt-5" : "border-t border-line"}`}
           >
             {/* Top row */}
             <div className="flex items-center gap-3.5">
@@ -37,9 +33,7 @@ export function WorkExperience() {
                   <h3 className="text-[18px] font-semibold text-ink tracking-[-0.02em]">
                     {job.company}
                   </h3>
-                  <span className="text-[15px] text-muted-foreground font-[460]">
-                    {job.title}
-                  </span>
+                  <span className="text-[15px] text-muted-foreground font-[460]">{job.title}</span>
                 </div>
                 <p className="text-[13px] text-faint mt-0.5 uppercase tracking-[0.04em] font-medium tabular-nums">
                   {job.startDate} – {job.endDate} · {job.location}
@@ -48,17 +42,12 @@ export function WorkExperience() {
             </div>
 
             {/* Description */}
-            <p className="text-[16px] text-body mt-3.5 font-[420] text-pretty">
-              {job.description}
-            </p>
+            <p className="text-[16px] text-body mt-3.5 font-[420] text-pretty">{job.description}</p>
 
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mt-3.5">
               {job.technologies.map((tech, techIndex) => (
-                <Badge
-                  key={techIndex}
-                  variant="secondary"
-                >
+                <Badge key={techIndex} variant="secondary">
                   {tech}
                 </Badge>
               ))}

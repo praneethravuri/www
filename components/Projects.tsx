@@ -21,9 +21,7 @@ export function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className={`group block py-[30px] ${
-              index === 0
-                ? "border-t-0 pt-5"
-                : "border-t border-line"
+              index === 0 ? "border-t-0 pt-5" : "border-t border-line"
             }`}
           >
             {/* Head */}
@@ -48,10 +46,7 @@ export function Projects() {
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mt-3.5">
               {project.techStack.map((tech, techIndex) => (
-                <Badge
-                  key={techIndex}
-                  variant="secondary"
-                >
+                <Badge key={techIndex} variant="secondary">
                   {tech}
                 </Badge>
               ))}

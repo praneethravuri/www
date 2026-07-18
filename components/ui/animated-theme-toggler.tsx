@@ -5,13 +5,7 @@ import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 import { flushSync } from "react-dom";
 
 export type TransitionVariant =
-  | "circle"
-  | "square"
-  | "triangle"
-  | "diamond"
-  | "hexagon"
-  | "rectangle"
-  | "star";
+  "circle" | "square" | "triangle" | "diamond" | "hexagon" | "rectangle" | "star";
 
 interface AnimatedThemeTogglerProps extends React.ComponentPropsWithoutRef<"button"> {
   duration?: number;

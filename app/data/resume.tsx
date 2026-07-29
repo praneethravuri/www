@@ -159,6 +159,15 @@ export const data = {
 
   projects: [
     {
+      name: "Tether",
+      url: "https://github.com/praneethravuri/tether",
+      description:
+        "Every coding agent runs in its own silo — Claude Code can't see a Codex session, and Codex can't message an Aider session, so answers get copied by hand between terminals. Tether replaces that with a local message bus: a background daemon backed by SQLite, and a CLI any agent, in any harness, can call from the shell to register a name, send mail, and block until a reply arrives.",
+      tags: ["Agentic AI", "CLI Tool"],
+      techStack: ["Go", "SQLite", "Unix Sockets"],
+    },
+
+    {
       name: "Gary",
       url: "https://github.com/praneethravuri/gary",
       description:

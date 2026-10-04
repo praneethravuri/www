@@ -5,13 +5,13 @@ export const data = {
   url: "https://praneethravuri.com",
   title: "AI Engineer",
   summary:
-    "AI engineer building production agents and the harness engineering around them: memory, retrieval, feedback, MCP tooling, and high-throughput backend services.",
-  heroHeadline: "Building AI agents and harness engineering for cybersecurity.",
-  lastUpdated: "2026-06-13",
+    "AI engineer at Tuskira, building memory and tools for security investigation agents. Previously worked on network-flow processing at Lumen and internal web tools at ADP.",
+  heroHeadline: "Building agents that help security teams investigate threats.",
+  lastUpdated: "2026-10-04",
 
   taglines: {
     footerTagline: {
-      tagline: "Let’s build AI that works.",
+      tagline: "Have something in mind? Get in touch.",
     },
   },
   keywords: [
@@ -53,7 +53,6 @@ export const data = {
     "Next.js",
     "Node.js",
     "RAG",
-    "Hybrid Search",
     "Reinforcement Learning",
     "High-Throughput Systems",
     "IPFIX",
@@ -116,20 +115,8 @@ export const data = {
       logoUrl: "/images/logos/tuskira_logo.webp",
       location: "United States",
       description:
-        "Building memory, feedback, and tool systems for SOC investigation agents. Created a FalkorDB-backed memory service that records investigations, stores analyst feedback in a knowledge graph, and exposes retrieval through MCP. Also building MCP servers and case-aggregation workflows that group similar investigations before analysis, improving context quality while cutting tokens and cost.",
-      technologies: [
-        "Agentic AI",
-        "MCP",
-        "Python",
-        "Go",
-        "FalkorDB",
-        "Cypher",
-        "Vector Embeddings",
-        "AWS",
-        "Kubernetes",
-        "VirusTotal",
-        "Cortex XDR",
-      ],
+        "At Tuskira, the work centers on giving security agents useful context for an investigation. A memory service stores past investigations and analyst feedback in FalkorDB, then makes that history available through MCP. Other work includes connecting agents to security tools and grouping related cases before analysis so they can share context.",
+      technologies: ["Python", "Go", "MCP", "FalkorDB", "AWS", "Kubernetes"],
     },
 
     {
@@ -140,8 +127,8 @@ export const data = {
       logoUrl: "/images/logos/lumen_logo.webp",
       location: "United States",
       description:
-        "Built a Go microservice that decodes IPFIX network-flow data at millions-of-flows-per-minute scale. Used goroutines and channels for high-throughput decoding, Kafka to separate ingestion from processing, and a retry path for flows that could not be decoded cleanly. Stored decoded data in BigQuery for historical analysis and MongoDB for operational network-engineer workflows on GCP.",
-      technologies: ["Go", "IPFIX", "Kafka", "BigQuery", "MongoDB", "GCP", "Docker", "Kubernetes"],
+        "Lumen’s network produces millions of flow records a minute. The work was turning those IPFIX records into data network engineers could use: a Go decoder, Kafka between ingestion and processing, and a retry path for records that failed to decode. BigQuery held the history for analysis; MongoDB supported day-to-day network workflows.",
+      technologies: ["Go", "Kafka", "BigQuery", "MongoDB", "GCP"],
     },
 
     {
@@ -152,7 +139,7 @@ export const data = {
       logoUrl: "/images/logos/adp_logo.webp",
       location: "India",
       description:
-        "Modernized a legacy internal employee-page experience during an internship. Rebuilt the UI with React, cleaned up older JavaScript patterns, and worked with Node.js and Redis while making the page easier to use and maintain.",
+        "An internship at ADP focused on an internal employee page. The work included rebuilding the interface in React, updating older JavaScript, and working on the Node.js and Redis backend. A small part of a large company, with a concrete goal: make an everyday page easier to use and maintain.",
       technologies: ["React", "Node.js", "Redis", "JavaScript"],
     },
   ],
@@ -162,8 +149,8 @@ export const data = {
       name: "Tether",
       url: "https://github.com/praneethravuri/tether",
       description:
-        "Every coding agent runs in its own silo — Claude Code can't see a Codex session, and Codex can't message an Aider session, so answers get copied by hand between terminals. Tether replaces that with a local message bus: a background daemon backed by SQLite, and a CLI any agent, in any harness, can call from the shell to register a name, send mail, and block until a reply arrives.",
-      tags: ["Agentic AI", "CLI Tool"],
+        "Coding agents in separate terminals need a way to talk and coordinate edits. Tether gives them a shared inbox through a local CLI. Agents can send questions, wait for replies, leave handoffs, and claim files they plan to work on. A Go daemon stores messages in SQLite and connects sessions across Git worktrees.",
+      tags: ["Agent coordination", "CLI"],
       techStack: ["Go", "SQLite", "Unix Sockets"],
     },
 
@@ -171,36 +158,36 @@ export const data = {
       name: "Gary",
       url: "https://github.com/praneethravuri/gary",
       description:
-        "Built for a real job-search workflow, then shaped into a reusable multi-agent resume tool. Gary reads a job description, extracts what matters, compares it with a resume, and drafts tailored sections without stuffing keywords or losing the person’s voice. Outputs PDF and Word docs through a CrewAI workflow.",
-      tags: ["Agentic AI", "LLMs"],
-      techStack: ["Crew AI", "MongoDB", "GCP"],
+        "Gary takes a master resume and a job description and produces a tailored Word document. Three agent passes analyze the role, draft the resume, and check the result against the source material. A document template keeps the formatting consistent, and Google Sheets records the application details.",
+      tags: ["Resume tailoring", "Agent workflows"],
+      techStack: ["Python", "CrewAI", "Pydantic", "docxtpl", "Google Sheets API"],
     },
 
     {
       name: "Pitstop",
       url: "https://github.com/praneethravuri/pitstop",
       description:
-        "An MCP server that lets an LLM ask questions over F1 telemetry. Pitstop turns race data into clean tool responses for lap times, tire behavior, pit windows, and pace, making strategy questions answerable in plain English. Built with FastMCP and HttpX.",
-      tags: ["MCP", "F1 Data"],
-      techStack: ["FastMCP", "HttpX"],
+        "Pitstop brings Formula 1 data into an AI chat through MCP. Its tools cover race results, standings, schedules, telemetry, and news. For questions about a race, it can compare lap pace, summarize stints, and calculate how lap times change over a tire stint. It combines FastF1, Jolpica, and OpenF1 with a queryable SQLite database.",
+      tags: ["MCP", "Formula 1"],
+      techStack: ["Python", "FastMCP", "FastF1", "HTTPX", "SQLite"],
     },
 
     {
       name: "Smart Traffic",
       url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
       description:
-        "An adaptive traffic-light simulation inspired by vehicle-actuated control, but with a learning agent. The SARSA agent observes queue lengths and learns when to switch signals, improving wait times over fixed schedules in the simulation. Built with NumPy, Pygame, and Matplotlib.",
+        "A university team project exploring how reinforcement learning can control a four-way intersection. A SARSA agent chooses which direction gets a green light, using accumulated vehicle delays to represent traffic conditions. Pygame shows the traffic simulation, while learning curves track the agent’s behavior during training.",
       tags: ["Reinforcement Learning"],
-      techStack: ["NumPy", "Pygame", "Matplotlib"],
+      techStack: ["Python", "NumPy", "Pygame", "Matplotlib"],
     },
 
     {
       name: "Notstuck",
       url: "https://github.com/praneethravuri/notstuck",
       description:
-        "A RAG project for messy technical docs. It combines vector similarity with keyword filtering so answers can find both meaning and exact terms, then uses CrewAI to produce cited responses. Built to learn what makes retrieval feel trustworthy: metadata, ranking, and visible sources.",
-      tags: ["RAG", "Hybrid Search"],
-      techStack: ["React", "Next.js", "PostgreSQL", "Pinecone", "Crew AI"],
+        "Upload a PDF, Word document, or text file, then ask questions about it. Notstuck splits the document into chunks, embeds them, and retrieves relevant passages from Pinecone. A chat interface shows the answer alongside document references. The assistant also has a web-search tool for questions beyond the uploaded files.",
+      tags: ["Document Q&A", "RAG"],
+      techStack: ["Next.js", "TypeScript", "FastAPI", "Pinecone", "CrewAI", "OpenAI Embeddings"],
     },
   ],
 

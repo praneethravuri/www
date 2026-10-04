@@ -1,1 +1,6 @@
+set -e
 pnpm exec lint-staged
+
+if [ -n "$(git diff --cached --name-only --diff-filter=ACMR -- '*.ts' '*.tsx')" ]; then
+  pnpm exec tsc --noEmit
+fi

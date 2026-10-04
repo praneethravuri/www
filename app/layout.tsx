@@ -112,8 +112,12 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {process.env.VERCEL_ENV === "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
 
         <script
           type="application/ld+json"

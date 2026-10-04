@@ -2,12 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, "codex/**"]
   pull_request:
     branches: [main]
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.event.pull_request.head.ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
@@ -46,5 +46,5 @@ jobs:
       - name: SEO regression checks
         run: pnpm test:seo
 
-      - name: Type check
-        run: pnpm exec tsc --noEmit
+      - name: Security header checks
+        run: pnpm test:headers

@@ -114,7 +114,6 @@ export const data = {
       title: "AI Engineer",
       startDate: "Dec 2025",
       endDate: "Present",
-      logoUrl: "/images/logos/tuskira_logo.webp",
       location: "United States",
       description:
         "At Tuskira, the work centers on giving security agents useful context for an investigation. A memory service stores past investigations and analyst feedback in FalkorDB, then makes that history available through MCP. Other work includes connecting agents to security tools and grouping related cases before analysis so they can share context.",
@@ -126,7 +125,6 @@ export const data = {
       title: "Software Engineer",
       startDate: "Oct 2024",
       endDate: "Nov 2025",
-      logoUrl: "/images/logos/lumen_logo.webp",
       location: "United States",
       description:
         "Lumen’s network produces millions of flow records a minute. The work was turning those IPFIX records into data network engineers could use: a Go decoder, Kafka between ingestion and processing, and a retry path for records that failed to decode. BigQuery held the history for analysis; MongoDB supported day-to-day network workflows.",
@@ -138,7 +136,6 @@ export const data = {
       title: "Full Stack Engineer Intern",
       startDate: "Jan 2022",
       endDate: "Jun 2022",
-      logoUrl: "/images/logos/adp_logo.webp",
       location: "India",
       description:
         "An internship at ADP focused on an internal employee page. The work included rebuilding the interface in React, updating older JavaScript, and working on the Node.js and Redis backend. A small part of a large company, with a concrete goal: make an everyday page easier to use and maintain.",
@@ -202,12 +199,10 @@ export const data = {
     {
       institution: "George Mason University",
       degree: "Master’s in Computer Science",
-      logoUrl: "/images/logos/gmu.webp",
     },
     {
       institution: "GRIET",
       degree: "Bachelor’s in Computer Science",
-      logoUrl: "/images/logos/griet.webp",
     },
   ],
 };

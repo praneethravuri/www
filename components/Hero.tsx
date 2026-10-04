@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <AvatarCircles names={[data.avatarName]} />
       </div>
-      <h2 className="mt-9 max-w-[30ch] text-[27px] leading-[1.35] font-semibold tracking-[-0.025em] text-ink sm:text-[32px]">
+      <h2 className="mt-9 max-w-[30ch] text-[27px] text-balance leading-[1.35] font-semibold tracking-[-0.025em] text-ink sm:text-[32px]">
         {data.heroHeadline}
       </h2>
       <p className="mt-5 text-body">{data.summary}</p>
@@ -30,7 +30,7 @@ export default function Hero() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="py-2 text-sm text-muted-foreground hover:text-ink"
+            className="inline-flex min-h-11 items-center py-2 text-sm text-muted-foreground hover:text-ink"
           >
             {item.name}
           </a>

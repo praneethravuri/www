@@ -34,6 +34,8 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 
 ## Verification
 
-Run `pnpm lint`, `pnpm build`, `pnpm test:seo`, and `pnpm test:headers`. `test:seo` validates built metadata, structured data, Markdown, crawler files, and canonical URLs. Use `pnpm build --webpack` only if the local sandbox prevents Turbopack worker port binding. ESLint stays on v9 and TypeScript on v6; next/config-next/bundle-analyzer versions should match. The placeholder résumé link has been removed until a real URL is supplied.
+Run `pnpm lint`, `pnpm build`, `pnpm test:seo`, `pnpm test:headers`, and `pnpm test:agents`. `test:seo` validates built metadata, structured data, Markdown, crawler files, and canonical URLs. `test:agents` starts a temporary production server and verifies negotiation, quality values, 406, HEAD, recovery 404s, trust/resource pages, their static Markdown versions, and public files. Use `pnpm build --webpack` only if the local sandbox prevents Turbopack worker port binding. ESLint stays on v9 and TypeScript on v6; next/config-next/bundle-analyzer versions should match. The placeholder résumé link has been removed until a real URL is supplied.
+
+`sitePages` in `app/data/resume.tsx` drives static About, Contact, Privacy, Projects, and Agent Instructions pages (`app/[page]`) and their `/<page>/index.md` alternatives. `proxy.ts` performs Accept negotiation without changing server component rendering, and emits recoverable Markdown 404s. Exclude static assets, Next internals, and Vercel telemetry paths. Use the maintained server-only `negotiator` parser rather than substring matching Accept. This remains a personal portfolio with Person schema, not a hosted API/MCP service or an Organization publisher.
 
 Pre-commit formats/lints staged files and type-checks staged TypeScript changes. CI includes `codex/**` branches and cancels superseded runs. The Blobatar is a keyboard-accessible pause/resume button.

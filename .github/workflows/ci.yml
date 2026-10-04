@@ -46,5 +46,8 @@ jobs:
       - name: SEO regression checks
         run: pnpm test:seo
 
+      - name: Agent endpoint regression checks
+        run: pnpm test:agents
+
       - name: Security header checks
         run: pnpm test:headers

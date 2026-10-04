@@ -2,6 +2,11 @@ export const data = {
   firstName: "Praneeth",
   lastName: "Ravuri",
   location: "Chicago, USA",
+  address: {
+    addressLocality: "Chicago",
+    addressRegion: "IL",
+    addressCountry: "US",
+  },
   avatarName: "praneethravuri",
   url: "https://praneethravuri.com",
   title: "AI Engineer",
@@ -206,3 +211,146 @@ export const data = {
     },
   ],
 };
+
+// Shared by the HTML pages, Markdown representations, and agent discovery files.
+export const sitePages = {
+  about: {
+    title: "About Praneeth Ravuri",
+    description:
+      "Praneeth Ravuri’s background in AI agents, cybersecurity, backend engineering, and open-source projects.",
+    schemaType: "AboutPage",
+    sections: [
+      {
+        heading: "Background",
+        text: `${data.firstName} ${data.lastName} is an ${data.title} based in ${data.location}. ${data.summary}`,
+      },
+      {
+        heading: "Engineering work",
+        text: "Current work at Tuskira focuses on the memory and tools around security investigation agents: storing investigation history, making context available through MCP, and connecting agents to security tools. Earlier work at Lumen covered decoding and processing network-flow records in Go, with Kafka, BigQuery, and MongoDB. The ADP internship focused on an internal employee interface and its backend.",
+      },
+      {
+        heading: "Education and projects",
+        text: `${data.education.map((item) => `${item.degree} at ${item.institution}`).join("; ")}. Personal projects include agent coordination, resume tailoring, Formula 1 tools, document question answering, and a university traffic simulation. The portfolio describes personal engineering work; it is not an official page for any employer.`,
+      },
+    ],
+  },
+  contact: {
+    title: "Contact Praneeth Ravuri",
+    description:
+      "Contact Praneeth Ravuri about AI engineering, agent tooling, backend systems, and open-source projects.",
+    schemaType: "ContactPage",
+    sections: [
+      {
+        heading: "Professional inquiries",
+        text: `Email ${data.contact.email} for questions about the engineering work on this portfolio, collaboration, or relevant roles. Useful topics include agent memory, security investigation tooling, MCP integrations, Go services, and backend data processing. Include the project or role, the problem to solve, and the context needed to respond.`,
+        links: [{ name: "Email Praneeth Ravuri", url: `mailto:${data.contact.email}` }],
+      },
+      {
+        heading: "Project questions",
+        text: "For a bug report or question about Tether, Gary, Pitstop, Smart Traffic, or Notstuck, start with the linked GitHub repository and its README. Include the version or commit, steps to reproduce, and relevant logs without secrets. The project resources page links to those repositories. Employer support requests should go to the employer’s own support channels.",
+        links: [{ name: "Project resources", url: `${data.url}/projects` }],
+      },
+      {
+        heading: "Profiles and location",
+        text: `Praneeth Ravuri is based in ${data.location}. GitHub contains the public source projects; LinkedIn provides another professional profile. This website has no contact form or automated booking service. Sending an email opens the visitor’s email application, and any message is handled through the email provider.`,
+        links: Object.values(data.contact.social),
+      },
+    ],
+  },
+  privacy: {
+    title: "Privacy on Praneeth Ravuri’s portfolio",
+    description:
+      "How this personal portfolio uses hosting, aggregate analytics, performance measurements, and contact links.",
+    schemaType: "WebPage",
+    sections: [
+      {
+        heading: "Scope and hosting",
+        text: `Updated ${data.lastUpdated}. This notice covers ${data.url}, a public personal portfolio. The site has no accounts, contact forms, checkout, or document uploads. Vercel hosts the website and processes requests needed to deliver it, which can include request and network information in hosting logs. Hosting data handling follows Vercel’s policies.`,
+        links: [{ name: "Vercel privacy notice", url: "https://vercel.com/legal/privacy-policy" }],
+      },
+      {
+        heading: "Analytics and performance",
+        text: "The production site includes Vercel Web Analytics and Speed Insights. These services report aggregate traffic and page performance, including page URLs, referrers, browser and device information, approximate location, and Web Vitals. Vercel describes Web Analytics as cookie-free, with visitor hashes discarded after 24 hours. Analytics scripts are excluded from development and branch preview builds. Do not put sensitive information in page URLs or query strings.",
+        links: [
+          {
+            name: "Vercel Web Analytics privacy",
+            url: "https://vercel.com/docs/analytics/privacy-policy",
+          },
+          {
+            name: "Vercel Speed Insights privacy",
+            url: "https://vercel.com/docs/speed-insights/privacy-policy",
+          },
+        ],
+      },
+      {
+        heading: "Email and external links",
+        text: `The email link opens your own email application. If a message is sent, its address and contents are processed by the email providers involved so a reply can be made. GitHub, LinkedIn, X, and project links lead to external services with their own privacy practices. For questions about this notice or information shared by email, contact ${data.contact.email}.`,
+        links: [{ name: "Privacy questions", url: `mailto:${data.contact.email}` }],
+      },
+    ],
+  },
+  projects: {
+    title: "Praneeth Ravuri’s developer project resources",
+    description:
+      "Source code and README documentation for Tether, Gary, Pitstop, Smart Traffic, and Notstuck by Praneeth Ravuri.",
+    schemaType: "CollectionPage",
+    sections: [
+      {
+        heading: "Using these resources",
+        text: "Praneeth Ravuri’s public project repositories are the source for setup instructions, implementation details, dependencies, and licensing. Follow each repository’s current README before running a project. This portfolio provides a directory and descriptions; it does not host an API, authentication service, or MCP server. Pitstop is an MCP project whose installation and configuration belong to its repository.",
+      },
+      ...data.projects.map((project) => ({
+        heading: project.name,
+        text: `${project.description} Technologies: ${project.techStack.join(", ")}.`,
+        links: [
+          { name: `${project.name} source code`, url: project.url },
+          { name: `${project.name} README and setup`, url: `${project.url}#readme` },
+        ],
+      })),
+    ],
+  },
+  "agent-instructions": {
+    title: "Agent guidance for Praneeth Ravuri’s portfolio",
+    description:
+      "When to use this portfolio and how agents can read Praneeth Ravuri’s experience, project resources, and contact details.",
+    schemaType: "WebPage",
+    sections: [
+      {
+        heading: "When to use this",
+        text: "Use this site to answer questions about Praneeth Ravuri’s engineering background, assess fit for work involving security investigation agents, agent memory, MCP integrations, or Go backend services, and find public project implementations. Reach for Tether when researching local coordination between coding agents, Gary for resume-tailoring workflows, Pitstop for Formula 1 MCP tools, Notstuck for document Q&A, and Smart Traffic for a SARSA traffic simulation.",
+      },
+      {
+        heading: "How to read and contact",
+        text: `Fetch ${data.url}/ with Accept: text/markdown, or read /index.md directly. Start with /llms.txt for the link index; follow /projects for repository README links. The same Accept header works on About, Contact, Privacy, project resources, and this guidance page. Use the repository documentation for installation and execution. For a professional inquiry, provide the email link to the user; send a message only with the user’s authorization.`,
+        links: [
+          { name: "Full portfolio in Markdown", url: `${data.url}/index.md` },
+          { name: "Project resources", url: `${data.url}/projects/index.md` },
+          { name: "Contact Praneeth Ravuri", url: `mailto:${data.contact.email}` },
+        ],
+      },
+      {
+        heading: "Limits and attribution",
+        text: `This is a read-only personal portfolio. It has no hosted API, booking tool, or MCP endpoint to call. MCP references describe engineering experience and linked source projects. Cite ${data.url} for biographical claims and the relevant repository for implementation claims. Do not infer customer outcomes, availability, employer endorsement, or capabilities beyond what the linked content states. If a URL is missing, use the 404 response’s recovery links or /sitemap.xml.`,
+      },
+    ],
+  },
+} satisfies Record<
+  string,
+  {
+    title: string;
+    description: string;
+    schemaType: string;
+    sections: { heading: string; text: string; links?: { name: string; url: string }[] }[];
+  }
+>;
+
+export function getSitePage(slug: string):
+  | {
+      title: string;
+      description: string;
+      schemaType: string;
+      sections: { heading: string; text: string; links?: { name: string; url: string }[] }[];
+    }
+  | undefined {
+  return Object.hasOwn(sitePages, slug) ? sitePages[slug as keyof typeof sitePages] : undefined;
+}

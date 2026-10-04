@@ -4,3 +4,6 @@ allowBuilds:
 
 overrides:
   postcss: ">=8.5.18"
+
+patchedDependencies:
+  next@16.3.8: patches/next@16.3.8.patch

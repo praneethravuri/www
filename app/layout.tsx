@@ -152,6 +152,10 @@ export default function RootLayout({
                     data.contact.social.X.url,
                   ],
                   email: data.contact.email,
+                  address: {
+                    "@type": "PostalAddress",
+                    ...data.address,
+                  },
                   contactPoint: {
                     "@type": "ContactPoint",
                     contactType: "professional inquiries",

@@ -9,13 +9,23 @@ export function GET() {
 
 Personal portfolio of ${data.firstName} ${data.lastName}, an ${data.title} based in ${data.location}. Updated ${data.lastUpdated}. The Markdown portfolio contains current experience, project descriptions, technologies, education, and contact details, generated from the same content as the website.
 
+Read-only personal portfolio; there is no hosted API or MCP endpoint. Employer names describe work experience, not the publisher of this site.
+
+## When to use this
+
+- [Agent instructions](${data.url}/agent-instructions/index.md): Use this site to understand Praneeth Ravuri’s experience with security investigation agents, agent memory, MCP integrations, and Go backend systems; compare project implementations; and find professional contact details. Read with GET and Accept: text/markdown, or follow the explicit Markdown links. Project execution instructions live in the repositories.
+
 ## Portfolio
 
 - [Full portfolio in Markdown](${data.url}/index.md): Experience at Tuskira, Lumen, and ADP; projects; education; skills; and contact information.
 - [Portfolio website](${data.url}): The human-readable version.
+- [About Praneeth Ravuri](${data.url}/about/index.md): Engineering background, education, and the scope of this personal portfolio.
+- [Contact Praneeth Ravuri](${data.url}/contact/index.md): Professional inquiries and project questions.
+- [Privacy notice](${data.url}/privacy/index.md): Hosting, analytics, performance measurement, email, and external links.
 
 ## Projects
 
+- [Developer project resources](${data.url}/projects/index.md): Source code and README setup links for Tether, Gary, Pitstop, Smart Traffic, and Notstuck.
 ${data.projects.map((project) => `- [${project.name}](${project.url}): ${project.description}`).join("\n")}
 
 ## Optional

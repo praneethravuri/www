@@ -199,7 +199,7 @@ export default function RootLayout({
                   isPartOf: { "@id": `${data.url}#webpage` },
                 })),
               ],
-            }).replace(/</g, "\u003c"),
+            }).replace(/</g, "\\u003c"),
           }}
         />
       </body>

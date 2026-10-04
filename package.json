@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "analyze": "ANALYZE=true next build",
+    "analyze": "ANALYZE=true next build --webpack",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
@@ -15,12 +15,9 @@
     "test:seo": "node scripts/check-seo.mjs"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,js,mjs,cjs}": [
       "prettier --write",
       "eslint --fix"
-    ],
-    "*.{js,mjs,cjs}": [
-      "prettier --write"
     ],
     "*.{json,md,css,yml,yaml}": [
       "prettier --write"

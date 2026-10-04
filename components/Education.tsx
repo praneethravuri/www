@@ -1,5 +1,4 @@
 import { data } from "@/app/data/resume";
-import Image from "next/image";
 
 export function Education() {
   return (
@@ -17,13 +16,6 @@ export function Education() {
           key={edu.institution}
           className={`flex items-center gap-4 py-5 border-t border-line ${index === 0 ? "border-t-0 pt-5" : ""}`}
         >
-          <Image
-            src={edu.logoUrl}
-            alt={`${edu.institution} logo`}
-            width={44}
-            height={44}
-            className="bg-card object-cover flex-none"
-          />
           <div>
             <p className="text-[17px] text-ink font-[600]">{edu.degree}</p>
             <p className="text-[14px] text-muted-foreground mt-px font-[460]">{edu.institution}</p>

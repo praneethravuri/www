@@ -7,7 +7,7 @@ export function OGContent() {
   return (
     <div
       style={{
-        background: "#000000",
+        background: "#141413",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -18,15 +18,6 @@ export function OGContent() {
         position: "relative",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
-        }}
-      />
       <div
         style={{
           display: "flex",
@@ -40,7 +31,7 @@ export function OGContent() {
           style={{
             fontSize: "72px",
             fontWeight: 700,
-            color: "#ffffff",
+            color: "#eeeeee",
             margin: 0,
             letterSpacing: "-2px",
           }}
@@ -51,7 +42,7 @@ export function OGContent() {
         <p
           style={{
             fontSize: "24px",
-            color: "#7c7c7c",
+            color: "#d4d4d4",
             margin: 0,
             maxWidth: "800px",
             textAlign: "center",
@@ -59,7 +50,7 @@ export function OGContent() {
         >
           {data.heroHeadline}
         </p>
-        <p style={{ fontSize: "20px", color: "#ffffff", margin: 0, marginTop: "20px" }}>
+        <p style={{ fontSize: "20px", color: "#eeeeee", margin: 0, marginTop: "20px" }}>
           {data.url.replace("https://", "")}
         </p>
       </div>

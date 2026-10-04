@@ -26,10 +26,7 @@ const convertToISO = (d: string) => {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
+  themeColor: "#141413",
 };
 
 export const metadata: Metadata = {
@@ -109,18 +106,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="motion-safe:scroll-smooth">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d){document.documentElement.classList.add('dark');}}catch(e){}})();`,
-          }}
-        />
-      </head>
-      <body
-        suppressHydrationWarning
-        className={`${inter.variable} font-sans antialiased relative min-h-screen`}
-      >
+    <html lang="en" className="dark">
+      <body className={`${inter.variable} font-sans antialiased relative min-h-screen`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:text-foreground focus:border focus:rounded-md"
@@ -142,7 +129,7 @@ export default function RootLayout({
                   "@id": `${data.url}#person`,
                   name: fullName,
                   url: data.url,
-                  image: `${data.url}/images/profile/hero.webp`,
+                  image: `${data.url}${data.avatarUrl}`,
                   jobTitle: data.title,
                   description: data.summary,
                   disambiguatingDescription: data.heroHeadline,

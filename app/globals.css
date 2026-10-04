@@ -2,42 +2,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* light palette (default) */
+/* Single dark palette. The Blobatar is the only color accent. */
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --ink: #0a0a0a;
-  --body: #3a3a3a;
-  --muted-foreground: #585858;
-  --faint: #707070;
-  --line: rgba(0, 0, 0, 0.1);
-  --line-strong: rgba(0, 0, 0, 0.16);
-  --card: #f5f5f5;
-  --primary: #0a0a0a;
-  --primary-foreground: #ffffff;
-  --selection-bg: #0a0a0a;
-  --selection-fg: #ffffff;
-  --scrollbar-thumb: #c9c9c9;
-  --scrollbar-thumb-hover: #b0b0b0;
-}
-
-/* dark palette — pure black monochrome (Portfolio v3) */
-.dark {
-  --background: #000000;
-  --foreground: #ffffff;
-  --ink: #ffffff;
-  --body: #b5b5b5;
-  --muted-foreground: #8e8e8e;
-  --faint: #808080;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.14);
-  --card: #0e0e0e;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
-  --selection-bg: #ffffff;
-  --selection-fg: #000000;
-  --scrollbar-thumb: #222222;
-  --scrollbar-thumb-hover: #2e2e2e;
+  color-scheme: dark;
+  --background: #141413;
+  --foreground: #d4d4d4;
+  --ink: #eeeeee;
+  --body: #d4d4d4;
+  --muted-foreground: #a3a3a3;
+  --faint: #858585;
+  --line: #333332;
+  --line-strong: #484847;
+  --card: #1c1c1b;
+  --primary: #eeeeee;
+  --primary-foreground: #141413;
+  --selection-bg: #d4d4d4;
+  --selection-fg: #141413;
+  --scrollbar-thumb: #333332;
+  --scrollbar-thumb-hover: #484847;
 }
 
 @theme inline {
@@ -74,13 +56,6 @@
 }
 
 @layer base {
-  :root {
-    color-scheme: light;
-  }
-  .dark {
-    color-scheme: dark;
-  }
-
   * {
     @apply border-border outline-ring/50;
   }
@@ -93,7 +68,7 @@
       BlinkMacSystemFont,
       "Segoe UI",
       sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
     font-weight: 420;
     letter-spacing: -0.011em;
@@ -149,15 +124,4 @@
       transition-duration: 0.01ms !important;
     }
   }
-}
-
-/* theme-toggle view transition (MagicUI AnimatedThemeToggler) */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-html[data-magicui-theme-vt="active"]::view-transition-group(root) {
-  animation-duration: var(--magicui-theme-toggle-vt-duration);
 }

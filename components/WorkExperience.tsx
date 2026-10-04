@@ -1,14 +1,9 @@
 import { data } from "@/app/data/resume";
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 
 export function WorkExperience() {
   return (
-    <section
-      id="experience"
-      aria-label="Experience"
-      className="mt-22 max-[600px]:mt-17.5 scroll-mt-8"
-    >
+    <section id="experience" aria-label="Experience" className="mt-20 scroll-mt-8">
       <h2 className="mb-2.5 flex items-center gap-3.5 text-[12.5px] font-medium uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
         Experience
       </h2>
@@ -21,13 +16,6 @@ export function WorkExperience() {
           >
             {/* Top row */}
             <div className="flex items-center gap-3.5">
-              <Image
-                src={job.logoUrl}
-                alt={`${job.company} logo`}
-                width={46}
-                height={46}
-                className="bg-card object-cover flex-none"
-              />
               <div>
                 <div className="flex items-baseline gap-2.5 flex-wrap">
                   <h3 className="text-[18px] font-semibold text-ink tracking-[-0.02em]">
@@ -35,7 +23,7 @@ export function WorkExperience() {
                   </h3>
                   <span className="text-[15px] text-muted-foreground font-[460]">{job.title}</span>
                 </div>
-                <p className="text-[13px] text-faint mt-0.5 uppercase tracking-[0.04em] font-medium tabular-nums">
+                <p className="text-[13px] text-faint mt-1 font-normal tabular-nums">
                   {job.startDate} – {job.endDate} · {job.location}
                 </p>
               </div>

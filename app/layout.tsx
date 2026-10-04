@@ -8,6 +8,7 @@ const inter = Inter({
   preload: true,
 });
 import "blobatar/motion.css";
+import "blobatar/gaze.css";
 import "./globals.css";
 import { data } from "@/app/data/resume";
 import { Analytics } from "@vercel/analytics/next";

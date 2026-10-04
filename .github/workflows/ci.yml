@@ -43,5 +43,8 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: SEO regression checks
+        run: pnpm test:seo
+
       - name: Type check
         run: pnpm exec tsc --noEmit

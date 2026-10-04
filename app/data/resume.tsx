@@ -5,6 +5,11 @@ export const data = {
   avatarName: "praneethravuri",
   url: "https://praneethravuri.com",
   title: "AI Engineer",
+  seo: {
+    title: "Praneeth Ravuri | AI Engineer & Backend Engineer",
+    description:
+      "Praneeth Ravuri is an AI engineer at Tuskira in Chicago, building agents for security investigations. Explore his backend engineering work and open-source projects.",
+  },
   summary:
     "AI engineer at Tuskira, building memory and tools for security investigation agents. Previously worked on network-flow processing at Lumen and internal web tools at ADP.",
   heroHeadline: "Building agents that help security teams investigate threats.",
@@ -100,10 +105,6 @@ export const data = {
         name: "X",
         url: "https://x.com/praneeth2510",
       },
-      Resume: {
-        name: "Résumé",
-        url: "https://docs.google.com/document/d/1Ue.../edit?usp=sharing",
-      },
     },
   },
 
@@ -148,6 +149,7 @@ export const data = {
   projects: [
     {
       name: "Tether",
+      languages: ["Go"],
       url: "https://github.com/praneethravuri/tether",
       description:
         "Coding agents in separate terminals need a way to talk and coordinate edits. Tether gives them a shared inbox through a local CLI. Agents can send questions, wait for replies, leave handoffs, and claim files they plan to work on. A Go daemon stores messages in SQLite and connects sessions across Git worktrees.",
@@ -157,6 +159,7 @@ export const data = {
 
     {
       name: "Gary",
+      languages: ["Python"],
       url: "https://github.com/praneethravuri/gary",
       description:
         "Gary takes a master resume and a job description and produces a tailored Word document. Three agent passes analyze the role, draft the resume, and check the result against the source material. A document template keeps the formatting consistent, and Google Sheets records the application details.",
@@ -166,6 +169,7 @@ export const data = {
 
     {
       name: "Pitstop",
+      languages: ["Python"],
       url: "https://github.com/praneethravuri/pitstop",
       description:
         "Pitstop brings Formula 1 data into an AI chat through MCP. Its tools cover race results, standings, schedules, telemetry, and news. For questions about a race, it can compare lap pace, summarize stints, and calculate how lap times change over a tire stint. It combines FastF1, Jolpica, and OpenF1 with a queryable SQLite database.",
@@ -175,6 +179,7 @@ export const data = {
 
     {
       name: "Smart Traffic",
+      languages: ["Python"],
       url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
       description:
         "A university team project exploring how reinforcement learning can control a four-way intersection. A SARSA agent chooses which direction gets a green light, using accumulated vehicle delays to represent traffic conditions. Pygame shows the traffic simulation, while learning curves track the agent’s behavior during training.",
@@ -184,6 +189,7 @@ export const data = {
 
     {
       name: "Notstuck",
+      languages: ["TypeScript", "Python"],
       url: "https://github.com/praneethravuri/notstuck",
       description:
         "Upload a PDF, Word document, or text file, then ask questions about it. Notstuck splits the document into chunks, embeds them, and retrieves relevant passages from Pinecone. A chat interface shows the answer alongside document references. The assistant also has a web-search tool for questions beyond the uploaded files.",

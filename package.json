@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
-    "test:headers": "node scripts/check-headers.mjs"
+    "test:headers": "node scripts/check-headers.mjs",
+    "test:seo": "node scripts/check-seo.mjs"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -33,26 +34,26 @@
     "@vercel/speed-insights": "^2.0.0",
     "blobatar": "^2.7.0",
     "clsx": "^2.1.1",
-    "next": "16.3.6",
+    "next": "16.3.8",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^16.3.6",
+    "@next/bundle-analyzer": "^16.3.8",
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.6.2",
+    "@types/node": "^26.6.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.3.6",
+    "eslint-config-next": "16.3.8",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
-    "lint-staged": "^17.5.1",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.9.9",
-    "sharp": "^0.35.4",
+    "sharp": "0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916"
+  "packageManager": "pnpm@11.28.4"
 }

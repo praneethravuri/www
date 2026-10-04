@@ -24,19 +24,17 @@ export default function Hero() {
         <Button asChild>
           <a href={`mailto:${data.contact.email}`}>Get in touch</a>
         </Button>
-        {Object.values(data.contact.social)
-          .filter((item) => item.name !== "Résumé")
-          .map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-2 text-sm text-muted-foreground hover:text-ink"
-            >
-              {item.name}
-            </a>
-          ))}
+        {Object.values(data.contact.social).map((item) => (
+          <a
+            key={item.name}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="py-2 text-sm text-muted-foreground hover:text-ink"
+          >
+            {item.name}
+          </a>
+        ))}
       </div>
     </section>
   );

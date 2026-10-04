@@ -3,75 +3,35 @@ import { data } from "@/app/data/resume";
 export const dynamic = "force-static";
 
 export function GET() {
-  const social = Object.values(data.contact.social)
-    .map((s) => `- [${s.name}](${s.url})`)
-    .join("\n");
-
-  const work = data.work
-    .map(
-      (job) => `### ${job.title} at ${job.company}
-
-${job.startDate} – ${job.endDate} · ${job.location}
-
-${job.description}
-
-Technologies: ${job.technologies.join(", ")}`
-    )
-    .join("\n\n");
-
-  const projects = data.projects
-    .map(
-      (project) => `### [${project.name}](${project.url})
-
-${project.tags.join(" · ")}
-
-${project.description}
-
-Tech stack: ${project.techStack.join(", ")}`
-    )
-    .join("\n\n");
-
-  const education = data.education.map((edu) => `- ${edu.degree}, ${edu.institution}`).join("\n");
-
-  const currentRole = data.work[0];
-
   const markdown = `# ${data.firstName} ${data.lastName}
 
 > ${data.summary}
 
-${data.title} at ${currentRole.company}. ${data.heroHeadline} Based in ${data.location}.
+Personal portfolio of ${data.firstName} ${data.lastName}, an ${data.title} based in ${data.location}. Updated ${data.lastUpdated}. The Markdown portfolio contains current experience, project descriptions, technologies, education, and contact details, generated from the same content as the website.
 
-## Contact
+## Portfolio
 
-- [Email](mailto:${data.contact.email})
-- [Website](${data.url})
-${social}
-
-## Experience
-
-${work}
+- [Full portfolio in Markdown](${data.url}/index.md): Experience at Tuskira, Lumen, and ADP; projects; education; skills; and contact information.
+- [Portfolio website](${data.url}): The human-readable version.
 
 ## Projects
 
-${projects}
+${data.projects.map((project) => `- [${project.name}](${project.url}): ${project.description}`).join("\n")}
 
-## Education
+## Optional
 
-${education}
-
-## Skills
-
-${data.skills.join(", ")}
-
-## License & Attribution
-
-Content available for AI and search indexing, discovery, research, and conversational use. Please link back to ${data.url}.
+${Object.values(data.contact.social)
+  .map(
+    (social) =>
+      `- [${social.name}](${social.url}): ${data.firstName} ${data.lastName}'s ${social.name} profile.`
+  )
+  .join("\n")}
 `;
-
   return new Response(markdown, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+      "X-Robots-Tag": "noindex",
     },
   });
 }

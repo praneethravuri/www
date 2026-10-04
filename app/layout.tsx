@@ -15,15 +15,9 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fullName = `${data.firstName} ${data.lastName}`;
-const pageTitle = `${fullName} | ${data.title}`;
+const pageTitle = data.seo.title;
 const currentRole = data.work[0];
 const lastUpdatedDateTime = `${data.lastUpdated}T00:00:00+00:00`;
-
-const MONTHS = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(",");
-const convertToISO = (d: string) => {
-  const [m, y] = d.split(" ");
-  return `${y}-${String(MONTHS.indexOf(m) + 1).padStart(2, "0")}`;
-};
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -38,7 +32,7 @@ export const metadata: Metadata = {
     default: pageTitle,
   },
   applicationName: fullName,
-  description: data.summary,
+  description: data.seo.description,
   keywords: data.keywords,
   authors: [
     {
@@ -53,14 +47,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: data.url,
     title: pageTitle,
-    description: data.summary,
+    description: data.seo.description,
     siteName: fullName,
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: pageTitle }],
   },
   twitter: {
     card: "summary_large_image",
     title: pageTitle,
-    description: data.summary,
+    description: data.seo.description,
     creator: "@praneeth2510",
     images: [{ url: "/twitter-image", width: 1200, height: 675, alt: pageTitle }],
   },
@@ -79,10 +73,8 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: data.url,
-    languages: {
-      "en-US": data.url,
-      en: data.url,
-      "x-default": data.url,
+    types: {
+      "text/markdown": `${data.url}/index.md`,
     },
   },
   icons: {
@@ -94,11 +86,11 @@ export const metadata: Metadata = {
     apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
-    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "",
-    other: {
-      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION || "",
-    },
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : undefined,
   },
 };
 
@@ -109,6 +101,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased relative min-h-screen`}>
         <a
           href="#main-content"
@@ -175,7 +170,7 @@ export default function RootLayout({
                   inLanguage: "en-US",
                 },
                 {
-                  "@type": "WebPage",
+                  "@type": "ProfilePage",
                   "@id": `${data.url}#webpage`,
                   url: data.url,
                   name: pageTitle,
@@ -184,36 +179,8 @@ export default function RootLayout({
                   mainEntity: { "@id": `${data.url}#person` },
                   description: data.summary,
                   inLanguage: "en-US",
-                  datePublished: "2024-01-01",
                   dateModified: lastUpdatedDateTime,
                 },
-                {
-                  "@type": "ProfilePage",
-                  "@id": `${data.url}#profilepage`,
-                  dateCreated: "2024-01-01T00:00:00+00:00",
-                  dateModified: lastUpdatedDateTime,
-                  mainEntity: { "@id": `${data.url}#person` },
-                },
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": `${data.url}#breadcrumb`,
-                  itemListElement: [
-                    {
-                      "@type": "ListItem",
-                      position: 1,
-                      name: "Home",
-                      item: data.url,
-                    },
-                  ],
-                },
-                ...data.work.map((job, idx) => ({
-                  "@type": "OrganizationRole",
-                  "@id": `${data.url}#work-${idx}`,
-                  roleName: job.title,
-                  startDate: convertToISO(job.startDate),
-                  endDate: job.endDate === "Present" ? undefined : convertToISO(job.endDate),
-                  organizationName: job.company,
-                })),
                 ...data.projects.map((project, idx) => ({
                   "@type": "SoftwareSourceCode",
                   "@id": `${data.url}#project-${idx}`,
@@ -222,10 +189,13 @@ export default function RootLayout({
                   codeRepository: project.url,
                   url: project.url,
                   author: { "@id": `${data.url}#person` },
-                  programmingLanguage: project.techStack,
+                  programmingLanguage: project.languages,
+                  keywords: project.tags.join(", "),
+                  runtimePlatform: project.techStack.join(", "),
+                  isPartOf: { "@id": `${data.url}#webpage` },
                 })),
               ],
-            }),
+            }).replace(/</g, "\u003c"),
           }}
         />
       </body>

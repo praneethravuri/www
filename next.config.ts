@@ -5,6 +5,8 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
+const isDev = process.env.NODE_ENV === "development";
+
 const securityHeaders: { key: string; value: string }[] = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
   {
@@ -19,7 +21,8 @@ const securityHeaders: { key: string; value: string }[] = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'sha256-aoCutFfVm5GqIB8qMQsBc+Vuos8737BA6R39PjbwVnc='",
+      // Static pages need inline Flight data; request nonces require dynamic SSR.
+      `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob:",
       "font-src 'self'",
@@ -28,7 +31,7 @@ const securityHeaders: { key: string; value: string }[] = [
       "base-uri 'self'",
       "form-action 'self'",
       "frame-ancestors 'none'",
-      "upgrade-insecure-requests",
+      ...(isDev ? [] : ["upgrade-insecure-requests"]),
     ].join("; "),
   },
 ];
@@ -71,7 +74,11 @@ const nextConfig: NextConfig = {
       {
         source: "/",
         headers: [
-          { key: "Cache-Control", value: "public, s-maxage=31536000, stale-while-revalidate=59" },
+          {
+            key: "Link",
+            value:
+              '</index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"',
+          },
         ],
       },
       {

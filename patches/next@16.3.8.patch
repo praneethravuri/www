@@ -1,3 +1,16 @@
+diff --git a/dist/build/generate-routes-manifest.js b/dist/build/generate-routes-manifest.js
+index baa348513c8d1099738d2bc2fee07951fc71882e..cba19229d581e2d60632645499959ef08a494e19 100644
+--- a/dist/build/generate-routes-manifest.js
++++ b/dist/build/generate-routes-manifest.js
+@@ -57,7 +57,7 @@ function generateRoutesManifest(options) {
+             header: _approuterheaders.RSC_HEADER,
+             // This vary header is used as a default. It is technically re-assigned in `base-server`,
+             // and may include an additional Vary option for `Next-URL`.
+-            varyHeader: `${_approuterheaders.RSC_HEADER}, ${_approuterheaders.NEXT_ROUTER_STATE_TREE_HEADER}, ${_approuterheaders.NEXT_ROUTER_PREFETCH_HEADER}, ${_approuterheaders.NEXT_ROUTER_SEGMENT_PREFETCH_HEADER}`,
++            varyHeader: `${_approuterheaders.RSC_HEADER}, ${_approuterheaders.NEXT_ROUTER_STATE_TREE_HEADER}, ${_approuterheaders.NEXT_ROUTER_PREFETCH_HEADER}, ${_approuterheaders.NEXT_ROUTER_SEGMENT_PREFETCH_HEADER}, Accept, Accept-Encoding`,
+             prefetchHeader: _approuterheaders.NEXT_ROUTER_PREFETCH_HEADER,
+             didPostponeHeader: _approuterheaders.NEXT_DID_POSTPONE_HEADER,
+             contentTypeHeader: _approuterheaders.RSC_CONTENT_TYPE_HEADER,
 diff --git a/dist/build/templates/app-page-runtime.js b/dist/build/templates/app-page-runtime.js
 index dfec9df74e9095294ca8e0f1c4b9f4601421025d..2be81d7f6fc3dd93290fad9816237d5fc1fdf4fa 100644
 --- a/dist/build/templates/app-page-runtime.js
@@ -11,6 +24,19 @@ index dfec9df74e9095294ca8e0f1c4b9f4601421025d..2be81d7f6fc3dd93290fad9816237d5f
              let parentSpan;
              const invokeRouteModule = async (span, context)=>{
                  const nextReq = new _node.NodeNextRequest(req);
+diff --git a/dist/esm/build/generate-routes-manifest.js b/dist/esm/build/generate-routes-manifest.js
+index ea01cfa9f27eb134a609a327f07c4d778876ffae..e0ecadf6914c63cb3a9c73fc04100312cad63f98 100644
+--- a/dist/esm/build/generate-routes-manifest.js
++++ b/dist/esm/build/generate-routes-manifest.js
+@@ -51,7 +51,7 @@ import { sortPages } from '../shared/lib/router/utils/sortable-routes';
+             header: RSC_HEADER,
+             // This vary header is used as a default. It is technically re-assigned in `base-server`,
+             // and may include an additional Vary option for `Next-URL`.
+-            varyHeader: `${RSC_HEADER}, ${NEXT_ROUTER_STATE_TREE_HEADER}, ${NEXT_ROUTER_PREFETCH_HEADER}, ${NEXT_ROUTER_SEGMENT_PREFETCH_HEADER}`,
++            varyHeader: `${RSC_HEADER}, ${NEXT_ROUTER_STATE_TREE_HEADER}, ${NEXT_ROUTER_PREFETCH_HEADER}, ${NEXT_ROUTER_SEGMENT_PREFETCH_HEADER}, Accept, Accept-Encoding`,
+             prefetchHeader: NEXT_ROUTER_PREFETCH_HEADER,
+             didPostponeHeader: NEXT_DID_POSTPONE_HEADER,
+             contentTypeHeader: RSC_CONTENT_TYPE_HEADER,
 diff --git a/dist/esm/build/templates/app-page-runtime.js b/dist/esm/build/templates/app-page-runtime.js
 index d991e81854e6685017936dd21fb9c4631edf9478..f0b950abec7957fadcb2c81d1cbb8784fba38068 100644
 --- a/dist/esm/build/templates/app-page-runtime.js

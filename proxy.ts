@@ -21,12 +21,15 @@ export function proxy(request: NextRequest) {
   }).mediaType(["text/html", "text/markdown"]);
   if (representation === "text/html") return next();
   if (!representation) {
+    const exists = path === "/" || Boolean(getSitePage(slug));
     return new Response(
       request.method === "HEAD"
         ? null
-        : "Not acceptable. Available representations: text/html, text/markdown.\n",
+        : exists
+          ? "Not acceptable. Available representations: text/html, text/markdown.\n"
+          : recoveryMarkdown,
       {
-        status: 406,
+        status: exists ? 406 : 404,
         headers: {
           "Content-Type": "text/plain; charset=utf-8",
           Vary: "Accept, Accept-Encoding, RSC",

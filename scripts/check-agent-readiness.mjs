@@ -109,6 +109,7 @@ try {
     }
   }
   const sitePaths = ["about", "contact", "privacy", "projects", "agent-instructions"];
+  assert.equal((await request("/__agent-test-missing", "application/json")).status, 404);
   for (const path of sitePaths) {
     const response = await request(`/${path}`, "text/html");
     assert.equal(response.status, 200, path);

@@ -3,6 +3,13 @@ import { readFileSync } from "node:fs";
 
 const read = (file) => readFileSync(`.next/server/app/${file}`, "utf8");
 const html = read("index.html");
+const routing = JSON.parse(readFileSync(".next/routes-manifest.json", "utf8"));
+for (const header of ["accept", "accept-encoding"]) {
+  assert.ok(
+    routing.rsc.varyHeader.toLowerCase().split(/,\s*/).includes(header),
+    "Vercel static delivery must preserve HTML/Markdown cache variation"
+  );
+}
 const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
 assert.equal(canonical, "https://praneethravuri.com");
 assert.equal((html.match(/<h1\b/g) || []).length, 1);

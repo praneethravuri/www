@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { data } from "@/app/data/resume";
+import { data, sitePages } from "@/app/data/resume";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -7,5 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: data.url,
       lastModified: new Date(data.lastUpdated),
     },
+    ...Object.keys(sitePages).map((slug) => ({
+      url: `${data.url}/${slug}`,
+      lastModified: new Date(data.lastUpdated),
+    })),
   ];
 }

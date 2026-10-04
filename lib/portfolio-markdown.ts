@@ -1,4 +1,37 @@
-import { data } from "@/app/data/resume";
+import { data, getSitePage } from "@/app/data/resume";
+
+export const recoveryMarkdown = `# 404 — Page not found
+
+This path does not exist on Praneeth Ravuri’s portfolio. Start with the links below to find the published content.
+
+- [Portfolio](${data.url}/)
+- [Full portfolio in Markdown](${data.url}/index.md)
+- [Agent link index](${data.url}/llms.txt)
+- [Sitemap](${data.url}/sitemap.xml)
+- [Project resources](${data.url}/projects)
+`;
+
+export function sitePageMarkdown(slug: string) {
+  const page = getSitePage(slug);
+  if (!page) return undefined;
+  return `# ${page.title}\n\n${page.sections.map((section) => `## ${section.heading}\n\n${section.text}${section.links ? `\n\n${section.links.map((link) => `- [${link.name}](${link.url})`).join("\n")}` : ""}`).join("\n\n")}\n\n[Back to the portfolio](${data.url}/)\n`;
+}
+
+export function markdownResponse(body: string, status = 200) {
+  return new Response(body, {
+    status,
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+      Vary: "Accept, Accept-Encoding, RSC",
+      "Cache-Control":
+        status === 200
+          ? "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+          : "no-store",
+      "X-Robots-Tag": "noindex",
+      Link: '</llms.txt>; rel="describedby"',
+    },
+  });
+}
 
 export function portfolioMarkdown() {
   const social = Object.values(data.contact.social)
@@ -53,6 +86,14 @@ ${data.education.map((edu) => `- ${edu.degree}, ${edu.institution}`).join("\n")}
 ## Skills
 
 ${data.skills.join(", ")}
+
+## Further reading
+
+- [About](${data.url}/about/index.md)
+- [Contact](${data.url}/contact/index.md)
+- [Privacy](${data.url}/privacy/index.md)
+- [Project resources](${data.url}/projects/index.md)
+- [Agent guidance](${data.url}/agent-instructions/index.md)
 
 ## Attribution
 

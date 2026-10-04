@@ -7,6 +7,7 @@ const inter = Inter({
   display: "swap",
   preload: true,
 });
+import "blobatar/motion.css";
 import "./globals.css";
 import { data } from "@/app/data/resume";
 import { Analytics } from "@vercel/analytics/next";
@@ -129,7 +130,6 @@ export default function RootLayout({
                   "@id": `${data.url}#person`,
                   name: fullName,
                   url: data.url,
-                  image: `${data.url}${data.avatarUrl}`,
                   jobTitle: data.title,
                   description: data.summary,
                   disambiguatingDescription: data.heroHeadline,

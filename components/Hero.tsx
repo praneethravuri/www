@@ -14,7 +14,7 @@ export default function Hero() {
             {data.title} · {data.location}
           </p>
         </div>
-        <AvatarCircles avatarUrls={[{ imageUrl: data.avatarUrl, alt: "" }]} />
+        <AvatarCircles names={[data.avatarName]} />
       </div>
       <h2 className="mt-9 max-w-[30ch] text-[27px] leading-[1.35] font-semibold tracking-[-0.025em] text-ink sm:text-[32px]">
         {data.heroHeadline}

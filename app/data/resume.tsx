@@ -2,7 +2,7 @@ export const data = {
   firstName: "Praneeth",
   lastName: "Ravuri",
   location: "Chicago, USA",
-  avatarUrl: "/blobatar.svg",
+  avatarName: "praneethravuri",
   url: "https://praneethravuri.com",
   title: "AI Engineer",
   summary:

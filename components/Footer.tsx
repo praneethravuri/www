@@ -2,7 +2,7 @@ import { data } from "@/app/data/resume";
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-line pt-8">
+    <footer className="mt-20 pt-8">
       <p className="text-lg font-medium text-ink">{data.taglines.footerTagline.tagline}</p>
       <a
         href={`mailto:${data.contact.email}`}

@@ -10,10 +10,7 @@ export function WorkExperience() {
 
       <div className="flex flex-col">
         {data.work.map((job, index) => (
-          <div
-            key={index}
-            className={`py-7.5 ${index === 0 ? "border-t-0 pt-5" : "border-t border-line"}`}
-          >
+          <div key={index} className={`py-7.5 ${index === 0 ? "pt-5" : ""}`}>
             {/* Top row */}
             <div className="flex items-center gap-3.5">
               <div>

@@ -20,9 +20,7 @@ export function Projects() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group block py-[30px] ${
-              index === 0 ? "border-t-0 pt-5" : "border-t border-line"
-            }`}
+            className={`group block py-[30px] ${index === 0 ? "pt-5" : ""}`}
           >
             {/* Head */}
             <div className="flex items-baseline gap-2.5 flex-wrap">

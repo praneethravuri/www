@@ -11,11 +11,8 @@ export function Education() {
         Education
       </h2>
 
-      {data.education.map((edu, index) => (
-        <div
-          key={edu.institution}
-          className={`flex items-center gap-4 py-5 border-t border-line ${index === 0 ? "border-t-0 pt-5" : ""}`}
-        >
+      {data.education.map((edu) => (
+        <div key={edu.institution} className="flex items-center gap-4 py-5">
           <div>
             <p className="text-[17px] text-ink font-[600]">{edu.degree}</p>
             <p className="text-[14px] text-muted-foreground mt-px font-[460]">{edu.institution}</p>

@@ -146,7 +146,7 @@ try {
     vary(md);
     const body = await md.text();
     markdownMetadata(body, md, `https://praneethravuri.com/${path}`);
-    assert.equal(md.headers.get("x-robots-tag"), null);
+    assert.equal(md.headers.get("x-robots-tag"), deployment ? "noindex" : null);
     const explicit = await request(`/${path}/index.md`, "text/html");
     assert.equal(explicit.status, 200);
     assert.match(explicit.headers.get("content-type"), /^text\/markdown/);

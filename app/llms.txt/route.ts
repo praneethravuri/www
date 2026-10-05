@@ -25,8 +25,14 @@ Read-only personal portfolio; there is no hosted API or MCP endpoint. Employer n
 
 ## Projects
 
+- [praneethravuri developer resources](${data.url}/projects): Praneeth Ravuri publishes these projects under the GitHub handle praneethravuri. Find repository source code, README setup instructions, and project technologies here.
 - [Developer project resources](${data.url}/projects/index.md): Source code and README setup links for Tether, Gary, Pitstop, Smart Traffic, and Notstuck.
 ${data.projects.map((project) => `- [${project.name}](${project.url}): ${project.description}`).join("\n")}
+
+## Website source
+
+- [Portfolio source code](https://github.com/praneethravuri/www): The Next.js implementation of this website, including Markdown routes, crawler files, and verification scripts.
+- [Portfolio development instructions](https://github.com/praneethravuri/www/blob/main/AGENTS.md): Repository-specific commands, content architecture, design constraints, and checks for agents contributing to the website.
 
 ## Optional
 

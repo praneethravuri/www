@@ -1,5 +1,12 @@
 import { data, getSitePage } from "@/app/data/resume";
 
+function frontmatter(title: string, description: string, canonical: string) {
+  // JSON double-quoted strings are YAML scalars too; quote punctuation and newlines safely.
+  return `---\n${Object.entries({ title, description, canonical, "last-updated": data.lastUpdated })
+    .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
+    .join("\n")}\n---\n\n`;
+}
+
 export const recoveryMarkdown = `# 404 — Page not found
 
 This path does not exist on Praneeth Ravuri’s portfolio. Start with the links below to find the published content.
@@ -14,10 +21,10 @@ This path does not exist on Praneeth Ravuri’s portfolio. Start with the links 
 export function sitePageMarkdown(slug: string) {
   const page = getSitePage(slug);
   if (!page) return undefined;
-  return `# ${page.title}\n\n${page.sections.map((section) => `## ${section.heading}\n\n${section.text}${section.links ? `\n\n${section.links.map((link) => `- [${link.name}](${link.url})`).join("\n")}` : ""}`).join("\n\n")}\n\n[Back to the portfolio](${data.url}/)\n`;
+  return `${frontmatter(page.title, page.description, `${data.url}/${slug}`)}# ${page.title}\n\n${page.sections.map((section) => `## ${section.heading}\n\n${section.text}${section.links ? `\n\n${section.links.map((link) => `- [${link.name}](${link.url})`).join("\n")}` : ""}`).join("\n\n")}\n\n[Back to the portfolio](${data.url}/)\n`;
 }
 
-export function markdownResponse(body: string, status = 200) {
+export function markdownResponse(body: string, status = 200, canonical?: string) {
   return new Response(body, {
     status,
     headers: {
@@ -28,7 +35,7 @@ export function markdownResponse(body: string, status = 200) {
           ? "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
           : "no-store",
       "X-Robots-Tag": "noindex",
-      Link: '</llms.txt>; rel="describedby"',
+      Link: `</llms.txt>; rel="describedby"${status === 200 && canonical ? `, <${canonical}>; rel="canonical"` : ""}`,
     },
   });
 }
@@ -59,7 +66,7 @@ ${project.description}
 Technologies: ${project.techStack.join(", ")}`
     )
     .join("\n\n");
-  return `# ${data.firstName} ${data.lastName}
+  return `${frontmatter(data.seo.title, data.seo.description, data.url)}# ${data.firstName} ${data.lastName}
 
 > ${data.summary}
 

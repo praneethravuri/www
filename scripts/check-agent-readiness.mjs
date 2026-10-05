@@ -49,6 +49,21 @@ const vary = (response) => {
   assert.ok(tokens.includes("accept"), "Negotiated responses must vary on Accept");
   assert.ok(tokens.includes("accept-encoding"));
 };
+const markdownMetadata = (body, response, canonical) => {
+  const block = body.match(/^---\n([\s\S]*?)\n---\n\n# /)?.[1];
+  assert.ok(block, "Successful Markdown documents must include YAML frontmatter");
+  const fields = Object.fromEntries(
+    block.split("\n").map((line) => {
+      const colon = line.indexOf(": ");
+      return [line.slice(0, colon), JSON.parse(line.slice(colon + 2))];
+    })
+  );
+  assert.deepEqual(Object.keys(fields), ["title", "description", "canonical", "last-updated"]);
+  assert.ok(fields.title.length > 0 && fields.description.length > 0);
+  assert.equal(fields.canonical, canonical);
+  assert.match(fields["last-updated"], /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(response.headers.get("link")?.includes(`<${canonical}>; rel="canonical"`));
+};
 try {
   for (let i = 0; i < 100; i++) {
     try {
@@ -79,7 +94,10 @@ try {
     vary(response);
     const body = await response.text();
     if (type === "text/markdown") {
-      assert.match(body, /^# Praneeth Ravuri\n/);
+      markdownMetadata(body, response, "https://praneethravuri.com");
+      // Vercel adds noindex to branch previews; production negotiated URLs stay indexable.
+      assert.equal(response.headers.get("x-robots-tag"), deployment ? "noindex" : null);
+      assert.match(body, /\n# Praneeth Ravuri\n/);
       assert.ok(body.includes("## Experience"));
       assert.doesNotMatch(body, /<html|<script/);
     } else if (type === "text/html") assert.match(body, /<h1\b/);
@@ -87,6 +105,7 @@ try {
   const head = await request("/", "text/markdown", "HEAD");
   assert.equal(head.status, 200);
   assert.match(head.headers.get("content-type"), /^text\/markdown/);
+  assert.ok(head.headers.get("link")?.includes('<https://praneethravuri.com>; rel="canonical"'));
   vary(head);
   assert.equal(await head.text(), "");
   for (const path of [
@@ -104,6 +123,7 @@ try {
       if (accept === "text/markdown") {
         assert.match(response.headers.get("content-type"), /^text\/markdown/);
         assert.match(body, /^# 404/);
+        assert.doesNotMatch(response.headers.get("link") || "", /rel="canonical"/);
         assert.equal(response.headers.get("cache-control"), "no-store");
       }
     }
@@ -125,11 +145,13 @@ try {
     assert.match(md.headers.get("content-type"), /^text\/markdown/);
     vary(md);
     const body = await md.text();
-    assert.match(body, /^# /);
+    markdownMetadata(body, md, `https://praneethravuri.com/${path}`);
+    assert.equal(md.headers.get("x-robots-tag"), deployment ? "noindex" : null);
     const explicit = await request(`/${path}/index.md`, "text/html");
     assert.equal(explicit.status, 200);
     assert.match(explicit.headers.get("content-type"), /^text\/markdown/);
     assert.equal(await explicit.text(), body);
+    markdownMetadata(body, explicit, `https://praneethravuri.com/${path}`);
     assert.equal(explicit.headers.get("x-robots-tag"), "noindex");
   }
   const llmsResponse = await request("/llms.txt");
@@ -138,6 +160,20 @@ try {
   const llms = await llmsResponse.text();
   assert.match(llms, /^# Praneeth Ravuri\n\n> /);
   assert.ok(llms.includes("## When to use this"));
+  assert.ok(llms.includes("https://praneethravuri.com/projects/index.md"));
+  assert.ok(llms.includes("[Portfolio source code](https://github.com/praneethravuri/www)"));
+  assert.ok(llms.includes("https://github.com/praneethravuri/www/blob/main/AGENTS.md"));
+  assert.ok(
+    llms.includes("[praneethravuri developer resources](https://praneethravuri.com/projects)")
+  );
+  const resources = await (await request("/projects", "text/html")).text();
+  assert.match(
+    resources,
+    /<title>Praneeth Ravuri \(praneethravuri\) [^<]*developer resources<\/title>/
+  );
+  assert.match(resources, /<h1\b[^>]*>Praneeth Ravuri \(praneethravuri\)/);
+  const resourceMarkdown = await (await request("/projects", "text/markdown")).text();
+  assert.match(resourceMarkdown, /\n# Praneeth Ravuri \(praneethravuri\)/);
   // H2 sections in llms.txt v2 are link lists, not arbitrary prose sections.
   for (const section of llms.split(/^## /m).slice(1)) {
     assert.match(section, /\n\n- \[[^\]]+\]\([^)]+\)/);
@@ -149,11 +185,16 @@ try {
       instructions.includes("Pitstop")
   );
   assert.ok(instructions.includes("mailto:ravpraneeth@gmail.com"));
+  const explicitPortfolio = await request("/index.md");
+  markdownMetadata(await explicitPortfolio.text(), explicitPortfolio, "https://praneethravuri.com");
+  assert.equal(explicitPortfolio.headers.get("x-robots-tag"), "noindex");
   const home = await (await request("/", "text/html")).text();
   const graph = JSON.parse(
     home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]
   )["@graph"];
   const person = graph.find((entry) => entry["@type"] === "Person");
+  assert.equal(person.alternateName, "praneethravuri");
+  assert.equal(graph.find((entry) => entry["@type"] === "WebSite").alternateName, "praneethravuri");
   assert.equal(person.contactPoint.email, "ravpraneeth@gmail.com");
   assert.equal(person.address.addressLocality, "Chicago");
   assert.equal(person.address.addressCountry, "US");

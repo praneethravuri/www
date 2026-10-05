@@ -1,6 +1,6 @@
 import Negotiator from "negotiator";
 import { NextResponse, type NextRequest } from "next/server";
-import { getSitePage } from "@/app/data/resume";
+import { data, getSitePage } from "@/app/data/resume";
 import {
   markdownResponse,
   portfolioMarkdown,
@@ -39,7 +39,11 @@ export function proxy(request: NextRequest) {
     );
   }
   const body = path === "/" ? portfolioMarkdown() : sitePageMarkdown(slug);
-  const response = markdownResponse(body ?? recoveryMarkdown, body ? 200 : 404);
+  const response = markdownResponse(
+    body ?? recoveryMarkdown,
+    body ? 200 : 404,
+    body ? `${data.url}${path === "/" ? "" : path}` : undefined
+  );
   // The negotiated URL is indexable; only explicit .md duplicates use noindex.
   if (body) response.headers.delete("X-Robots-Tag");
   return request.method === "HEAD" ? new Response(null, response) : response;

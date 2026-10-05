@@ -1,6 +1,7 @@
 export const data = {
   firstName: "Praneeth",
   lastName: "Ravuri",
+  handle: "praneethravuri",
   location: "Chicago, USA",
   address: {
     addressLocality: "Chicago",
@@ -290,14 +291,13 @@ export const sitePages = {
     ],
   },
   projects: {
-    title: "Praneeth Ravuri’s developer project resources",
-    description:
-      "Source code and README documentation for Tether, Gary, Pitstop, Smart Traffic, and Notstuck by Praneeth Ravuri.",
+    title: `Praneeth Ravuri (${data.handle}) — developer resources`,
+    description: `Developer resources by Praneeth Ravuri (${data.handle}): source code and setup documentation for Tether, Gary, Pitstop, Smart Traffic, and Notstuck.`,
     schemaType: "CollectionPage",
     sections: [
       {
         heading: "Using these resources",
-        text: "Praneeth Ravuri’s public project repositories are the source for setup instructions, implementation details, dependencies, and licensing. Follow each repository’s current README before running a project. This portfolio provides a directory and descriptions; it does not host an API, authentication service, or MCP server. Pitstop is an MCP project whose installation and configuration belong to its repository.",
+        text: `Praneeth Ravuri publishes these projects under the GitHub handle ${data.handle}. Their repositories are the source for setup instructions, implementation details, dependencies, and licensing. Follow each repository’s current README before running a project. This portfolio provides a directory and descriptions; it does not host an API, authentication service, or MCP server. Pitstop is an MCP project whose installation and configuration belong to its repository.`,
       },
       ...data.projects.map((project) => ({
         heading: project.name,

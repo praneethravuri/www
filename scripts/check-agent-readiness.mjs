@@ -95,7 +95,8 @@ try {
     const body = await response.text();
     if (type === "text/markdown") {
       markdownMetadata(body, response, "https://praneethravuri.com");
-      assert.equal(response.headers.get("x-robots-tag"), null);
+      // Vercel adds noindex to branch previews; production negotiated URLs stay indexable.
+      assert.equal(response.headers.get("x-robots-tag"), deployment ? "noindex" : null);
       assert.match(body, /\n# Praneeth Ravuri\n/);
       assert.ok(body.includes("## Experience"));
       assert.doesNotMatch(body, /<html|<script/);

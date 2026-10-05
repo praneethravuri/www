@@ -19,11 +19,11 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 24
           cache: pnpm
@@ -34,8 +34,15 @@ jobs:
       - name: Audit (prod deps)
         run: pnpm audit --prod --audit-level=high
 
+      # No upstream patch yet; lint tooling only. Production audit above has no exceptions.
+      - name: Audit all dependencies (fixable advisories)
+        run: pnpm audit --audit-level=moderate --ignore GHSA-vfj7-8cjw-p6xm
+
       - name: Format check
         run: pnpm format:check
+
+      - name: Workflow policy checks
+        run: pnpm test:workflows
 
       - name: Lint
         run: pnpm lint

@@ -139,7 +139,13 @@ try {
     assert.ok(html.includes(`/${path}/index.md`));
     assert.equal((html.match(/<h1\b/g) || []).length, 1);
     const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
-    assert.ok(main && main.replace(/<[^>]*>/g, "").length >= 500, path);
+    // These server-rendered paragraphs contain plain text, not nested markup.
+    // Count actual prose instead of treating stripped HTML (including JSON-LD) as content.
+    const paragraphs = [...(main || "").matchAll(/<p\b[^>]*>([^<]*)<\/p>/g)];
+    assert.ok(
+      main && paragraphs.reduce((length, paragraph) => length + paragraph[1].length, 0) >= 500,
+      path
+    );
     const md = await request(`/${path}`, "text/markdown");
     assert.equal(md.status, 200);
     assert.match(md.headers.get("content-type"), /^text\/markdown/);

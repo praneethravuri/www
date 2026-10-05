@@ -31,3 +31,11 @@ Pre-commit runs formatting and linting on staged files, then checks types when T
 The Blobatar follows the pointer and can be paused by clicking it or pressing Enter when focused. Motion respects the system’s reduced-motion preference.
 
 See [AGENTS.md](AGENTS.md) for architecture and project constraints.
+
+## Dependency maintenance
+
+Individual Dependabot npm patch updates can auto-merge after the required CI and both CodeQL scans pass against an up-to-date branch. Grouped updates, minor, major, GitHub Actions updates, and updates reporting maintainer changes require manual review. The privileged auto-merge workflow never checks out PR code and verifies Dependabot metadata and the exact PR head before enabling auto-merge. Patch versions reduce compatibility risk; tests cannot guarantee a dependency is safe.
+
+CI audits production dependencies without exceptions and all dependencies at moderate severity or above. The all-dependency audit has one documented exception: GHSA-vfj7-8cjw-p6xm in `braces@3.0.3`, a transitive development dependency of the Next.js ESLint plugin, currently has no published patch. It processes the repository's trusted lint patterns, not visitor input. Remove the exception when an upstream patch becomes available. Production dependencies are still audited without this exception.
+
+Run `pnpm test:workflows` to verify immutable action pins, privileged workflow safeguards, and patch-only auto-merge eligibility (including rejected minor, major, action, maintainer-change, and missing-metadata cases).

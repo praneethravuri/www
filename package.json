@@ -11,6 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
+    "test:workflows": "node scripts/check-workflows.mjs",
     "test:headers": "node scripts/check-headers.mjs",
     "test:seo": "node scripts/check-seo.mjs",
     "test:agents": "node scripts/check-agent-readiness.mjs"

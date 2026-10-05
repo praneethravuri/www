@@ -3,12 +3,11 @@
 import { useState } from "react";
 import { Blobatar } from "@blobatar/react";
 import { useGaze } from "@blobatar/react/gaze";
-import { cn } from "@/lib/utils";
 
 // Minimal adaptation of Magic UI Avatar Circles using animated inline Blobatars.
-export function AvatarCircles({ className, names }: { className?: string; names: string[] }) {
+export function AvatarCircles({ names }: { names: string[] }) {
   return (
-    <div className={cn("flex -space-x-4", className)}>
+    <div className="flex -space-x-4">
       {names.map((name) => (
         <PointerAvatar key={name} name={name} />
       ))}

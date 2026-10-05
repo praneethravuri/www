@@ -4,6 +4,8 @@ allowBuilds:
 
 overrides:
   postcss: ">=8.5.18"
+  brace-expansion@<1.1.21: 1.1.21
+  nanoid@>=3.0.0 <3.3.18: 3.3.18
 
 patchedDependencies:
   next@16.3.8: patches/next@16.3.8.patch

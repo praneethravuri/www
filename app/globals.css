@@ -128,3 +128,14 @@
     }
   }
 }
+
+/* Explicit dash lengths keep both vertical edges consistent across browsers. */
+.portfolio-frame {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='18'%3E%3Cpath stroke='%232a2a2a' d='M.5 0v10'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='18'%3E%3Cpath stroke='%232a2a2a' d='M.5 0v10'/%3E%3C/svg%3E");
+  background-position:
+    left top,
+    right top;
+  background-repeat: repeat-y;
+}

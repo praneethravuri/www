@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 704px single-column layout with an orange Blobatar and interactive hover accents.
+Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 768px single-column layout with an orange Blobatar and interactive hover accents.
 
 ## Commands
 
@@ -21,7 +21,7 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 ## Architecture
 
 - **All content lives in `app/data/resume.tsx`** (`data` export) — name, summary, taglines, contact/socials, work, projects, education. Components render from it; edit content there, not in components.
-- `app/page.tsx` renders Hero → WorkExperience → Projects → Education → Footer inside `<main class="max-w-[704px]">`.
+- `app/page.tsx` renders Hero → WorkExperience → Projects → Education → Footer inside `<main class="max-w-[768px]">`.
 - `app/layout.tsx` holds all SEO metadata, JSON-LD structured data, production-only Vercel Analytics/Speed Insights, and the skip link.
 - `app/globals.css` — Tailwind v4 CSS-first theming: dark palette as CSS vars in `:root`, mapped to Tailwind tokens via `@theme inline` (+ `@custom-variant dark`); body base type (16px / weight 400 / line-height 1.5 / -0.00875em), inverted `::selection`, themed custom scrollbar, and reduced-motion support.
 - Design-exact values use Tailwind arbitrary classes (`text-[27px] font-[560] tracking-[-0.025em]`).

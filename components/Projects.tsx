@@ -26,7 +26,7 @@ export function Projects() {
                 alt={project.imageAlt}
                 fill
                 unoptimized
-                sizes="(max-width: 704px) calc(100vw - 42px), 656px"
+                sizes="(max-width: 768px) calc(100vw - 42px), 720px"
                 className="object-contain"
               />
             </div>

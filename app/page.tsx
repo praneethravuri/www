@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main
       id="main-content"
-      className="mx-auto w-full max-w-[704px] portfolio-frame px-6 pb-24 max-[600px]:px-5 max-[600px]:pb-20"
+      className="mx-auto w-full max-w-[768px] portfolio-frame px-6 pb-24 max-[600px]:px-5 max-[600px]:pb-20"
     >
       <Hero />
       <WorkExperience />

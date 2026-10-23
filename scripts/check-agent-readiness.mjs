@@ -173,7 +173,7 @@ try {
     "/manifest.webmanifest",
     "/opengraph-image",
     "/twitter-image",
-    "/images/projects/tether.svg",
+    "/images/projects/tether-v2.webp",
     "/images/projects/gary.svg",
     "/images/projects/pitstop.svg",
     "/images/projects/smart-traffic.svg",

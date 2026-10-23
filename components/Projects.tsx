@@ -25,7 +25,7 @@ export function Projects() {
                 src={project.image}
                 alt={project.imageAlt}
                 fill
-                unoptimized
+                unoptimized={project.image.endsWith(".svg")}
                 sizes="(max-width: 768px) calc(100vw - 42px), 720px"
                 className="object-contain"
               />

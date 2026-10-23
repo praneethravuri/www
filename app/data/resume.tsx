@@ -152,8 +152,8 @@ export const data = {
   projects: [
     {
       name: "Tether",
-      image: "/images/projects/tether.svg",
-      imageAlt: "Isometric CAD drawing of connected geometric nodes and a shared hub",
+      image: "/images/projects/tether-v2.webp",
+      imageAlt: "Two isometric computers exchanging messages over an orange connection",
       languages: ["Go"],
       url: "https://github.com/praneethravuri/tether",
       description:

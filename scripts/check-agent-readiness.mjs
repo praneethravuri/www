@@ -131,34 +131,10 @@ try {
   const sitePaths = ["about", "contact", "privacy", "projects", "agent-instructions"];
   assert.equal((await request("/__agent-test-missing", "application/json")).status, 404);
   for (const path of sitePaths) {
-    const response = await request(`/${path}`, "text/html");
-    assert.equal(response.status, 200, path);
-    vary(response);
-    const html = await response.text();
-    assert.ok(html.includes(`rel="canonical" href="https://praneethravuri.com/${path}"`));
-    assert.ok(html.includes(`/${path}/index.md`));
-    assert.equal((html.match(/<h1\b/g) || []).length, 1);
-    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
-    // These server-rendered paragraphs contain plain text, not nested markup.
-    // Count actual prose instead of treating stripped HTML (including JSON-LD) as content.
-    const paragraphs = [...(main || "").matchAll(/<p\b[^>]*>([^<]*)<\/p>/g)];
-    assert.ok(
-      main && paragraphs.reduce((length, paragraph) => length + paragraph[1].length, 0) >= 500,
-      path
-    );
-    const md = await request(`/${path}`, "text/markdown");
-    assert.equal(md.status, 200);
-    assert.match(md.headers.get("content-type"), /^text\/markdown/);
-    vary(md);
-    const body = await md.text();
-    markdownMetadata(body, md, `https://praneethravuri.com/${path}`);
-    assert.equal(md.headers.get("x-robots-tag"), deployment ? "noindex" : null);
-    const explicit = await request(`/${path}/index.md`, "text/html");
-    assert.equal(explicit.status, 200);
-    assert.match(explicit.headers.get("content-type"), /^text\/markdown/);
-    assert.equal(await explicit.text(), body);
-    markdownMetadata(body, explicit, `https://praneethravuri.com/${path}`);
-    assert.equal(explicit.headers.get("x-robots-tag"), "noindex");
+    for (const accept of ["text/html", "text/markdown"]) {
+      assert.equal((await request(`/${path}`, accept)).status, 404, path);
+      assert.equal((await request(`/${path}/index.md`, accept)).status, 404, path);
+    }
   }
   const llmsResponse = await request("/llms.txt");
   assert.equal(llmsResponse.status, 200);
@@ -166,31 +142,13 @@ try {
   const llms = await llmsResponse.text();
   assert.match(llms, /^# Praneeth Ravuri\n\n> /);
   assert.ok(llms.includes("## When to use this"));
-  assert.ok(llms.includes("https://praneethravuri.com/projects/index.md"));
+  assert.ok(!llms.includes("https://praneethravuri.com/projects/index.md"));
   assert.ok(llms.includes("[Portfolio source code](https://github.com/praneethravuri/www)"));
   assert.ok(llms.includes("https://github.com/praneethravuri/www/blob/main/AGENTS.md"));
-  assert.ok(
-    llms.includes("[praneethravuri developer resources](https://praneethravuri.com/projects)")
-  );
-  const resources = await (await request("/projects", "text/html")).text();
-  assert.match(
-    resources,
-    /<title>Praneeth Ravuri \(praneethravuri\) [^<]*developer resources<\/title>/
-  );
-  assert.match(resources, /<h1\b[^>]*>Praneeth Ravuri \(praneethravuri\)/);
-  const resourceMarkdown = await (await request("/projects", "text/markdown")).text();
-  assert.match(resourceMarkdown, /\n# Praneeth Ravuri \(praneethravuri\)/);
   // H2 sections in llms.txt v2 are link lists, not arbitrary prose sections.
   for (const section of llms.split(/^## /m).slice(1)) {
     assert.match(section, /\n\n- \[[^\]]+\]\([^)]+\)/);
   }
-  const instructions = await (await request("/agent-instructions", "text/markdown")).text();
-  assert.ok(
-    instructions.includes("security investigation") &&
-      instructions.includes("Tether") &&
-      instructions.includes("Pitstop")
-  );
-  assert.ok(instructions.includes("mailto:ravpraneeth@gmail.com"));
   const explicitPortfolio = await request("/index.md");
   markdownMetadata(await explicitPortfolio.text(), explicitPortfolio, "https://praneethravuri.com");
   assert.equal(explicitPortfolio.headers.get("x-robots-tag"), "noindex");
@@ -228,7 +186,7 @@ try {
   }
   const sitemap = await (await request("/sitemap.xml")).text();
   for (const path of sitePaths)
-    assert.ok(sitemap.includes(`<loc>https://praneethravuri.com/${path}</loc>`));
+    assert.ok(!sitemap.includes(`<loc>https://praneethravuri.com/${path}</loc>`));
   assert.ok(!sitemap.includes("index.md"));
   assert.ok(
     (await (await request("/robots.txt")).text()).includes(
@@ -236,7 +194,7 @@ try {
     )
   );
   console.log(
-    `PASS: agent negotiation, q-values, 406, HEAD, 404 recovery, trust pages, discovery, schema, sitemap, and public files (${origin})`
+    `PASS: agent negotiation, q-values, 406, HEAD, 404 recovery, single-page routing, discovery, schema, sitemap, and public files (${origin})`
   );
 } finally {
   server?.kill("SIGTERM");

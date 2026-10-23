@@ -24,12 +24,12 @@ export function Projects() {
           >
             {/* Head */}
             <div className="flex items-baseline gap-2.5 flex-wrap">
-              <h3 className="inline-flex items-center gap-2 text-[18px] font-[600] tracking-[-0.02em] text-ink leading-[1.2]">
+              <h3 className="inline-flex items-center gap-2 text-[18px] font-[600] tracking-[-0.02em] text-ink group-hover:text-accent leading-[1.2]">
                 {project.name}
                 <ArrowUpRightIcon
                   size={15}
                   aria-hidden="true"
-                  className="text-faint group-hover:text-ink"
+                  className="text-faint group-hover:text-accent"
                 />
               </h3>
               <span className="text-[15px] text-muted-foreground font-medium">

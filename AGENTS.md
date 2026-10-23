@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 640px single-column layout with a single orange Blobatar accent.
+Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 640px single-column layout with an orange Blobatar and interactive hover accents.
 
 ## Commands
 
@@ -14,8 +14,8 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 ## Hard constraints
 
 - **ESLint must stay on v9** — v10 breaks eslint-plugin-react via eslint-config-next 16.x.
-- **Dark mode only**: background `#141414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. No pictures, company logos, cards, gradients, or navbars. Horizontal rules appear only beside section headings.
-- **Server components by default**: the animated Blobatar is the only custom client island. It uses `@blobatar/react` plus `useGaze` and the motion/gaze CSS from `blobatar`. Seed `praneethravuri`, neon orange `#FF5F1F`, pointer travel 3. Respect reduced motion and fine-pointer gating. No theme toggle or no-flash script.
+- **Dark mode only**: background `#151414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. No pictures, company logos, cards, gradients, or navbars. Horizontal rules appear only beside section headings.
+- **Server components by default**: the animated Blobatar is the only custom client island. It uses `@blobatar/react` plus `useGaze` and the motion/gaze CSS from `blobatar`. Seed `praneethravuri`, neon orange `#FF5D20`, pointer travel 3. Respect reduced motion and fine-pointer gating. No theme toggle or no-flash script.
 - **No entrance/reveal animations.** BlurFade was removed for FCP/LCP reasons — JS-driven reveals SSR content with `opacity:0`, which delays paint until hydration. Do not reintroduce scroll reveals or anything that renders content hidden. Hover transitions (color/transform) are fine.
 
 ## Architecture
@@ -34,8 +34,8 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 
 ## Verification
 
-Run `pnpm lint`, `pnpm build`, `pnpm test:seo`, `pnpm test:headers`, and `pnpm test:agents`. `test:seo` validates built metadata, structured data, Markdown, crawler files, and canonical URLs. `test:agents` starts a temporary production server and verifies negotiation, quality values, 406, HEAD, recovery 404s, trust/resource pages, their static Markdown versions, and public files. Use `pnpm build --webpack` only if the local sandbox prevents Turbopack worker port binding. ESLint stays on v9 and TypeScript on v6; next/config-next/bundle-analyzer versions should match. The placeholder résumé link has been removed until a real URL is supplied.
+Run `pnpm lint`, `pnpm build`, `pnpm test:seo`, `pnpm test:headers`, and `pnpm test:agents`. `test:seo` validates built metadata, structured data, Markdown, crawler files, and canonical URLs. `test:agents` starts a temporary production server and verifies negotiation, quality values, 406, HEAD, recovery 404s, removed-page 404s, and public files. Use `pnpm build --webpack` only if the local sandbox prevents Turbopack worker port binding. ESLint stays on v9 and TypeScript on v6; next/config-next/bundle-analyzer versions should match. The placeholder résumé link has been removed until a real URL is supplied.
 
-`sitePages` in `app/data/resume.tsx` drives static About, Contact, Privacy, Projects, and Agent Instructions pages (`app/[page]`) and their `/<page>/index.md` alternatives. `proxy.ts` performs Accept negotiation without changing server component rendering, and emits recoverable Markdown 404s. Exclude static assets, Next internals, and Vercel telemetry paths. Use the maintained server-only `negotiator` parser rather than substring matching Accept. This remains a personal portfolio with Person schema, not a hosted API/MCP service or an Organization publisher.
+The portfolio has one HTML page. Keep `/index.md` and `/llms.txt` as machine-readable alternatives; removed supporting pages return 404. `proxy.ts` performs Accept negotiation without changing server component rendering, and emits recoverable Markdown 404s. Exclude static assets, Next internals, and Vercel telemetry paths. Use the maintained server-only `negotiator` parser rather than substring matching Accept. This remains a personal portfolio with Person schema, not a hosted API/MCP service or an Organization publisher.
 
 Pre-commit formats/lints staged files and type-checks staged TypeScript changes. CI includes `codex/**` branches and cancels superseded runs. The Blobatar is a keyboard-accessible pause/resume button.

@@ -32,7 +32,7 @@ function PointerAvatar({ name }: { name: string }) {
         ref={ref}
         name={name}
         animate={playing ? "always" : undefined}
-        palette={{ head: "#ff5f1f", eye: "#141413" }}
+        palette={{ head: "#FF5D20", eye: "#151414" }}
         className="size-full"
         aria-hidden="true"
       />

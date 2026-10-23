@@ -1,27 +1,19 @@
 import Negotiator from "negotiator";
 import { NextResponse, type NextRequest } from "next/server";
-import { data, getSitePage } from "@/app/data/resume";
-import {
-  markdownResponse,
-  portfolioMarkdown,
-  recoveryMarkdown,
-  sitePageMarkdown,
-} from "@/lib/portfolio-markdown";
+import { data } from "@/app/data/resume";
+import { markdownResponse, portfolioMarkdown, recoveryMarkdown } from "@/lib/portfolio-markdown";
 
 export function proxy(request: NextRequest) {
   const next = () => NextResponse.next({ headers: { Vary: "Accept, Accept-Encoding" } });
   if (!["GET", "HEAD"].includes(request.method) || request.headers.get("rsc") === "1")
     return next();
   const path = request.nextUrl.pathname;
-  const slug = path.slice(1);
-  // Explicit Markdown URLs are stable alternatives and do not negotiate.
-  if (path.endsWith("/index.md") && getSitePage(slug.slice(0, -9))) return next();
   const representation = new Negotiator({
     headers: { accept: request.headers.get("accept") ?? "*/*" },
   }).mediaType(["text/html", "text/markdown"]);
   if (representation === "text/html") return next();
   if (!representation) {
-    const exists = path === "/" || Boolean(getSitePage(slug));
+    const exists = path === "/";
     return new Response(
       request.method === "HEAD"
         ? null
@@ -38,7 +30,7 @@ export function proxy(request: NextRequest) {
       }
     );
   }
-  const body = path === "/" ? portfolioMarkdown() : sitePageMarkdown(slug);
+  const body = path === "/" ? portfolioMarkdown() : undefined;
   const response = markdownResponse(
     body ?? recoveryMarkdown,
     body ? 200 : 404,

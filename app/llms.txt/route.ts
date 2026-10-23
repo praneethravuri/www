@@ -13,20 +13,15 @@ Read-only personal portfolio; there is no hosted API or MCP endpoint. Employer n
 
 ## When to use this
 
-- [Agent instructions](${data.url}/agent-instructions/index.md): Use this site to understand Praneeth Ravuri’s experience with security investigation agents, agent memory, MCP integrations, and Go backend systems; compare project implementations; and find professional contact details. Read with GET and Accept: text/markdown, or follow the explicit Markdown links. Project execution instructions live in the repositories.
+- [Portfolio guidance](${data.url}/index.md): Read the portfolio for engineering experience, projects, and contact details. Project execution instructions live in the linked repositories.
 
 ## Portfolio
 
 - [Full portfolio in Markdown](${data.url}/index.md): Experience at Tuskira, Lumen, and ADP; projects; education; skills; and contact information.
 - [Portfolio website](${data.url}): The human-readable version.
-- [About Praneeth Ravuri](${data.url}/about/index.md): Engineering background, education, and the scope of this personal portfolio.
-- [Contact Praneeth Ravuri](${data.url}/contact/index.md): Professional inquiries and project questions.
-- [Privacy notice](${data.url}/privacy/index.md): Hosting, analytics, performance measurement, email, and external links.
 
 ## Projects
 
-- [praneethravuri developer resources](${data.url}/projects): Praneeth Ravuri publishes these projects under the GitHub handle praneethravuri. Find repository source code, README setup instructions, and project technologies here.
-- [Developer project resources](${data.url}/projects/index.md): Source code and README setup links for Tether, Gary, Pitstop, Smart Traffic, and Notstuck.
 ${data.projects.map((project) => `- [${project.name}](${project.url}): ${project.description}`).join("\n")}
 
 ## Website source

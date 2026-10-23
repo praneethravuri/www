@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-/* Single dark palette. The Blobatar is the only color accent. */
+/* Single dark palette. The Blobatar and interactive hover states use the orange accent. */
 :root {
   color-scheme: dark;
-  --background: #141414;
+  --accent: #ff5d20;
+  --background: #151414;
   --foreground: #f0e3de;
   --ink: #fffbf5;
   --body: #f0e3de;
@@ -13,14 +14,15 @@
   --line-strong: #525252;
   --card: #252525;
   --primary: #fffbf5;
-  --primary-foreground: #141414;
+  --primary-foreground: #151414;
   --selection-bg: #f0e3de;
-  --selection-fg: #141414;
+  --selection-fg: #151414;
   --scrollbar-thumb: #2a2a2a;
   --scrollbar-thumb-hover: #525252;
 }
 
 @theme inline {
+  --color-accent: var(--accent);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-ink: var(--ink);

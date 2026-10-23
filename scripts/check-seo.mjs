@@ -59,33 +59,14 @@ const llms = read("llms.txt.body");
 const markdown = read("index.md.body");
 assert.match(llms, /^# Praneeth Ravuri\n\n> /);
 assert.ok(llms.includes(`${canonical}/index.md`));
-assert.ok(llms.includes(`${canonical}/projects/index.md`));
+assert.ok(!llms.includes(`${canonical}/projects/index.md`));
 assert.ok(llms.includes("[Portfolio source code](https://github.com/praneethravuri/www)"));
 assert.ok(llms.includes("https://github.com/praneethravuri/www/blob/main/AGENTS.md"));
 const portfolioFields = frontmatter(markdown, canonical);
 assert.equal(portfolioFields.description, description);
 for (const path of ["about", "contact", "privacy", "projects", "agent-instructions"]) {
-  const document = read(`${path}/index.md.body`);
-  const fields = frontmatter(document, `${canonical}/${path}`);
-  assert.ok(document.includes(`\n# ${fields.title}\n`));
-  assert.equal(fields["last-updated"], portfolioFields["last-updated"]);
-}
-assert.match(
-  llms,
-  /\[praneethravuri developer resources\]\(https:\/\/praneethravuri\.com\/projects\)/
-);
-const resources = read("projects.html");
-assert.match(
-  resources,
-  /<title>Praneeth Ravuri \(praneethravuri\) [^<]*developer resources<\/title>/
-);
-assert.match(resources, /<meta name="description" content="[^"]*praneethravuri[^\"]*"/);
-assert.match(resources, /<h1\b[^>]*>Praneeth Ravuri \(praneethravuri\)/);
-assert.match(resources, /rel="canonical" href="https:\/\/praneethravuri\.com\/projects"/);
-assert.ok(read("projects/index.md.body").includes("Praneeth Ravuri (praneethravuri)"));
-for (const project of projects) {
-  assert.ok(resources.includes(project.name));
-  assert.ok(resources.includes(`${project.codeRepository}#readme`));
+  assert.ok(!html.includes(`href="/${path}"`));
+  assert.ok(!llms.includes(`${canonical}/${path}`));
 }
 assert.doesNotMatch(llms + markdown, /1Ue\.\.\.|Hybrid Search|Outputs PDF/);
 for (const section of ["Experience", "Projects", "Education", "Skills"]) {
@@ -94,6 +75,7 @@ for (const section of ["Experience", "Projects", "Education", "Skills"]) {
 for (const project of projects) assert.ok(markdown.includes(project.codeRepository));
 const sitemap = read("sitemap.xml.body");
 assert.ok(sitemap.includes(`<loc>${canonical}</loc>`));
+assert.equal((sitemap.match(/<loc>/g) || []).length, 1);
 assert.ok(read("robots.txt.body").includes(`${canonical}/sitemap.xml`));
 console.log(
   "PASS: server-rendered metadata, structured data, Markdown, llms.txt, sitemap, and robots"

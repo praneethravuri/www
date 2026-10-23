@@ -7,7 +7,7 @@ export function OGContent() {
   return (
     <div
       style={{
-        background: "#141414",
+        background: "#151414",
         width: "100%",
         height: "100%",
         display: "flex",

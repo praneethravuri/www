@@ -30,7 +30,7 @@ export default function Hero() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center py-2 text-sm text-muted-foreground hover:text-ink"
+            className="inline-flex min-h-11 items-center py-2 text-sm text-muted-foreground hover:text-accent"
           >
             {item.name}
           </a>

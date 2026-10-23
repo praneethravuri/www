@@ -17,9 +17,6 @@ export default function NotFound() {
         <li>
           <a href="/sitemap.xml">Sitemap</a>
         </li>
-        <li>
-          <Link href="/projects">Project resources</Link>
-        </li>
       </ul>
     </main>
   );

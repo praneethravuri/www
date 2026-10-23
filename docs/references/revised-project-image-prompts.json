@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "prompts": [
+    {
+      "slug": "gary-v3",
+      "prompt": "Revise this Gary resume-tailoring illustration to REMOVE the desktop computer, monitor frame, monitor stand, and keyboard COMPLETELY. Keep the story: TWO recognizable standalone source sheets on the left, one resume document with gray portrait placeholder and abstract horizontal text lines, one job description sheet with orange highlighted lines. These sheets stand freely as paper documents, NOT inside a monitor. Orange lines merge their information and flow through the existing three small processing stages in the middle, then into the existing single finished resume sheet on the right with an orange checkmark. Simplify the processing stages slightly so source documents and output resume are the main focus. Preserve the same precise isometric CAD drawing style, thin white and gray outlines with orange #FF5D20 accents, flat black #151414 background, balanced centered 2:1 wide landscape composition and generous margins. No computers, screens, keyboards, devices, monitor-shaped frames, people, logos, text, words, labels, numbers, glow, gradients, cartoon styling or soft shading."
+    },
+    {
+      "slug": "notstuck-v3",
+      "prompt": "Revise this Notstuck document-question-answering illustration to REMOVE the desktop computer, monitor outer frame, monitor stand, and keyboard COMPLETELY. Retain the three source paper documents on the left, the orange information connections, and the search magnifying glass in the middle. On the right retain ONLY the two floating message panels: the smaller white outlined question bubble above the larger orange outlined answer bubble with abstract white horizontal answer lines. These are freestanding chat bubbles, NOT inside a monitor or frame and NOT shaped like a device. No other enclosing border. This tells the clear story: documents -> search -> sourced answer. Balance the three groups across the canvas, center the whole drawing horizontally and vertically with generous equal margins. Preserve precise isometric CAD linework, thin warm-white and gray outlines, orange #FF5D20 connection and answer highlights, flat solid #151414 background, wide landscape 2:1 aspect ratio. No computers, monitors, screens, keyboards, devices, characters, text labels, logos, readable words, numbers, gradients, glow, cartoon style or soft rendering."
+    }
+  ]
+}

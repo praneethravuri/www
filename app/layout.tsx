@@ -22,7 +22,7 @@ const lastUpdatedDateTime = `${data.lastUpdated}T00:00:00+00:00`;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#141413",
+  themeColor: "#141414",
 };
 
 export const metadata: Metadata = {

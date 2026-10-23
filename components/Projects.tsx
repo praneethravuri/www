@@ -9,7 +9,7 @@ export function Projects() {
       aria-label="Projects"
       className="mt-[88px] max-[600px]:mt-[70px] scroll-mt-8"
     >
-      <h2 className="mb-[10px] flex items-center gap-3.5 text-[12.5px] font-[500] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
+      <h2 className="mb-[10px] flex items-center gap-3.5 text-[13px] font-[500] uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
         Projects
       </h2>
 
@@ -32,13 +32,13 @@ export function Projects() {
                   className="text-faint group-hover:text-ink"
                 />
               </h3>
-              <span className="text-[15px] text-muted-foreground font-[460]">
+              <span className="text-[15px] text-muted-foreground font-medium">
                 {project.tags.join(" · ")}
               </span>
             </div>
 
             {/* Description */}
-            <p className="text-[16px] text-body mt-3.5 font-[420] text-pretty">
+            <p className="text-[16px] text-body mt-3.5 font-normal text-pretty">
               {project.description}
             </p>
 

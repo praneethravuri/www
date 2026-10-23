@@ -7,7 +7,7 @@ export function OGContent() {
   return (
     <div
       style={{
-        background: "#141413",
+        background: "#141414",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -31,18 +31,18 @@ export function OGContent() {
           style={{
             fontSize: "72px",
             fontWeight: 700,
-            color: "#eeeeee",
+            color: "#fffbf5",
             margin: 0,
             letterSpacing: "-2px",
           }}
         >
           {ogFullName}
         </h1>
-        <p style={{ fontSize: "32px", color: "#a3a3a3", margin: 0 }}>{data.title}</p>
+        <p style={{ fontSize: "32px", color: "#a1a1a1", margin: 0 }}>{data.title}</p>
         <p
           style={{
             fontSize: "24px",
-            color: "#d4d4d4",
+            color: "#f0e3de",
             margin: 0,
             maxWidth: "800px",
             textAlign: "center",
@@ -50,7 +50,7 @@ export function OGContent() {
         >
           {data.heroHeadline}
         </p>
-        <p style={{ fontSize: "20px", color: "#eeeeee", margin: 0, marginTop: "20px" }}>
+        <p style={{ fontSize: "20px", color: "#fffbf5", margin: 0, marginTop: "20px" }}>
           {data.url.replace("https://", "")}
         </p>
       </div>

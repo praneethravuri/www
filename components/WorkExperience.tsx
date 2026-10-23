@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 export function WorkExperience() {
   return (
     <section id="experience" aria-label="Experience" className="mt-20 scroll-mt-8">
-      <h2 className="mb-2.5 flex items-center gap-3.5 text-[12.5px] font-medium uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
+      <h2 className="mb-2.5 flex items-center gap-3.5 text-[13px] font-medium uppercase tracking-[0.18em] text-muted-foreground after:h-px after:flex-1 after:bg-line after:content-['']">
         Experience
       </h2>
 
@@ -18,7 +18,7 @@ export function WorkExperience() {
                   <h3 className="text-[18px] font-semibold text-ink tracking-[-0.02em]">
                     {job.company}
                   </h3>
-                  <span className="text-[15px] text-muted-foreground font-[460]">{job.title}</span>
+                  <span className="text-[15px] text-muted-foreground font-medium">{job.title}</span>
                 </div>
                 <p className="text-[13px] text-faint mt-1 font-normal tabular-nums">
                   {job.startDate} – {job.endDate} · {job.location}
@@ -27,7 +27,9 @@ export function WorkExperience() {
             </div>
 
             {/* Description */}
-            <p className="text-[16px] text-body mt-3.5 font-[420] text-pretty">{job.description}</p>
+            <p className="text-[16px] text-body mt-3.5 font-normal text-pretty">
+              {job.description}
+            </p>
 
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mt-3.5">

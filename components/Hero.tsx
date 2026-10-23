@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="pt-16 sm:pt-24" id="top" aria-label="Introduction">
       <div className="flex items-start justify-between gap-6">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-ink">
+          <h1 className="text-2xl leading-[1.38] font-medium tracking-tight text-ink">
             {data.firstName} {data.lastName}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <AvatarCircles names={[data.avatarName]} />
       </div>
-      <h2 className="mt-9 max-w-[30ch] text-[27px] text-balance leading-[1.35] font-semibold tracking-[-0.025em] text-ink sm:text-[32px]">
+      <h2 className="mt-9 max-w-[30ch] text-[24px] text-balance leading-[1.38] font-medium tracking-[-0.025em] text-ink sm:text-[30px] sm:leading-[1.1]">
         {data.heroHeadline}
       </h2>
       <p className="mt-5 text-body">{data.summary}</p>

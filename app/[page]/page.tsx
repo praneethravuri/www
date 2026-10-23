@@ -41,7 +41,9 @@ export default async function InformationPage({ params }: { params: Promise<{ pa
       <Link href="/" className="inline-block py-2 text-sm text-muted-foreground hover:text-ink">
         Back to portfolio
       </Link>
-      <h1 className="mt-8 text-3xl font-semibold tracking-tight text-ink">{page.title}</h1>
+      <h1 className="mt-8 text-[30px] leading-[1.1] font-medium tracking-tight text-ink">
+        {page.title}
+      </h1>
       {page.sections.map((section) => (
         <section key={section.heading} className="mt-10">
           <h2 className="text-lg font-medium text-ink">{section.heading}</h2>

@@ -3,21 +3,21 @@
 /* Single dark palette. The Blobatar is the only color accent. */
 :root {
   color-scheme: dark;
-  --background: #141413;
-  --foreground: #d4d4d4;
-  --ink: #eeeeee;
-  --body: #d4d4d4;
-  --muted-foreground: #a3a3a3;
+  --background: #141414;
+  --foreground: #f0e3de;
+  --ink: #fffbf5;
+  --body: #f0e3de;
+  --muted-foreground: #a1a1a1;
   --faint: #858585;
-  --line: #333332;
-  --line-strong: #484847;
-  --card: #1c1c1b;
-  --primary: #eeeeee;
-  --primary-foreground: #141413;
-  --selection-bg: #d4d4d4;
-  --selection-fg: #141413;
-  --scrollbar-thumb: #333332;
-  --scrollbar-thumb-hover: #484847;
+  --line: #2a2a2a;
+  --line-strong: #525252;
+  --card: #252525;
+  --primary: #fffbf5;
+  --primary-foreground: #141414;
+  --selection-bg: #f0e3de;
+  --selection-fg: #141414;
+  --scrollbar-thumb: #2a2a2a;
+  --scrollbar-thumb-hover: #525252;
 }
 
 @theme inline {
@@ -65,9 +65,9 @@
       "Segoe UI",
       sans-serif;
     font-size: 16px;
-    line-height: 1.6;
-    font-weight: 420;
-    letter-spacing: -0.011em;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.00875em;
     font-optical-sizing: auto;
     font-feature-settings:
       "liga" 1,

@@ -173,7 +173,6 @@ try {
     "/manifest.webmanifest",
     "/opengraph-image",
     "/twitter-image",
-    "/grid.svg",
     "/favicon.ico",
     "/icons/favicon-16x16.png",
     "/icons/favicon-32x32.png",

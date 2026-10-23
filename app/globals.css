@@ -60,8 +60,6 @@
 
   body {
     @apply bg-background text-body;
-    background-image: url("/grid.svg");
-    background-position: center top;
     font-family:
       var(--font-inter),
       -apple-system,

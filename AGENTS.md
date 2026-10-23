@@ -14,7 +14,7 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 ## Hard constraints
 
 - **ESLint must stay on v9** — v10 breaks eslint-plugin-react via eslint-config-next 16.x.
-- **Dark mode only**: background `#151414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. No pictures, company logos, cards, gradients, or navbars. Horizontal rules appear only beside section headings. A static dotted/dashed SVG grid covers the background, with dashed vertical content edges.
+- **Dark mode only**: background `#151414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. No pictures, company logos, cards, gradients, or navbars. Horizontal rules appear only beside section headings. The content column has dashed vertical edges; keep the background plain without a dot grid.
 - **Server components by default**: the animated Blobatar is the only custom client island. It uses `@blobatar/react` plus `useGaze` and the motion/gaze CSS from `blobatar`. Seed `praneethravuri`, neon orange `#FF5D20`, pointer travel 3. Respect reduced motion and fine-pointer gating. No theme toggle or no-flash script.
 - **No entrance/reveal animations.** BlurFade was removed for FCP/LCP reasons — JS-driven reveals SSR content with `opacity:0`, which delays paint until hydration. Do not reintroduce scroll reveals or anything that renders content hidden. Hover transitions (color/transform) are fine.
 

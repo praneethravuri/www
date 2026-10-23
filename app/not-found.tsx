@@ -2,7 +2,10 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main id="main-content" className="mx-auto w-full max-w-[640px] px-6 py-20">
+    <main
+      id="main-content"
+      className="mx-auto w-full max-w-[704px] border-x border-dashed border-line px-6 py-20"
+    >
       <h1 className="text-3xl font-semibold text-ink">Page not found</h1>
       <p className="mt-4">
         This path does not exist. Start with the portfolio or its published link index.

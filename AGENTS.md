@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 640px single-column layout with an orange Blobatar and interactive hover accents.
+Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 704px single-column layout with an orange Blobatar and interactive hover accents.
 
 ## Commands
 
@@ -14,14 +14,14 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 ## Hard constraints
 
 - **ESLint must stay on v9** — v10 breaks eslint-plugin-react via eslint-config-next 16.x.
-- **Dark mode only**: background `#151414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. No pictures, company logos, cards, gradients, or navbars. Horizontal rules appear only beside section headings.
+- **Dark mode only**: background `#151414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. No pictures, company logos, cards, gradients, or navbars. Horizontal rules appear only beside section headings. A static dotted/dashed SVG grid covers the background, with dashed vertical content edges.
 - **Server components by default**: the animated Blobatar is the only custom client island. It uses `@blobatar/react` plus `useGaze` and the motion/gaze CSS from `blobatar`. Seed `praneethravuri`, neon orange `#FF5D20`, pointer travel 3. Respect reduced motion and fine-pointer gating. No theme toggle or no-flash script.
 - **No entrance/reveal animations.** BlurFade was removed for FCP/LCP reasons — JS-driven reveals SSR content with `opacity:0`, which delays paint until hydration. Do not reintroduce scroll reveals or anything that renders content hidden. Hover transitions (color/transform) are fine.
 
 ## Architecture
 
 - **All content lives in `app/data/resume.tsx`** (`data` export) — name, summary, taglines, contact/socials, work, projects, education. Components render from it; edit content there, not in components.
-- `app/page.tsx` renders Hero → WorkExperience → Projects → Education → Footer inside `<main class="max-w-[640px]">`.
+- `app/page.tsx` renders Hero → WorkExperience → Projects → Education → Footer inside `<main class="max-w-[704px]">`.
 - `app/layout.tsx` holds all SEO metadata, JSON-LD structured data, production-only Vercel Analytics/Speed Insights, and the skip link.
 - `app/globals.css` — Tailwind v4 CSS-first theming: dark palette as CSS vars in `:root`, mapped to Tailwind tokens via `@theme inline` (+ `@custom-variant dark`); body base type (16px / weight 400 / line-height 1.5 / -0.00875em), inverted `::selection`, themed custom scrollbar, and reduced-motion support.
 - Design-exact values use Tailwind arbitrary classes (`text-[27px] font-[560] tracking-[-0.025em]`).

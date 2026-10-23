@@ -152,6 +152,8 @@ export const data = {
   projects: [
     {
       name: "Tether",
+      image: "/images/projects/tether.svg",
+      imageAlt: "Isometric CAD drawing of connected geometric nodes and a shared hub",
       languages: ["Go"],
       url: "https://github.com/praneethravuri/tether",
       description:
@@ -162,6 +164,8 @@ export const data = {
 
     {
       name: "Gary",
+      image: "/images/projects/gary.svg",
+      imageAlt: "Isometric CAD drawing of layered document planes above three processing blocks",
       languages: ["Python"],
       url: "https://github.com/praneethravuri/gary",
       description:
@@ -172,6 +176,8 @@ export const data = {
 
     {
       name: "Pitstop",
+      image: "/images/projects/pitstop.svg",
+      imageAlt: "Isometric CAD drawing of an angular circuit, telemetry bars, and a lap trace",
       languages: ["Python"],
       url: "https://github.com/praneethravuri/pitstop",
       description:
@@ -182,6 +188,8 @@ export const data = {
 
     {
       name: "Smart Traffic",
+      image: "/images/projects/smart-traffic.svg",
+      imageAlt: "Isometric CAD drawing of a four-way intersection with a suspended control node",
       languages: ["Python"],
       url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
       description:
@@ -192,6 +200,8 @@ export const data = {
 
     {
       name: "Notstuck",
+      image: "/images/projects/notstuck.svg",
+      imageAlt: "Isometric CAD drawing of stacked document planes connected to a knowledge lattice",
       languages: ["TypeScript", "Python"],
       url: "https://github.com/praneethravuri/notstuck",
       description:

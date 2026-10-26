@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { data } from "@/app/data/resume";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { Badge } from "@/components/ui/badge";
@@ -25,15 +24,6 @@ export function Projects() {
             className="group block rounded-lg"
           >
             <Card className="gap-0 overflow-hidden rounded-lg border-line bg-background py-0 shadow-none transition-colors group-hover:border-accent group-focus-visible:border-accent">
-              <div className="relative aspect-[2/1] overflow-hidden border-b border-line bg-background">
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) calc(100vw - 42px), 720px"
-                  className="object-contain"
-                />
-              </div>
               <CardHeader className="gap-2 px-6 pt-6">
                 <h3 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] text-ink">
                   <span className="inline-flex items-center gap-2 group-hover:text-accent group-focus-visible:text-accent">

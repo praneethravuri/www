@@ -45,3 +45,10 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - dependencies
+    groups:
+      # Keep codeql-action/init and codeql-action/analyze on the same version:
+      # a mixed init/analyze pair fails the CodeQL workflow, so they must
+      # always bump in a single PR.
+      codeql-action:
+        patterns:
+          - "github/codeql-action/*"

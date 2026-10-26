@@ -16,10 +16,9 @@ export const data = {
     description:
       "Praneeth Ravuri is an AI engineer at Tuskira in Chicago, building agents for security investigations. Explore his backend engineering work and open-source projects.",
   },
-  summary:
-    "AI engineer at Tuskira, building memory and tools for security investigation agents. Previously worked on network-flow processing at Lumen and internal web tools at ADP.",
+  summary: "Fight AI with AI.",
   heroHeadline: "Building agents that help security teams investigate threats.",
-  lastUpdated: "2026-10-04",
+  lastUpdated: "2026-10-26",
 
   taglines: {
     footerTagline: {
@@ -120,10 +119,10 @@ export const data = {
       title: "AI Engineer",
       startDate: "Dec 2025",
       endDate: "Present",
-      location: "United States",
+      location: "Chicago, IL, USA",
       description:
-        "At Tuskira, the work centers on giving security agents useful context for an investigation. A memory service stores past investigations and analyst feedback in FalkorDB, then makes that history available through MCP. Other work includes connecting agents to security tools and grouping related cases before analysis so they can share context.",
-      technologies: ["Python", "Go", "MCP", "FalkorDB", "AWS", "Kubernetes"],
+        "Building, maintaining, and optimizing SOC agents and the harness around them, working with multiple MCP tools and servers. Also building memory for security investigation agents, storing past investigations and analyst feedback in FalkorDB.",
+      technologies: ["Python", "Go", "FalkorDB", "AWS", "Kubernetes", "Postgres"],
     },
 
     {
@@ -131,9 +130,9 @@ export const data = {
       title: "Software Engineer",
       startDate: "Oct 2024",
       endDate: "Nov 2025",
-      location: "United States",
+      location: "Richardson, TX, USA",
       description:
-        "Lumen’s network produces millions of flow records a minute. The work was turning those IPFIX records into data network engineers could use: a Go decoder, Kafka between ingestion and processing, and a retry path for records that failed to decode. BigQuery held the history for analysis; MongoDB supported day-to-day network workflows.",
+        "Turned millions of IPFIX flow records per minute into data network engineers could use: a Go decoder, Kafka between ingestion and processing, and a retry path for records that failed to decode.",
       technologies: ["Go", "Kafka", "BigQuery", "MongoDB", "GCP"],
     },
 
@@ -142,9 +141,9 @@ export const data = {
       title: "Full Stack Engineer Intern",
       startDate: "Jan 2022",
       endDate: "Jun 2022",
-      location: "India",
+      location: "Hyderabad, IN",
       description:
-        "An internship at ADP focused on an internal employee page. The work included rebuilding the interface in React, updating older JavaScript, and working on the Node.js and Redis backend. A small part of a large company, with a concrete goal: make an everyday page easier to use and maintain.",
+        "Rebuilt an internal employee page in React with a Node.js and Redis backend, making an everyday page easier to use and maintain.",
       technologies: ["React", "Node.js", "Redis", "JavaScript"],
     },
   ],
@@ -157,7 +156,7 @@ export const data = {
       languages: ["Go"],
       url: "https://github.com/praneethravuri/tether",
       description:
-        "Coding agents in separate terminals need a way to talk and coordinate edits. Tether gives them a shared inbox through a local CLI. Agents can send questions, wait for replies, leave handoffs, and claim files they plan to work on. A Go daemon stores messages in SQLite and connects sessions across Git worktrees.",
+        "A shared inbox for coding agents in separate terminals: send questions, wait for replies, leave handoffs, and claim files, backed by a Go daemon and SQLite.",
       tags: ["Agent coordination", "CLI"],
       techStack: ["Go", "SQLite", "Unix Sockets"],
     },
@@ -170,7 +169,7 @@ export const data = {
       languages: ["Python"],
       url: "https://github.com/praneethravuri/gary",
       description:
-        "Gary takes a master resume and a job description and produces a tailored Word document. Three agent passes analyze the role, draft the resume, and check the result against the source material. A document template keeps the formatting consistent, and Google Sheets records the application details.",
+        "Turns a master resume and a job description into a tailored Word document through three agent passes: analyze the role, draft the resume, and check it against the source.",
       tags: ["Resume tailoring", "Agent workflows"],
       techStack: ["Python", "CrewAI", "Pydantic", "docxtpl", "Google Sheets API"],
     },
@@ -183,7 +182,7 @@ export const data = {
       languages: ["Python"],
       url: "https://github.com/praneethravuri/pitstop",
       description:
-        "Pitstop brings Formula 1 data into an AI chat through MCP. Its tools cover race results, standings, schedules, telemetry, and news. For questions about a race, it can compare lap pace, summarize stints, and calculate how lap times change over a tire stint. It combines FastF1, Jolpica, and OpenF1 with a queryable SQLite database.",
+        "Brings Formula 1 data into AI chat through MCP: results, standings, schedules, telemetry, and news, plus lap-pace comparisons and stint analysis.",
       tags: ["MCP", "Formula 1"],
       techStack: ["Python", "FastMCP", "FastF1", "HTTPX", "SQLite"],
     },
@@ -195,7 +194,7 @@ export const data = {
       languages: ["Python"],
       url: "https://github.com/praneethravuri/traffic-congestion-reduction-with-SARSA",
       description:
-        "A university team project exploring how reinforcement learning can control a four-way intersection. A SARSA agent chooses which direction gets a green light, using accumulated vehicle delays to represent traffic conditions. Pygame shows the traffic simulation, while learning curves track the agent’s behavior during training.",
+        "A university project using a SARSA reinforcement-learning agent to control a four-way intersection's traffic lights.",
       tags: ["Reinforcement Learning"],
       techStack: ["Python", "NumPy", "Pygame", "Matplotlib"],
     },
@@ -208,7 +207,7 @@ export const data = {
       languages: ["TypeScript", "Python"],
       url: "https://github.com/praneethravuri/notstuck",
       description:
-        "Upload a PDF, Word document, or text file, then ask questions about it. Notstuck splits the document into chunks, embeds them, and retrieves relevant passages from Pinecone. A chat interface shows the answer alongside document references. The assistant also has a web-search tool for questions beyond the uploaded files.",
+        "Upload a PDF, Word document, or text file, then ask questions about it: it chunks and embeds the document, retrieves passages from Pinecone, and shows answers with sources.",
       tags: ["Document Q&A", "RAG"],
       techStack: ["Next.js", "TypeScript", "FastAPI", "Pinecone", "CrewAI", "OpenAI Embeddings"],
     },

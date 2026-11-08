@@ -81,7 +81,7 @@ ${projects}
 
 ## Education
 
-${data.education.map((edu) => `- ${edu.degree}, ${edu.institution}`).join("\n")}
+${data.education.map((edu) => `- ${edu.degree}, ${edu.institution} · ${edu.location}`).join("\n")}
 
 ## Skills
 

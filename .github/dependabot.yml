@@ -12,6 +12,7 @@ updates:
       next-ecosystem:
         patterns:
           - "next"
+          - "@next/bundle-analyzer"
           - "react"
           - "react-dom"
           - "@types/react*"

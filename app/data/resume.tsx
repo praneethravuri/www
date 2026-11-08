@@ -216,10 +216,13 @@ export const data = {
   education: [
     {
       institution: "George Mason University",
+      location: "Fairfax, VA, USA",
       degree: "Master’s in Computer Science",
     },
     {
-      institution: "GRIET",
+      institution: "Gokaraju Rangaraju Institute of Engineering and Technology",
+      shortInstitution: "GRIET",
+      location: "Hyderabad, IN",
       degree: "Bachelor’s in Computer Science",
     },
   ],

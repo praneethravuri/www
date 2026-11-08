@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 768px single-column layout with an orange Blobatar and interactive hover accents.
+Personal portfolio for Praneeth Ravuri (praneethravuri.com). Single-page Next.js site implementing the "Portfolio v3" design — a dark, 768px single-column layout with an electric blue Blobatar and interactive hover accents.
 
 ## Commands
 
@@ -14,8 +14,8 @@ Package manager is **pnpm**. Build approvals/overrides live in `pnpm-workspace.y
 ## Hard constraints
 
 - **ESLint must stay on v9** — v10 breaks eslint-plugin-react via eslint-config-next 16.x.
-- **Dark mode only**: background `#151414`, body `#F0E3DE`, headings `#FFFBF5`, secondary `#A1A1A1`, quiet `#858585`, surfaces `#252525`, dividers `#2A2A2A`. Palette in `app/globals.css`. Inter only. Project cards use shadcn Card with black/orange/white/gray isometric CAD-style artwork stored as optimized WebP in `public/images/projects`. No company logos, gradients, or navbars. Horizontal rules appear only beside section headings. The content column has dashed vertical edges; keep the background plain without a dot grid.
-- **Server components by default**: the animated Blobatar is the only custom client island. It uses `@blobatar/react` plus `useGaze` and the motion/gaze CSS from `blobatar`. Seed `praneethravuri`, neon orange `#FF5D20`, pointer travel 3. Respect reduced motion and fine-pointer gating. No theme toggle or no-flash script.
+- **Dark mode only**: charcoal background/surfaces `#1E1E1C`, sand text `#D8CBB3`, electric blue accent `#2F6BFF`; dividers blend sand into charcoal. Palette in `app/globals.css`. Inter only. Projects use text-only rows without images. No company logos, gradients, or navbars. Horizontal rules appear only beside section headings. Keep the background plain without side lines or a dot grid.
+- **Server components by default**: the animated Blobatar is the only custom client island. It uses `@blobatar/react` plus `useGaze` and the motion/gaze CSS from `blobatar`. Seed `praneethravuri`, electric blue `#2F6BFF`, pointer travel 3. Respect reduced motion and fine-pointer gating. No theme toggle or no-flash script.
 - **No entrance/reveal animations.** BlurFade was removed for FCP/LCP reasons — JS-driven reveals SSR content with `opacity:0`, which delays paint until hydration. Do not reintroduce scroll reveals or anything that renders content hidden. Hover transitions (color/transform) are fine.
 
 ## Architecture

@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
-/* Single dark palette. The Blobatar and interactive hover states use the orange accent. */
+/* Three-color dark palette; hover shades blend blue toward charcoal. */
 :root {
   color-scheme: dark;
-  --accent: #ff5d20;
-  --background: #151414;
-  --foreground: #f0e3de;
-  --ink: #fffbf5;
-  --body: #f0e3de;
-  --muted-foreground: #a1a1a1;
-  --faint: #858585;
-  --line: #2a2a2a;
-  --line-strong: #525252;
-  --card: #252525;
-  --primary: #fffbf5;
-  --primary-foreground: #151414;
-  --selection-bg: #f0e3de;
-  --selection-fg: #151414;
-  --scrollbar-thumb: #2a2a2a;
-  --scrollbar-thumb-hover: #525252;
+  --accent: #2f6bff;
+  --background: #1e1e1c;
+  --foreground: #d8cbb3;
+  --ink: #d8cbb3;
+  --body: #d8cbb3;
+  --muted-foreground: #d8cbb3;
+  --faint: #d8cbb3;
+  --line: color-mix(in srgb, var(--foreground) 18%, var(--background));
+  --line-strong: color-mix(in srgb, var(--foreground) 35%, var(--background));
+  --card: #1e1e1c;
+  --primary: #2f6bff;
+  --primary-foreground: #d8cbb3;
+  --selection-bg: #d8cbb3;
+  --selection-fg: #1e1e1c;
+  --scrollbar-thumb: var(--line);
+  --scrollbar-thumb-hover: var(--line-strong);
 }
 
 @theme inline {
@@ -129,13 +129,13 @@
   }
 }
 
-/* Explicit dash lengths keep both vertical edges consistent across browsers. */
-.portfolio-frame {
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='18'%3E%3Cpath stroke='%232a2a2a' d='M.5 0v10'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='18'%3E%3Cpath stroke='%232a2a2a' d='M.5 0v10'/%3E%3C/svg%3E");
-  background-position:
-    left top,
-    right top;
-  background-repeat: repeat-y;
+/* Filled action buttons use a smooth darker-blue hover state. */
+.portfolio-button {
+  background-color: var(--accent);
+  color: var(--foreground);
+  transition: background-color 200ms ease;
+}
+
+.portfolio-button:hover {
+  background-color: color-mix(in srgb, var(--accent) 75%, var(--background));
 }

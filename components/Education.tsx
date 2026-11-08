@@ -15,7 +15,17 @@ export function Education() {
         <div key={edu.institution} className="flex items-center gap-4 py-5">
           <div>
             <p className="text-[18px] text-ink font-[600]">{edu.degree}</p>
-            <p className="text-[14px] text-muted-foreground mt-px font-medium">{edu.institution}</p>
+            <p className="text-[14px] text-muted-foreground mt-px font-medium">
+              {"shortInstitution" in edu ? (
+                <>
+                  <span className="sm:hidden">{edu.shortInstitution}</span>
+                  <span className="hidden sm:inline">{edu.institution}</span>
+                </>
+              ) : (
+                edu.institution
+              )}
+            </p>
+            <p className="text-[14px] text-muted-foreground mt-px">{edu.location}</p>
           </div>
         </div>
       ))}

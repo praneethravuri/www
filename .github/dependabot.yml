@@ -12,6 +12,7 @@ updates:
       next-ecosystem:
         patterns:
           - "next"
+          - "@next/bundle-analyzer"
           - "react"
           - "react-dom"
           - "@types/react*"
@@ -45,3 +46,8 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - dependencies
+    groups:
+      # Keep CodeQL init and analyze on the same release.
+      codeql-action:
+        patterns:
+          - "github/codeql-action/*"

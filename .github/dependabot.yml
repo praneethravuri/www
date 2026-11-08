@@ -46,3 +46,8 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - dependencies
+    groups:
+      # Keep CodeQL init and analyze on the same release.
+      codeql-action:
+        patterns:
+          - "github/codeql-action/*"

@@ -4,6 +4,7 @@ allowBuilds:
 
 overrides:
   postcss: ">=8.5.18"
+  minimatch@>=7.0.0 <11.0.1: 11.0.5
   brace-expansion@<1.1.21: 1.1.21
   nanoid@>=3.0.0 <3.3.18: 3.3.18
 
